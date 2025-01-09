@@ -1,0 +1,316 @@
+
+/*--------------------------------------------------------------
+  # Hero Section
+  --------------------------------------------------------------*/
+  /* .hero {
+    width: 100%;
+    min-height: 100vh;
+  
+  }
+  
+  .hero .info {
+    inset: 0;
+    z-index: 3;
+    padding: 140px 0 60px 0;
+  }
+  
+  @media (max-width: 768px),
+  (max-height: 480px) {
+    .hero .info {
+      padding: 100px 50px 60px 50px;
+    }
+  }
+  
+  .hero .info h2 {
+    margin-bottom: 30px;
+    padding-bottom: 30px;
+    font-size: 56px;
+    font-weight: 700;
+    position: relative;
+  }
+  
+  .hero .info h2:after {
+    content: "";
+    position: absolute;
+    display: block;
+    width: 80px;
+    height: 4px;
+    background: var(--accent-color);
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+  }
+  
+  @media (max-width: 768px) {
+    .hero .info h2 {
+      font-size: 36px;
+    }
+  }
+  
+  .hero .info p {
+    color: color-mix(in srgb, var(--default-color), transparent 20%);
+    font-size: 18px;
+  }
+  
+  
+  
+  .hero .carousel {
+    inset: 0;
+    position: absolute;
+    overflow: hidden;
+  }
+  
+  .hero .carousel-item {
+    position: absolute;
+    inset: 0;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    overflow: hidden;
+    transition-duration: 0.4s;
+  }
+  
+  .hero .carousel-item img {
+    position: absolute;
+    inset: 0;
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 1;
+  }
+  
+  .hero .carousel-item::before {
+    content: "";
+    background-color: color-mix(in srgb, var(--background-color), transparent 30%);
+    position: absolute;
+    inset: 0;
+    z-index: 2;
+  }
+  
+  .hero .carousel-control-prev {
+    justify-content: start;
+  }
+  
+  @media (min-width: 640px) {
+    .hero .carousel-control-prev {
+      padding-left: 15px;
+    }
+  }
+  
+  .hero .carousel-control-next {
+    justify-content: end;
+  }
+  
+  @media (min-width: 640px) {
+    .hero .carousel-control-next {
+      padding-right: 15px;
+    }
+  }
+  
+  .hero .carousel-control-next-icon,
+  .hero .carousel-control-prev-icon {
+    background: none;
+    font-size: 26px;
+    line-height: 0;
+    background: color-mix(in srgb, var(--default-color), transparent 80%);
+    color: color-mix(in srgb, var(--default-color), transparent 40%);
+    border-radius: 50px;
+    width: 54px;
+    height: 54px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .hero .carousel-control-prev,
+  .hero .carousel-control-next {
+    z-index: 3;
+    transition: 0.3s;
+  }
+  
+  .hero .carousel-control-prev:focus,
+  .hero .carousel-control-next:focus {
+    opacity: 0.5;
+  }
+  
+  .hero .carousel-control-prev:hover,
+  .hero .carousel-control-next:hover {
+    opacity: 0.9;
+  }
+  
+  .home-icon{
+    color: yellow;
+  } */
+  
+  /*--------------------------------------------------------------
+    # Constructions Section
+    --------------------------------------------------------------*/
+  /* .constructions .card-item {
+    background-color: var(--surface-color);
+    border: 1px solid color-mix(in srgb, var(--default-color), transparent 85%);
+    position: relative;
+    border-radius: 95px;
+  }
+  
+  .constructions .card-item .card-bg {
+    min-height: 300px;
+    position: relative;
+  }
+  
+  .constructions .card-item .card-bg img {
+    position: absolute;
+    inset: 0;
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    z-index: 1;
+  }
+  
+  .constructions .card-item .card-body {
+    padding: 30px;
+  }
+  
+  .constructions .card-item h4 {
+    font-weight: 700;
+    font-size: 20px;
+    margin-bottom: 15px;
+  }
+  
+  .constructions .card-item p {
+    color: color-mix(in srgb, var(--default-color), transparent 40%);
+    margin: 0;
+  } */
+  
+  /*--------------------------------------------------------------
+    # Services Section
+    --------------------------------------------------------------*/
+  /* .services .service-item {
+    background-color: var(--surface-color);
+    padding: 40px;
+    box-shadow: 0px 0 30px rgba(0, 0, 0, 0.1);
+    height: 100%;
+  }
+  
+  .services .service-item .icon {
+    width: 48px;
+    height: 48px;
+    position: relative;
+    margin-bottom: 50px;
+  }
+  
+  .services .service-item .icon i {
+    color: rgb(1, 1, 1);
+    font-size: 56px;
+    transition: ease-in-out 0.3s;
+    z-index: 2;
+    position: relative;
+  }
+  
+  
+  
+  
+  .services .service-item h3 {
+    color: color-mix(in srgb, var(--heading-color), transparent 20%);
+    font-weight: 700;
+    margin: 0 0 20px 0;
+    padding-bottom: 8px;
+    font-size: 22px;
+    position: relative;
+    display: inline-block;
+    border-bottom: 4px solid color-mix(in srgb, var(--heading-color), transparent 90%);
+    transition: 0.3s;
+  }
+  
+  .services .service-item p {
+    line-height: 24px;
+    font-size: 14px;
+    margin-bottom: 0;
+  }
+  
+  
+  
+  .services .service-item:hover h3 {
+    border-color: var(--accent-color);
+    color: var(--heading-color);
+  }
+   */
+ 
+  
+  /* testanomial */
+  /* .carousel-item {
+    min-height: 350px;
+   
+  }
+  
+  .carousel-img {
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    ;
+    border-radius: 50%;
+    left: 50%;
+    top: 30%;
+    transform: translate(-50%, -50%);
+    border: 2px solid var(--accent-color);
+  }
+  
+  .carousel-img img {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+  }
+  
+  .carousel-caption {
+    
+    color: var(--default-color) !important;
+    
+  }
+  
+  .testimonial-name {
+    font-size: 25px;
+    font-weight: 400;
+    text-transform: capitalize;
+  }
+  
+  .carousel-control-prev-icon {
+    background-image: url(https://www.svgrepo.com/show/97099/left-arrow.svg) !important;
+  }
+  
+  .carousel-control-next-icon {
+    background-image: url(https://www.svgrepo.com/show/55208/right-arrow.svg) !important;
+  }
+  
+  .testimonial-rating {
+    color: var(--accent-color);
+  
+  } */
+
+/* Project */
+/* .project-card-hover h5{
+   
+    background-color: var(--background-color);
+    
+  }
+  
+  .btn-get-started {
+    color: var(--default-color);
+    font-family: var(--heading-font);
+    font-weight: 500;
+    font-size: 16px;
+    letter-spacing: 1px;
+    display: inline-block;
+    padding: 6px 25px;
+    border-radius: 50px;
+    transition: 0.5s;
+    margin: 10px;
+    border: 2px solid var(--accent-color);
+  }
+  
+   .btn-get-started:hover {
+    background: var(--accent-color);
+    
+  }   */

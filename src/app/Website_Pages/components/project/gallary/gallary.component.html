@@ -1,0 +1,30 @@
+<main class="main">
+
+    <div class="container section-title text-center pt-5 position-relative" data-aos="fade-up">
+        <h2 class="fs-2 fw-bold position-relative mt-5 pt-3">Gallary</h2>
+        <!-- <p class="mb-0">Necessitatibus eius consequatur ex aliquid fuga eum quidem sint consectetur velit</p> -->
+    </div><!-- End Section Title -->
+    <!-- Contact Section -->
+    <section id="contact" class="contact section">
+
+        <div class="container" data-aos="fade-up" data-aos-delay="100">
+
+            <!-- <div class="row gy-4"> -->
+                <!-- <div class="col-12"> -->
+                    <div class=" flex justify-center">
+                        <div *ngIf="images" class="grid grid-cols-12 gap-4" >
+                            <div *ngFor="let image of images; let index = index" class="col-span-4" key="index">
+                                <img [src]="image.thumbnailImageSrc" [alt]="image.alt" style="cursor: pointer ; height: 300px;" (click)="imageClick(index)" />
+                            </div>
+                        </div>
+                        <p-galleria [value]="images" [(visible)]="displayCustom" [(activeIndex)]="activeIndex" [responsiveOptions]="responsiveOptions" [containerStyle]="{ 'max-width': '850px' }" [numVisible]="7" [circular]="true" [fullScreen]="true" [showItemNavigators]="true" [showThumbnails]="false">
+                            <ng-template pTemplate="item" let-item>
+                                <img [src]="item.itemImageSrc" style="width: 100%; display: block;" />
+                            </ng-template>
+                        </p-galleria>
+                    </div>
+                <!-- </div> -->
+            <!-- </div> -->
+        </div>
+    </section>
+</main>

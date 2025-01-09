@@ -1,0 +1,81 @@
+<header id="header" class="header flex align-items-center   surface-900 py-2">
+    <div class="container-fluid container-xl position-relative d-flex align-items-center justify-content-between">
+
+        <a routerLink="index.html" class="logo flex align-items-center text-decoration-none">
+            <img src="assets/img/logo.png" alt="">
+            <h1 class="sitename m-0 text-white fs-3 fw-bold">
+                <span> <i class="bi bi-house-heart fs-2 text-danger"></i></span>
+                MyDreamProperty
+            </h1> 
+        </a>
+
+        <nav id="navmenu" class="navmenu">
+            <ul>
+                <li><a routerLink="Home" routerLinkActive="active-link" [routerLinkActiveOptions]="{ exact: true }"  class=" text-decoration-none">Home</a></li>
+                <li><a routerLink="About" routerLinkActive="active-link"  class="text-decoration-none">About</a></li>
+                <li class="dropdown"><a  routerLinkActive="active-link" class="text-decoration-none"><span>Projects</span> <i
+                            class="bi bi-chevron-down toggle-dropdown"></i></a>
+                    <ul>
+                        <li class="dropdown"><a  class="text-decoration-none"><span>On Going</span> <i
+                                    class="bi bi-chevron-down toggle-dropdown"></i></a>
+                            <ul>
+                                <li class="dropdown"><a routerLink="#" class="text-decoration-none"><span>Project 1</span>
+                                        <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+                                    <ul>
+                                        <li><a routerLink="#"
+                                                class="text-decoration-none" routerLink="gallary">Gallary</a></li>
+                                        <li><a routerLink="#"
+                                                class="text-decoration-none" routerLink="project">Description </a></li>
+                                    </ul>
+                                </li>
+                                <li class="dropdown"><a routerLink="#" class="text-decoration-none"><span>Project 2</span>
+                                        <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+                                    <ul>
+                                        <li><a routerLink="#"
+                                                class="text-decoration-none" routerLink="gallary">Gallary</a></li>
+                                        <li><a routerLink="#"
+                                                class="text-decoration-none" routerLink="project">Description </a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="dropdown"><a routerLink="#" class="text-decoration-none"><span>Completed</span> <i
+                                    class="bi bi-chevron-down toggle-dropdown"></i></a>
+                            <ul>
+                                <li class="dropdown"><a routerLink="#" class="text-decoration-none"><span>Project 1</span>
+                                        <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+                                    <ul>
+                                        <li><a routerLink="#"
+                                                class="text-decoration-none" routerLink="gallary">Gallary</a></li>
+                                        <li><a routerLink="#"
+                                                class="text-decoration-none" routerLink="project">Description </a></li>
+                                    </ul>
+                                </li>
+                                <li class="dropdown"><a routerLink="#" class="text-decoration-none"><span>Project 2</span>
+                                        <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+                                    <ul>
+                                        <li><a routerLink="#"
+                                                class="text-decoration-none" routerLink="gallary">Gallary</a></li>
+                                        <li><a routerLink="#"
+                                                class="text-decoration-none" routerLink="project">Description </a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+                <li><a routerLink="contact" routerLinkActive="active-link" class="text-decoration-none">Contact</a></li>
+                <li><a routerLink="login" routerLinkActive="active-link" class="text-decoration-none">SignIn</a></li>
+            </ul>
+            <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
+        </nav>
+
+
+    </div>
+</header>
+
+ 
+
+<router-outlet></router-outlet>
+
+
