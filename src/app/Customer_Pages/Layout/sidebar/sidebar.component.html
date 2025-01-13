@@ -1,1 +1,157 @@
-<p>sidebar works!</p>
+<div class="flex flex-column h-screen surface-ground">
+    <!-- Navbar -->
+    <div
+        class="flex justify-content-between align-items-center px-4 py-3 border-bottom-1 surface-border surface-section shadow-2 w-full">
+        <!-- Left Section -->
+        <div class="flex align-items-center">
+            <i class="pi pi-bars text-2xl text-primary cursor-pointer" (click)="toggleSidebar()"></i>
+            <span class="ml-2 text-xl font-bold text-primary">MDP</span>
+        </div>
+
+        <!-- Right Section with Icons -->
+        <div class="flex align-items-center gap-4">
+            <i class="pi pi-calendar text-xl text-primary cursor-pointer"></i>
+            <i class="pi pi-cog text-xl text-primary cursor-pointer"></i>
+            <!-- User Icon with Dropdown -->
+            <div class="relative">
+                <i class="pi pi-user text-xl text-primary cursor-pointer" (click)="overlayPanel.toggle($event)"></i>
+
+                <!-- Dropdown menu -->
+                <p-overlayPanel #overlayPanel appendTo="body">
+                    <ul class="list-none p-0 m-0">
+                        <li class="p-2 hover:surface-hover cursor-pointer">My Profile</li>
+                        <li class="p-2 hover:surface-hover cursor-pointer">Logout</li>
+                    </ul>
+                </p-overlayPanel>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- Sidebar -->
+    <p-sidebar [(visible)]="sidebarVisible" position="left" appendTo="body" class="w-18rem transition-all shadow-2"
+        [showCloseIcon]="false" styleClass="p-0">
+        <!-- Close Icon -->
+        <div class="flex justify-content-end pr-3 pt-2">
+            <i class="pi pi-times text-xl text-primary cursor-pointer" (click)="sidebarVisible = false"></i>
+        </div>
+
+        <!-- Sidebar Image -->
+        <div class="flex justify-content-center align-items-center my-3">
+            <img src="https://wp.sfdcdigital.com/en-us/wp-content/uploads/sites/4/2024/11/marquee-crm-real-estate_1680x1120.jpg?resize=1536,1024"
+                alt="Sidebar Logo" class="border-round w-6rem" />
+        </div>
+
+        <!-- Sidebar Title -->
+        <div class="flex justify-content-center align-items-center my-3">
+            <span class="text-xl font-bold text-primary"> My Dream Property </span>
+        </div>
+
+        <!-- Sidebar Menu -->
+        <ul class="list-none p-0 m-0">
+            <li class="p-3 hover:surface-hover cursor-pointer text-md flex align-items-center gap-2">
+                <i class="pi pi-home text-primary"></i> Home
+            </li>
+            <li class="p-3 hover:surface-hover cursor-pointer text-md flex align-items-center gap-2">
+                <i class="pi pi-chart-line text-primary"></i> My Dashboard
+            </li>
+            <li class="p-3 hover:surface-hover cursor-pointer text-md flex align-items-center gap-2">
+                <i class="pi pi-wallet text-primary"></i> Properties For Buy
+            </li>
+            <li class="p-3 hover:surface-hover cursor-pointer text-md flex align-items-center gap-2">
+                <i class="pi pi-dollar text-primary"></i> Properties For Rent
+            </li>
+            <li class="p-3 hover:surface-hover cursor-pointer text-md flex align-items-center gap-2">
+                <i class="pi pi-map-marker text-primary"></i> New Projects
+            </li>
+            <li class="p-3 hover:surface-hover cursor-pointer text-md flex align-items-center gap-2">
+                <i class="pi pi-compass text-primary"></i> Explore Localities
+            </li>
+
+            <!-- Separator -->
+            <li class="border-top-1 surface-border my-2"></li>
+
+            <li class="p-3 hover:surface-hover cursor-pointer text-md flex align-items-center gap-2">
+                <i class="pi pi-briefcase text-primary"></i> Brokerage
+            </li>
+            <li class="p-3 hover:surface-hover cursor-pointer text-md flex align-items-center gap-2">
+                <i class="pi pi-id-card text-primary"></i> Agents
+            </li>
+
+            <!-- Notifications Section -->
+            <li class="border-top-1 surface-border my-2"></li>
+            <li class="p-3 hover:surface-hover cursor-pointer text-md flex align-items-center justify-content-between">
+                <div class="flex align-items-center gap-2">
+                    <i class="pi pi-envelope text-primary"></i> Messages
+                </div>
+                <span class="badge bg-primary text-white text-sm">5</span>
+            </li>
+            <li class="p-3 hover:surface-hover cursor-pointer text-md flex align-items-center justify-content-between">
+                <div class="flex align-items-center gap-2">
+                    <i class="pi pi-bell text-primary"></i> Notifications
+                </div>
+                <span class="badge bg-danger text-white text-sm">3</span>
+            </li>
+        </ul>
+    </p-sidebar>
+
+    <router-outlet></router-outlet>
+
+    <!-- Main Content Area -->
+    <!-- <div class="flex flex-column flex-grow-1">
+     
+      <div class="p-4">
+        <div class="flex flex-column align-items-center mb-4">
+          <h1 class="text-4xl font-bold text-primary mb-2 fadein-animation">Documentation</h1>
+          <p class="text-lg text-secondary text-center w-8 shadow-2 p-4 border-round transition-all hover:shadow-4 p-3">
+            Manage your client and agent contacts efficiently with our tools and resources. Explore new properties and
+            stay updated with recent developments.
+          </p>
+        </div>
+  
+        <div class="flex flex-column align-items-center justify-content-center px-3 py-6">
+         
+          <h1 class="text-2xl font-bold text-primary mb-4">Find a PG & Hostel</h1>
+          <hr class="w-6 border-primary mb-5" /> 
+  
+          <div class="container">
+            <div class="p-4">
+              <div class="row gy-4">
+                <div class="col-12 md:col-3 lg:col-3">
+                  <div class="surface-card shadow-2 border-round p-4 hover:shadow-4 transition-duration-300 text-center">
+                    <i class="pi pi-users text-4xl text-primary mb-3"></i>
+                    <h2 class="text-lg font-bold mb-2">Student Friendly PG's</h2>
+                    <p class="text-secondary mb-3">Affordable and comfortable living spaces tailored for students.</p>
+                  </div>
+                </div>
+  
+                <div class="col-12 md:col-3 lg:col-3">
+                  <div class="surface-card shadow-2 border-round p-4 hover:shadow-4 transition-duration-300 text-center">
+                    <i class="pi pi-user text-4xl text-pink-500 mb-3"></i>
+                    <h2 class="text-lg font-bold mb-2">PG for Girls</h2>
+                    <p class="text-secondary mb-3">Safe and secure accommodations specially for girls.</p>
+                  </div>
+                </div>
+  
+                <div class="col-12 md:col-3 lg:col-3">
+                  <div class="surface-card shadow-2 border-round p-4 hover:shadow-4 transition-duration-300 text-center">
+                    <i class="pi pi-user text-4xl text-blue-500 mb-3"></i>
+                    <h2 class="text-lg font-bold mb-2">PG for Boys</h2>
+                    <p class="text-secondary mb-3">Spacious and well-equipped PGs designed for boys.</p>
+                  </div>
+                </div>
+  
+                <div class="col-12 md:col-3 lg:col-3">
+                  <div class="surface-card shadow-2 border-round p-4 hover:shadow-4 transition-duration-300 text-center">
+                    <i class="pi pi-home text-4xl text-green-500 mb-3"></i>
+                    <h2 class="text-lg font-bold mb-2">Hostel for Girls</h2>
+                    <p class="text-secondary mb-3">Hostels with all amenities ensuring comfort and safety for girls.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div> -->
+</div>
