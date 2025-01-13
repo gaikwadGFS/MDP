@@ -6,6 +6,8 @@ import { ContactComponent } from './Website_Pages/components/contact/contact.com
 import { GallaryComponent } from './Website_Pages/components/project/gallary/gallary.component';
 import { ProjectsComponent } from './Website_Pages/components/project/projects/projects.component';
 import { LoginComponent } from './Website_Pages/components/login/login.component';
+import { SidebarComponent } from './Customer_Pages/Layout/sidebar/sidebar.component';
+import { DashboardComponent } from './Customer_Pages/Components/dashboard/dashboard.component';
 
 export const routes: Routes = [
     
@@ -46,6 +48,16 @@ export const routes: Routes = [
             {
                 path:'login',
                 component:LoginComponent
+            }
+        ]
+    },
+    {
+        path:'sidebar',
+        component:SidebarComponent,
+        children:[
+            {
+                path:'dashboard',
+                component:DashboardComponent
             }
         ]
     }
