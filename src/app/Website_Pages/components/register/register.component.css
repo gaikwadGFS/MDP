@@ -1,0 +1,41 @@
+/* Shared styling for inputs */
+.contact-input {
+    font-size: 14px;
+    padding: 10px 15px;
+    box-shadow: none;
+    border-radius: 0;
+    color: grey;
+    background-color: rgba(255, 255, 255, 0.7); /* 70% transparent */
+    border: 1px solid rgba(255, 255, 255, 0.7); /* Light border with transparency */
+    transition: border-color 0.4s ease;
+  }
+  
+  /* Change border color on focus */
+  .contact-input:focus {
+    border-color: #feb900; /* Solid color on focus */
+    outline: none; /* Remove default browser outline */
+  }
+  
+  /* Placeholder text */
+  .contact-input::placeholder {
+    color: rgba(0, 0, 0, 0.5); /* Slightly transparent placeholder text */
+  }
+  
+  /* Center the register button */
+  button {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+  }
+  
+  /* Additional mobile responsiveness */
+  @media (max-width: 768px) {
+    .w-full {
+      width: 100% !important;
+    }
+  
+    .w-20rem {
+      width: 100% !important;
+    }
+  }
+  
