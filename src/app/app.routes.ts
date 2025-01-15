@@ -8,6 +8,8 @@ import { ProjectsComponent } from './Website_Pages/components/project/projects/p
 import { LoginComponent } from './Website_Pages/components/login/login.component';
 import { SidebarComponent } from './Customer_Pages/Layout/sidebar/sidebar.component';
 import { DashboardComponent } from './Customer_Pages/Components/dashboard/dashboard.component';
+import { RegisterComponent } from './Website_Pages/components/register/register.component';
+
 
 export const routes: Routes = [
     
@@ -48,6 +50,10 @@ export const routes: Routes = [
             {
                 path:'login',
                 component:LoginComponent
+            },
+            {
+                path:'register',
+                component:RegisterComponent
             }
         ]
     },
