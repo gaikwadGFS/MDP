@@ -1,4 +1,95 @@
+<!-- <div class="flex justify-content-center align-items-center min-h-screen">
+    <div class="surface-card p-4 shadow-2 border-round w-full sm:w-30rem">
+      <div class="text-center mb-5">
+        <img src="" alt="Logo" class="w-6rem">
+        <h2 class="text-900 font-medium text-2xl mt-3">Register</h2>
+        <p class="text-600">Create your account</p>
+      </div>
 
+      
+      
+      <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+        Full Name
+        <div class="field mb-4">
+          <label for="fullName" class="block text-900 font-medium mb-2">Full Name</label>
+          <input
+            id="fullName"
+            type="text"
+            pInputText
+            formControlName="fullName"
+            class="w-full"
+            placeholder="Enter your full name"
+          />
+          <small class="p-error" *ngIf="registerForm.get('fullName')?.invalid && registerForm.get('fullName')?.touched">
+            Full name is required.
+          </small>
+        </div>
+  
+        Email
+        <div class="field mb-4">
+          <label for="email" class="block text-900 font-medium mb-2">Email</label>
+          <input
+            id="email"
+            type="email"
+            pInputText
+            formControlName="email"
+            class="w-full"
+            placeholder="Enter your email"
+          />
+          <small class="p-error" *ngIf="registerForm.get('email')?.invalid && registerForm.get('email')?.touched">
+            Valid email is required.
+          </small>
+        </div>
+  
+        Password
+        <div class="field mb-4">
+          <label for="password" class="block text-900 font-medium mb-2">Password</label>
+          <input
+            id="password"
+            type="password"
+            pInputText
+            formControlName="password"
+            class="w-full"
+            placeholder="Create a password"
+          />
+          <small class="p-error" *ngIf="registerForm.get('password')?.invalid && registerForm.get('password')?.touched">
+            Password must be at least 6 characters.
+          </small>
+        </div>
+  
+        Confirm Password
+        <div class="field mb-4">
+          <label for="confirmPassword" class="block text-900 font-medium mb-2">Confirm Password</label>
+          <input
+            id="confirmPassword"
+            type="password"
+            pInputText
+            formControlName="confirmPassword"
+            class="w-full"
+            placeholder="Confirm your password"
+          />
+          <small
+            class="p-error"
+            *ngIf="registerForm.hasError('passwordMismatch') && registerForm.get('confirmPassword')?.touched"
+          >
+            Passwords do not match.
+          </small>
+        </div>
+  
+        <button
+          type="submit"
+          pButton
+          label="Register"
+          class="w-medium"
+          [disabled]="registerForm.invalid"
+          style="background-color: #feb900; color: black; border: none;"
+        ></button>
+      </form>
+    </div>
+  </div>
+
+  
+   -->
 
 
 
@@ -18,93 +109,113 @@
 
 
    <div class="flex justify-content-center align-items-center min-h-screen">
-    <div class="surface-card p-4 shadow-2 border-round w-full sm:w-30rem">
-      <div class="text-center mb-5">
-        <img src="" alt="Logo" class="w-6rem">
-        <h2 class="text-900 font-medium text-2xl mt-3">Register</h2>
-        <p class="text-600">Create your account</p>
-      </div>
-  
-      <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
-        <!-- Full Name -->
-        <div class="field mb-4">
-          <label for="fullName" class="block text-900 font-medium mb-2">Full Name</label>
-          <input
-            id="fullName"
-            type="text"
-            pInputText
-            formControlName="fullName"
-            class="w-full contact-input"
-            placeholder="Enter your full name"
-          />
-          <small class="p-error" *ngIf="registerForm.get('fullName')?.invalid && registerForm.get('fullName')?.touched">
-            Full name is required.
-          </small>
-        </div>
-  
-        <!-- Email -->
-        <div class="field mb-4">
-          <label for="email" class="block text-900 font-medium mb-2">Email</label>
-          <input
-            id="email"
-            type="email"
-            pInputText
-            formControlName="email"
-            class="w-full contact-input"
-            placeholder="Enter your email"
-          />
-          <small class="p-error" *ngIf="registerForm.get('email')?.invalid && registerForm.get('email')?.touched">
-            Valid email is required.
-          </small>
-        </div>
-  
-        <!-- Password -->
-        <div class="field mb-4">
-          <label for="password" class="block text-900 font-medium mb-2">Password</label>
-          <input
-            id="password"
-            type="password"
-            pInputText
-            formControlName="password"
-            class="w-full contact-input"
-            placeholder="Create a password"
-          />
-          <small class="p-error" *ngIf="registerForm.get('password')?.invalid && registerForm.get('password')?.touched">
-            Password must be at least 6 characters.
-          </small>
-        </div>
-  
-        <!-- Confirm Password -->
-        <div class="field mb-4">
-          <label for="confirmPassword" class="block text-900 font-medium mb-2">Confirm Password</label>
-          <input
-            id="confirmPassword"
-            type="password"
-            pInputText
-            formControlName="confirmPassword"
-            class="w-full contact-input"
-            placeholder="Confirm your password"
-          />
-          <small
-            class="p-error"
-            *ngIf="registerForm.hasError('passwordMismatch') && registerForm.get('confirmPassword')?.touched"
-          >
-            Passwords do not match.
-          </small>
-        </div>
-  
-        <!-- Register Button -->
-        <div class="flex justify-content-center">
-          <button
-            type="submit"
-            pButton
-            label="Register"
-            class="w-small sm:w-30rem"
-            [disabled]="registerForm.invalid"
-            style="background-color: #feb900; color: black; border: none;"
-          ></button>
-        </div>
-      </form>
+  <div class="surface-card p-4 shadow-2 border-round w-full sm:w-30rem">
+    <div class="text-center mb-5">
+      <img src="" alt="Logo" class="w-6rem">
+      <h2 class="text-900 font-medium text-2xl mt-3">Register</h2>
+      <p class="text-600">Create your account</p>
     </div>
+
+    <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+         <!-- First Name -->
+        <div class="field mb-4">
+            <label for="firstName" class="block text-900 font-medium mb-2">First Name</label>
+            <input
+              id="firstName"
+              type="text"
+              pInputText
+              formControlName="firstName"
+              class="w-full contact-input"
+              placeholder="Enter your first name"
+            />
+            <small class="p-error" *ngIf="registerForm.get('firstName')?.invalid && registerForm.get('firstName')?.touched">
+              First name is required.
+            </small>
+          </div>
+
+      <!-- last Name -->
+      <div class="field mb-4">
+        <label for="email" class="block text-900 font-medium mb-2">Last Name</label>
+        <input
+          id="LastName"
+          type="LastName"
+          pInputText
+          formControlName="lastName"
+          class="w-full contact-input"
+          placeholder="Enter your last name"
+        />
+        <small class="p-error" *ngIf="registerForm.get('lastName')?.invalid && registerForm.get('lastName')?.touched">
+           Last name is required.
+        </small>
+      </div>
+
+
+
+       <!-- Mobile -->
+       <div class="field mb-4">
+        <label for="mobile" class="block text-900 font-medium mb-2">Mobile</label>
+        <input
+          id="mobile"
+          type="text"
+          pInputText
+          formControlName="mobile"
+          class="w-full contact-input"
+          placeholder="Enter your mobile number"
+        />
+        <small class="p-error" *ngIf="registerForm.get('mobile')?.invalid && registerForm.get('mobile')?.touched">
+          Mobile number is required.
+        </small>
+      </div>
+
+     
+
+       <!-- Address (Pincode) -->
+       <div class="field mb-4">
+        <label for="address" class="block text-900 font-medium mb-2">Address (Pincode)</label>
+        <input
+          id="address"
+          type="text"
+          pInputText
+          formControlName="address"
+          class="w-full contact-input"
+          placeholder="Enter your address or pincode"
+        />
+        <small class="p-error" *ngIf="registerForm.get('address')?.invalid && registerForm.get('address')?.touched">
+          Address is required.
+        </small>
+      </div>
+
+
+
+       <!-- Password -->
+       <div class="field mb-4">
+        <label for="password" class="block text-900 font-medium mb-2">Password</label>
+        <input
+          id="password"
+          type="password"
+          pInputText
+          formControlName="password"
+          class="w-full contact-input"
+          placeholder="Create a password"
+        />
+        <small class="p-error" *ngIf="registerForm.get('password')?.invalid && registerForm.get('password')?.touched">
+          Password must be at least 6 characters.
+        </small>
+      </div>
+
+
+     
+      <!-- Register Button -->
+      <div class="flex justify-content-center">
+        <button
+          type="submit"
+          pButton
+          label="Register"
+          class="w-full sm:w-20rem"
+          [disabled]="registerForm.invalid"
+          style="background-color: #feb900; color: black; border: none;"
+        ></button>
+      </div>
+    </form>
   </div>
-  
+</div>

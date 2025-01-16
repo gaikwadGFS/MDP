@@ -21,21 +21,3 @@
     color: rgba(0, 0, 0, 0.5); /* Slightly transparent placeholder text */
   }
   
-  /* Center the register button */
-  button {
-    display: flex;
-    justify-content: center;
-    margin-top: 20px;
-  }
-  
-  /* Additional mobile responsiveness */
-  @media (max-width: 768px) {
-    .w-full {
-      width: 100% !important;
-    }
-  
-    .w-20rem {
-      width: 100% !important;
-    }
-  }
-  
