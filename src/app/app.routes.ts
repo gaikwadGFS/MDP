@@ -7,8 +7,8 @@ import { GallaryComponent } from './Website_Pages/components/project/gallary/gal
 import { ProjectsComponent } from './Website_Pages/components/project/projects/projects.component';
 import { LoginComponent } from './Website_Pages/components/login/login.component';
 import { SidebarComponent } from './Customer_Pages/Layout/sidebar/sidebar.component';
-import { DashboardComponent } from './Customer_Pages/Components/dashboard/dashboard.component';
 import { RegisterComponent } from './Website_Pages/components/register/register.component';
+import { DashboardComponent } from './Customer_Pages/customers/Components/dashboard/dashboard.component';
 
 
 export const routes: Routes = [
@@ -58,13 +58,21 @@ export const routes: Routes = [
         ]
     },
     {
-        path:'sidebar',
-        component:SidebarComponent,
-        children:[
-            {
-                path:'dashboard',
-                component:DashboardComponent
-            }
-        ]
-    }
+        path: 'customer',
+       loadChildren: () => import('./Customer_Pages/customers/customers.module').then(m => m.CustomersModule)
+     },
+     {
+        path: 'home-service',
+       loadChildren: () => import('./Customer_Pages/home-services/home-services.module').then(m => m.HomeServicesModule)
+     },
+    // {
+    //     path:'sidebar',
+    //     component:SidebarComponent,
+    //     children:[
+    //         {
+    //             path:'dashboard',
+    //             component:DashboardComponent
+    //         }
+    //     ]
+    // }
 ];

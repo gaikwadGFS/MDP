@@ -14,3 +14,12 @@
   .centered-img h2{
     text-shadow: 2px 2px var(--default-color);
   }
+
+  .card-header i{
+    color: var(--accent-color);
+    /* font-size: larger; */
+  }
+  .line{
+    width: 100%;
+    
+  }
