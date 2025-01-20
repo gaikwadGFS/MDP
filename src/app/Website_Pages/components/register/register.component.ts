@@ -26,33 +26,37 @@ export class RegisterComponent {
   registerForm: FormGroup;
 
   constructor(private fb: FormBuilder) {
-    this.registerForm = this.fb.group(
-      {
-        fullName: ['', Validators.required],
-        email: ['', [Validators.required, Validators.email]],
-        password: ['', [Validators.required, Validators.minLength(6)]],
-        confirmPassword: ['', Validators.required],
-      },
-      { validators: this.passwordMatchValidator }
-    );
+    this.registerForm = this.fb.group({
+      firstName: ['', [Validators.required, Validators.minLength(2)]],
+      lastName: ['', [Validators.required, Validators.minLength(2)]],
+      mobile: ['', [Validators.required, Validators.pattern(/^[0-9]{10}$/)]],
+      address: ['', [Validators.required, Validators.minLength(5)]],
+      password: ['', [Validators.required, Validators.minLength(6)]]
+    });
   }
 
-  passwordMatchValidator(form: AbstractControl) {
-    const password = form.get('password')?.value;
-    const confirmPassword = form.get('confirmPassword')?.value;
-
-    if (password !== confirmPassword) {
-      return { passwordMismatch: true };
-    }
-    return null;
-  }
-
-  onSubmit() {
+  /**
+   * Submit handler for the registration form
+   */
+  onSubmit(): void {
     if (this.registerForm.valid) {
-      console.log('Registration Data:', this.registerForm.value);
-      // Implement registration logic here
+      console.log('Form Submitted', this.registerForm.value);
+      // You can replace this with an API call or further processing
+    } else {
+      console.log('Form is invalid');
+      this.markAllFieldsAsTouched();
     }
   }
 
-
+  /**
+   * Marks all fields as touched to display validation errors
+   */
+  private markAllFieldsAsTouched(): void {
+    Object.keys(this.registerForm.controls).forEach((field) => {
+      const control = this.registerForm.get(field);
+      if (control) {
+        control.markAsTouched({ onlySelf: true });
+      }
+    });
+  }
 }
