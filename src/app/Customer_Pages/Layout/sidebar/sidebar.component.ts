@@ -43,17 +43,7 @@ export class SidebarComponent {
   };
 
   constructor(private router: Router) {}
-
-  toggleDropdown(dropdown: string) {
-    this.dropdowns[dropdown] = !this.dropdowns[dropdown];
-  }
-
-  navigateTo(route: string) {
-    this.sidebarVisible = false;
-    this.router.navigate([`/${route}`]);
-  }
- 
-
+  
   // Options for city dropdown
   cityOptions = [
     { label: 'New York', value: 'NY' },
@@ -93,6 +83,15 @@ export class SidebarComponent {
     this.selectedCity = null;
     this.selectedOccupancy = null;
     this.budget = null;
+  }
+
+  toggleDropdown(dropdown: string) {
+    this.dropdowns[dropdown] = !this.dropdowns[dropdown];
+  }
+
+  navigateTo(route: string) {
+    this.sidebarVisible = false;
+    this.router.navigate([`/${route}`]);
   }
  
 }
