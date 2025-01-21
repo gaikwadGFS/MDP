@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { RouterLink, RouterModule } from '@angular/router';
+import { Router, RouterLink, RouterModule } from '@angular/router';
 import { SidebarModule } from 'primeng/sidebar';
 import { CardModule } from 'primeng/card';
 import { ButtonModule } from 'primeng/button';
@@ -15,6 +15,7 @@ import { InputNumberModule } from 'primeng/inputnumber';
   standalone: true,
   imports: [
     FormsModule,
+    RouterModule,
     ReactiveFormsModule,
     RouterModule,
     SidebarModule,
@@ -36,7 +37,13 @@ export class SidebarComponent {
   selectedCity: string | null = null; // Selected city filter
   selectedOccupancy: string | null = null; // Selected occupancy filter
   budget: number | null = null; // Selected budget filter
+  dropdowns: { [key: string]: boolean } = {
+    getServices: false,
+    uploadProperty: false,
+  };
 
+  constructor(private router: Router) {}
+  
   // Options for city dropdown
   cityOptions = [
     { label: 'New York', value: 'NY' },
@@ -77,4 +84,14 @@ export class SidebarComponent {
     this.selectedOccupancy = null;
     this.budget = null;
   }
+
+  toggleDropdown(dropdown: string) {
+    this.dropdowns[dropdown] = !this.dropdowns[dropdown];
+  }
+
+  navigateTo(route: string) {
+    this.sidebarVisible = false;
+    this.router.navigate([`/${route}`]);
+  }
+ 
 }

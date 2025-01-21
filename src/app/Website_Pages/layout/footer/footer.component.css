@@ -74,5 +74,51 @@
   footer img {
     width: 44px;
   }
+
+
+
+  /* Download Button CSS */
+  .store a {
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    font-weight: 400;
+    font-size: 12px;
+  }
+  
+  .store a i {
+    font-size: 16px;
+    position: absolute;
+    top: 50%;
+    left: 10px;
+    transform: translateY(-50%);
+  }
+  
+  .store a:hover {
+    color: rgba(255, 255, 255, 1);
+  }
+  
+  .store a::after {
+    content: '';
+    position: absolute;
+    width: 200px;
+    height: 50px;
+    left: -200px;
+    top: 50%;
+    transform: translateY(-50%) skewX(-25deg);
+    background-image: linear-gradient(to right, transparent, rgba(255, 255, 255, 0.14), transparent);
+    transition: left 0.8s ease;
+  }
+  
+  .store a:hover::after {
+    left: 200px;
+  }
+  
+  @keyframes shine {
+    to {
+      left: 200px;
+    }
+  }
+  
   
   
