@@ -42,19 +42,6 @@ export class SidebarComponent {
 
   constructor(private router: Router) {}
 
-<<<<<<< HEAD
-  toggleDropdown(dropdown: string) {
-    this.dropdowns[dropdown] = !this.dropdowns[dropdown];
-  }
-
-  navigateTo(route: string) {
-    // this.sidebarVisible = false;
-    this.router.navigate([`/${route}`]);
-  }
- 
-
-=======
->>>>>>> f557a7413354fef87b1aff772ef5fc7e6562a16c
   // Options for city dropdown
   cityOptions = [
     { label: 'New York', value: 'NY' },
