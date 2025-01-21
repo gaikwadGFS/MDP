@@ -65,6 +65,10 @@ export const routes: Routes = [
         path: 'home-service',
        loadChildren: () => import('./Customer_Pages/home-services/home-services.module').then(m => m.HomeServicesModule)
      },
+     {
+        path: 'properties',
+       loadChildren: () => import('./Customer_Pages/properties/properties.module').then(m => m.PropertiesModule)
+     },
     // {
     //     path:'sidebar',
     //     component:SidebarComponent,
