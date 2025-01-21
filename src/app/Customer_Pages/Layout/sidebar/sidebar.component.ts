@@ -49,7 +49,7 @@ export class SidebarComponent {
   }
 
   navigateTo(route: string) {
-    this.sidebarVisible = false;
+    // this.sidebarVisible = false;
     this.router.navigate([`/${route}`]);
   }
  

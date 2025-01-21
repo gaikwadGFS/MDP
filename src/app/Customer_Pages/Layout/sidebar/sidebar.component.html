@@ -97,7 +97,7 @@
     <!-- Sidebar Menu -->
     <ul class="list-none p-0">
       <li class="p-3 hover:surface-hover cursor-pointer text-md flex align-items-center gap-2"
-        (click)="navigateTo('home')">
+         routerLink="/customer/dashboard">
         <i class="pi pi-home text-primary"></i> Home
       </li>
       <li class="p-3 hover:surface-hover cursor-pointer text-md flex align-items-center gap-2"
@@ -116,15 +116,15 @@
         </div>
         <ul class="list-none p-0 ml-4" *ngIf="dropdowns['getServices']">
           <li class="p-2 hover:surface-hover cursor-pointer flex align-items-center gap-2"
-            (click)="navigateTo('interior')">
+             routerLink="/home-service/interiors">
             <i class="pi pi-palette text-primary"></i> Interior
           </li>
           <li class="p-2 hover:surface-hover cursor-pointer flex align-items-center gap-2"
-            (click)="navigateTo('painter')">
+            routerLink="/home-service/painting">
             <i class="pi pi-paint-brush text-primary"></i> Painter
           </li>
           <li class="p-2 hover:surface-hover cursor-pointer flex align-items-center gap-2"
-            (click)="navigateTo('furniture')">
+             routerLink="/home-service/furniture">
             <i class="pi pi-cube text-primary"></i> Furniture
           </li>
         </ul>
@@ -141,11 +141,11 @@
         </div>
         <ul class="list-none p-0 ml-4" *ngIf="dropdowns['uploadProperty']">
           <li class="p-2 hover:surface-hover cursor-pointer flex align-items-center gap-2"
-            (click)="navigateTo('viewProperty')">
+             routerLink="/properties/viewUploadedProperties">
             <i class="pi pi-eye text-primary"></i> View Your Property
           </li>
           <li class="p-2 hover:surface-hover cursor-pointer flex align-items-center gap-2"
-            (click)="navigateTo('uploadProperty')">
+            routerLink="/properties/uploadProperties">
             <i class="pi pi-cloud-upload text-primary"></i> Upload New Property
           </li>
         </ul>
@@ -153,7 +153,7 @@
 
       <!-- Property Registration -->
       <li class="p-3 hover:surface-hover cursor-pointer text-md flex align-items-center gap-2"
-        (click)="navigateTo('propertyRegistration')">
+        (click)="navigateTo('properties/registerProperties')">
         <i class="pi pi-book text-primary"></i> Property Registration
       </li>
 
