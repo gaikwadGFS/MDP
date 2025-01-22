@@ -1,1 +1,55 @@
-<p>dashboard works!</p>
+<form [formGroup]="dashboardForm" (ngSubmit)="onSubmit()" class="p-p-3 p-shadow-3 p-border-round-lg">
+    <!-- Tabs for Buy, Rent, etc. -->
+    <div class="p-grid p-nogutter p-mb-3">
+        <div class="p-col-6">
+            <div class="card p-p-2">
+                <p-tabs [value]="tabs[activeTabIndex].route" class="w-full">
+                    <p-tablist>
+                        <p-tab *ngFor="let tab of tabs" [value]="tab.route" [routerLink]="tab.route"
+                            class="flex align-items-center gap-2">
+                            <i [class]="tab.icon"></i>
+                            <span>{{ tab.label }}</span>
+                        </p-tab>
+                    </p-tablist>
+                </p-tabs>
+            </div>
+        </div>
+    </div>
+
+    <!-- Search bar -->
+    <div class="p-d-flex p-ai-center p-p-2 p-border-1 p-border-round-md" style="border-color: #e4e4e4;">
+        <!-- City Input -->
+        <div class="p-inputgroup p-mr-2" style="flex: 1;">
+            <span class="p-inputgroup-addon">
+                <i class="pi pi-map-marker"></i>
+            </span>
+            <input pInputText formControlName="searchCity" placeholder="Mumbai" class="p-inputtext-lg" />
+        </div>
+
+        <!-- Add More -->
+        <input pInputText formControlName="searchArea" placeholder="Add more..." class="p-inputtext-lg p-mr-2"
+            style="flex: 1;" />
+
+        <!-- Property Type Dropdown -->
+        <div class="p-inputgroup p-mr-2">
+            <span class="p-inputgroup-addon">
+                <i class="pi pi-home"></i>
+            </span>
+            <p-dropdown formControlName="propertyType" [options]="propertyTypes" placeholder="Flat +1"
+                class="p-inputtext-lg"></p-dropdown>
+        </div>
+
+        <!-- Budget Dropdown -->
+        <div class="p-inputgroup p-mr-2">
+            <span class="p-inputgroup-addon">
+                <i class="pi pi-dollar"></i>
+            </span>
+            <p-dropdown formControlName="budget" [options]="budgetOptions" placeholder="Budget"
+                class="p-inputtext-lg"></p-dropdown>
+        </div>
+
+        <!-- Search Button -->
+        <button pButton type="submit" label="Search" class="p-button-rounded p-button-danger p-button-lg"></button>
+    </div>
+</form>
+
