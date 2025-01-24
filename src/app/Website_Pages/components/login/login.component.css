@@ -1,0 +1,39 @@
+
+
+/* Shared styling for inputs */
+.contact-input {
+    font-size: 14px;
+    padding: 10px 15px;
+    box-shadow: none;
+    border-radius: 0;
+    color: grey;
+    background-color: white;
+    border: 1px solid color-mix(in srgb, #feb900, transparent 80%);
+    transition: border-color 0.4s ease;
+  }
+  
+  /* Change border color on focus without altering transparency */
+  .contact-input:focus {
+    border-color: #feb900; /* Solid color without transparency */
+    outline: none; /* Remove default browser outline */
+  }
+  
+  /* Change border color when input is not empty */
+  .contact-input:not(:placeholder-shown) {
+    border-color: #feb900; /* Solid color without transparency */
+  }
+  
+  /* Styling placeholder */
+  .contact-input::placeholder {
+    color: color-mix(in srgb, grey, transparent 70%);
+  }
+  
+
+
+
+
+
+
+
+
+

@@ -6,6 +6,10 @@ import { ContactComponent } from './Website_Pages/components/contact/contact.com
 import { GallaryComponent } from './Website_Pages/components/project/gallary/gallary.component';
 import { ProjectsComponent } from './Website_Pages/components/project/projects/projects.component';
 import { LoginComponent } from './Website_Pages/components/login/login.component';
+import { SidebarComponent } from './Customer_Pages/Layout/sidebar/sidebar.component';
+import { RegisterComponent } from './Website_Pages/components/register/register.component';
+import { DashboardComponent } from './Customer_Pages/customers/Components/dashboard/dashboard.component';
+
 
 export const routes: Routes = [
     
@@ -46,7 +50,33 @@ export const routes: Routes = [
             {
                 path:'login',
                 component:LoginComponent
+            },
+            {
+                path:'register',
+                component:RegisterComponent
             }
         ]
-    }
+    },
+    {
+        path: 'customer',
+       loadChildren: () => import('./Customer_Pages/customers/customers.module').then(m => m.CustomersModule)
+     },
+     {
+        path: 'home-service',
+       loadChildren: () => import('./Customer_Pages/home-services/home-services.module').then(m => m.HomeServicesModule)
+     },
+     {
+        path: 'properties',
+       loadChildren: () => import('./Customer_Pages/properties/properties.module').then(m => m.PropertiesModule)
+     },
+    // {
+    //     path:'sidebar',
+    //     component:SidebarComponent,
+    //     children:[
+    //         {
+    //             path:'dashboard',
+    //             component:DashboardComponent
+    //         }
+    //     ]
+    // }
 ];
