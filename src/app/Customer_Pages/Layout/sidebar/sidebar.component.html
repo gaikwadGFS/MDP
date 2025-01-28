@@ -1,12 +1,13 @@
 <div class="flex flex-column surface-ground">
   <!-- Navbar -->
-  <div class="flex justify-content-between align-items-center px-4 py-3 border-bottom-1 surface-border surface-section shadow-2 w-full">
+  <div class="navbar flex justify-content-between align-items-center px-4 py-3 border-bottom-1 surface-border surface-section shadow-2 w-full fixed top-0 left-0 z-3">
+    <!-- Left Section -->
     <!-- Left Section -->
     <div class="flex align-items-center">
       <i class="pi pi-bars text-2xl text-primary cursor-pointer" (click)="toggleSidebar()"></i>
       <span class="ml-2 text-xl font-bold text-primary">MDP</span>
     </div>
-<!-- 
+  <!-- 
     <div class="flex align-items-center gap-2 flex-grow-1 justify-content-center">
       <button pButton type="button" label="Find Your Perfect..." icon="pi pi-filter" severity="info" (click)="openSearchDrawer()"></button>
     </div> -->
@@ -22,7 +23,7 @@
         <p-overlayPanel #overlayPanel appendTo="body">
           <ul class="list-none p-0 m-0">
             <li class="p-2 hover:surface-hover cursor-pointer">My Profile</li>
-            <li class="p-2 hover:surface-hover cursor-pointer">Logout</li>
+            <li class="p-2 hover:surface-hover cursor-pointer" (click)="logout()">Logout</li>
           </ul>
         </p-overlayPanel>
       </div>
