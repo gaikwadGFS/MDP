@@ -8,8 +8,11 @@ import { TextareaModule } from 'primeng/textarea';
 import { MessageService } from 'primeng/api';
 import { FileUpload } from 'primeng/fileupload';
 import { ToastModule } from 'primeng/toast';
-
-
+import { InputGroupModule } from 'primeng/inputgroup';
+import { InputNumberModule } from 'primeng/inputnumber';
+import { InputGroupAddonModule } from 'primeng/inputgroupaddon';
+import { DatePicker } from 'primeng/datepicker';
+import { PasswordModule } from 'primeng/password';
 interface UploadEvent {
   originalEvent: Event;
   files: File[];
@@ -17,7 +20,8 @@ interface UploadEvent {
 @Component({
   selector: 'app-registerproperty',
   standalone: true,
-  imports: [StepperModule,ButtonModule,FormsModule,Select,InputTextModule,TextareaModule,FileUpload,ToastModule],
+  imports: [StepperModule,ButtonModule,FormsModule,Select,InputTextModule,TextareaModule,FileUpload,ToastModule,
+    InputGroupModule,InputNumberModule,InputGroupAddonModule,DatePicker,PasswordModule],
   providers: [MessageService],
   templateUrl: './registerproperty.component.html',
   styleUrl: './registerproperty.component.css'

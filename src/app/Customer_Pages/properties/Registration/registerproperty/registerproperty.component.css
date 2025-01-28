@@ -1,0 +1,14 @@
+p-datepicker {
+    padding: 0px !important; 
+    background: transparent !important; 
+     color: transparent !important; 
+     border: none !important; 
+     border-radius: 0px !important; 
+}
+
+p-datepicker:not(.p-datepicker-inline) {
+    background: #ffffff;
+    border: 0 none;
+    box-shadow:none !important;
+}
+
