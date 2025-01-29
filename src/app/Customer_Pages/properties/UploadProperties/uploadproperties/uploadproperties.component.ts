@@ -26,17 +26,11 @@ import { DatePicker } from "primeng/datepicker";
   selector: 'app-uploadproperties',
   standalone: true,
   imports: [TableModule,ButtonModule, StepperModule,CommonModule,ReactiveFormsModule,DropdownModule,StepsModule,RadioButton,FormsModule,InputGroupModule,InputNumberModule,InputTextModule,TextareaModule,InputGroupAddonModule,PasswordModule,TextareaModule,FileUploadModule,ToastModule,Select],
+  providers:[MessageService],
   templateUrl: './uploadproperties.component.html',
   styleUrl: './uploadproperties.component.css'
 })
 export class UploadpropertiesComponent implements OnInit {
-
-
-
-
-
-
-
 
 
  propertyType:any[]=['Apartment', 'Independent House/Villa', 'Gated Community Villa'];
@@ -46,14 +40,14 @@ export class UploadpropertiesComponent implements OnInit {
 
   selectedPropertyType:string='';
 
-  constructor() {}
+  constructor(private messageService:MessageService) {}
 
   ngOnInit(): void {
     
   }
 
   onUpload(event: any) {
-    // this.messageService.add({ severity: 'info', summary: 'Success', detail: 'File Uploaded with Basic Mode' });
+    this.messageService.add({ severity: 'info', summary: 'Success', detail: 'File Uploaded with Basic Mode' });
 }
 
 
