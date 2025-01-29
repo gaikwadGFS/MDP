@@ -1,0 +1,75 @@
+
+.carousel-container {
+  width: 80%;
+  margin: 0 auto;
+}
+
+.carousel-item {
+  text-align: center;
+  
+
+}
+
+.carousel-item img {
+  width: 100%;
+  height: 250px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.carousel-item h3 {
+  margin-top: 10px;
+  font-size: 1.2rem;
+  color: #333;
+}
+
+
+/*CSS for  card section*/
+
+.card-height{
+  height: 300px;
+}
+.card-design {
+  border-radius: 12px;
+  background: linear-gradient(135deg, #f5f7fa, #c3cfe2);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+
+  
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card-design:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.card-design .p-card-header {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #333;
+  background: #fff;
+  border-radius: 10px 10px 0 0;
+  padding: 15px;
+  border-bottom: 2px solid #ddd;
+}
+
+.card-design ul {
+  list-style: none;
+  padding-left: 20px;
+}
+
+.card-design ul li {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: #333;
+  padding: 5px 0;
+}
+
+.card-design ul li::before {
+  content: '•';
+  color: #3498db;
+  font-size: 1.2rem;
+  margin-right: 10px;
+}
+
