@@ -84,10 +84,10 @@ export class SidebarComponent {
   }
 
   // Toggle dropdown visibility without closing the sidebar
-  toggleDropdown(dropdown: string) {
-    this.dropdowns[dropdown] = !this.dropdowns[dropdown]; // Show/hide the dropdown options
-    this.sidebarVisible = true; // Ensure sidebar stays visible
+  toggleDropdown(menu: string) {
+    this.dropdowns[menu] = !this.dropdowns[menu];
   }
+  
 
   // Navigate to a route and close the sidebar
   navigateTo(route: string) {
