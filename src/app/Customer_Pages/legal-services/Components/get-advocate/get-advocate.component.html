@@ -1,0 +1,275 @@
+<!-- Search for Advocate Start -->
+<section class="light-background">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <div>
+                    <h2>Find Your Advocate</h2>
+                </div>
+            </div>
+            <!-- Seach for Advocate start -->
+            <div class="col-12">
+                <div class="row">
+                    <div class="col-3">
+                        <p-select [options]="cities" placeholder="Select a City" [editable]="true" optionLabel="name"
+                            class="w-full md:w-56" />
+                    </div>
+                    <div class="col-3">
+                        <p-select [options]="specialization" placeholder="Select a specialization" [editable]="true"
+                            class="w-full md:w-56" />
+                    </div>
+                    <div class="col-3">
+                        <p-select [options]="rating" placeholder="Select a Rating" [editable]="true"
+                            class="w-full md:w-56" />
+                    </div>
+                    <div class="col-3">
+                        <p-select [options]="specialization" placeholder="Select a Fee range" [editable]="true"
+                            class="w-full md:w-56" />
+                    </div>
+                    <div class="col-6 col-offset-3">
+                        <div class="text-center">
+                            <p-button label="Search" variant="text" severity="info" icon="pi pi-search"
+                                class="w-full" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Search for Advocate End -->
+
+        </div>
+    </div>
+</section>
+<!-- Search for Advocate End -->
+<!-- Services Offered Start -->
+<section class="dark-background">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-12">
+                <h2 class="text-center mb-3">Services Offered</h2>
+                <div class="card border-0 shadow p-2 mx-5">
+                    <p-scrollpanel [style]="{ width: '100%', height: '500px' }">
+                        <div class="row">
+                            <div class="col-4">
+                                <div class="d-flex">
+                                    <div>
+                                        <h4 class="text-center my-2 uppercase text-primary-600 font-italic fw-bold">
+                                            Consultation Type</h4>
+                                        <p>Buying or selling property involves preparing and validating legal documents.
+                                            Advocates can assist with:</p>
+                                        <h5 class="fw-bold text-dark"><i class="fa-solid fa-check mx-2"></i>Property
+                                            Verification:</h5>
+                                        <p> Assistance in verifying the legal status of a property, ensuring
+                                            there are no pending disputes, or that the title deed is clean and
+                                            legitimate.
+                                        </p>
+                                        <h5 class="fw-bold text-dark"><i class="fa-solid fa-check mx-2"></i>Agreement
+                                            Drafting:
+                                        </h5>
+                                        <p> Advocates can help draft legal documents such as sale agreements, lease
+                                            agreements, or MoUs tailored to the transaction.</p>
+                                        <h5 class="fw-bold text-dark"><i class="fa-solid fa-check mx-2"></i>Dispute
+                                            Resolution:
+                                        </h5>
+                                        <p> Support in resolving disputes over property ownership, rental
+                                            disagreements, or boundary conflicts.</p>
+                                        <h5 class="fw-bold text-dark"><i class="fa-solid fa-check mx-2"></i>Registration
+                                            Assistance:</h5>
+                                        <p> Helping clients during the property registration process, including
+                                            preparing documentation and dealing with government offices.</p>
+                                        <h5 class="fw-bold text-dark"><i class="fa-solid fa-check mx-2"></i> Tax and
+                                            Compliance
+                                            Advice:</h5>
+                                        <p> Providing advice on tax-related aspects like capital gains tax,
+                                            stamp duty, and other property-related levies.</p>
+                                    </div>
+                                    <p-divider type="dotted" layout="vertical" />
+                                </div>
+                            </div>
+
+                            <div class="col-4">
+                                <div class="d-flex">
+                                    <div>
+                                        <h4 class="text-center my-2 uppercase text-primary-600 font-italic fw-bold">
+                                            Document
+                                            Assistance</h4>
+                                        <h5 class="text-dark"><i class="fa-regular fa-file  mx-2"></i> Title Deeds
+                                            Verification.
+                                        </h5>
+                                        <h5 class="text-dark"><i class="fa-regular fa-file text-dark mx-2"></i>
+                                            Encumbrance Certificates.
+                                        </h5>
+                                        <h5 class="text-dark"><i class="fa-regular fa-file text-dark mx-2"></i> Sale
+                                            Agreements.</h5>
+                                        <h5 class="text-dark"> <i class="fa-regular fa-file text-dark mx-2"></i> Power
+                                            of Attorney
+                                            Documentation.
+                                        </h5>
+                                        <h5 class="text-dark"><i class="fa-regular fa-file text-dark mx-2"></i> Lease or
+                                            Rental
+                                            Agreements.
+                                        </h5>
+                                        <h5 class="text-dark"><i class="fa-regular fa-file text-dark mx-2"></i> Property
+                                            Tax Receipts.
+                                        </h5>
+                                        <h5><i class="fa-regular fa-file text-dark mx-2"></i> Society NOC (No Objection
+                                            Certificate).</h5>
+                                        <p-divider type="dotted" />
+                                        <h4 class="text-center my-3 uppercase text-primary-600 font-italic fw-bold">Fee
+                                            Structure</h4>
+                                        <p>Transparency in pricing is vital for user trust. Advocates can display their
+                                            charges
+                                            for different services:</p>
+
+                                        <h5 class=" text-dark"><i
+                                                class="fa-solid fa-indian-rupee-sign  mx-2"></i>Consultation
+                                            Fee:</h5>
+                                        <p> Fixed fee for a one-time consultation session.</p>
+                                        <h5 class=" text-dark"><i class="fa-solid fa-indian-rupee-sign  mx-2"></i>Hourly
+                                            Fee:
+                                        </h5>
+                                        <p> Hourly billing for more extensive or ongoing legal support.</p>
+                                        <h5 class=" text-dark"><i class="fa-solid fa-indian-rupee-sign  mx-2"></i>Fixed
+                                            Charges
+                                            for Services:</h5>
+                                        <p> Predefined charges for specific tasks such as agreement drafting or
+                                            registration
+                                            assistance.</p>
+
+                                    </div>
+                                    <p-divider type="dotted" layout="vertical" />
+                                </div>
+                            </div>
+
+                            <div class="col-4">
+                                <div>
+                                    <h4 class="text-center my-2 uppercase text-primary-600 font-italic fw-bold">Online
+                                        Appointment Option</h4>
+                                    <p>To make it convenient for users, advocates can offer an online appointment
+                                        booking
+                                        system. This feature can include:</p>
+
+                                    <h5 class="text-dark"><i class="fa-regular fa-calendar-check  mx-2"></i>Available
+                                        dates and
+                                        times.
+                                    </h5>
+                                    <h5 class="text-dark"><i class="fa-regular fa-calendar-check  mx-2"></i>Payment
+                                        options for
+                                        booking
+                                        confirmation.</h5>
+                                    <h5 class="text-dark"><i class="fa-regular fa-calendar-check  mx-2"></i>Video or
+                                        in-person
+                                        consultation preference.</h5>
+                                </div>
+                                <p-divider type="dotted" />
+                                <div>
+                                    <h4 class=" text-center my-2 uppercase text-primary-600 font-italic fw-bold">Other
+                                        Specialized Services</h4>
+                                    <p>Depending on the expertise of the advocate, they may also offer niche services,
+                                        such
+                                        as:
+                                    </p>
+
+                                    <h5 class="text-dark"><i class="fa-solid fa-sign-hanging mx-2"></i>Real Estate Due
+                                        Diligence:</h5>
+                                    <p> Comprehensive analysis of the property, including legal, financial, and
+                                        regulatory
+                                        checks.</p>
+                                    <h5 class="text-dark"><i class="fa-solid fa-sign-hanging mx-2"></i>Litigation
+                                        Services:
+                                    </h5>
+                                    <p>Representation in property-related legal disputes in courts or tribunals.</p>
+                                    <h5 class="text-dark"><i class="fa-solid fa-sign-hanging mx-2"></i>Partition or
+                                        Inheritance
+                                        Advice:</h5>
+                                    <p>Legal support for dividing ancestral property among heirs.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </p-scrollpanel>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Servces Offered End -->
+
+<!-- Reasons to Hire a Legal Expert start -->
+<section class="light-background">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <div>
+                    <h3 class="fw-bold text-dark">Reasons to Hire a Legal Expert</h3>
+                    <p><q>Hiring a legal expert is essential when navigating complex legal matters that require
+                            specialized knowledge and experience. Whether you’re drafting contracts, resolving disputes,
+                            or ensuring compliance with laws, legal professionals provide invaluable guidance. They help
+                            prevent risks, protect your interests, and ensure that your actions align with the law.
+                            Their expertise is particularly critical in areas like real estate, business transactions,
+                            family matters, or litigation, where even small mistakes can have significant
+                            consequences.</q></p>
+                    <div >
+
+                    <h5 class="text-dark"><i class="fa fa-user-tie mx-2"></i>Expert Guidance</h5>
+                    <p>Legal experts provide accurate advice tailored to your situation, ensuring you understand your rights and legal options clearly.</p>
+                    <h5 class="text-dark"><i class="fa fa-shield-alt mx-2"></i>Risk Prevention</h5>
+                    <p>They identify potential legal risks and help you avoid issues before they arise, whether in contracts, business dealings, or personal matters.</p>
+                    <h5 class="text-dark"><i class="fa fa-balance-scale mx-2"></i>Dispute Resolution</h5>
+                    <p>Legal experts assist in resolving conflicts through negotiation, mediation, or court representation to protect your interests.</p>
+                    <h5 class="text-dark"><i class="fa fa-file-alt mx-2"></i>Document Review and Drafting</h5>
+                    <p>They ensure legal documents like contracts, wills, or agreements are valid, enforceable, and structured to safeguard your needs.</p>
+                </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Reasons to Hire a Legal Expert start -->
+
+<!-- List of services and packages start -->
+ <section class="dark-background">
+  <div class="container">
+    <div class="row">
+        <div class="col-12">
+            <p-tabs value="0">
+                <p-tablist>
+                    <p-tab value="0">Packages</p-tab>
+                    <p-tab value="1">services</p-tab>
+                    <!-- <p-tab value="2">Header III</p-tab> -->
+                </p-tablist>
+                <p-tabpanels>
+                    <p-tabpanel value="0">
+                       <div class="row">
+                        <div class="col-4">
+                            <div class="card">
+                                <div>
+                                    
+                                </div>
+                            </div>
+                        </div>
+                       </div>
+                    </p-tabpanel>
+                    <p-tabpanel value="1">
+                        <p class="m-0">
+                            Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem
+                            aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.
+                            Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni
+                            dolores eos qui ratione voluptatem sequi nesciunt. Consectetur, adipisci velit, sed quia non numquam eius
+                            modi.
+                        </p>
+                    </p-tabpanel>
+                    <!-- <p-tabpanel value="2">
+                        <p class="m-0">
+                            At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti
+                            atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique
+                            sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem rerum
+                            facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil
+                            impedit quo minus.
+                        </p>
+                    </p-tabpanel> -->
+                </p-tabpanels>
+            </p-tabs>
+        </div>
+    </div>
+  </div>
+ </section>
+<!-- List of services and packages end -->

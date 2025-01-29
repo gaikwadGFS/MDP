@@ -69,6 +69,10 @@ export const routes: Routes = [
         path: 'properties',
        loadChildren: () => import('./Customer_Pages/properties/properties.module').then(m => m.PropertiesModule)
      },
+     {
+        path: 'legalServices',
+       loadChildren: () => import('./Customer_Pages/legal-services/legal-services.module').then(m => m.LegalServicesModule)
+     },
     // {
     //     path:'sidebar',
     //     component:SidebarComponent,
