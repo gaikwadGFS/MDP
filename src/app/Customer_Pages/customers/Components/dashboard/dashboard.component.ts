@@ -6,6 +6,7 @@ import { ButtonModule } from 'primeng/button';
 import { ReactiveFormsModule, FormGroup, FormControl } from '@angular/forms';
 import { DropdownModule } from 'primeng/dropdown'; // For dropdown
 import { TabsModule } from 'primeng/tabs';
+import { CarouselModule } from 'primeng/carousel'; // Importing CarouselModule
 
 @Component({
   selector: 'app-dashboard',
@@ -17,7 +18,8 @@ import { TabsModule } from 'primeng/tabs';
     TabsModule,
     ButtonModule,
     ReactiveFormsModule,
-    DropdownModule
+    DropdownModule,
+    CarouselModule // Adding CarouselModule to imports
   ],
   templateUrl: './dashboard.component.html',
   styleUrls: ['./dashboard.component.css']
@@ -43,8 +45,22 @@ export class DashboardComponent implements OnInit {
     { label: 'Above 20,00,000', value: 'Above 20,00,000' }
   ];
 
+  properties = [
+    { image: 'https://via.placeholder.com/300x200?text=Property+1', name: 'Modern 2BHK Flat', price: '₹45,00,000', description: 'Spacious 2BHK flat in a prime location.' },
+    { image: 'https://via.placeholder.com/300x200?text=Property+2', name: 'Luxury 3BHK Apartment', price: '₹75,00,000', description: 'Luxury 3BHK apartment with modern amenities.' },
+    { image: 'https://via.placeholder.com/300x200?text=Property+3', name: 'Commercial Office Space', price: '₹1,50,00,000', description: 'Well-located office space in a business hub.' },
+    // Add more properties as needed
+  ];
+
+  propertyImages = [
+    'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQh7BlPQnpAmVTuhPN2UsvfgkxGVNzfsHZwlg&s',
+    'https://3.imimg.com/data3/QF/VC/MY-11005443/princetown.jpg',
+    'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTZFlyQWxv72erCxTodjvHGPFEUbWmzME43LA&s'
+  ];
+
+
   dashboardForm: FormGroup;
-  activeTabIndex: number = 0; // Tracks the active tab index
+  activeTabIndex: number = 0;
 
   constructor() {
     this.dashboardForm = new FormGroup({
@@ -54,23 +70,20 @@ export class DashboardComponent implements OnInit {
       searchPincode: new FormControl(''),
       searchPropertyName: new FormControl(''),
       propertyType: new FormControl(''),
-      budget: new FormControl('') // Added for budget
+      budget: new FormControl('')
     });
   }
 
-  ngOnInit(): void {
-    // Initialization logic (if any) can be added here
-  }
+  ngOnInit(): void { }
 
   onTabChange(tabIndex: number): void {
     this.activeTabIndex = tabIndex;
     this.tabs.forEach((tab, index) => {
-      tab.isActive = index === tabIndex; // Mark only the selected tab as active
+      tab.isActive = index === tabIndex;
     });
   }
 
   onSubmit(): void {
     console.log('Form Submitted:', this.dashboardForm.value);
-    // Handle the search filter logic here (e.g., API call or filtering logic)
   }
 }
