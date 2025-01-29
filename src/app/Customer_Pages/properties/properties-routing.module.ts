@@ -4,6 +4,7 @@ import { UploadpropertiesComponent } from './UploadProperties/uploadproperties/u
 import { ViewpropertiesComponent } from './UploadProperties/viewproperties/viewproperties.component';
 import { RegisterpropertyComponent } from './Registration/registerproperty/registerproperty.component';
 import { SidebarComponent } from '../Layout/sidebar/sidebar.component';
+import { ViewRegisterPropertiesComponent } from './Registration/view-register-properties/view-register-properties.component';
 
 const routes: Routes = [
 
@@ -16,6 +17,10 @@ const routes: Routes = [
           component:RegisterpropertyComponent
         },
         {
+          path:'view_Register_Properties',
+          component:ViewRegisterPropertiesComponent
+        },
+        {
           path:'uploadProperties',
           component:UploadpropertiesComponent
         },
@@ -23,6 +28,7 @@ const routes: Routes = [
           path:'viewUploadedProperties',
           component:ViewpropertiesComponent
         },
+
       ]
    },
   
