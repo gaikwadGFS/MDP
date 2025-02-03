@@ -5,6 +5,8 @@ import { ViewpropertiesComponent } from './UploadProperties/viewproperties/viewp
 import { RegisterpropertyComponent } from './Registration/registerproperty/registerproperty.component';
 import { SidebarComponent } from '../Layout/sidebar/sidebar.component';
 import { ViewRegisterPropertiesComponent } from './Registration/view-register-properties/view-register-properties.component';
+import { SerachRegistrarOfficeComponent } from './serach-registrar-office/serach-registrar-office.component';
+import { CheckMahaReraComponent } from './check-maha-rera/check-maha-rera.component';
 
 const routes: Routes = [
 
@@ -21,6 +23,10 @@ const routes: Routes = [
           component:ViewRegisterPropertiesComponent
         },
         {
+          path:'Search_registrar_office',
+          component:SerachRegistrarOfficeComponent
+        },
+        {
           path:'uploadProperties',
           component:UploadpropertiesComponent
         },
@@ -28,6 +34,10 @@ const routes: Routes = [
           path:'viewUploadedProperties',
           component:ViewpropertiesComponent
         },
+        {
+          path:'check_maharera',
+          component:CheckMahaReraComponent
+        }
 
       ]
    },
