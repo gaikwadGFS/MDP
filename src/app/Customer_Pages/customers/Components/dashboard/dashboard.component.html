@@ -168,7 +168,7 @@
                             <span class="p-inputgroup-addon">
                                 <i class="pi pi-map-marker"></i>
                             </span>
-                            <input pInputText formControlName="searchCity" placeholder="City" class="p-inputtext-lg" />
+                            <input pInputText formControlName="searchCity" placeholder="City" class="p-inputtext-lg"  class="p-inputtext-lg p-filled" style="border: 1px solid #ced4da;"/>
                         </div>
                         <!-- Area Input -->
                         <div class="p-inputgroup p-col-12 p-md-3">
@@ -181,7 +181,7 @@
                                         fill="#007ad9" />
                                 </svg>
                             </span>
-                            <input pInputText formControlName="searchArea" placeholder="Area" class="p-inputtext-lg" />
+                            <input pInputText formControlName="searchArea" placeholder="Area" class="p-inputtext-lg" class="p-inputtext-lg p-filled" style="border: 1px solid #ced4da;" />
                         </div>
                         <!-- Pincode Input -->
                         <div class="p-inputgroup p-col-12 p-md-3">
@@ -189,7 +189,7 @@
                                 <i class="pi pi-map"></i>
                             </span>
                             <input pInputText formControlName="searchPincode" placeholder="Pincode"
-                                class="p-inputtext-lg" />
+                            class="p-inputtext-lg p-filled" style="border: 1px solid #ced4da;"  />
                         </div>
                         <!-- Property Type Dropdown -->
                         <div class="p-inputgroup p-col-12 p-md-3">
@@ -226,7 +226,7 @@
 
             <!-- Contact Us Dialog -->
             <p-dialog [(visible)]="showContactDialog" modal="true" header="Contact Us" [style]="{width: '400px'}"
-                class="min-w-40" [position]="{top: '-10px', right: '0'}">
+                class="min-w-40" position="bottomright">
                 <div class="p-d-flex p-flex-column p-ai-center p-text-center">
                     <h3>📞 Get in Touch</h3>
                     <p>We are here to help you. Contact us anytime.</p>
