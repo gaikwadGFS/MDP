@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { Router, RouterLink, RouterModule } from '@angular/router';
+import { Router, RouterModule } from '@angular/router';
 import { SidebarModule } from 'primeng/sidebar';
 import { CardModule } from 'primeng/card';
 import { ButtonModule } from 'primeng/button';
@@ -15,7 +15,7 @@ import { InputNumberModule } from 'primeng/inputnumber';
   standalone: true,
   imports: [
     FormsModule,
-    CommonModule,
+    RouterModule,
     ReactiveFormsModule,
     SidebarModule,
     CardModule,
@@ -24,8 +24,7 @@ import { InputNumberModule } from 'primeng/inputnumber';
     InputNumberModule,
     OverlayPanelModule,
     DrawerModule,
-    RouterLink,
-    RouterModule
+    CommonModule,
   ],
   templateUrl: './sidebar.component.html',
   styleUrls: ['./sidebar.component.css'],
@@ -87,6 +86,15 @@ export class SidebarComponent {
   // Toggle dropdown visibility without closing the sidebar
   toggleDropdown(menu: string) {
     this.dropdowns[menu] = !this.dropdowns[menu];
+  }
+  
+
+  // Navigate to a route and close the sidebar
+  navigateTo(route: string) {
+    if (!this.dropdowns['getServices'] && !this.dropdowns['uploadProperty']) {
+      this.sidebarVisible = false; // Close the sidebar only when dropdowns are not open
+    }
+    this.router.navigate([`/${route}`]);
   }
 
   // Logout functionality

@@ -1,11 +1,18 @@
 <div class="flex flex-column surface-ground">
   <!-- Navbar -->
-  <div class="navbar flex justify-content-between align-items-center px-4 py-3 border-bottom-1 surface-border surface-section shadow-2 w-full fixed top-0 left-0 z-3">
+  <div
+    class="navbar flex justify-content-between align-items-center px-4 py-3 border-bottom-1 surface-border surface-section shadow-2 w-full fixed top-0 left-0 z-3">
+   
     <!-- Left Section -->
     <div class="flex align-items-center">
       <i class="pi pi-bars text-xl text-primary cursor-pointer" (click)="toggleSidebar()"></i>
       <span class="ml-2 text-xl font-bold text-primary">MDP</span>
     </div>
+    <!-- 
+    <div class="flex align-items-center gap-2 flex-grow-1 justify-content-center">
+      <button pButton type="button" label="Find Your Perfect..." icon="pi pi-filter" severity="info" (click)="openSearchDrawer()"></button>
+    </div> -->
+
     <!-- Right Section with Icons -->
     <div class="flex align-items-center gap-4">
       <i class="pi pi-shopping-cart text-xl text-primary cursor-pointer"></i>
@@ -25,7 +32,8 @@
   </div>
 
   <!-- Sidebar -->
-  <p-sidebar [(visible)]="sidebarVisible" position="left" appendTo="body" class="w-18rem shadow-2" [showCloseIcon]="false" styleClass="p-0">
+  <p-sidebar [(visible)]="sidebarVisible" position="left" appendTo="body" class="w-18rem shadow-2"
+    [showCloseIcon]="false" styleClass="p-0">
     <!-- Close Icon -->
     <div class="flex justify-content-end pr-3 pt-2">
       <i class="pi pi-times text-xl text-primary cursor-pointer" (click)="sidebarVisible = false"></i>
@@ -33,16 +41,20 @@
 
     <!-- Sidebar Header -->
     <div class="text-center p-3">
-      <img src="https://wp.sfdcdigital.com/en-us/wp-content/uploads/sites/4/2024/11/marquee-crm-real-estate_1680x1120.jpg?resize=1536,1024" alt="Sidebar Logo" class="border-round w-6rem mb-2" />
+      <img
+        src="https://wp.sfdcdigital.com/en-us/wp-content/uploads/sites/4/2024/11/marquee-crm-real-estate_1680x1120.jpg?resize=1536,1024"
+        alt="Sidebar Logo" class="border-round w-6rem mb-2" />
       <h3 class="text-primary font-bold mb-0">My Dream Property</h3>
     </div>
 
     <!-- Sidebar Menu -->
     <ul class="list-none p-0">
-      <li class="p-3 hover:surface-hover cursor-pointer text-md flex align-items-center gap-2" routerLink="/customer/dashboard">
+      <li class="p-3 hover:surface-hover cursor-pointer text-md flex align-items-center gap-2"
+        routerLink="/customer/dashboard">
         <i class="pi pi-home text-primary"></i> Home
       </li>
-      <li class="p-3 hover:surface-hover cursor-pointer text-md flex align-items-center gap-2">
+      <li class="p-3 hover:surface-hover cursor-pointer text-md flex align-items-center gap-2"
+        (click)="navigateTo('trending')">
         <i class="pi pi-chart-line text-primary"></i> Latest Trending Properties
       </li>
       <!-- <li class="p-3 hover:surface-hover cursor-pointer text-md flex align-items-center gap-2">
@@ -51,20 +63,24 @@
 
       <!-- Get Services Dropdown -->
       <li class="p-3">
-        <div class="flex align-items-center justify-content-between cursor-pointer" (click)="toggleDropdown('getServices')">
+        <div class="flex align-items-center justify-content-between cursor-pointer"
+          (click)="toggleDropdown('getServices')">
           <div class="text-md flex align-items-center gap-2">
             <i class="pi pi-palette text-primary"></i> Get Services
           </div>
           <i [ngClass]="dropdowns['getServices'] ? 'pi pi-chevron-down' : 'pi pi-chevron-right'"></i>
         </div>
         <ul class="list-none p-0 ml-4" *ngIf="dropdowns['getServices']">
-          <li class="p-2 hover:surface-hover cursor-pointer flex align-items-center gap-2" routerLink="/home-service/interiors">
+          <li class="p-2 hover:surface-hover cursor-pointer flex align-items-center gap-2"
+            routerLink="/home-service/interiors">
             <i class="pi pi-palette text-primary"></i> Interior
           </li>
-          <li class="p-2 hover:surface-hover cursor-pointer flex align-items-center gap-2" routerLink="/home-service/painting">
+          <li class="p-2 hover:surface-hover cursor-pointer flex align-items-center gap-2"
+            routerLink="/home-service/painting">
             <i class="pi pi-paint-brush text-primary"></i> Painter
           </li>
-          <li class="p-2 hover:surface-hover cursor-pointer flex align-items-center gap-2" routerLink="/home-service/furniture">
+          <li class="p-2 hover:surface-hover cursor-pointer flex align-items-center gap-2"
+            routerLink="/home-service/furniture">
             <i class="pi pi-cube text-primary"></i> Furniture
           </li>
         </ul>
@@ -72,17 +88,20 @@
 
       <!-- Upload Your Property Dropdown -->
       <li class="p-3">
-        <div class="flex align-items-center justify-content-between cursor-pointer" (click)="toggleDropdown('uploadProperty')">
+        <div class="flex align-items-center justify-content-between cursor-pointer"
+          (click)="toggleDropdown('uploadProperty')">
           <div class="text-md flex align-items-center gap-2">
             <i class="pi pi-upload text-primary"></i> Upload Your Property
           </div>
           <i [ngClass]="dropdowns['uploadProperty'] ? 'pi pi-chevron-down' : 'pi pi-chevron-right'"></i>
         </div>
         <ul class="list-none p-0 ml-4" *ngIf="dropdowns['uploadProperty']">
-          <li class="p-2 hover:surface-hover cursor-pointer flex align-items-center gap-2" routerLink="/properties/viewUploadedProperties">
+          <li class="p-2 hover:surface-hover cursor-pointer flex align-items-center gap-2"
+            routerLink="/properties/viewUploadedProperties">
             <i class="pi pi-eye text-primary"></i> View Your Property
           </li>
-          <li class="p-2 hover:surface-hover cursor-pointer flex align-items-center gap-2" routerLink="/properties/uploadProperties">
+          <li class="p-2 hover:surface-hover cursor-pointer flex align-items-center gap-2"
+            routerLink="/properties/uploadProperties">
             <i class="pi pi-cloud-upload text-primary"></i> Upload New Property
           </li>
         </ul>
@@ -95,41 +114,49 @@
 
       <!-- Advocate Menu Dropdown -->
       <li class="p-3">
-        <div class="flex align-items-center justify-content-between cursor-pointer" (click)="toggleDropdown('advocateMenu')">
+        <div class="flex align-items-center justify-content-between cursor-pointer"
+          (click)="toggleDropdown('advocateMenu')">
           <div class="text-md flex align-items-center gap-2">
             <i class="pi pi-briefcase text-primary"></i> Get Advocate
           </div>
           <i [ngClass]="dropdowns['advocateMenu'] ? 'pi pi-chevron-down' : 'pi pi-chevron-right'"></i>
         </div>
         <ul class="list-none p-0 ml-4" *ngIf="dropdowns['advocateMenu']">
-          <li class="p-2 hover:surface-hover cursor-pointer flex align-items-center gap-2" routerLink="/advocate/lawyers">
+          <li class="p-2 hover:surface-hover cursor-pointer flex align-items-center gap-2"
+            routerLink="/advocate/lawyers">
             <i class="pi pi-user text-primary"></i> Find a Lawyer
           </li>
           <li class="p-2 hover:surface-hover cursor-pointer flex align-items-center gap-2" routerLink="/advocate/cases">
             <i class="pi pi-clipboard text-primary"></i> Your Cases
           </li>
-          <li class="p-2 hover:surface-hover cursor-pointer flex align-items-center gap-2" routerLink="/advocate/appointments">
+          <li class="p-2 hover:surface-hover cursor-pointer flex align-items-center gap-2"
+            routerLink="/advocate/appointments">
             <i class="pi pi-calendar text-primary"></i> Appointments
           </li>
         </ul>
       </li>
 
       <!-- Other Sidebar Items -->
-      <li class="p-3 hover:surface-hover cursor-pointer text-md flex align-items-center gap-2">
+      <li class="p-3 hover:surface-hover cursor-pointer text-md flex align-items-center gap-2"
+        (click)="navigateTo('popular')">
         <i class="pi pi-star text-primary"></i> Most Popular
       </li>
-      <li class="p-3 hover:surface-hover cursor-pointer text-md flex align-items-center gap-2" routerLink="/properties/check_maharera">
+      <li class="p-3 hover:surface-hover cursor-pointer text-md flex align-items-center gap-2"
+        (click)="navigateTo('/properties/Search_registrar_office')">
         <i class="pi pi-check-circle text-primary"></i> Check MahaRera
       </li><li class="p-3 hover:surface-hover cursor-pointer text-md flex align-items-center gap-2" routerLink="/properties/Search_registrar_office">
         <i class="pi pi-check-circle text-primary"></i> Search Registrar Office
       </li>
-      <li class="p-3 hover:surface-hover cursor-pointer text-md flex align-items-center gap-2">
+      <li class="p-3 hover:surface-hover cursor-pointer text-md flex align-items-center gap-2"
+        (click)="navigateTo('help')">
         <i class="pi pi-question-circle text-primary"></i> Need Help?
       </li>
-      <li class="p-3 hover:surface-hover cursor-pointer text-md flex align-items-center gap-2">
+      <li class="p-3 hover:surface-hover cursor-pointer text-md flex align-items-center gap-2"
+        (click)="navigateTo('contact')">
         <i class="pi pi-phone text-primary"></i> Contact Us
       </li>
-      <li class="p-3 hover:surface-hover cursor-pointer text-md flex align-items-center gap-2">
+      <li class="p-3 hover:surface-hover cursor-pointer text-md flex align-items-center gap-2"
+        (click)="navigateTo('about')">
         <i class="pi pi-info-circle text-primary"></i> About Us
       </li>
     </ul>
