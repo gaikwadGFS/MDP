@@ -1,35 +1,35 @@
-<h1 class="mt-5" >Hello</h1>
-<p >check-maha-rera works!</p>
+<section class="light-background">
+<div class="container mt-5 ">
+    <div class="row">
+        <div class="col">
+            <div class="p-inputgroup w-100 ml-1">
+                <input type="text" pInputText placeholder="Search..." />
+               <div>
+                <p-button  class="p-3"  label="Search" icon="pi pi-check" [loading]="loading" (onClick)="load()" />
+                <p-button class="btn-danger"   label="Reset" icon="pi pi-refresh" [loading]="loading"    (onClick)="load()" />
+            </div>
+                
+              </div>
+        </div>
+    </div>
+</div>
+<!-- <form [formGroup]="myForm">
+    <div class="p-inputgroup">
+        <input type="text" pInputText formControlName="search" placeholder="Search..." />
+        <p-button label="Search" icon="pi pi-search" (onClick)="search()"></p-button>
+        <p-button label="Reset" icon="pi pi-refresh" (onClick)="resetForm()"></p-button>
+    </div>
+</form> -->
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<!-- <p-table [value]="documents" [paginator]="true" [rows]="5" responsiveLayout="scroll">
-    <ng-template pTemplate="header">
-        <tr>
+<div class="container mt-3">
+    <div class="row">
+        <div class="col">
+            <table>
+            
+<p-table [value]="documents"   [paginator]="true" [rows]="8" responsiveLayout="scroll">
+    <ng-template  pTemplate="header">
+        <tr >
             <th>Sr No</th>
             <th>Subject</th>
             <th>Date</th>
@@ -49,4 +49,38 @@
             </td>
         </tr>
     </ng-template>
-</p-table> -->
+</p-table>
+</table>
+
+        </div>
+    </div>
+</div>
+
+</section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
