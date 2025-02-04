@@ -1,1 +1,59 @@
-<p>serach-registrar-office works!</p>
+<div class="container mt-5">
+    <!-- Heading for the page -->
+    <div class="row justify-content-center">
+        <div class="col-12 text-center py-5">
+            <h1>Search Registrar Office</h1>
+        </div>
+    </div>
+
+    <div class="row">
+        <!-- Center the dropdown and the button in the same row using Flexbox -->
+        <div class="col-12 d-flex justify-content-center align-items-center">
+            <!-- Cities dropdown -->
+            <div class=" mr-3">
+                <label for="cities" class=""></label>
+                <p-select 
+                    [options]="cities" 
+                    [checkmark]="true"
+                    [showClear]="true" 
+                    placeholder="Select a city">
+                </p-select>
+            </div>
+            <!-- Search Button -->
+            <button pButton type="button" label="Search" icon="pi pi-search" class="p-button-primary"></button>
+        </div>
+    </div>
+
+    <!-- The Table Section -->
+    <div class="row">
+        <div class="col-12">
+            <div class="card mt-5">
+                <p-table
+                    [value]="products"
+                    showGridlines
+                    [tableStyle]="{ 'min-width': '50rem' }">
+                    <ng-template #header>
+                        <tr>
+                            <th>sr no.</th>
+                            <th>Office Name</th>
+                            <th>Address</th>
+                            <th>contact</th>
+                            <th>Site/Office Link</th>
+                            <th>Rating</th>
+                        </tr>
+                    </ng-template>
+                    <ng-template #body let-product>
+                        <tr>
+                            <td>{{ product.srnumber }}</td>
+                            <td>{{ product.Officename }}</td>
+                            <td>{{ product.Address }}</td>
+                            <td>{{ product.contact }}</td>
+                            <td class="text-decoration-underline text-primary"
+                            >{{ product.SiteOfficeLink}}</td>
+                            <td> <p-rating 
+                                [(ngModel)]="product.Rating" 
+                                [readonly]="true" 
+                                class="custom-rating"
+                                >
+                            </p-rating></td>
+                    
