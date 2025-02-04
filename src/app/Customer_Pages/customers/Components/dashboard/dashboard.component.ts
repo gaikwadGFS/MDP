@@ -7,6 +7,8 @@ import { ReactiveFormsModule, FormGroup, FormControl } from '@angular/forms';
 import { DropdownModule } from 'primeng/dropdown'; // For dropdown
 import { TabsModule } from 'primeng/tabs';
 import { CarouselModule } from 'primeng/carousel'; // Importing CarouselModule
+import { DialogModule } from 'primeng/dialog';
+import { ConfirmDialogModule } from 'primeng/confirmdialog';
 
 @Component({
   selector: 'app-dashboard',
@@ -19,12 +21,15 @@ import { CarouselModule } from 'primeng/carousel'; // Importing CarouselModule
     ButtonModule,
     ReactiveFormsModule,
     DropdownModule,
+    DialogModule,
+    ConfirmDialogModule,
     CarouselModule // Adding CarouselModule to imports
   ],
   templateUrl: './dashboard.component.html',
   styleUrls: ['./dashboard.component.css']
 })
 export class DashboardComponent implements OnInit {
+  showContactDialog: boolean = false;
   tabs = [
     { route: '/dashboard/buy', label: 'Buy', icon: 'pi pi-shopping-cart', isActive: true },
     { route: '/dashboard/rent', label: 'Rent', icon: 'pi pi-home', isActive: false },
@@ -86,4 +91,4 @@ export class DashboardComponent implements OnInit {
   onSubmit(): void {
     console.log('Form Submitted:', this.dashboardForm.value);
   }
-}
+  }

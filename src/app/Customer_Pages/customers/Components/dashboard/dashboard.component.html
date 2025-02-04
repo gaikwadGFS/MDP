@@ -145,7 +145,9 @@
         <!-- Search Form Section -->
         <div class="col-3 p-m-2">
             <div class="p-d-flex p-flex-column p-p-3 p-shadow-4 p-border-round-lg" style="background-color: #ffffff;">
-                <form [formGroup]="dashboardForm" (ngSubmit)="onSubmit()" class="p-fluid">
+                <form [formGroup]="dashboardForm" (ngSubmit)="onSubmit()"
+                    class="p-p-3 p-shadow-4 p-border-round-lg p-fluid"
+                    style="max-width: 400px; width: 110%; background-color: #ffffff;">
                     <div class="p-d-flex p-jc-around p-mb-4">
                         <p-tabView>
                             <p-tabPanel header="Buy" leftIcon="pi pi-shopping-cart">
@@ -161,60 +163,78 @@
                     </div>
                     <div class="p-d-flex p-flex-wrap p-shadow-2 p-p-3 p-border-round-md p-gap-3"
                         style="border: 1px solid #e4e4e4; align-items: center;">
-                        <div class="p-grid p-fluid">
-                            <div class="p-inputgroup p-col-12 p-md-3">
-                                <span class="p-inputgroup-addon">
-                                    <i class="pi pi-map-marker"></i>
-                                </span>
-                                <input pInputText formControlName="searchCity" placeholder="City"
-                                    class="p-inputtext-lg p-filled" style="border: 1px solid #ced4da;" />
-                            </div>
-
-                            <div class="p-inputgroup p-col-12 p-md-3">
-                                <span class="p-inputgroup-addon">
-                                    <i class="pi pi-compass"></i>
-                                </span>
-                                <input pInputText formControlName="searchArea" placeholder="Area"
-                                    class="p-inputtext-lg p-filled" style="border: 1px solid #ced4da;" />
-                            </div>
-
-                            <div class="p-inputgroup p-col-12 p-md-3">
-                                <span class="p-inputgroup-addon">
-                                    <i class="pi pi-map"></i>
-                                </span>
-                                <input pInputText formControlName="searchPincode" placeholder="Pincode"
-                                    class="p-inputtext-lg p-filled" style="border: 1px solid #ced4da;" />
-                            </div>
-
-                            <div class="p-inputgroup p-col-12 p-md-3">
-                                <span class="p-inputgroup-addon">
-                                    <i class="pi pi-home"></i>
-                                </span>
-                                <p-dropdown formControlName="propertyType" [options]="propertyTypes"
-                                    placeholder="Flat +1" class="p-inputtext-lg p-filled"></p-dropdown>
-                            </div>
-
-                            <div class="p-inputgroup p-col-12 p-md-3">
-                                <span class="p-inputgroup-addon">
-                                    <i class="pi pi-dollar"></i>
-                                </span>
-                                <p-dropdown formControlName="budget" [options]="budgetOptions"
-                                    placeholder="Up to 5,00,000" class="p-inputtext-lg p-filled"></p-dropdown>
-                            </div>
-
-                            <div class="p-d-flex p-jc-center p-col-12 p-md-3">
-                                <button pButton type="submit" label="Search"
-                                    class="p-button-rounded p-button-danger p-button-lg"></button>
-                            </div>
+                        <!-- City Input -->
+                        <div class="p-inputgroup p-col-12 p-md-3">
+                            <span class="p-inputgroup-addon">
+                                <i class="pi pi-map-marker"></i>
+                            </span>
+                            <input pInputText formControlName="searchCity" placeholder="City" class="p-inputtext-lg"  class="p-inputtext-lg p-filled" style="border: 1px solid #ced4da;"/>
+                        </div>
+                        <!-- Area Input -->
+                        <div class="p-inputgroup p-col-12 p-md-3">
+                            <span class="p-inputgroup-addon">
+                                <!-- Custom Icon (SVG Example) -->
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20"
+                                    fill="none">
+                                    <path
+                                        d="M10 2C5.58 2 2 5.58 2 10s3.58 8 8 8 8-3.58 8-8-3.58-8-8-8zM10 16c-3.31 0-6-2.69-6-6s2.69-6 6-6 6 2.69 6 6-2.69 6-6 6z"
+                                        fill="#007ad9" />
+                                </svg>
+                            </span>
+                            <input pInputText formControlName="searchArea" placeholder="Area" class="p-inputtext-lg" class="p-inputtext-lg p-filled" style="border: 1px solid #ced4da;" />
+                        </div>
+                        <!-- Pincode Input -->
+                        <div class="p-inputgroup p-col-12 p-md-3">
+                            <span class="p-inputgroup-addon">
+                                <i class="pi pi-map"></i>
+                            </span>
+                            <input pInputText formControlName="searchPincode" placeholder="Pincode"
+                            class="p-inputtext-lg p-filled" style="border: 1px solid #ced4da;"  />
+                        </div>
+                        <!-- Property Type Dropdown -->
+                        <div class="p-inputgroup p-col-12 p-md-3">
+                            <span class="p-inputgroup-addon">
+                                <i class="pi pi-home"></i>
+                            </span>
+                            <p-dropdown formControlName="propertyType" [options]="propertyTypes" placeholder="Flat +1"
+                                class="p-inputtext-lg"></p-dropdown>
+                        </div>
+                        <!-- Budget Dropdown -->
+                        <div class="p-inputgroup p-col-12 p-md-3">
+                            <span class="p-inputgroup-addon">
+                                <i class="pi pi-dollar"></i>
+                            </span>
+                            <p-dropdown formControlName="budget" [options]="budgetOptions" placeholder="Up to 5,00,000"
+                                class="p-inputtext-lg"></p-dropdown>
+                        </div>
+                        <!-- Search Button -->
+                        <div class="p-d-flex p-jc-center p-col-12 p-md-3">
+                            <button pButton type="submit" label="Search"
+                                class="p-button-rounded p-button-danger p-button-lg"></button>
                         </div>
                     </div>
                 </form>
             </div>
         </div>
-    </div>
 
-    <!-- Fixed Need Help Button -->
-    <div class="flex justify-content-between align-items-center" >
-        <button pButton label="Need Help" icon="pi pi-question-circle" class="ml-auto mb-3"></button>
+
+        <!-- Fixed Need Help Button -->
+        <div class="flex justify-content-end align-items-center">
+            <!-- Need Help button -->
+            <p-button label="Need Help" icon="pi pi-question-circle" (click)="showContactDialog = true"
+                class="ml-auto mb-2"></p-button>
+
+            <!-- Contact Us Dialog -->
+            <p-dialog [(visible)]="showContactDialog" modal="true" header="Contact Us" [style]="{width: '400px'}"
+                class="min-w-40" position="bottomright">
+                <div class="p-d-flex p-flex-column p-ai-center p-text-center">
+                    <h3>📞 Get in Touch</h3>
+                    <p>We are here to help you. Contact us anytime.</p>
+                    <p><i class="pi pi-envelope"></i> support&#64;example.com</p>
+                    <p><i class="pi pi-phone"></i> +91 98765 43210</p>
+                </div>
+            </p-dialog>
+        </div>
+
     </div>
 </div>

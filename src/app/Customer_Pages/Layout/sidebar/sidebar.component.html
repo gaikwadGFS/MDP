@@ -117,13 +117,13 @@
         <div class="flex align-items-center justify-content-between cursor-pointer"
           (click)="toggleDropdown('advocateMenu')">
           <div class="text-md flex align-items-center gap-2">
-            <i class="pi pi-briefcase text-primary"></i> Get Advocate
+            <i class="pi pi-briefcase text-primary"></i> Legal Services
           </div>
           <i [ngClass]="dropdowns['advocateMenu'] ? 'pi pi-chevron-down' : 'pi pi-chevron-right'"></i>
         </div>
         <ul class="list-none p-0 ml-4" *ngIf="dropdowns['advocateMenu']">
           <li class="p-2 hover:surface-hover cursor-pointer flex align-items-center gap-2"
-            routerLink="/advocate/lawyers">
+            routerLink="/legalServices/getAdvocate">
             <i class="pi pi-user text-primary"></i> Find a Lawyer
           </li>
           <li class="p-2 hover:surface-hover cursor-pointer flex align-items-center gap-2" routerLink="/advocate/cases">
@@ -142,18 +142,38 @@
         <i class="pi pi-star text-primary"></i> Most Popular
       </li>
       <li class="p-3 hover:surface-hover cursor-pointer text-md flex align-items-center gap-2"
-        (click)="navigateTo('/properties/Search_registrar_office')">
+        (click)="navigateTo('/properties/check_maharera')">
         <i class="pi pi-check-circle text-primary"></i> Check MahaRera
       </li><li class="p-3 hover:surface-hover cursor-pointer text-md flex align-items-center gap-2" routerLink="/properties/Search_registrar_office">
-        <i class="pi pi-check-circle text-primary"></i> Search Registrar Office
+        <i class="pi pi-search text-primary"></i> Search Registrar Office
       </li>
       <li class="p-3 hover:surface-hover cursor-pointer text-md flex align-items-center gap-2"
         (click)="navigateTo('help')">
         <i class="pi pi-question-circle text-primary"></i> Need Help?
       </li>
-      <li class="p-3 hover:surface-hover cursor-pointer text-md flex align-items-center gap-2"
+      <!-- <li class="p-3 hover:surface-hover cursor-pointer text-md flex align-items-center gap-2"
         (click)="navigateTo('contact')">
         <i class="pi pi-phone text-primary"></i> Contact Us
+      </li> -->
+      <li class="p-3">
+        <div class="flex align-items-center justify-content-between cursor-pointer"
+          (click)="toggleDropdown('ContactUs')">
+          <div class="text-md flex align-items-center gap-2">
+            <i class="pi pi-phone text-primary"></i>Contact Us
+          </div>
+          <i [ngClass]="dropdowns['ContactUs'] ? 'pi pi-chevron-down' : 'pi pi-chevron-right'"></i>
+        </div>
+        <ul class="list-none p-0 ml-4" *ngIf="dropdowns['ContactUs']">
+          <li class=" hover:surface-hover cursor-pointer flex align-items-center gap-2">
+           
+           <p> contactus&#64;growingflowers-solutions.com</p>
+          </li>
+          <li class=" hover:surface-hover cursor-pointer flex align-items-center gap-2">
+          
+           <p>shop. 15, Runal Gateway Commercial Complex, Near Mukai Chawk, Kiwale, Pune-412101</p>
+          </li>
+          
+        </ul>
       </li>
       <li class="p-3 hover:surface-hover cursor-pointer text-md flex align-items-center gap-2"
         (click)="navigateTo('about')">
