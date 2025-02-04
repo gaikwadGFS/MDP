@@ -1,6 +1,6 @@
 <!-- Search for Advocate Start -->
 <section class="light-background">
-    <div class="container">
+    <div class="container mt-5">
         <div class="row">
             <div class="col-12">
                 <div>
@@ -28,8 +28,8 @@
                     </div>
                     <div class="col-6 col-offset-3">
                         <div class="text-center">
-                            <p-button label="Search" variant="text" severity="info" icon="pi pi-search"
-                                class="w-full" />
+                            <p-button label="Search" variant="text" [raised]="true" severity="success"
+                                icon="pi pi-search" class="w-full" />
                         </div>
                     </div>
                 </div>
@@ -207,17 +207,21 @@
                             Their expertise is particularly critical in areas like real estate, business transactions,
                             family matters, or litigation, where even small mistakes can have significant
                             consequences.</q></p>
-                    <div >
+                    <div>
 
-                    <h5 class="text-dark"><i class="fa fa-user-tie mx-2"></i>Expert Guidance</h5>
-                    <p>Legal experts provide accurate advice tailored to your situation, ensuring you understand your rights and legal options clearly.</p>
-                    <h5 class="text-dark"><i class="fa fa-shield-alt mx-2"></i>Risk Prevention</h5>
-                    <p>They identify potential legal risks and help you avoid issues before they arise, whether in contracts, business dealings, or personal matters.</p>
-                    <h5 class="text-dark"><i class="fa fa-balance-scale mx-2"></i>Dispute Resolution</h5>
-                    <p>Legal experts assist in resolving conflicts through negotiation, mediation, or court representation to protect your interests.</p>
-                    <h5 class="text-dark"><i class="fa fa-file-alt mx-2"></i>Document Review and Drafting</h5>
-                    <p>They ensure legal documents like contracts, wills, or agreements are valid, enforceable, and structured to safeguard your needs.</p>
-                </div>
+                        <h5 class="text-dark"><i class="fa fa-user-tie mx-2"></i>Expert Guidance</h5>
+                        <p>Legal experts provide accurate advice tailored to your situation, ensuring you understand
+                            your rights and legal options clearly.</p>
+                        <h5 class="text-dark"><i class="fa fa-shield-alt mx-2"></i>Risk Prevention</h5>
+                        <p>They identify potential legal risks and help you avoid issues before they arise, whether in
+                            contracts, business dealings, or personal matters.</p>
+                        <h5 class="text-dark"><i class="fa fa-balance-scale mx-2"></i>Dispute Resolution</h5>
+                        <p>Legal experts assist in resolving conflicts through negotiation, mediation, or court
+                            representation to protect your interests.</p>
+                        <h5 class="text-dark"><i class="fa fa-file-alt mx-2"></i>Document Review and Drafting</h5>
+                        <p>They ensure legal documents like contracts, wills, or agreements are valid, enforceable, and
+                            structured to safeguard your needs.</p>
+                    </div>
                 </div>
             </div>
         </div>
@@ -226,38 +230,237 @@
 <!-- Reasons to Hire a Legal Expert start -->
 
 <!-- List of services and packages start -->
- <section class="dark-background">
-  <div class="container">
-    <div class="row">
-        <div class="col-12">
-            <p-tabs value="0">
-                <p-tablist>
-                    <p-tab value="0">Packages</p-tab>
-                    <p-tab value="1">services</p-tab>
-                    <!-- <p-tab value="2">Header III</p-tab> -->
-                </p-tablist>
-                <p-tabpanels>
-                    <p-tabpanel value="0">
-                       <div class="row">
-                        <div class="col-4">
-                            <div class="card">
-                                <div>
-                                    
+<section class="dark-background">
+    <div class="container p-3">
+        <div class="row">
+            <div class="col-12">
+                <h2 class="text-center">Packages & Services</h2>
+            </div>
+            <div class="col-12">
+                <p-tabs value="0">
+                    <p-tablist>
+                        <p-tab value="0">Packages</p-tab>
+                        <p-tab value="1">services</p-tab>
+                        <!-- <p-tab value="2">Header III</p-tab> -->
+                    </p-tablist>
+                    <p-tabpanels>
+                        <p-tabpanel value="0">
+                            <div class="row">
+                                <div class="col-3">
+                                    <div class="card shadow h-100 p-2">
+                                        <div class="row">
+                                            <div class="col-12">
+                                                <p class="fw-bold text-dark"> 1. Standard Rental Agreement Package</p>
+                                            </div>
+                                            <div class="col-12">
+                                                <p class="fw-bold text-dark">Contents:</p>
+                                                <p><i class="fa-solid fa-check-double text-dark"></i> Rental Agreement
+                                                    Registration: Registered on the Maharashtra
+                                                    state government portal.</p>
+                                                <p><i class="fa-solid fa-check-double text-dark"></i>
+                                                    E-Stamping:Includes legal E-Stamp for validity in court.</p>
+                                                <p><i class="fa-solid fa-check-double text-dark"></i> Hardcopy
+                                                    Delivery:Physical copy delivered to your address.</p>
+                                            </div>
+                                            <div class="col-12">
+                                                <p class="fw-bold text-dark">Features:</p>
+                                                <p><i class="fa-solid fa-check-double text-dark"></i>Cost: ₹1,500</p>
+                                                <p><i class="fa-solid fa-check-double text-dark"></i> Turnaround Time:
+                                                    2-3 days for registration and delivery.</p>
+                                                <p><i class="fa-solid fa-check-double text-dark"></i> Legal Support:
+                                                    Access to a legal advisor for any queries
+                                                    regarding the agreement.</p>
+                                            </div>
+                                            <div class="col-12">
+                                                <button class="p-button p-button-primary w-full">Select</button>
+                                            </div>
+                                        </div>
+                                        <div>
+
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-3">
+                                    <div class="card shadow h-100 p-2">
+                                        <div class="row">
+                                            <div class="col-12">
+                                                <p class="fw-bold text-dark"> 2. Comprehensive Rental Package with
+                                                    Police Verification</p>
+                                            </div>
+                                            <div class="col-12">
+                                                <p class="fw-bold text-dark">Contents:</p>
+                                                <p><i class="fa-solid fa-check-double text-dark"></i> Rental Agreement
+                                                    Registration: Registered on the Maharashtra state
+                                                    government portal.</p>
+                                                <p><i class="fa-solid fa-check-double text-dark"></i> Police
+                                                    Verification: Complete police verification included.</p>
+                                                <p><i class="fa-solid fa-check-double text-dark"></i> Biometric KYC:
+                                                    Free visit for biometric verification at your
+                                                    location.</p>
+                                            </div>
+                                            <div class="col-12">
+                                                <p class="fw-bold text-dark">Features:</p>
+                                                <p><i class="fa-solid fa-check-double text-dark"></i>Cost: ₹2,000 (Save
+                                                    ₹300 with combo offer)</p>
+                                                <p><i class="fa-solid fa-check-double text-dark"></i> Turnaround Time:
+                                                    3-5 days including police verification.</p>
+                                                <p><i class="fa-solid fa-check-double text-dark"></i> Legal Validity
+                                                    Assurance: Ensures the agreement is legally binding
+                                                    and enforceable.</p>
+                                            </div>
+                                            <div class="col-12"> <button
+                                                    class="p-button p-button-primary w-full">Select</button></div>
+                                        </div>
+                                        <div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-3">
+                                    <div class="card shadow h-100 p-2">
+                                        <div class="row">
+                                            <div class="col-12">
+                                                <p class="fw-bold text-dark"> 3. Premium Rental Agreement Package</p>
+                                            </div>
+                                            <div class="col-12">
+                                                <p class="fw-bold text-dark">Contents:</p>
+                                                <p> <i class="fa-solid fa-check-double text-dark"></i>Rental Agreement
+                                                    with E-Stamp & Notary: Includes notarization of the
+                                                    agreement.</p>
+                                                <p><i class="fa-solid fa-check-double text-dark"></i> Hardcopy Delivery:
+                                                    Printed copy with legal E-Stamp delivered to your
+                                                    address.</p>
+                                                <p><i class="fa-solid fa-check-double text-dark"></i> Doorstep Biometric
+                                                    KYC: Convenience of biometric verification at
+                                                    your residence.</p>
+                                            </div>
+                                            <div class="col-12">
+                                                <p class="fw-bold text-dark">Features:</p>
+                                                <p><i class="fa-solid fa-check-double text-dark"></i>Cost: ₹2,500</p>
+                                                <p><i class="fa-solid fa-check-double text-dark"></i> Turnaround Time:
+                                                    4-6 days for complete processing and delivery.</p>
+                                                <p><i class="fa-solid fa-check-double text-dark"></i> Legal
+                                                    Consultation: One-time consultation with a property lawyer
+                                                    included.</p>
+                                            </div>
+
+                                            <div class="col-12"> <button
+                                                    class="p-button p-button-primary w-full">Select</button></div>
+                                        </div>
+                                        <div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                                <div class="col-3">
+                                    <div class="card shadow h-100 p-2">
+                                        <div class="row">
+                                            <div class="col-12">
+                                                <p class="fw-bold text-dark"> 4. Online Rental Agreement Registration
+                                                    Service</p>
+                                            </div>
+                                            <div class="col-12">
+                                                <p class="fw-bold text-dark">Contents:</p>
+                                                <p><i class="fa-solid fa-check-double text-dark"></i> E-registration:
+                                                    Complete online registration through the Maharashtra
+                                                    government portal.</p>
+                                                <p><i class="fa-solid fa-check-double text-dark"></i> Document Upload
+                                                    Assistance: Help in uploading necessary documents
+                                                    like ID proofs and property details.</p>
+                                            </div>
+                                            <div class="col-12">
+                                                <p class="fw-bold text-dark">Features:</p>
+                                                <p> <i class="fa-solid fa-check-double text-dark"></i>Cost: ₹1,200</p>
+                                                <p><i class="fa-solid fa-check-double text-dark"></i> Turnaround Time:
+                                                    Immediate processing upon document submission.</p>
+                                                <p><i class="fa-solid fa-check-double text-dark"></i> Guided Support:
+                                                    Step-by-step assistance available via chat or phone.
+                                                </p>
+                                            </div>
+
+                                            <div class="col-12"> <button
+                                                    class="p-button p-button-primary w-full">Select</button></div>
+                                        </div>
+                                        <div>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                       </div>
-                    </p-tabpanel>
-                    <p-tabpanel value="1">
-                        <p class="m-0">
-                            Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem
-                            aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.
-                            Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni
-                            dolores eos qui ratione voluptatem sequi nesciunt. Consectetur, adipisci velit, sed quia non numquam eius
-                            modi.
-                        </p>
-                    </p-tabpanel>
-                    <!-- <p-tabpanel value="2">
+                        </p-tabpanel>
+                        <p-tabpanel value="1">
+                            <div class="row">
+                                <div class="col-6">
+                                    <div class="card p-2">
+                                        <p class="fw-bold"> 1. Property Development Services</p>
+                                        <p>Land Acquisition: ₹2,000 - ₹5,000 per sq ft (depending on location)</p>
+                                        <p>Site Development: ₹500 - ₹1,200 per sq ft</p>
+                                        <p>Construction Management: ₹100 - ₹300 per sq ft</p>
+
+
+                                    </div>
+                                </div>
+                                <div class="col-6">
+                                    <div class="card p-2">
+                                        <p class="fw-bold">2. Legal Services</p>
+                                        <p> Rental Agreement Preparation: ₹1,500 - ₹3,000</p>
+                                        <p> Property Registration Fees: Varies by property value (typically 1-7% of the
+                                            property price)</p>
+                                        <p> Title Search and Verification: ₹5,000 - ₹15,000</p>
+                                    </div>
+                                </div>
+                                <div class="col-6">
+                                    <div class="card p-2">
+                                        <p class="fw-bold"> 3. Financial Services</p>
+                                        <p>Home Loan Assistance: Free (commission-based from lenders)</p>
+                                        <p>Investment Consultation: ₹2,000 - ₹5,000 per session</p>
+                                        <p>Tax Advisory for Real Estate Investments: ₹3,000 - ₹10,000</p>
+                                    </div>
+                                </div>
+                                <div class="col-6">
+                                    <div class="card p-2">
+                                        <p class="fw-bold">4. Marketing and Sales</p>
+                                        <p>Property Listing on Real Estate Portals: ₹1,000 - ₹5,000 per month</p>
+
+                                        <p>Digital Marketing Campaigns: ₹10,000 - ₹50,000 (depending on scope)</p>
+                                        <p>Open House Events: ₹5,000 - ₹20,000 per event</p>
+                                    </div>
+                                </div>
+                                <div class="col-6">
+                                    <div class="card p-2">
+                                        <p class="fw-bold">5. Interior Design and Furnishing</p>
+                                        <p>Interior Design Consultation: ₹2,500 - ₹10,000</p>
+                                        <p>Furnishing Packages: ₹50,000 - ₹2,00,000 (depending on size and quality)</p>
+                                        <p>Landscaping Services: ₹25,000 - ₹1,00,000</p>
+                                    </div>
+                                </div>
+                                <div class="col-6">
+                                    <div class="card p-2">
+                                        <p class="fw-bold">6. Facility Management</p>
+                                        <p>Regular Maintenance Services: ₹5,000 - ₹20,000 per month</p>
+                                        <p>Security Services: ₹15,000 - ₹50,000 per month (depending on property size)
+                                        </p>
+                                        <p>Cleaning and Waste Management: ₹2,500 - ₹10,000 per month</p>
+                                    </div>
+                                </div>
+                                <div class="col-6">
+                                    <div class="card p-2">
+                                        <p class="fw-bold">7. Insurance Services</p>
+                                        <p>Property Insurance Premiums: 0.1% to 0.5% of the property value annually</p>
+                                        <p>Liability Insurance for Landlords: ₹3,000 - ₹15,000 annually</p>
+
+                                    </div>
+                                </div>
+                                <div class="col-6">
+                                    <div class="card p-2">
+                                        <p class="fw-bold">8. Consultation Services</p>
+                                        <p>Real Estate Market Analysis Reports: ₹5,000 - ₹20,000</p>
+                                        <p>Feasibility Studies for New Projects: ₹10,000 - ₹50,000</p>
+
+                                    </div>
+                                </div>
+
+                            </div>
+                        </p-tabpanel>
+                        <!-- <p-tabpanel value="2">
                         <p class="m-0">
                             At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti
                             atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique
@@ -266,10 +469,10 @@
                             impedit quo minus.
                         </p>
                     </p-tabpanel> -->
-                </p-tabpanels>
-            </p-tabs>
+                    </p-tabpanels>
+                </p-tabs>
+            </div>
         </div>
     </div>
-  </div>
- </section>
+</section>
 <!-- List of services and packages end -->

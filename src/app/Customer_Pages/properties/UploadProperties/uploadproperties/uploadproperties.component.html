@@ -1,14 +1,21 @@
-<div class="container-fluid ">
+<div class="container mt-5">
+    <div class="row">
+        <div class="col-12">
+            <h2 class="mt-5 text-center">Upload Your New Property</h2>
+        </div>
+    </div>
   <div class="row">
       <div class="col-12">
-          <div class="pt-5 my-5">
+          <div class="">
               <div class="card   shadow border-0 p-3">
                   <p-stepper [value]="1" class="basis-[50rem]">
                       <p-step-list>
                           <p-step [value]="1">Property Details</p-step>
                           <p-step [value]="2">Locality Details</p-step>
                           <p-step [value]="3">Rent Details</p-step>
-                          <p-step [value]="4">Registration Fee </p-step>
+                          <p-step [value]="4">Amenities Details</p-step>
+                          <p-step [value]="5">Registration Fee </p-step>
+
                        
                       </p-step-list>
                       <p-step-panels>
@@ -17,6 +24,10 @@
                               <ng-template #content let-activateCallback="activateCallback">
                                   <form action="">
                                       <div class="row ">
+
+
+
+                                        
                                           <div class="col-12">
                                               <div>
                                                   <label for="propertyType" class="my-2">Apartment Type </label>
