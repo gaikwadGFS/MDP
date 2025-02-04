@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import { TabViewModule } from 'primeng/tabview';
@@ -9,6 +9,14 @@ import { TabsModule } from 'primeng/tabs';
 import { CarouselModule } from 'primeng/carousel'; // Importing CarouselModule
 import { DialogModule } from 'primeng/dialog';
 import { ConfirmDialogModule } from 'primeng/confirmdialog';
+import { PopoverModule } from 'primeng/popover';
+import { Popover } from 'primeng/popover';
+import { InputGroup } from 'primeng/inputgroup';
+import { InputGroupAddonModule } from 'primeng/inputgroupaddon';
+import { InputTextModule } from 'primeng/inputtext';
+import { ConfirmPopupModule } from 'primeng/confirmpopup';
+import { ToastModule } from 'primeng/toast';
+import { SidebarModule } from 'primeng/sidebar';
 
 @Component({
   selector: 'app-dashboard',
@@ -22,14 +30,21 @@ import { ConfirmDialogModule } from 'primeng/confirmdialog';
     ReactiveFormsModule,
     DropdownModule,
     DialogModule,
+    SidebarModule,
     ConfirmDialogModule,
+    PopoverModule,
+    InputTextModule,
+    InputGroupAddonModule,
+    InputGroup,
+    ConfirmPopupModule,
+    ToastModule,
     CarouselModule // Adding CarouselModule to imports
   ],
   templateUrl: './dashboard.component.html',
-  styleUrls: ['./dashboard.component.css']
+  styleUrls: ['./dashboard.component.css'],
+  schemas: [CUSTOM_ELEMENTS_SCHEMA] 
 })
 export class DashboardComponent implements OnInit {
-  showContactDialog: boolean = false;
   tabs = [
     { route: '/dashboard/buy', label: 'Buy', icon: 'pi pi-shopping-cart', isActive: true },
     { route: '/dashboard/rent', label: 'Rent', icon: 'pi pi-home', isActive: false },

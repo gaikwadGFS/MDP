@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
 import { Router, RouterModule } from '@angular/router';
-import { SidebarModule } from 'primeng/sidebar';
 import { CardModule } from 'primeng/card';
 import { ButtonModule } from 'primeng/button';
 import { DropdownModule } from 'primeng/dropdown';
@@ -9,6 +8,7 @@ import { DrawerModule } from 'primeng/drawer';
 import { CommonModule } from '@angular/common';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { InputNumberModule } from 'primeng/inputnumber';
+import { AvatarModule } from 'primeng/avatar'; 
 
 @Component({
   selector: 'app-sidebar',
@@ -17,12 +17,12 @@ import { InputNumberModule } from 'primeng/inputnumber';
     FormsModule,
     RouterModule,
     ReactiveFormsModule,
-    SidebarModule,
     CardModule,
     ButtonModule,
     DropdownModule,
     InputNumberModule,
     OverlayPanelModule,
+    AvatarModule,
     DrawerModule,
     CommonModule,
   ],
@@ -30,7 +30,7 @@ import { InputNumberModule } from 'primeng/inputnumber';
   styleUrls: ['./sidebar.component.css'],
 })
 export class SidebarComponent {
-  sidebarVisible: boolean = false; // To toggle sidebar visibility
+  drawerVisible: boolean = false; // To toggle drawer visibility
   searchDrawerVisible: boolean = false; // Drawer visibility toggle
   selectedCity: string | null = null; // Selected city filter
   selectedOccupancy: string | null = null; // Selected occupancy filter
@@ -39,7 +39,8 @@ export class SidebarComponent {
     getServices: false, // Initially, dropdowns are hidden
     uploadProperty: false,
   };
-
+  visible: boolean = false;
+  
   constructor(private router: Router) {}
 
   // Options for city dropdown
@@ -56,9 +57,9 @@ export class SidebarComponent {
     { label: 'Corporate', value: 'CORPORATE' },
   ];
 
-  // Toggle the sidebar
-  toggleSidebar() {
-    this.sidebarVisible = !this.sidebarVisible;
+  // Toggle the drawer
+  toggleDrawer() {
+    this.drawerVisible = !this.drawerVisible;
   }
 
   // Open the search/filter drawer
@@ -83,16 +84,16 @@ export class SidebarComponent {
     this.budget = null;
   }
 
-  // Toggle dropdown visibility without closing the sidebar
+  // Toggle dropdown visibility without closing the drawer
   toggleDropdown(menu: string) {
     this.dropdowns[menu] = !this.dropdowns[menu];
   }
   
 
-  // Navigate to a route and close the sidebar
+  // Navigate to a route and close the drawer
   navigateTo(route: string) {
     if (!this.dropdowns['getServices'] && !this.dropdowns['uploadProperty']) {
-      this.sidebarVisible = false; // Close the sidebar only when dropdowns are not open
+      this.drawerVisible = false; // Close the drawer only when dropdowns are not open
     }
     this.router.navigate([`/${route}`]);
   }
