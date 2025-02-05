@@ -1,1 +1,105 @@
-<h1 class="mt-8">Most popular component works</h1>
+<div class="mt-6 p-3">
+    <!-- Section Header -->
+    <div class="text-3xl font-bold text-center text-white p-3 border-round-lg"
+        style="background: linear-gradient(135deg, #007bff, #00c6ff);">
+        ⭐ Most Popular Properties
+    </div>
+
+    <div class="grid mt-4">
+        <!-- Property Card -->
+        <div class="col-12 md:col-6 lg:col-4 p-2">
+            <div class="flex justify-content-center">
+                <div class="surface-card shadow-3 border-round-lg p-3 w-full hover:shadow-5 transition-all"
+                    style="max-width: 380px; background: linear-gradient(135deg, #f0f8ff, #d9f7ff); border: 1px solid #a7c7d7; display: flex; flex-direction: column; position: relative;"> <!-- Added position: relative for positioning the badge -->
+
+                    <!-- Image Section -->
+                    <div class="relative">
+                        <p-carousel [value]="propertyImages" [numVisible]="1" [numScroll]="1" [circular]="true"
+                            [autoplayInterval]="3000">
+                            <ng-template pTemplate="item" let-image>
+                                <img [src]="image" alt="Property Image" class="w-full border-round-lg shadow-1"
+                                    style="object-fit: cover; height: 180px;"> <!-- ⬅ Decreased Image Height -->
+                            </ng-template>
+                        </p-carousel>
+                        <span
+                            class="badge bg-green-500 text-white p-1 border-round absolute top-0 right-0 m-2">LIVE</span>
+                    </div>
+
+                    <!-- Property Info -->
+                    <div class="mt-2">
+                        <div class="text-md font-bold text-primary-700">
+                            1 BHK Flat In Standalone Building (No Lift 2nd Floor) For Rent In Hinjawadi
+                        </div>
+                        <div class="text-xs text-primary-500 mt-1">
+                            📍 Datt Colony near Kirti Classic Plots,
+                            <a href="#" class="text-primary font-medium">Explore Nearby</a>
+                        </div>
+                    </div>
+
+                    <!-- Price & Details -->
+                    <div class="grid text-center mt-2">
+                        <div class="col-4">
+                            <div class="text-lg font-bold text-primary-800">₹ 14,000</div>
+                            <div class="text-xs text-500">Rent</div>
+                        </div>
+                        <div class="col-4">
+                            <div class="text-lg font-bold text-primary-800">₹ 20,000</div>
+                            <div class="text-xs text-500">Deposit</div>
+                        </div>
+                        <div class="col-4">
+                            <div class="text-lg font-bold text-primary-800">500 sqft</div>
+                            <div class="text-xs text-500">Buildup</div>
+                        </div>
+                    </div>
+
+                    <!-- Additional Features -->
+                    <div class="grid mt-2 text-600">
+                        <div class="col-4 flex align-items-center">
+                            <i class="pi pi-home mr-1 text-primary-700"></i> <span>Unfurnished</span>
+                        </div>
+                        <div class="col-4 flex align-items-center">
+                            <i class="pi pi-building mr-1 text-primary-700"></i> <span>1 BHK</span>
+                        </div>
+                        <div class="col-4 flex align-items-center">
+                            <i class="pi pi-user mr-1 text-primary-700"></i> <span>Bachelor</span>
+                        </div>
+                    </div>
+
+                    <!-- Availability -->
+                    <div class="flex align-items-center mt-2 text-600">
+                        <i class="pi pi-calendar mr-1 text-primary-700"></i>
+                        <span>Available: <b>01-Feb-2025</b></span>
+                    </div>
+
+                    <!-- Action Buttons -->
+                    <div class="grid mt-2">
+                        <div class="col-7">
+                            <button pButton class="p-button-primary w-full p-2 font-bold text-sm">
+                                <i class="pi pi-user mr-1"></i> Get Owner
+                            </button>
+                        </div>
+                        <div class="col-5">
+                            <button pButton class="p-button-secondary w-full p-2 font-bold text-sm">
+                                <i class="pi pi-heart"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="text-left mt-2">
+                        <button pButton class="p-button-outlined p-button-success p-2 font-bold text-sm">
+                            <i class="pi pi-calendar"></i> Join Visit
+                        </button>
+                    </div>
+
+                    <!-- 🏆 Most Popular Badge - Positioned inside the property card (bottom-right) -->
+                    <span class="badge bg-orange-500 text-white p-1 border-round m-2 mt-auto"
+                        style="width: 130px; padding: 0.5rem 1rem; font-size: 0.9rem; text-align: center; background: linear-gradient(135deg, #ff7e00, #ff9800); border: 1px solid #e57d00; position: absolute; bottom: 10px; right: 10px;">
+                        ⭐ Most Popular
+                    </span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Duplicate the above block for more properties -->
+    </div>
+</div>
