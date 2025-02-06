@@ -1,25 +1,28 @@
 <div class="mt-6 p-3">
-    <div class="grid mt-4 justify-content-between"> <!-- Ensuring proper spacing -->
+    <div class="grid mt-4 justify-content-between">
         <!-- Property Card 1 -->
         <div class="col-6">
             <div class="flex justify-content-center">
                 <div class="surface-card shadow-3 border-round-lg p-3 w-full hover:shadow-5 transition-all"
                     style="max-width: 700px; background: linear-gradient(135deg, #f0f8ff, #d9f7ff); border: 1px solid #a7c7d7; display: flex; flex-direction: column; position: relative;">
+
                     <!-- Image Section -->
-                    <div class="relative">
+                    <div class="relative" style="margin-top: 10px;">
                         <p-carousel [value]="propertyImages" [numVisible]="1" [numScroll]="1" [circular]="true"
                             [autoplayInterval]="3000">
                             <ng-template pTemplate="item" let-image>
                                 <img [src]="image" alt="Property Image" class="w-full border-round-lg shadow-1"
-                                    style="object-fit: cover; height: 180px;">
+                                    style="object-fit: cover; height: 200px;">
                             </ng-template>
                         </p-carousel>
-                        <span
-                            class="badge bg-green-500 text-white p-1 border-round absolute top-0 right-0 m-2">LIVE</span>
+                        <span class="badge bg-green-500 text-white p-2 border-round absolute"
+                            style="top: 15px; right: 0.25px; font-size: 0.85rem; box-shadow: 0 2px 4px rgba(0,0,0,0.2);">
+                            LIVE
+                        </span>
                     </div>
 
                     <!-- Property Info -->
-                    <div class="mt-2">
+                    <div class="mt-3">
                         <div class="text-md font-bold text-primary-700">
                             1 BHK Flat In Standalone Building (No Lift 2nd Floor) For Rent In Hinjawadi
                         </div>
@@ -30,7 +33,7 @@
                     </div>
 
                     <!-- Price & Details -->
-                    <div class="grid text-center mt-2">
+                    <div class="grid text-center mt-3">
                         <div class="col-4">
                             <div class="text-lg font-bold text-primary-800">₹ 14,000</div>
                             <div class="text-xs text-500">Rent</div>
@@ -45,143 +48,112 @@
                         </div>
                     </div>
 
-                    <!-- Additional Features -->
-                    <div class="grid mt-2 text-600">
-                        <div class="col-4 flex align-items-center">
-                            <i class="pi pi-home mr-1 text-primary-700"></i> <span>Unfurnished</span>
-                        </div>
-                        <div class="col-4 flex align-items-center">
-                            <i class="pi pi-building mr-1 text-primary-700"></i> <span>1 BHK</span>
-                        </div>
-                        <div class="col-4 flex align-items-center">
-                            <i class="pi pi-user mr-1 text-primary-700"></i> <span>Bachelor</span>
-                        </div>
-                    </div>
-
                     <!-- Availability -->
-                    <div class="flex align-items-center mt-2 text-600">
+                    <div class="flex align-items-center mt-3 text-600">
                         <i class="pi pi-calendar mr-1 text-primary-700"></i>
                         <span>Available: <b>01-Feb-2025</b></span>
                     </div>
-
                     <!-- Action Buttons -->
-                    <div class="grid mt-2">
+                    <div class="grid mt-3">
                         <div class="col-7">
-                            <button pButton class="p-button-primary w-full p-2 font-bold text-sm">
+                            <button pButton class="p-button-success w-full p-2 font-bold text-sm">
                                 <i class="pi pi-user mr-1"></i> Get Owner
                             </button>
                         </div>
                         <div class="col-5">
-                            <button pButton class="p-button-secondary w-full p-2 font-bold text-sm">
+                            <button pButton class="p-button-warning w-full p-2 font-bold text-sm">
                                 <i class="pi pi-heart"></i>
                             </button>
                         </div>
                     </div>
 
-                    <div class="text-left mt-2">
-                        <button pButton class="p-button-outlined p-button-success p-2 font-bold text-sm">
-                            <i class="pi pi-calendar"></i> Join Visit
-                        </button>
-                    </div>
 
                     <!-- Most Popular Badge -->
-                    <span class="badge bg-orange-500 text-white p-1 border-round m-2 mt-auto"
-                        style="width: 130px; padding: 0.5rem 1rem; font-size: 0.9rem; text-align: center; background: linear-gradient(135deg, #ff7e00, #ff9800); border: 1px solid #e57d00; position: absolute; bottom: 10px; right: 10px;">
+                    <span class="badge bg-orange-500 text-white p-1 border-round absolute"
+                        style="width: 110px; padding: 0.5rem 1rem; font-size: 0.70rem; text-align: center;
+                        background: linear-gradient(135deg, #ff7e00, #ff9800); border: 1px solid #e57d00;
+                        top: 6px; right: 5px; z-index: 2; backdrop-filter: blur(3px); box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);">
                         ⭐ Most Popular
                     </span>
+
                 </div>
             </div>
         </div>
 
-        <!-- Property Card 2 -->
+        <!-- Property Card 2 (Duplicate of Card 1) -->
         <div class="col-6">
             <div class="flex justify-content-center">
                 <div class="surface-card shadow-3 border-round-lg p-3 w-full hover:shadow-5 transition-all"
                     style="max-width: 700px; background: linear-gradient(135deg, #f0f8ff, #d9f7ff); border: 1px solid #a7c7d7; display: flex; flex-direction: column; position: relative;">
+
                     <!-- Image Section -->
-                    <div class="relative">
+                    <div class="relative" style="margin-top: 10px;">
                         <p-carousel [value]="propertyImages" [numVisible]="1" [numScroll]="1" [circular]="true"
                             [autoplayInterval]="3000">
                             <ng-template pTemplate="item" let-image>
                                 <img [src]="image" alt="Property Image" class="w-full border-round-lg shadow-1"
-                                    style="object-fit: cover; height: 180px;">
+                                    style="object-fit: cover; height: 200px;">
                             </ng-template>
                         </p-carousel>
-                        <span
-                            class="badge bg-green-500 text-white p-1 border-round absolute top-0 right-0 m-2">LIVE</span>
+                        <span class="badge bg-green-500 text-white p-2 border-round absolute"
+                            style="top: 15px; right: 0.25px; font-size: 0.85rem; box-shadow: 0 2px 4px rgba(0,0,0,0.2);">
+                            LIVE
+                        </span>
                     </div>
 
                     <!-- Property Info -->
-                    <div class="mt-2">
+                    <div class="mt-3">
                         <div class="text-md font-bold text-primary-700">
-                            1 BHK Flat In Standalone Building (No Lift 2nd Floor) For Rent In Hinjawadi
+                            2 BHK Flat In Apartment For Rent In Wakad
                         </div>
                         <div class="text-xs text-primary-500 mt-1">
-                            📍 Datt Colony near Kirti Classic Plots,
+                            📍 Opposite Phoenix Mall,
                             <a href="#" class="text-primary font-medium">Explore Nearby</a>
                         </div>
                     </div>
 
                     <!-- Price & Details -->
-                    <div class="grid text-center mt-2">
+                    <div class="grid text-center mt-3">
                         <div class="col-4">
-                            <div class="text-lg font-bold text-primary-800">₹ 14,000</div>
+                            <div class="text-lg font-bold text-primary-800">₹ 22,000</div>
                             <div class="text-xs text-500">Rent</div>
                         </div>
                         <div class="col-4">
-                            <div class="text-lg font-bold text-primary-800">₹ 20,000</div>
+                            <div class="text-lg font-bold text-primary-800">₹ 50,000</div>
                             <div class="text-xs text-500">Deposit</div>
                         </div>
                         <div class="col-4">
-                            <div class="text-lg font-bold text-primary-800">500 sqft</div>
+                            <div class="text-lg font-bold text-primary-800">850 sqft</div>
                             <div class="text-xs text-500">Buildup</div>
                         </div>
                     </div>
 
-                    <!-- Additional Features -->
-                    <div class="grid mt-2 text-600">
-                        <div class="col-4 flex align-items-center">
-                            <i class="pi pi-home mr-1 text-primary-700"></i> <span>Unfurnished</span>
-                        </div>
-                        <div class="col-4 flex align-items-center">
-                            <i class="pi pi-building mr-1 text-primary-700"></i> <span>1 BHK</span>
-                        </div>
-                        <div class="col-4 flex align-items-center">
-                            <i class="pi pi-user mr-1 text-primary-700"></i> <span>Bachelor</span>
-                        </div>
-                    </div>
-
                     <!-- Availability -->
-                    <div class="flex align-items-center mt-2 text-600">
+                    <div class="flex align-items-center mt-3 text-600">
                         <i class="pi pi-calendar mr-1 text-primary-700"></i>
-                        <span>Available: <b>01-Feb-2025</b></span>
+                        <span>Available: <b>15-Feb-2025</b></span>
                     </div>
 
                     <!-- Action Buttons -->
-                    <div class="grid mt-2">
+                    <div class="grid mt-3">
                         <div class="col-7">
-                            <button pButton class="p-button-primary w-full p-2 font-bold text-sm">
+                            <button pButton class="p-button-success w-full p-2 font-bold text-sm">
                                 <i class="pi pi-user mr-1"></i> Get Owner
                             </button>
                         </div>
                         <div class="col-5">
-                            <button pButton class="p-button-secondary w-full p-2 font-bold text-sm">
+                            <button pButton class="p-button-warning w-full p-2 font-bold text-sm">
                                 <i class="pi pi-heart"></i>
                             </button>
                         </div>
                     </div>
 
-                    <div class="text-left mt-2">
-                        <button pButton class="p-button-outlined p-button-success p-2 font-bold text-sm">
-                            <i class="pi pi-calendar"></i> Join Visit
-                        </button>
-                    </div>
-
                     <!-- Most Popular Badge -->
-                    <span class="badge bg-orange-500 text-white p-1 border-round m-2 mt-auto"
-                        style="width: 130px; padding: 0.5rem 1rem; font-size: 0.9rem; text-align: center; background: linear-gradient(135deg, #ff7e00, #ff9800); border: 1px solid #e57d00; position: absolute; bottom: 10px; right: 10px;">
+                    <span class="badge bg-orange-500 text-white p-1 border-round absolute"
+                        style="top: 6px; right: 5px;">
                         ⭐ Most Popular
                     </span>
+
                 </div>
             </div>
         </div>
