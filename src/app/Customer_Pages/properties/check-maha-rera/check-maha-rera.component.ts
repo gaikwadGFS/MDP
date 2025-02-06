@@ -5,8 +5,7 @@ import { ButtonModule } from 'primeng/button';
 import { CalendarModule } from 'primeng/calendar';
 import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
-// import { FormControl } from '@angular/forms'; 
-// import { FormGroup } from '@angular/forms';
+
 
 @Component({
   selector: 'app-check-maha-rera',
@@ -19,45 +18,33 @@ export class CheckMahaReraComponent {
   loading: boolean = false;
   
   documents = [
-    { subject: 'Maharashtra Real Estate Regulatory Authority (General) (Amendment) Regulations, 2025', date: new Date(), uploadedFile: null },
-    { subject: 'Maharashtra Real Estate Regulatory Authority ( General) (Amendment) Regulations, 2021', date: new Date(), uploadedFile: null },
-    { subject: 'Maharashtra Real Estate Regulatory Authority ( General) (Amendment) Regulations, 2024', date: new Date(), uploadedFile: null },
-    { subject: 'MahaRERA General (Second Amendment) Regulations 2019.	', date: new Date(), uploadedFile: null },
-    { subject: 'MahaRERA General (Amendment) Regulations 2017.	', date: new Date(), uploadedFile: null },
-    { subject: 'MahaRERA General Regulations 2017	', date: new Date(), uploadedFile: null },
-    { subject: 'Maharashtra Real Estate Regulatory Authority (Recruitment and Conditions of Service of Employees) Regulations 2017	', date: new Date(), uploadedFile: null }
+    { subject: 'Maharashtra Real Estate Regulatory Authority (General) (Amendment) Regulations, 2025', date: new Date(), documentName: 'Algebra.pdf', fileUrl: 'assets/docs/Algebra.pdf' },
+    { subject: 'Maharashtra Real Estate Regulatory Authority ( General) (Amendment) Regulations, 2021', date: new Date(), documentName: 'Algebra.pdf', fileUrl: 'assets/docs/Algebra.pdf' },
+    { subject: 'Maharashtra Real Estate Regulatory Authority ( General) (Amendment) Regulations, 2024', date: new Date(), documentName: 'Algebra.pdf', fileUrl: 'assets/docs/Algebra.pdf' },
+    { subject: 'MahaRERA General (Second Amendment) Regulations 2019.	', date: new Date(), documentName: 'Algebra.pdf', fileUrl: 'assets/docs/Algebra.pdf' },
+    { subject: 'MahaRERA General (Amendment) Regulations 2017.	', date: new Date(), documentName: 'Algebra.pdf', fileUrl: 'assets/docs/Algebra.pdf' },
+    { subject: 'MahaRERA General Regulations 2017	', date: new Date(), documentName: 'Algebra.pdf', fileUrl: 'assets/docs/Algebra.pdf'},
+    { subject: 'Maharashtra Real Estate Regulatory Authority (Recruitment and Conditions of Service of Employees) Regulations 2017	', date: new Date(),documentName: 'Algebra.pdf', fileUrl: 'assets/docs/Algebra.pdf' }
 
   ];
 
-  onUpload(event: any, doc: any) {
-    const file = event.files[0];
-    doc.uploadedFile = file;
+ 
+  searchText: string = '';
+  filteredDocuments = [...this.documents];
+
+  search() {
+    this.filteredDocuments = this.documents.filter(doc =>
+      doc.subject.toLowerCase().includes(this.searchText.toLowerCase())
+    );
+  }
+
+  reset() {
+    this.searchText = '';
+    this.filteredDocuments = [...this.documents];
+  }
+
   }
 
 
 
-  load(): void {
-    this.loading = true; // Start loading
-    console.log('Load method triggered');
 
-    // Simulate some asynchronous operation
-    setTimeout(() => {
-      this.loading = false; // Stop loading
-    }, 2000);
-  }
-
-
-  // myForm = new FormGroup({
-  //   search: new FormControl(''),
-  // });
-
-  // search() {
-  //   console.log('Searching for:', this.myForm.value.search);
-  // }
-
-  // resetForm() {
-  //   this.myForm.reset(); // Clears the input field
-  // }
-
-
-}

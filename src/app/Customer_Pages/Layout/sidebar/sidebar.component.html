@@ -2,16 +2,12 @@
   <!-- Navbar -->
   <div
     class="navbar flex justify-content-between align-items-center px-4 py-3 border-bottom-1 surface-border surface-section shadow-2 w-full fixed top-0 left-0 z-3">
-   
+
     <!-- Left Section -->
     <div class="flex align-items-center">
-      <i class="pi pi-bars text-xl text-primary cursor-pointer" (click)="toggleSidebar()"></i>
+      <i class="pi pi-bars text-xl text-primary cursor-pointer" (click)="toggleDrawer()"></i>
       <span class="ml-2 text-xl font-bold text-primary">MDP</span>
     </div>
-    <!-- 
-    <div class="flex align-items-center gap-2 flex-grow-1 justify-content-center">
-      <button pButton type="button" label="Find Your Perfect..." icon="pi pi-filter" severity="info" (click)="openSearchDrawer()"></button>
-    </div> -->
 
     <!-- Right Section with Icons -->
     <div class="flex align-items-center gap-4">
@@ -31,15 +27,15 @@
     </div>
   </div>
 
-  <!-- Sidebar -->
-  <p-sidebar [(visible)]="sidebarVisible" position="left" appendTo="body" class="w-18rem shadow-2"
-    [showCloseIcon]="false" styleClass="p-0">
+  <!-- Drawer -->
+  <p-drawer [(visible)]="drawerVisible" position="left" appendTo="body" class="w-18rem shadow-2" [dismissible]="true"
+    [showCloseIcon]="false">
     <!-- Close Icon -->
     <div class="flex justify-content-end pr-3 pt-2">
-      <i class="pi pi-times text-xl text-primary cursor-pointer" (click)="sidebarVisible = false"></i>
+      <i class="pi pi-times text-xl text-primary cursor-pointer" (click)="drawerVisible = false"></i>
     </div>
 
-    <!-- Sidebar Header -->
+    <!-- Drawer Header -->
     <div class="text-center p-3">
       <img
         src="https://wp.sfdcdigital.com/en-us/wp-content/uploads/sites/4/2024/11/marquee-crm-real-estate_1680x1120.jpg?resize=1536,1024"
@@ -47,7 +43,7 @@
       <h3 class="text-primary font-bold mb-0">My Dream Property</h3>
     </div>
 
-    <!-- Sidebar Menu -->
+    <!-- Drawer Menu -->
     <ul class="list-none p-0">
       <li class="p-3 hover:surface-hover cursor-pointer text-md flex align-items-center gap-2"
         routerLink="/customer/dashboard">
@@ -57,9 +53,52 @@
         (click)="navigateTo('trending')">
         <i class="pi pi-chart-line text-primary"></i> Latest Trending Properties
       </li>
-      <!-- <li class="p-3 hover:surface-hover cursor-pointer text-md flex align-items-center gap-2">
-        <i class="pi pi-book text-primary"></i> Property Registration
-      </li> -->
+
+      <!-- Upload Your Property Dropdown -->
+      <li class="p-3">
+        <div class="flex align-items-center justify-content-between cursor-pointer"
+          (click)="toggleDropdown('uploadProperty')">
+          <div class="text-md flex align-items-center gap-2">
+            <i class="pi pi-upload text-primary"></i> Upload Your Property
+          </div>
+          <i [ngClass]="dropdowns['uploadProperty'] ? 'pi pi-chevron-down' : 'pi pi-chevron-right'"></i>
+        </div>
+        <ul class="list-none p-0 ml-4" *ngIf="dropdowns['uploadProperty']">
+          <li class="p-2 hover:surface-hover cursor-pointer flex align-items-center gap-2"
+            routerLink="/properties/viewUploadedProperties">
+            <i class="pi pi-eye text-primary"></i> View Your Property
+          </li>
+          <li class="p-2 hover:surface-hover cursor-pointer flex align-items-center gap-2"
+            routerLink="/properties/uploadProperties">
+            <i class="pi pi-cloud-upload text-primary"></i> Upload New Property
+          </li>
+        </ul>
+      </li>
+
+
+      <!-- Advocate Menu Dropdown -->
+      <li class="p-3">
+        <div class="flex align-items-center justify-content-between cursor-pointer"
+          (click)="toggleDropdown('advocateMenu')">
+          <div class="text-md flex align-items-center gap-2">
+            <i class="pi pi-briefcase text-primary"></i> Get Advocate
+          </div>
+          <i [ngClass]="dropdowns['advocateMenu'] ? 'pi pi-chevron-down' : 'pi pi-chevron-right'"></i>
+        </div>
+        <ul class="list-none p-0 ml-4" *ngIf="dropdowns['advocateMenu']">
+          <li class="p-2 hover:surface-hover cursor-pointer flex align-items-center gap-2"
+            routerLink="/advocate/lawyers">
+            <i class="pi pi-user text-primary"></i> Find a Lawyer
+          </li>
+          <li class="p-2 hover:surface-hover cursor-pointer flex align-items-center gap-2" routerLink="/advocate/cases">
+            <i class="pi pi-clipboard text-primary"></i> Your Cases
+          </li>
+          <li class="p-2 hover:surface-hover cursor-pointer flex align-items-center gap-2"
+            routerLink="/advocate/appointments">
+            <i class="pi pi-calendar text-primary"></i> Appointments
+          </li>
+        </ul>
+      </li>
 
       <!-- Get Services Dropdown -->
       <li class="p-3">
@@ -86,66 +125,24 @@
         </ul>
       </li>
 
-      <!-- Upload Your Property Dropdown -->
-      <li class="p-3">
-        <div class="flex align-items-center justify-content-between cursor-pointer"
-          (click)="toggleDropdown('uploadProperty')">
-          <div class="text-md flex align-items-center gap-2">
-            <i class="pi pi-upload text-primary"></i> Upload Your Property
-          </div>
-          <i [ngClass]="dropdowns['uploadProperty'] ? 'pi pi-chevron-down' : 'pi pi-chevron-right'"></i>
-        </div>
-        <ul class="list-none p-0 ml-4" *ngIf="dropdowns['uploadProperty']">
-          <li class="p-2 hover:surface-hover cursor-pointer flex align-items-center gap-2"
-            routerLink="/properties/viewUploadedProperties">
-            <i class="pi pi-eye text-primary"></i> View Your Property
-          </li>
-          <li class="p-2 hover:surface-hover cursor-pointer flex align-items-center gap-2"
-            routerLink="/properties/uploadProperties">
-            <i class="pi pi-cloud-upload text-primary"></i> Upload New Property
-          </li>
-        </ul>
-      </li>
-
       <!-- Property Registration -->
-      <li class="p-3 hover:surface-hover cursor-pointer text-md flex align-items-center gap-2" routerLink="/properties/registerProperties">
+      <li class="p-3 hover:surface-hover cursor-pointer text-md flex align-items-center gap-2"
+        routerLink="/properties/registerProperties">
         <i class="pi pi-book text-primary"></i> Property Registration
-      </li>
-
-      <!-- Advocate Menu Dropdown -->
-      <li class="p-3">
-        <div class="flex align-items-center justify-content-between cursor-pointer"
-          (click)="toggleDropdown('advocateMenu')">
-          <div class="text-md flex align-items-center gap-2">
-            <i class="pi pi-briefcase text-primary"></i> Legal Services
-          </div>
-          <i [ngClass]="dropdowns['advocateMenu'] ? 'pi pi-chevron-down' : 'pi pi-chevron-right'"></i>
-        </div>
-        <ul class="list-none p-0 ml-4" *ngIf="dropdowns['advocateMenu']">
-          <li class="p-2 hover:surface-hover cursor-pointer flex align-items-center gap-2"
-            routerLink="/legalServices/getAdvocate">
-            <i class="pi pi-user text-primary"></i> Find a Lawyer
-          </li>
-          <li class="p-2 hover:surface-hover cursor-pointer flex align-items-center gap-2" routerLink="/advocate/cases">
-            <i class="pi pi-clipboard text-primary"></i> Your Cases
-          </li>
-          <li class="p-2 hover:surface-hover cursor-pointer flex align-items-center gap-2"
-            routerLink="/advocate/appointments">
-            <i class="pi pi-calendar text-primary"></i> Appointments
-          </li>
-        </ul>
       </li>
 
       <!-- Other Sidebar Items -->
       <li class="p-3 hover:surface-hover cursor-pointer text-md flex align-items-center gap-2"
-        (click)="navigateTo('popular')">
+        (click)="navigateTo('/properties/mostPopular')">
         <i class="pi pi-star text-primary"></i> Most Popular
       </li>
       <li class="p-3 hover:surface-hover cursor-pointer text-md flex align-items-center gap-2"
         (click)="navigateTo('/properties/check_maharera')">
         <i class="pi pi-check-circle text-primary"></i> Check MahaRera
-      </li><li class="p-3 hover:surface-hover cursor-pointer text-md flex align-items-center gap-2" routerLink="/properties/Search_registrar_office">
-        <i class="pi pi-search text-primary"></i> Search Registrar Office
+      </li>
+      <li class="p-3 hover:surface-hover cursor-pointer text-md flex align-items-center gap-2"
+        routerLink="/properties/Search_registrar_office">
+        <i class="pi pi-check-circle text-primary"></i> Search Registrar Office
       </li>
       <li class="p-3 hover:surface-hover cursor-pointer text-md flex align-items-center gap-2"
         (click)="navigateTo('help')">
@@ -165,14 +162,14 @@
         </div>
         <ul class="list-none p-0 ml-4" *ngIf="dropdowns['ContactUs']">
           <li class=" hover:surface-hover cursor-pointer flex align-items-center gap-2">
-           
-           <p> contactus&#64;growingflowers-solutions.com</p>
+
+            <p> contactus&#64;growingflowers-solutions.com</p>
           </li>
           <li class=" hover:surface-hover cursor-pointer flex align-items-center gap-2">
-          
-           <p>shop. 15, Runal Gateway Commercial Complex, Near Mukai Chawk, Kiwale, Pune-412101</p>
+
+            <p>shop. 15, Runal Gateway Commercial Complex, Near Mukai Chawk, Kiwale, Pune-412101</p>
           </li>
-          
+
         </ul>
       </li>
       <li class="p-3 hover:surface-hover cursor-pointer text-md flex align-items-center gap-2"
@@ -180,7 +177,7 @@
         <i class="pi pi-info-circle text-primary"></i> About Us
       </li>
     </ul>
-  </p-sidebar>
+  </p-drawer>
 
   <router-outlet></router-outlet>
 </div>

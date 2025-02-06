@@ -7,6 +7,7 @@ import { SidebarComponent } from '../Layout/sidebar/sidebar.component';
 import { ViewRegisterPropertiesComponent } from './Registration/view-register-properties/view-register-properties.component';
 import { SerachRegistrarOfficeComponent } from './serach-registrar-office/serach-registrar-office.component';
 import { CheckMahaReraComponent } from './check-maha-rera/check-maha-rera.component';
+import { MostPopularComponent } from './most-popular/most-popular.component';
 
 const routes: Routes = [
 
@@ -37,6 +38,10 @@ const routes: Routes = [
         {
           path:'check_maharera',
           component:CheckMahaReraComponent
+        },
+        {
+          path:'mostPopular',
+          component:MostPopularComponent
         }
 
       ]
