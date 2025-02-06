@@ -1,5 +1,62 @@
-<h1 class="mt-5" >Hello</h1>
-<p >check-maha-rera works!</p>
+<section class="light-background">
+    <h2 class="text-center m-3">
+        Maha-rera Rules and Regulations
+    </h2>
+
+<div class="container mt-3">
+    <div class="row">
+        <div class="col-12">
+            <div class="search-container ">
+                <!-- <input type="text" pInputText placeholder="Search Subject..." [(ngModel)]="searchText"> -->
+                <input pInputText [(ngModel)]="searchText" type="text" pSize="large" placeholder="Search Subject..." />
+
+                
+                <button pButton label="Search"  icon="pi pi-search" class="p-button-sm p-button-primary" (click)="search()"></button>
+                <button pButton label="Reset"   class="p-5" icon="pi pi-refresh" class="p-button-sm p-button-danger" (click)="reset()"></button>
+            
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<div class="container">
+    <div class="row">
+        <div class="col">
+            <p-table #dt [value]="documents" [paginator]="true" [rows]="8" responsiveLayout="scroll">
+                <ng-template pTemplate="header">
+                    <tr>
+                        <th>Sr No</th>
+                        <th>Subject</th>
+                        <th>Date</th>
+                        <!-- <th>Document</th> -->
+                        <th>Download</th>
+                    </tr>
+                </ng-template>
+                <ng-template pTemplate="body" let-doc let-i="rowIndex">
+                    <tr>
+                        <td>{{ i + 1 }}</td>
+                        <td>{{ doc.subject }}</td>
+                        <td>{{ doc.date | date:'dd/MM/yyyy' }}</td>
+                        <!-- <td>{{ doc.documentName }}</td> -->
+                        <!-- <td>
+                            <p-fileUpload mode="basic" chooseLabel="Upload" (onUpload)="onUpload($event, doc)" [customUpload]="true"></p-fileUpload>
+                            <p *ngIf="doc.uploadedFile">{{ doc.uploadedFile.name }}</p>
+                        </td> -->
+                        <td>
+                            <a [href]="doc.fileUrl" download="{{ doc.documentName }}" class="download-link">Click Here</a>
+                        </td>
+                    </tr>
+                </ng-template>
+            </p-table>
+            
+        </div>
+    </div>
+</div>
+
+</section>
 
 
 
@@ -27,26 +84,3 @@
 
 
 
-<!-- <p-table [value]="documents" [paginator]="true" [rows]="5" responsiveLayout="scroll">
-    <ng-template pTemplate="header">
-        <tr>
-            <th>Sr No</th>
-            <th>Subject</th>
-            <th>Date</th>
-            <th>Document</th>
-        </tr>
-    </ng-template>
-    <ng-template pTemplate="body" let-doc let-i="rowIndex">
-        <tr>
-            <td>{{ i + 1 }}</td>
-            <td>{{ doc.subject }}</td>
-            <td>
-                <p-calendar [(ngModel)]="doc.date" dateFormat="dd/mm/yy"></p-calendar>
-            </td>
-            <td>
-                <p-fileUpload mode="basic" chooseLabel="Upload" (onUpload)="onUpload($event, doc)" [customUpload]="true"></p-fileUpload>
-                <p *ngIf="doc.uploadedFile">{{ doc.uploadedFile.name }}</p>
-            </td>
-        </tr>
-    </ng-template>
-</p-table> -->
