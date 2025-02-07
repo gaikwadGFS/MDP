@@ -120,5 +120,17 @@
     }
   }
   
+  .fixed-needhelp-button {
+    position: fixed;
+    bottom: 40px; /* Adjust this value to move it up or down */
+    right: 20px; /* Adjust this value to move it left or right */
+    z-index: 1000; /* Ensure it stays above other elements */
+}
+
+.fixed-needhelp-button .btn{
+  background-color: #FAB702;
+  color: black;
+  border: none;
+}
   
   
