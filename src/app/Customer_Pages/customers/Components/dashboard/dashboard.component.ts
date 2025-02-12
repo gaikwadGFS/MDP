@@ -39,6 +39,7 @@ import { SidebarModule } from 'primeng/sidebar';
     ToastModule,
     CarouselModule // Adding CarouselModule to imports
   ],
+  providers:[],
   templateUrl: './dashboard.component.html',
   styleUrls: ['./dashboard.component.css'],
   schemas: [CUSTOM_ELEMENTS_SCHEMA]

@@ -4,6 +4,7 @@ import { Observable } from 'rxjs';
 export class ApiService {
 
   private dbUrl = 'assets/db.json'; // Adjust path as needed
+  apiUrlStartPoint:string="http://localhost:3000/"
 
   constructor(private http: HttpClient) { }
 
@@ -11,8 +12,6 @@ export class ApiService {
   getProperties(): Observable<any> {
     return this.http.get<any>(this.dbUrl);
   }
-
-  apiUrlStartPoint:string="http://localhost:3000/"
 
   customerRegistration(obj:any):Observable<any>{
    return this.http.post(`${this.apiUrlStartPoint}customerRegister`,obj);
