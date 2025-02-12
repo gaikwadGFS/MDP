@@ -30,6 +30,55 @@
           { "src": "assets/property4.jpg" }
         ]
       }
+    ],
+
+    "interior":[{
+      "Hall":[ {
+        "Title": "Elegant Living Room",
+        "Image": "hall_image_url.jpg",
+        "Price": "$5000 - $15000",
+        "WallColor": "",
+        "Flooring": "",
+        "CeilingDesign": "",
+        "Furniture": "",
+        "Lighting": "",
+        "Decor": ["Wall art", "Mirrors", "Rugs", "Plants", "Curtains"],
+        "Storage": ["TV console", "Shelves", "Cabinets"],
+        "SeatingArrangement": ["Open layout", "Sectional sofas", "Accent chairs"],
+        "TechnologyIntegration": ["Smart lighting", "Home theater", "Speakers"]
+      }],
+      "Kitchen": [{
+        "Title": "Modern Kitchen",
+        "Image": "kitchen_image_url.jpg",
+        "Price": "$7000 - $20000",
+        "WallColor": "",
+        "Flooring": "",
+        "CeilingDesign": "",
+        "Cabinetry":"",
+        "Backsplash": ["Tile", "Glass", "Stone finish"],
+        "Lighting":"",
+        "Appliances": ["Built-in oven", "Refrigerator", "Dishwasher", "Hob", "Chimney"],
+        "StorageSolutions": ["Pull-out drawers", "Pantry cabinets", "Corner units"],
+        "DiningArea": ["Breakfast counter", "Small dining nook"]
+      }],
+      "Bedroom":[ {
+        "Title": "Cozy Bedroom",
+        "Image": "bedroom_image_url.jpg",
+        "Price": "$6000 - $18000",
+        "WallColor":"",
+        "Flooring": "",
+        "CeilingDesign":"",
+        "BedType": "",
+        "Wardrobe": "",
+        "Lighting": "",
+        "Furniture": ["Bedside tables", "Dresser", "Study table", "Lounge chair"],
+        "CurtainsAndBlinds": ["Sheer curtains", "Blackout curtains", "Roller blinds"],
+        "Decor": ["Wall art", "Mirrors", "Rugs", "Indoor plants"],
+        "Storage": ["Under-bed storage", "Modular cabinets", "Bedside storage"]
+      }]
+    }
+    
     ]
+
   }
   
