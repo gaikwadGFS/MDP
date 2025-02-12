@@ -22,5 +22,23 @@ export class ApiService {
     return this.http.get(`${this.apiUrlStartPoint}customerRegister`)
   }
 
+  getAllCities():Observable<any>{
+    return this.http.get(`${this.apiUrlStartPoint}cities`)
+  }
+
+  // searchCities(name: string): Observable<any[]> {
+  //   return this.http.get<any[]>(`${this.apiUrlStartPoint}cities?name_like=${name}`);
+  // }
+
+  // getAdvocatesByCity(cityId: number): Observable<any[]> {
+  //   return this.http.get<any[]>(`${this.apiUrlStartPoint}advocates?cityId=${cityId}`);
+  // }
+  searchCities(name: string): Observable<any[]> {
+    return this.http.get<any[]>(`${this.apiUrlStartPoint}cities?name_like=${name}`);
+  }
+
+  getAdvocatesByCity(cityId: number): Observable<any[]> {
+    return this.http.get<any[]>(`${this.apiUrlStartPoint}advocates?cityId=${cityId}`);
+  }
 
 }
