@@ -22,7 +22,7 @@ import { Toast } from 'primeng/toast';
     ButtonModule,
     
   ],
-  providers:[MessageService],
+  providers:[MessageService,ApiService],
   templateUrl: './register.component.html',
   styleUrls: ['./register.component.css']
 })
