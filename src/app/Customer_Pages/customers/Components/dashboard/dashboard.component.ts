@@ -10,7 +10,6 @@ import { CarouselModule } from 'primeng/carousel'; // Importing CarouselModule
 import { DialogModule } from 'primeng/dialog';
 import { ConfirmDialogModule } from 'primeng/confirmdialog';
 import { PopoverModule } from 'primeng/popover';
-import { Popover } from 'primeng/popover';
 import { InputGroup } from 'primeng/inputgroup';
 import { InputGroupAddonModule } from 'primeng/inputgroupaddon';
 import { InputTextModule } from 'primeng/inputtext';
@@ -42,9 +41,12 @@ import { SidebarModule } from 'primeng/sidebar';
   ],
   templateUrl: './dashboard.component.html',
   styleUrls: ['./dashboard.component.css'],
-  schemas: [CUSTOM_ELEMENTS_SCHEMA] 
+  schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
 export class DashboardComponent implements OnInit {
+  dashboardForm: FormGroup;
+  activeTabIndex: number = 0;
+
   tabs = [
     { route: '/dashboard/buy', label: 'Buy', icon: 'pi pi-shopping-cart', isActive: true },
     { route: '/dashboard/rent', label: 'Rent', icon: 'pi pi-home', isActive: false },
@@ -78,10 +80,6 @@ export class DashboardComponent implements OnInit {
     'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTZFlyQWxv72erCxTodjvHGPFEUbWmzME43LA&s'
   ];
 
-
-  dashboardForm: FormGroup;
-  activeTabIndex: number = 0;
-
   constructor() {
     this.dashboardForm = new FormGroup({
       tabSelection: new FormControl(''),
@@ -106,4 +104,4 @@ export class DashboardComponent implements OnInit {
   onSubmit(): void {
     console.log('Form Submitted:', this.dashboardForm.value);
   }
-  }
+}
