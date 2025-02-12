@@ -56,23 +56,9 @@
                             </div>
                         </div>
 
-                        <div class="grid mb-3">
-                            <div class="col-4"><i class="pi pi-home mr-2 text-blue-900"></i><span>Unfurnished</span></div>
-                            <div class="col-4"><i class="pi pi-building mr-2 text-blue-900"></i><span>1 BHK</span></div>
-                            <div class="col-4"><i class="pi pi-user mr-2 text-blue-900"></i><span>Bachelor</span></div>
-                        </div>
-
-                        <div class="grid">
-                            <div class="col-4"><i class="pi pi-calendar mr-2 text-blue-900"></i><span>01-Feb-2025</span></div>
-                        </div>
-
                         <div class="grid mt-3">
                             <div class="col-8"><button class="p-button p-button-primary w-full">Get Owner Details</button></div>
                             <div class="col-4"><button class="p-button p-button-secondary w-full"><i class="pi pi-heart mr-2"></i> Save</button></div>
-                        </div>
-
-                        <div class="text-right mt-3">
-                            <button class="p-button p-button-outlined p-button-success">Join Visit</button>
                         </div>
                     </div>
                 </div>
@@ -91,26 +77,14 @@
 
                     <div class="grid mt-3">
                         <div class="col-12">
-                            <span class="p-inputgroup-addon"><i class="pi pi-map-marker"></i></span>
-                            <input pInputText formControlName="searchCity" placeholder="City" class="p-inputtext-lg" />
-                        </div>
-
-                        <div class="col-12">
-                            <span class="p-inputgroup-addon"><i class="pi pi-map"></i></span>
-                            <input pInputText formControlName="searchArea" placeholder="Area" class="p-inputtext-lg" />
-                        </div>
-
-                        <div class="col-12">
-                            <span class="p-inputgroup-addon"><i class="pi pi-map"></i></span>
-                            <input pInputText formControlName="searchPincode" placeholder="Pincode" class="p-inputtext-lg" />
+                            <p-inputGroup>
+                                <span class="p-inputgroup-addon"><i class="pi pi-map-marker"></i></span>
+                                <input pInputText formControlName="searchCity" placeholder="City" class="p-inputtext-lg" />
+                            </p-inputGroup>
                         </div>
 
                         <div class="col-12">
                             <p-dropdown formControlName="propertyType" [options]="propertyTypes" placeholder="Property Type"></p-dropdown>
-                        </div>
-
-                        <div class="col-12">
-                            <p-dropdown formControlName="budget" [options]="budgetOptions" placeholder="Budget"></p-dropdown>
                         </div>
 
                         <div class="col-12 text-center mt-3">

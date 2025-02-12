@@ -43,6 +43,7 @@ import { HttpClientModule } from '@angular/common/http';
     CarouselModule,
     HttpClientModule // Ensure HTTP Client is available
   ],
+  // providers:[ApiService],
   templateUrl: './dashboard.component.html',
   styleUrls: ['./dashboard.component.css'],
   schemas: [CUSTOM_ELEMENTS_SCHEMA]
@@ -112,5 +113,9 @@ export class DashboardComponent implements OnInit {
         property.city.toLowerCase().includes(searchCity.toLowerCase())
       );
     }
+  }
+
+  onSubmit() {
+    console.log('Form submitted:', this.dashboardForm.value);
   }
 }
