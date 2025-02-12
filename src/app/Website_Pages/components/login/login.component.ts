@@ -12,11 +12,7 @@ import { MessageService } from 'primeng/api';
   selector: 'app-login',
   standalone: true,
   imports: [CheckboxModule,ButtonModule,RouterLink, CommonModule,ReactiveFormsModule,Toast],
-<<<<<<< HEAD
-  providers:[MessageService],
-=======
   providers:[MessageService,ApiService],
->>>>>>> 2cda1f28d01cd39f2fdcd8c04051d8fe6ae1cf28
   templateUrl: './login.component.html',
   styleUrl: './login.component.css'
 })
