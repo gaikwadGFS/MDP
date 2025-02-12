@@ -10,11 +10,40 @@
             <!-- Seach for Advocate start -->
             <div class="col-12">
                 <div class="row">
+
                     <div class="col-3">
-                        <p-select [options]="cities" placeholder="Select a City" [editable]="true" optionLabel="name"
-                            class="w-full md:w-56" />
+                        <p-dropdown
+                        [(ngModel)]="selectedCity"
+                       [options]="cities"
+                        optionLabel="name"
+                        placeholder="Select a city"
+                        (onChange)="onCitySelect($event)"
+                        [filter]="true"
+                        filterBy="name"
+                        class="w-full md:w-56"
+                    ></p-dropdown>
+                            {{selectedCity}}
+
+                        <!-- <p-autoComplete
+                            [(ngModel)]="selectedCity"
+                            [suggestions]="cities"
+                            (completeMethod)="onSearch($event)"
+                            field="name"
+                            (onSelect)="onCitySelect($event)"
+                            placeholder="Search for a city"
+                          ></p-autoComplete> -->
+                        <!-- <p-autoComplete [(ngModel)]="selectedCity" [suggestions]="cities" field="name"
+                             placeholder="Search for a city"
+                            [dropdown]="true" [virtualScroll]="true" [virtualScrollItemSize]="34">
+                        </p-autoComplete> -->
+
+                        <p>Selected City: {{ selectedCity?.name }}</p>
+
+                        <ul *ngIf="displayData">
+                            <li *ngFor="let advocate of advocates">{{ advocate?.name }}</li>
+                        </ul>
                     </div>
-                    <div class="col-3">
+                    <!-- <div class="col-3">
                         <p-select [options]="specialization" placeholder="Select a specialization" [editable]="true"
                             class="w-full md:w-56" />
                     </div>
@@ -25,11 +54,19 @@
                     <div class="col-3">
                         <p-select [options]="specialization" placeholder="Select a Fee range" [editable]="true"
                             class="w-full md:w-56" />
-                    </div>
+                    </div> -->
                     <div class="col-6 col-offset-3">
                         <div class="text-center">
                             <p-button label="Search" variant="text" [raised]="true" severity="success"
-                                icon="pi pi-search" class="w-full" />
+                                (onClick)="onCitySelect($event)" icon="pi pi-search" class="w-full" />
+                        </div>
+
+
+                        <div *ngIf="advocates && advocates.length > 0">
+                            <h2>Advocates in {{selectedCity?.name}}</h2>
+                            <ul>
+                                <li *ngFor="let advocate of advocates">{{advocate.name}}</li>
+                            </ul>
                         </div>
                     </div>
                 </div>

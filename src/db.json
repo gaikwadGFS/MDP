@@ -151,5 +151,87 @@
       "officeTimeAndWeeklyHolidays": "10 to 5.45 (Every Sunday,Second and Fourth Saturday)",
       "city": "nashik"
     }
+  ],
+  "cities": [
+    {
+      "id": 1,
+      "name": "Mumbai"
+    },
+    {
+      "id": 2,
+      "name": "Pune"
+    },
+    {
+      "id": 3,
+      "name": "Nagpur"
+    },
+    {
+      "id": 4,
+      "name": "Nashik"
+    },
+    {
+      "id": 5,
+      "name": "Aurangabad"
+    },
+    {
+      "id": 6,
+      "name": "Solapur"
+    },
+    {
+      "id": 7,
+      "name": "Amravati"
+    },
+    {
+      "id": 8,
+      "name": "Kolhapur"
+    },
+    {
+      "id": 9,
+      "name": "Akola"
+    },
+    {
+      "id": 10,
+      "name": "Jalgaon"
+    }
+  ],
+  "advocates": [
+    {
+      "id": 1,
+      "name": "Alice Smith",
+      "cityId": 1,
+      "specialization": "Criminal Law",
+      "rating": 4.5,
+      "fee": 150,
+      "city": "New York"
+    },
+    {
+      "id": 2,
+      "name": "Bob Johnson",
+      "cityId": 2,
+      "specialization": "Family Law",
+      "rating": 3.8,
+      "fee": 200,
+      "city": "Los Angeles"
+    },
+    {
+      "id": 3,
+      "name": "Charlie Brown",
+      "cityId": 1,
+      "specialization": "Corporate Law",
+      "rating": 4.2,
+      "fee": 250,
+      "city": "New York"
+    }
+  ],
+  "customerRegister": [
+  
+    {
+      "id": "ec4c",
+      "firstName": "Kshitija",
+      "lastName": "gaikwad",
+      "mobile": "9890660766",
+      "address": "413005",
+      "password": "kshitija"
+    }
   ]
 }
