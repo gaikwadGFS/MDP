@@ -1,34 +1,113 @@
 {
-  "propertiesList": [
+    "propertiesList": [
+      {
+        "title": "1 BHK Flat In Standalone Building (No Lift 2nd Floor) For Rent In Hinjawadi",
+        "location": "Datt Colony near Kirti Classic Plots",
+        "rent": 14000,
+        "deposit": 20000,
+        "size": "500",
+        "furnishing": "Unfurnished",
+        "bhk": "1 BHK",
+        "suitableFor": "Bachelor",
+        "availableFrom": "01-Feb-2025",
+        "propertyImages": [
+          { "src": "assets/property1.jpg" },
+          { "src": "assets/property2.jpg" }
+        ]
+      },
+      {
+        "title": "2 BHK Apartment For Rent in Baner",
+        "location": "Opp. Balewadi High Street",
+        "rent": 22000,
+        "deposit": 50000,
+        "size": "800",
+        "furnishing": "Semi-Furnished",
+        "bhk": "2 BHK",
+        "suitableFor": "Family",
+        "availableFrom": "15-Mar-2025",
+        "propertyImages": [
+          { "src": "assets/property3.jpg" },
+          { "src": "assets/property4.jpg" }
+        ]
+      }
+    ],
+
+    "interior":[{
+      "Hall":[ {
+        "Title": "Elegant Living Room",
+        "Image": "hall_image_url.jpg",
+        "Price": "$5000 - $15000",
+        "WallColor": "",
+        "Flooring": "",
+        "CeilingDesign": "",
+        "Furniture": "",
+        "Lighting": "",
+        "Decor": ["Wall art", "Mirrors", "Rugs", "Plants", "Curtains"],
+        "Storage": ["TV console", "Shelves", "Cabinets"],
+        "SeatingArrangement": ["Open layout", "Sectional sofas", "Accent chairs"],
+        "TechnologyIntegration": ["Smart lighting", "Home theater", "Speakers"]
+      }],
+      "Kitchen": [{
+        "Title": "Modern Kitchen",
+        "Image": "kitchen_image_url.jpg",
+        "Price": "$7000 - $20000",
+        "WallColor": "",
+        "Flooring": "",
+        "CeilingDesign": "",
+        "Cabinetry":"",
+        "Backsplash": ["Tile", "Glass", "Stone finish"],
+        "Lighting":"",
+        "Appliances": ["Built-in oven", "Refrigerator", "Dishwasher", "Hob", "Chimney"],
+        "StorageSolutions": ["Pull-out drawers", "Pantry cabinets", "Corner units"],
+        "DiningArea": ["Breakfast counter", "Small dining nook"]
+      }],
+      "Bedroom":[ {
+        "Title": "Cozy Bedroom",
+        "Image": "bedroom_image_url.jpg",
+        "Price": "$6000 - $18000",
+        "WallColor":"",
+        "Flooring": "",
+        "CeilingDesign":"",
+        "BedType": "",
+        "Wardrobe": "",
+        "Lighting": "",
+        "Furniture": ["Bedside tables", "Dresser", "Study table", "Lounge chair"],
+        "CurtainsAndBlinds": ["Sheer curtains", "Blackout curtains", "Roller blinds"],
+        "Decor": ["Wall art", "Mirrors", "Rugs", "Indoor plants"],
+        "Storage": ["Under-bed storage", "Modular cabinets", "Bedside storage"]
+      }]
+    }
+    
+    ],
+
+  
+ 
+  "customerRegister": [
     {
-      "title": "1 BHK Flat In Standalone Building (No Lift 2nd Floor) For Rent In Hinjawadi",
-      "location": "Datt Colony near Kirti Classic Plots",
-      "rent": 14000,
-      "deposit": 20000,
-      "size": "500",
-      "furnishing": "Unfurnished",
-      "bhk": "1 BHK",
-      "suitableFor": "Bachelor",
-      "availableFrom": "01-Feb-2025",
-      "propertyImages": [
-        { "src": "assets/property1.jpg" },
-        { "src": "assets/property2.jpg" }
-      ]
+      "id": "c39f",
+      "firstName": "Kshitija",
+      "lastName": "Gaikwad",
+      "mobile": "9890660766",
+      "address": "413005",
+      "password": "kshitija"
     },
     {
-      "title": "2 BHK Apartment For Rent in Baner",
-      "location": "Opp. Balewadi High Street",
-      "rent": 22000,
-      "deposit": 50000,
-      "size": "800",
-      "furnishing": "Semi-Furnished",
-      "bhk": "2 BHK",
-      "suitableFor": "Family",
-      "availableFrom": "15-Mar-2025",
-      "propertyImages": [
-        { "src": "assets/property3.jpg" },
-        { "src": "assets/property4.jpg" }
-      ]
+      "id": "9df2",
+      "firstName": "bhushan",
+      "lastName": "mulpure",
+      "mobile": "9878909876",
+      "address": "365978",
+      "password": "123456"
+    },
+    {
+      "id": "f737",
+      "firstName": "jjjh",
+      "lastName": "kjkjds",
+      "mobile": "7894561230",
+      "address": "456123",
+      "password": "1236544"
     }
   ]
+
+  
 }
