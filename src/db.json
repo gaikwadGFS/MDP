@@ -152,18 +152,47 @@
       "city": "nashik"
     }
   ],
-
   "cities": [
-    { "id": 1, "name": "Mumbai" },
-    { "id": 2, "name": "Pune" },
-    { "id": 3, "name": "Nagpur" },
-    { "id": 4, "name": "Nashik" },
-    { "id": 5, "name": "Aurangabad" },
-    { "id": 6, "name": "Solapur" },
-    { "id": 7, "name": "Amravati" },
-    { "id": 8, "name": "Kolhapur" },
-    { "id": 9, "name": "Akola" },
-    { "id": 10, "name": "Jalgaon" }
+    {
+      "id": 1,
+      "name": "Mumbai"
+    },
+    {
+      "id": 2,
+      "name": "Pune"
+    },
+    {
+      "id": 3,
+      "name": "Nagpur"
+    },
+    {
+      "id": 4,
+      "name": "Nashik"
+    },
+    {
+      "id": 5,
+      "name": "Aurangabad"
+    },
+    {
+      "id": 6,
+      "name": "Solapur"
+    },
+    {
+      "id": 7,
+      "name": "Amravati"
+    },
+    {
+      "id": 8,
+      "name": "Kolhapur"
+    },
+    {
+      "id": 9,
+      "name": "Akola"
+    },
+    {
+      "id": 10,
+      "name": "Jalgaon"
+    }
   ],
   "advocates": [
     {
@@ -193,9 +222,16 @@
       "fee": 250,
       "city": "New York"
     }
-  ]
-
-
+  ],
+  "customerRegister": [
   
+    {
+      "id": "ec4c",
+      "firstName": "Kshitija",
+      "lastName": "gaikwad",
+      "mobile": "9890660766",
+      "address": "413005",
+      "password": "kshitija"
+    }
+  ]
 }
-
