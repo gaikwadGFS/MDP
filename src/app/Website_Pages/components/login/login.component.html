@@ -2,13 +2,15 @@
   [showTransformOptions]="'translateY(100%)'" [showTransitionOptions]="'1000ms'" [hideTransitionOptions]="'1000ms'"
   [showTransformOptions]="'translateX(100%)'" />
 
-   <div class="surface-card p-4 shadow-2 border-round w-auto">
+   <div class="surface-card p-4 shadow-2 border-round w-auto mt-4">
     <!-- Welcome Section -->
-    <div class="text-center mb-5">
-      <img src="/src/assets/about.jpg" alt="Image" height="50px" class="mb-6">
-      <!-- <div class="text-900 text-3xl font-medium mb-4">Welcome Back</div> -->
-      <p class="text-600 font-medium line-height-3">Don't have an account?</p>
-      <a class="font-medium underline ml-2 text-blue-500 cursor-pointer" routerLink="/register">Register Now!</a>
+    <div class="text-center mb-3">
+      <img src="https://img1.wsimg.com/isteam/ip/957d1ef6-9f8d-4653-a4c2-121d6b896ba7/blob.png/:/rs=w:203,h:100,cg:true,m/cr=w:203,h:100/qt=q:95" alt="Image" height="50px" class="mb-1 mt-6">
+      <div class="text-900 text-3xl font-medium mb-2">Log-In</div>
+      <div class="d-flex justify-content-center">
+        <p class="text-600 font-medium line-height-3">Don't have an account?</p>
+      <a class="font-medium underline ml-2 text-blue-500 cursor-pointer" routerLink="/register">Sign-up Now!</a>
+      </div>
     </div>
   
     <!-- Centered Form Section -->
@@ -57,14 +59,12 @@
       </div>
   
       <!-- Sign In Button -->
-      <div class="w-full sm:w-20rem mb-4">
+      <div class="w-full sm:w-20rem mb-4 mx-auto">
         <button
           pButton
           pRipple
-          icon="pi pi-sign-out"
           class="w-full"
-          style="background-color: #feb900; color: black; border: none;"
-       >Sign In</button>
+          style="background-color: #feb900; color: black; border: none;"> Sign In <i class="pi pi-sign-out"></i></button>
         <!-- <a routerLink="/customer/dashboard">Login</a> -->
       </div>
     </form>
