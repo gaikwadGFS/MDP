@@ -1,19 +1,23 @@
+<p-toast [breakpoints]="{ '920px': { width: '100%', right: '0', left: '0' } }"
+  [showTransformOptions]="'translateY(100%)'" [showTransitionOptions]="'1000ms'" [hideTransitionOptions]="'1000ms'"
+  [showTransformOptions]="'translateX(100%)'" />
 
    <div class="surface-card p-4 shadow-2 border-round w-auto">
     <!-- Welcome Section -->
     <div class="text-center mb-5">
-      <img src="/MDP/src/assets/about.jpg" alt="Image" height="50px" class="mb-6">
-      <div class="text-900 text-3xl font-medium mb-4">Welcome Back</div>
-      <span class="text-600 font-medium line-height-3">Don't have an account?</span>
-      <a class="font-medium underline ml-2 text-blue-500 cursor-pointer" routerLink="/register">Create Now!</a>
+      <img src="/src/assets/about.jpg" alt="Image" height="50px" class="mb-6">
+      <!-- <div class="text-900 text-3xl font-medium mb-4">Welcome Back</div> -->
+      <p class="text-600 font-medium line-height-3">Don't have an account?</p>
+      <a class="font-medium underline ml-2 text-blue-500 cursor-pointer" routerLink="/register">Register Now!</a>
     </div>
   
     <!-- Centered Form Section -->
     <div class="flex flex-column align-items-center">
+      <form  [formGroup]="loginForm" (ngSubmit)="onLogin()">
       <!-- mobile number Input -->
       <div class="w-full sm:w-30rem">
         <label for="mobile1" class="block text-900 font-medium mb-1">Moblie number</label>
-        <input  [(ngModel)]="loginCredentials.mobileNum"
+        <input  formControlName="mobile"
           id="mobile1"
           type="text"
           placeholder="Enter your mobile number"
@@ -26,7 +30,7 @@
       <div class="w-full sm:w-30rem position-relative">
         <label for="password1" class="block text-900 font-medium mb-2">Password</label>
         <div class="relative">
-        <input   [(ngModel)]="loginCredentials.password"
+        <input  formControlName="password"
           id="password1"
           [type]="showPassword ? 'text' : 'password'"
           placeholder="Password"
@@ -60,9 +64,10 @@
           icon="pi pi-sign-out"
           class="w-full"
           style="background-color: #feb900; color: black; border: none;"
-        (click)="signIn()">Sign In</button>
+       >Sign In</button>
         <!-- <a routerLink="/customer/dashboard">Login</a> -->
       </div>
+    </form>
     </div>
 
   

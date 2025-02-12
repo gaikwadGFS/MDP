@@ -106,80 +106,61 @@
 
 
 
+<p-toast [breakpoints]="{ '920px': { width: '100%', right: '0', left: '0' } }"
+  [showTransformOptions]="'translateY(100%)'" [showTransitionOptions]="'1000ms'" [hideTransitionOptions]="'1000ms'"
+  [showTransformOptions]="'translateX(100%)'" />
 
 
-   <div class="flex justify-content-center align-items-center min-h-screen py-8">
+<div class="flex justify-content-center align-items-center min-h-screen py-8">
   <div class="surface-card p-4 shadow-2 border-round w-full sm:w-30rem">
-    <div class="text-center mb-5">
-      <img src="" alt="Logo" class="w-6rem">
-      <h2 class="text-900 font-medium text-2xl mt-3 ">Register</h2>
-      <p class="text-600">Create your account</p>
+    <div class="text-center mb-3">
+      <img
+        src="https://img1.wsimg.com/isteam/ip/957d1ef6-9f8d-4653-a4c2-121d6b896ba7/blob.png/:/rs=w:203,h:100,cg:true,m/cr=w:203,h:100/qt=q:95"
+        alt="Logo" class="w-6rem">
+      <!-- <h2 class="text-900 font-medium text-2xl mt-3 ">Register</h2> -->
+      <h5 class="text-600 fw-bold mt-3">Create your account</h5>
     </div>
 
     <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
-         <!-- First Name -->
-        <div class="field mb-4">
-            <label for="firstName" class="block text-900 font-medium mb-2">First Name</label>
-            <input
-              id="firstName"
-              type="text"
-              pInputText
-              formControlName="firstName"
-              class="w-full contact-input"
-              placeholder="Enter your first name"
-            />
-            <small class="p-error" *ngIf="registerForm.get('firstName')?.invalid && registerForm.get('firstName')?.touched">
-              First name is required.
-            </small>
-          </div>
+      <!-- First Name -->
+      <div class="field mb-4">
+        <label for="firstName" class="block text-900 font-medium mb-2">First Name</label>
+        <input id="firstName" type="text" pInputText formControlName="firstName" class="w-full contact-input"
+          placeholder="Enter your first name" />
+        <small class="p-error" *ngIf="registerForm.get('firstName')?.invalid && registerForm.get('firstName')?.touched">
+          First name is required.
+        </small>
+      </div>
 
       <!-- last Name -->
       <div class="field mb-4">
         <label for="email" class="block text-900 font-medium mb-2">Last Name</label>
-        <input
-          id="LastName"
-          type="LastName"
-          pInputText
-          formControlName="lastName"
-          class="w-full contact-input"
-          placeholder="Enter your last name"
-        />
+        <input id="LastName" type="LastName" pInputText formControlName="lastName" class="w-full contact-input"
+          placeholder="Enter your last name" />
         <small class="p-error" *ngIf="registerForm.get('lastName')?.invalid && registerForm.get('lastName')?.touched">
-           Last name is required.
+          Last name is required.
         </small>
       </div>
 
 
 
-       <!-- Mobile -->
-       <div class="field mb-4">
+      <!-- Mobile -->
+      <div class="field mb-4">
         <label for="mobile" class="block text-900 font-medium mb-2">Mobile</label>
-        <input
-          id="mobile"
-          type="text"
-          pInputText
-          formControlName="mobile"
-          class="w-full contact-input"
-          placeholder="Enter your mobile number"
-        />
+        <input id="mobile" type="text" pInputText formControlName="mobile" class="w-full contact-input"
+          placeholder="Enter your mobile number" />
         <small class="p-error" *ngIf="registerForm.get('mobile')?.invalid && registerForm.get('mobile')?.touched">
           Mobile number is required.
         </small>
       </div>
 
-     
 
-       <!-- Address (Pincode) -->
-       <div class="field mb-4">
+
+      <!-- Address (Pincode) -->
+      <div class="field mb-4">
         <label for="address" class="block text-900 font-medium mb-2">Address (Pincode)</label>
-        <input
-          id="address"
-          type="text"
-          pInputText
-          formControlName="address"
-          class="w-full contact-input"
-          placeholder="Enter your address or pincode"
-        />
+        <input id="address" type="text" pInputText formControlName="address" class="w-full contact-input"
+          placeholder="Enter your address or pincode" />
         <small class="p-error" *ngIf="registerForm.get('address')?.invalid && registerForm.get('address')?.touched">
           Address is required.
         </small>
@@ -187,34 +168,22 @@
 
 
 
-       <!-- Password -->
-       <div class="field mb-4">
+      <!-- Password -->
+      <div class="field mb-4">
         <label for="password" class="block text-900 font-medium mb-2">Password</label>
-        <input
-          id="password"
-          type="password"
-          pInputText
-          formControlName="password"
-          class="w-full contact-input"
-          placeholder="Create a password"
-        />
+        <input id="password" type="password" pInputText formControlName="password" class="w-full contact-input"
+          placeholder="Create a password" />
         <small class="p-error" *ngIf="registerForm.get('password')?.invalid && registerForm.get('password')?.touched">
           Password must be at least 6 characters.
         </small>
       </div>
 
 
-     
+
       <!-- Register Button -->
       <div class="flex justify-content-center">
-        <button
-          type="submit"
-          pButton
-          label="Register"
-          class="w-full sm:w-20rem"
-          [disabled]="registerForm.invalid"
-          style="background-color: #feb900; color: black; border: none;"
-        ></button>
+        <button type="submit" pButton label="Register" class="w-full sm:w-20rem" [disabled]="registerForm.invalid"
+          style="background-color: #feb900; color: black; border: none;"></button>
       </div>
     </form>
   </div>
