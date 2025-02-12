@@ -4,9 +4,9 @@ import { RouterModule } from '@angular/router';
 import { TabViewModule } from 'primeng/tabview';
 import { ButtonModule } from 'primeng/button';
 import { ReactiveFormsModule, FormGroup, FormControl } from '@angular/forms';
-import { DropdownModule } from 'primeng/dropdown'; // For dropdown
+import { DropdownModule } from 'primeng/dropdown';
 import { TabsModule } from 'primeng/tabs';
-import { CarouselModule } from 'primeng/carousel'; // Importing CarouselModule
+import { CarouselModule } from 'primeng/carousel';
 import { DialogModule } from 'primeng/dialog';
 import { ConfirmDialogModule } from 'primeng/confirmdialog';
 import { PopoverModule } from 'primeng/popover';
@@ -16,6 +16,9 @@ import { InputTextModule } from 'primeng/inputtext';
 import { ConfirmPopupModule } from 'primeng/confirmpopup';
 import { ToastModule } from 'primeng/toast';
 import { SidebarModule } from 'primeng/sidebar';
+import { ApiService } from '../../../Core/Services/api.service';
+import { HttpClientModule } from '@angular/common/http';
+
 
 @Component({
   selector: 'app-dashboard',
@@ -37,9 +40,9 @@ import { SidebarModule } from 'primeng/sidebar';
     InputGroup,
     ConfirmPopupModule,
     ToastModule,
-    CarouselModule // Adding CarouselModule to imports
+    CarouselModule,
+    HttpClientModule // Ensure HTTP Client is available
   ],
-  providers:[],
   templateUrl: './dashboard.component.html',
   styleUrls: ['./dashboard.component.css'],
   schemas: [CUSTOM_ELEMENTS_SCHEMA]
@@ -47,6 +50,8 @@ import { SidebarModule } from 'primeng/sidebar';
 export class DashboardComponent implements OnInit {
   dashboardForm: FormGroup;
   activeTabIndex: number = 0;
+  propertyImages: any[] = []; // Define this based on your image data
+
 
   tabs = [
     { route: '/dashboard/buy', label: 'Buy', icon: 'pi pi-shopping-cart', isActive: true },
@@ -68,22 +73,11 @@ export class DashboardComponent implements OnInit {
     { label: 'Above 20,00,000', value: 'Above 20,00,000' }
   ];
 
-  properties = [
-    { image: 'https://via.placeholder.com/300x200?text=Property+1', name: 'Modern 2BHK Flat', price: '₹45,00,000', description: 'Spacious 2BHK flat in a prime location.' },
-    { image: 'https://via.placeholder.com/300x200?text=Property+2', name: 'Luxury 3BHK Apartment', price: '₹75,00,000', description: 'Luxury 3BHK apartment with modern amenities.' },
-    { image: 'https://via.placeholder.com/300x200?text=Property+3', name: 'Commercial Office Space', price: '₹1,50,00,000', description: 'Well-located office space in a business hub.' },
-    // Add more properties as needed
-  ];
+  properties: any[] = []; // API se aane wala pura data
+  filteredProperties: any[] = []; // Search hone ke baad ka data
 
-  propertyImages = [
-    'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQh7BlPQnpAmVTuhPN2UsvfgkxGVNzfsHZwlg&s',
-    'https://3.imimg.com/data3/QF/VC/MY-11005443/princetown.jpg',
-    'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTZFlyQWxv72erCxTodjvHGPFEUbWmzME43LA&s'
-  ];
-
-  constructor() {
+  constructor(private apiService: ApiService) {
     this.dashboardForm = new FormGroup({
-      tabSelection: new FormControl(''),
       searchCity: new FormControl(''),
       searchArea: new FormControl(''),
       searchPincode: new FormControl(''),
@@ -93,16 +87,30 @@ export class DashboardComponent implements OnInit {
     });
   }
 
-  ngOnInit(): void { }
-
-  onTabChange(tabIndex: number): void {
-    this.activeTabIndex = tabIndex;
-    this.tabs.forEach((tab, index) => {
-      tab.isActive = index === tabIndex;
-    });
+  ngOnInit(): void {
+    this.fetchProperties();
   }
 
-  onSubmit(): void {
-    console.log('Form Submitted:', this.dashboardForm.value);
+  fetchProperties() {
+    this.apiService.getProperties().subscribe(
+      (data: any) => {
+        this.properties = data.propertiesList || []; // Ensure correct data extraction
+        this.filteredProperties = this.properties;
+      },
+      (error) => {
+        console.error('Error fetching properties:', error);
+      }
+    );
+  }
+
+  searchByCity() {
+    const searchCity = this.dashboardForm.value.searchCity;
+    if (!searchCity || searchCity.trim() === '') {
+      this.filteredProperties = this.properties;
+    } else {
+      this.filteredProperties = this.properties.filter(property =>
+        property.city.toLowerCase().includes(searchCity.toLowerCase())
+      );
+    }
   }
 }

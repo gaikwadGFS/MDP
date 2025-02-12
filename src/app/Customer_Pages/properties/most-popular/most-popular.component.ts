@@ -7,7 +7,6 @@ import { ApiService } from '../../../../Services/api.service';
   selector: 'app-most-popular',
   standalone: true,
   imports: [CommonModule, CarouselModule],
-  providers:[ApiService],
   templateUrl: './most-popular.component.html',
   styleUrl: './most-popular.component.css'
 })
