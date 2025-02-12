@@ -22,5 +22,9 @@ export class ApiService {
     return this.http.get(`${this.apiUrlStartPoint}customerRegister`)
   }
 
+  getAllInteriorDesign():Observable<any>{
+    return this.http.get(`${this.apiUrlStartPoint}interior`)
+  }
 
-}
+
+    }
