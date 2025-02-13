@@ -1,9 +1,9 @@
-import { Component, OnInit, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import { TabViewModule } from 'primeng/tabview';
 import { ButtonModule } from 'primeng/button';
-import { ReactiveFormsModule, FormGroup, FormControl } from '@angular/forms';
+import { ReactiveFormsModule, FormGroup, FormControl, FormBuilder } from '@angular/forms';
 import { DropdownModule } from 'primeng/dropdown';
 import { TabsModule } from 'primeng/tabs';
 import { CarouselModule } from 'primeng/carousel';
@@ -17,8 +17,7 @@ import { ConfirmPopupModule } from 'primeng/confirmpopup';
 import { ToastModule } from 'primeng/toast';
 import { SidebarModule } from 'primeng/sidebar';
 import { ApiService } from '../../../Core/Services/api.service';
-import { HttpClientModule } from '@angular/common/http';
-
+import { debounceTime, distinctUntilChanged } from 'rxjs/operators';
 
 @Component({
   selector: 'app-dashboard',
@@ -40,19 +39,17 @@ import { HttpClientModule } from '@angular/common/http';
     InputGroup,
     ConfirmPopupModule,
     ToastModule,
-    CarouselModule,
-    HttpClientModule // Ensure HTTP Client is available
+    CarouselModule
   ],
-  // providers:[ApiService],
   templateUrl: './dashboard.component.html',
   styleUrls: ['./dashboard.component.css'],
-  schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
 export class DashboardComponent implements OnInit {
   dashboardForm: FormGroup;
   activeTabIndex: number = 0;
-  propertyImages: any[] = []; // Define this based on your image data
-
+  properties: any[] = []; // Array to hold properties
+  filteredProperties: any[] = []; // Array to hold filtered properties
+  allProperties: any[] = []; // Array to hold all properties
 
   tabs = [
     { route: '/dashboard/buy', label: 'Buy', icon: 'pi pi-shopping-cart', isActive: true },
@@ -74,11 +71,15 @@ export class DashboardComponent implements OnInit {
     { label: 'Above 20,00,000', value: 'Above 20,00,000' }
   ];
 
-  properties: any[] = []; // API se aane wala pura data
-  filteredProperties: any[] = []; // Search hone ke baad ka data
+  propertyImages = [
+    'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQh7BlPQnpAmVTuhPN2UsvfgkxGVNzfsHZwlg&s',
+    'https://3.imimg.com/data3/QF/VC/MY-11005443/princetown.jpg',
+    'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTZFlyQWxv72erCxTodjvHGPFEUbWmzME43LA&s'
+  ];
 
-  constructor(private apiService: ApiService) {
+  constructor(private apiService: ApiService, private fb: FormBuilder) {
     this.dashboardForm = new FormGroup({
+      tabSelection: new FormControl(''),
       searchCity: new FormControl(''),
       searchArea: new FormControl(''),
       searchPincode: new FormControl(''),
@@ -92,30 +93,37 @@ export class DashboardComponent implements OnInit {
     this.fetchProperties();
   }
 
-  fetchProperties() {
-    this.apiService.getProperties().subscribe(
-      (data: any) => {
-        this.properties = data.propertiesList || []; // Ensure correct data extraction
-        this.filteredProperties = this.properties;
-      },
-      (error) => {
-        console.error('Error fetching properties:', error);
-      }
-    );
+  fetchProperties(): void {
+    this.apiService.getProperties().subscribe((data: any) => {
+      this.properties = data;
+      this.filteredProperties = data; // Initialize filteredProperties with all properties
+    });
   }
 
-  searchByCity() {
-    const searchCity = this.dashboardForm.value.searchCity;
-    if (!searchCity || searchCity.trim() === '') {
-      this.filteredProperties = this.properties;
-    } else {
-      this.filteredProperties = this.properties.filter(property =>
-        property.city.toLowerCase().includes(searchCity.toLowerCase())
+  onTabChange(tabIndex: number): void {
+    this.activeTabIndex = tabIndex;
+    this.tabs.forEach((tab, index) => {
+      tab.isActive = index === tabIndex;
+    });
+  }
+
+  onSubmit(): void {
+    const formValue = this.dashboardForm.value;
+    this.filteredProperties = this.properties.filter(property => {
+      return (
+        (!formValue.searchCity || property.city.toLowerCase().includes(formValue.searchCity.toLowerCase())) &&
+        (!formValue.searchArea || property.location.toLowerCase().includes(formValue.searchArea.toLowerCase())) &&
+        (!formValue.searchPincode || property.pincode === formValue.searchPincode) &&
+        (!formValue.propertyType || property.propertyType === formValue.propertyType) &&
+        (!formValue.budget || this.isWithinBudget(property.rent, formValue.budget))
       );
-    }
+    });
   }
 
-  onSubmit() {
-    console.log('Form submitted:', this.dashboardForm.value);
+  isWithinBudget(rent: number, budget: string): boolean {
+    const budgetRange = budget.split(' - ');
+    const minBudget = parseInt(budgetRange[0].replace(/,/g, ''), 10);
+    const maxBudget = budgetRange[1] ? parseInt(budgetRange[1].replace(/,/g, ''), 10) : Infinity;
+    return rent >= minBudget && rent <= maxBudget;
   }
 }

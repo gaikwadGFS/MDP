@@ -12,10 +12,10 @@
       "availableFrom": "01-Feb-2025",
       "propertyImages": [
         {
-          "src": "assets/property1.jpg"
+          "src": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQh7BlPQnpAmVTuhPN2UsvfgkxGVNzfsHZwlg&s"
         },
         {
-          "src": "assets/property2.jpg"
+          "src": "https://3.imimg.com/data3/QF/VC/MY-11005443/princetown.jpg"
         }
       ]
     },
@@ -31,10 +31,10 @@
       "availableFrom": "15-Mar-2025",
       "propertyImages": [
         {
-          "src": "assets/property3.jpg"
+          "src": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSHnRNKzw_qArrl79_XUFZJoxzIlyCjyGUlNA&s"
         },
         {
-          "src": "assets/property4.jpg"
+          "src": "https://www.skyi.com/images/iris-baner/iris-header_monile.jpg"
         }
       ]
     },
@@ -50,7 +50,7 @@
       "floor": "",
       "totalFloor": "",
       "state": "",
-      "city": "",
+      "city": "pune",
       "pincode": "",
       "address": "",
       "rentType": "",

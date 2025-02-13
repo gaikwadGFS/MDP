@@ -1,7 +1,8 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { CarouselModule } from 'primeng/carousel';
-import { ApiService } from '../../../../Services/api.service';
+import { ApiService } from '../../Core/Services/api.service';
+
 
 @Component({
   selector: 'app-most-popular',
