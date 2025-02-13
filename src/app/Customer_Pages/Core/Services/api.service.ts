@@ -21,6 +21,9 @@ export class ApiService {
   customerRegistration(obj: any): Observable<any> {
     return this.http.post(`${this.apiUrlStartPoint}customerRegister`, obj);
   }
+  propertyUpload(obj: any): Observable<any> {
+    return this.http.post(`${this.apiUrlStartPoint}propertiesList`, obj);
+  }
 
   customerLogin(obj: any): Observable<any> {
     return this.http.post(`${this.apiUrlStartPoint}customerRegister`, obj);
