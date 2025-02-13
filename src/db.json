@@ -39,41 +39,66 @@
       ]
     },
     {
-      "propertyId": "",
-      "apartmentType": "",
-      "bhkType": "",
-      "propertyType": "",
-      "propertySize": "",
-      "facing": "",
-      "propertyAge": "",
-      "propertyCondition": "",
-      "floor": "",
-      "totalFloor": "",
-      "state": "",
-      "city": "pune",
-      "pincode": "",
-      "address": "",
-      "rentType": "",
-      "rent": "",
-      "deposite": "",
-      "perMonthOrAnum": "",
-      "monthlyMaintenance": "",
-      "furnishing": "",
-      "parking": "",
-      "preferedTenants": "",
-      "propertyDescription": "",
-      "amenities": [],
-      "utilitiesAvailable": [],
-      "nearbyFacilities:": [],
-      "restrictions": [],
-      "ownerName": "",
-      "ownerContact": "",
-      "ownerAddress": "",
-      "ownerEmail": "",
-      "availableFrom": "",
+      "propertyId": "PUNE123456",
+      "apartmentType": "Apartment",
+      "bhkType": "3 BHK",
+      "propertyType": "Residential",
+      "propertySize": "1200 sqft",
+      "facing": "East",
+      "propertyAge": "5 years",
+      "propertyCondition": "Well Maintained",
+      "floor": "7",
+      "totalFloor": "10",
+      "state": "Maharashtra",
+      "city": "Pune",
+      "pincode": "411045",
+      "address": "Skyline Residency, Near Balewadi Phata, Pune",
+      "rentType": "Lease",
+      "rent": "35000",
+      "deposite": "100000",
+      "perMonthOrAnum": "Per Month",
+      "monthlyMaintenance": "2000",
+      "furnishing": "Fully Furnished",
+      "parking": "1 Covered Parking",
+      "preferedTenants": "Family or Working Professionals",
+      "propertyDescription": "Spacious 3 BHK apartment with a balcony, modular kitchen, and ample sunlight. Located in a gated community with 24/7 security.",
+      "amenities": [
+        "Gym",
+        "Swimming Pool",
+        "Children's Play Area",
+        "Clubhouse",
+        "Power Backup",
+        "24/7 Water Supply",
+        "CCTV Surveillance"
+      ],
+      "utilitiesAvailable": [
+        "Water Supply",
+        "Electricity",
+        "Internet",
+        "Gas Pipeline"
+      ],
+      "nearbyFacilities": [
+        "Hospitals",
+        "Schools",
+        "Malls",
+        "Public Transport",
+        "Supermarkets"
+      ],
+      "restrictions": [
+        "No Pets",
+        "No Loud Music after 10 PM"
+      ],
+      "ownerName": "Amit Sharma",
+      "ownerContact": "9876543210",
+      "ownerAddress": "Koregaon Park, Pune",
+      "ownerEmail": "amit.sharma@example.com",
+      "availableFrom": "01-Apr-2025",
       "propertyImages": [
         {
-          "src": ""
+          "src": "https://3.imimg.com/data3/QF/VC/MY-11005443/princetown.jpg"
+        },
+        {
+          "src": "https://www.skyi.com/images/iris-baner/iris-header_monile.jpg"
         }
       ]
     }

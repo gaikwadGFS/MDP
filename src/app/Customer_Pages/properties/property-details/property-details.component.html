@@ -1,1 +1,49 @@
-<p>property-details works!</p>
+<div class="p-container flex justify-content-center mt-5">
+    <div class="col-12 md:col-4 lg:col-3 p-2 mt-3" style="width: 500px;">
+        <p-card class="h-full border-round-lg shadow-2 hover:shadow-4 transition-duration-300" *ngIf="property">
+            <ng-template pTemplate="header">
+                <img [src]="property.propertyImages[0].src" alt="Property Image" class="w-full border-round-top-lg" />
+            </ng-template>
+            <ng-template pTemplate="title" class="text-lg font-bold">{{ property.title }}</ng-template>
+            <ng-template pTemplate="content" class="text-sm">
+                <div class="flex align-items-center mb-2">
+                    <i class="pi pi-map-marker mr-2"></i>
+                    <span>{{ property.location }}</span>
+                </div>
+                <div class="flex align-items-center mb-2">
+                    <i class="pi pi-money-bill mr-2"></i>
+                    <span>₹{{ property.rent }} / month</span>
+                </div>
+                <div class="flex align-items-center mb-2">
+                    <i class="pi pi-wallet mr-2"></i>
+                    <span>₹{{ property.deposit }} deposit</span>
+                </div>
+                <div class="flex align-items-center mb-2">
+                    <i class="pi pi-chart-bar mr-2"></i>
+                    <span>{{ property.size }} sqft</span>
+                </div>
+                <div class="flex align-items-center mb-2">
+                    <i class="pi pi-home mr-2"></i>
+                    <span>{{ property.furnishing }}</span>
+                </div>
+                <div class="flex align-items-center mb-2">
+                    <i class="pi pi-building mr-2"></i>
+                    <span>{{ property.bhk }} BHK</span>
+                </div>
+                <div class="flex align-items-center mb-2">
+                    <i class="pi pi-users mr-2"></i>
+                    <span>{{ property.suitableFor }}</span>
+                </div>
+                <div class="flex align-items-center mb-2">
+                    <i class="pi pi-calendar mr-2"></i>
+                    <span>Available from {{ property.availableFrom }}</span>
+                </div>
+                <div class="flex align-items-center mb-2">
+                    <i class="pi pi-cog mr-2"></i>
+                    <span>Maintenance: ₹{{ property.monthlyMaintenance }}</span>
+                </div>
+                <p-tag value="Available" severity="success" class="mt-2"></p-tag>
+            </ng-template>
+        </p-card>
+    </div>
+</div>
