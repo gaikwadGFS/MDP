@@ -1,0 +1,17 @@
+.p-container {
+    max-width: 1200px;
+    margin: auto;
+  }
+  
+  p-card {
+    transition: transform 0.3s ease-in-out;
+  }
+  
+  p-card:hover {
+    transform: scale(1.03);
+  }
+  
+  p-tag {
+    font-size: 14px;
+  }
+  

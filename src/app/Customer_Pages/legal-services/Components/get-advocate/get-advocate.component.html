@@ -12,61 +12,38 @@
                 <div class="row">
 
                     <div class="col-3">
-                        <p-dropdown
-                        [(ngModel)]="selectedCity"
-                       [options]="cities"
-                        optionLabel="name"
-                        placeholder="Select a city"
-                        (onChange)="onCitySelect($event)"
-                        [filter]="true"
-                        filterBy="name"
-                        class="w-full md:w-56"
-                    ></p-dropdown>
-                            {{selectedCity}}
+                        <p-dropdown [(ngModel)]="selectedCity" [options]="cities" optionLabel="name"
+                            placeholder="Select a city" [filter]="true" filterBy="name"
+                            class="w-full md:w-56"></p-dropdown>
 
-                        <!-- <p-autoComplete
-                            [(ngModel)]="selectedCity"
-                            [suggestions]="cities"
-                            (completeMethod)="onSearch($event)"
-                            field="name"
-                            (onSelect)="onCitySelect($event)"
-                            placeholder="Search for a city"
-                          ></p-autoComplete> -->
-                        <!-- <p-autoComplete [(ngModel)]="selectedCity" [suggestions]="cities" field="name"
-                             placeholder="Search for a city"
-                            [dropdown]="true" [virtualScroll]="true" [virtualScrollItemSize]="34">
-                        </p-autoComplete> -->
 
-                        <p>Selected City: {{ selectedCity?.name }}</p>
 
-                        <ul *ngIf="displayData">
-                            <li *ngFor="let advocate of advocates">{{ advocate?.name }}</li>
-                        </ul>
                     </div>
-                    <!-- <div class="col-3">
-                        <p-select [options]="specialization" placeholder="Select a specialization" [editable]="true"
-                            class="w-full md:w-56" />
-                    </div>
+
                     <div class="col-3">
-                        <p-select [options]="rating" placeholder="Select a Rating" [editable]="true"
-                            class="w-full md:w-56" />
-                    </div>
-                    <div class="col-3">
-                        <p-select [options]="specialization" placeholder="Select a Fee range" [editable]="true"
-                            class="w-full md:w-56" />
-                    </div> -->
-                    <div class="col-6 col-offset-3">
-                        <div class="text-center">
-                            <p-button label="Search" variant="text" [raised]="true" severity="success"
-                                (onClick)="onCitySelect($event)" icon="pi pi-search" class="w-full" />
+                        <div class="text-center d-flex">
+                            <div>
+                                <p-button label="Search" variant="text" [raised]="true" severity="success"
+                                    (onClick)="onCitySelect()" icon="pi pi-search" class="w-full" />
+                            </div>
+                            <div class="ms-2">
+                                <p-button class="ms-4" label="Clear" variant="text" [raised]="true" severity="info"
+                                    (onClick)="clearSearch()" icon="pi pi-filter-slash" class="w-full" />
+                            </div>
                         </div>
 
 
-                        <div *ngIf="advocates && advocates.length > 0">
-                            <h2>Advocates in {{selectedCity?.name}}</h2>
-                            <ul>
-                                <li *ngFor="let advocate of advocates">{{advocate.name}}</li>
-                            </ul>
+
+                    </div>
+                    <div class="col-6">
+                        <div>
+                            <div *ngIf="advocates && advocates.length > 0">
+                                <h2>Advocates in {{selectedCity?.name}}</h2>
+                                <ul>
+                                    <li *ngFor="let advocate of advocates">{{advocate.name}} | Contact :
+                                        {{advocate.contactNumber}} | Address :{{advocate.address}} </li>
+                                </ul>
+                            </div>
                         </div>
                     </div>
                 </div>
