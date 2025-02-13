@@ -4,399 +4,420 @@
             <h2 class="mt-5 text-center">Upload Your New Property</h2>
         </div>
     </div>
-  <div class="row">
-      <div class="col-12">
-          <div class="">
-              <div class="card   shadow border-0 p-3">
-                  <p-stepper [value]="1" class="basis-[50rem]">
-                      <p-step-list>
-                          <p-step [value]="1">Property Details</p-step>
-                          <p-step [value]="2">Rent Details</p-step>
-                          <p-step [value]="3">Ownership & Legal Information</p-step>
-                          <p-step [value]="4">Additional Considerations</p-step>
-                          <p-step [value]="5">locality details</p-step>
-
-                       
-                      </p-step-list>
-                      <p-step-panels>
-                          <!-- Property Details Start -->
-                          <p-step-panel [value]="1">
-                              <ng-template #content let-activateCallback="activateCallback">
-                                <form [formGroup]="propertyForm" (ngSubmit)="onSubmit()">
-                                      <div class="row ">
+    <div class="row">
+        <div class="col-12">
+            <div class="">
+                <div class="card   shadow border-0 p-3">
 
 
 
-                                        
-                                          <div class="col-12">
-                                              <div>
-                                                  <label for="propertyType" class="my-2">Apartment Type </label>
-                                                  <p-select  formControlName="propertyType" [options]="propertyType" [checkmark]="true"
-                                                      [showClear]="true" placeholder="Select a Property Type"
-                                                      class="w-full md:w-56" />
-                                              </div>
-                                          </div>
-                                         
-                                          <div class="col-12">
-                                              <div>
-                                                  <label for="BhkType" class="my-2">BHK Type </label>
-                                                  <p-select formControlName="bhkType" [options]="BhkType" [checkmark]="true"
-                                                      [showClear]="true" placeholder="Select a Bhk Type"
-                                                      class="w-full md:w-56" />
-                                              </div>
-                                          </div>
-                                          <div class="col-12">
-                                              <div>
-                                                  <label for="propertySize" class="my-2">Property Size
-                                                  </label>
-                                                  <input pInputText id="propertySize" class="w-100" formControlName="propertySize" placeholder="Total Area (sq. ft./sq. m.)"/>
-                                              </div>
-                                          </div>
-                                          <div class="col-12">
-                                              <div>
-                                                  <label for="Facing" class="my-2">Facing </label>
-                                                  <p-select  formControlName="facing" [options]="Facing" [checkmark]="true"
-                                                      [showClear]="true" placeholder="Select a Direction"
-                                                      class="w-full md:w-56" />
-                                              </div>
-                                          </div>
-                                          <div class="col-12">
-                                              <div>
-                                                  <label for="PropertyAge" class="my-2">Property Age </label>
-                                                  <p-select formControlName="propertyAge" [options]="PropertyAge" [checkmark]="true"
-                                                      [showClear]="true" placeholder="Select Property Age"
-                                                      class="w-full md:w-56" />
-                                              </div>
-                                          </div>
-                                          <div class="col-12">
-                                              <div>
-                                                  <label for="Condition" class="my-2">Condition</label>
-                                                  <p-select formControlName="propertyCondition" [options]="Condition" [checkmark]="true"
-                                                      [showClear]="true" placeholder="Select Condition"
-                                                      class="w-full md:w-56" />
-                                              </div>
-                                          </div>
-                                          <div class="col-12 d-flex gap-2 align-items-end">
-                                            <!-- Floors Dropdown -->
-                                            <div class="col-6">
+                    <form [formGroup]="propertyForm" (ngSubmit)="onSubmit()">
+
+
+                        <p-stepper [value]="1" class="basis-[50rem]">
+                            <p-step-list>
+                                <p-step [value]="1">Property Details</p-step>
+                                <p-step [value]="2">Rent Details</p-step>
+                                <p-step [value]="3">Ownership & Legal Information</p-step>
+                                <p-step [value]="4">Additional Considerations</p-step>
+                                <p-step [value]="5">locality details</p-step>
+
+
+                            </p-step-list>
+                            <!-- <p-step-panels> -->
+
+                                <!-- Property Details Start -->
+
+                                <p-step-panel [value]="1">
+
+                                    <ng-template #content let-activateCallback="activateCallback">
+
+                                        <div class="row ">
+
+
+
+
+                                            <div class="col-12">
                                                 <div>
-                                                    <label for="floors" class="my-2">Floors</label>
-                                                    <p-select formControlName="floor" [options]="floorOptions" [checkmark]="true" [showClear]="true"
-                                                        placeholder="Select Floors" class="w-full" />
+                                                    <label for="propertyType" class="my-2">Apartment Type </label>
+                                                    <p-select formControlName="propertyType" [options]="propertyType"
+                                                        [checkmark]="true" [showClear]="true"
+                                                        placeholder="Select a Property Type" class="w-full md:w-56" />
                                                 </div>
                                             </div>
-                                        
-                                            <!-- Total Floors Dropdown -->
-                                            <div class="col-6">
+
+                                            <div class="col-12">
                                                 <div>
-                                                    <label for="totalFloors" class="my-2">Total Floors</label>
-                                                    <p-select formControlName="totalFloor" [options]="floorOptions" [checkmark]="true" [showClear]="true"
-                                                        placeholder="Select Total Floors" class="w-100" />
+                                                    <label for="BhkType" class="my-2">BHK Type </label>
+                                                    <p-select formControlName="bhkType" [options]="BhkType"
+                                                        [checkmark]="true" [showClear]="true"
+                                                        placeholder="Select a Bhk Type" class="w-full md:w-56" />
                                                 </div>
+                                            </div>
+                                            <div class="col-12">
+                                                <div>
+                                                    <label for="propertySize" class="my-2">Property Size
+                                                    </label>
+                                                    <input pInputText id="propertySize" class="w-100"
+                                                        formControlName="propertySize"
+                                                        placeholder="Total Area (sq. ft./sq. m.)" />
+                                                </div>
+                                            </div>
+                                            <div class="col-12">
+                                                <div>
+                                                    <label for="Facing" class="my-2">Facing </label>
+                                                    <p-select formControlName="facing" [options]="Facing"
+                                                        [checkmark]="true" [showClear]="true"
+                                                        placeholder="Select a Direction" class="w-full md:w-56" />
+                                                </div>
+                                            </div>
+                                            <div class="col-12">
+                                                <div>
+                                                    <label for="propertyAge" class="my-2">Property Age </label>
+                                                    <p-select formControlName="propertyAge" [options]="propertyAge"
+                                                        [checkmark]="true" [showClear]="true"
+                                                        placeholder="Select Property Age" class="w-full md:w-56" />
+                                                </div>
+                                            </div>
+                                            <div class="col-12">
+                                                <div>
+                                                    <label for="Condition" class="my-2">Condition</label>
+                                                    <p-select formControlName="propertyCondition" [options]="Condition"
+                                                        [checkmark]="true" [showClear]="true"
+                                                        placeholder="Select Condition" class="w-full md:w-56" />
+                                                </div>
+                                            </div>
+                                            <div class="col-12 d-flex gap-2 align-items-end">
+                                                <!-- Floors Dropdown -->
+                                                <div class="col-6">
+                                                    <div>
+                                                        <label for="floors" class="my-2">Floors</label>
+                                                        <p-select formControlName="floor" [options]="floorOptions"
+                                                            [checkmark]="true" [showClear]="true"
+                                                            placeholder="Select Floors" class="w-full" />
+                                                    </div>
+                                                </div>
+
+                                                <!-- Total Floors Dropdown -->
+                                                <div class="col-6">
+                                                    <div>
+                                                        <label for="totalFloors" class="my-2">Total Floors</label>
+                                                        <p-select formControlName="totalFloor" [options]="floorOptions"
+                                                            [checkmark]="true" [showClear]="true"
+                                                            placeholder="Select Total Floors" class="w-100" />
+                                                    </div>
+                                                </div>
+                                            </div>
+
+
+
+                                            <div class="flex  py-4 justify-content-end">
+                                                <p-button label="Next" icon="pi pi-arrow-right" iconPos="right"
+                                                    (onClick)="activateCallback(2)" />
                                             </div>
                                         </div>
-                                        
-                                        
 
-                                          <div class="flex  py-4 justify-content-end">
-                                              <p-button label="Next" icon="pi pi-arrow-right" iconPos="right"
-                                                  (onClick)="activateCallback(2)" />
-                                          </div>
-                                      </div>
-                                  </form>
-                              </ng-template>
-                          </p-step-panel>
-                          <!-- Property Details End -->
-
-                         
+                                    </ng-template>
+                                </p-step-panel>
+                                <!-- Property Details End -->
 
 
+                                <!-- Rent Details Start -->
+                                <p-step-panel [value]="2">
+                                    <ng-template #content let-activateCallback="activateCallback">
 
-                          
-                          
-                            <!-- Rent Details Start -->
-                            <p-step-panel [value]="2">
-                                <ng-template #content let-activateCallback="activateCallback">
-                                    <form [formGroup]="propertyForm" (ngSubmit)="onSubmit()">
-                                        <div class="row">        
-                                      <!-- Rent Type Radio Buttons -->
+                                        <div class="row">
+                                            <!-- Rent Type Radio Buttons -->
                                             <div class="col-12 mb-3">
                                                 <h5 class="my-2 fw-bold">Select Rent Type</h5>
                                                 <div class="d-flex gap-4">
-                                                    <p-radioButton name="rentType" value="rent" formControlName="rentType" inputId="Only Rent"
-                                                    ></p-radioButton>
+                                                    <p-radioButton name="rentType" value="rent"
+                                                        formControlName="rentType" inputId="Only Rent"></p-radioButton>
                                                     <label for="Only Rent" class="ml-2">Only rent</label>
-                                                    </div>
-                                                    <div class="d-flex gap-4">
-                                                    <p-radioButton name="rentType" value="lease" formControlName="rentType" inputId="Only Lease"></p-radioButton>
+                                                </div>
+                                                <div class="d-flex gap-4">
+                                                    <p-radioButton name="rentType" value="lease"
+                                                        formControlName="rentType" inputId="Only Lease"></p-radioButton>
                                                     <label for="Only Lease" class="ml-2">Only lease</label>
-                                                    </div>
+                                                </div>
                                             </div>
-                        
+
                                             <!-- Expected Rent Fields -->
                                             <div class="col-12  align-items-end">
                                                 <div class="col-12">
                                                     <label for="expectedRent" class="my-2">Expected Rent</label>
-                                                    <input pInputText id="expectedRent" class="w-full" formControlName="rent" placeholder="Enter Amount" />
+                                                    <input pInputText id="expectedRent" class="w-full"
+                                                        formControlName="rent" placeholder="Enter Amount" />
                                                 </div>
                                                 <div class="col-12">
                                                     <label for="rentDuration" class="my-2">Per</label>
-                                                    <p-select [options]="rentDurationOptions" formControlName="rentDurationOptions" [checkmark]="true" [showClear]="true"
-                                                        placeholder="Select Duration" class="w-full" />
+                                                    <p-select [options]="rentDurationOptions"
+                                                        formControlName="rentDurationOptions" [checkmark]="true"
+                                                        [showClear]="true" placeholder="Select Duration"
+                                                        class="w-full" />
                                                 </div>
                                             </div>
                                             <!-- Expected Deposit Field -->
                                             <div class="col-12  align-items-end">
-                                            <div class="col-12 ">
-                                                <label for="expectedDeposit" class="my-2">Total Deposit</label>
-                                                <input pInputText id="expectedDeposit" class="w-full" formControlName="deposit" placeholder="Enter Deposit Amount" />
-                                            </div>
-                        
-                                            
+                                                <div class="col-12 ">
+                                                    <label for="deposite" class="my-2">Total Deposit</label>
+                                                    <input pInputText id="deposite" class="w-full"
+                                                        formControlName="deposite" placeholder="Enter Deposit Amount" />
+                                                </div>
+
+
                                             </div>
                                             <div class="col-12  align-items-end">
-                                            <div class="col-12">
-                                              <div>
-                                                  <label for="MonthlyMaintenance" class="my-2">Monthly Maintenance </label>
-                                                  <p-select  formControlName="monthlyMaintenance" [options]="monthlyMaintenance" [checkmark]="true"
-                                                      [showClear]="true" placeholder="Select"
-                                                      class="w-full md:w-56" />
-                                              </div>
-                                          </div>
+                                                <div class="col-12">
+                                                    <div>
+                                                        <label for="monthlyMaintenance" class="my-2">Monthly Maintenance
+                                                        </label>
+                                                        <p-select formControlName="monthlyMaintenance"
+                                                            [options]="monthlyMaintenance" [checkmark]="true"
+                                                            [showClear]="true" placeholder="Select"
+                                                            class="w-full md:w-56" />
+                                                    </div>
+                                                </div>
                                             </div>
 
 
-                                            <div class="col-12  align-items-end ">
+                                            <!-- <div class="col-12  align-items-end ">
                                             <div class="col-12 ">
                                               <p-datepicker   class="w-full" [(ngModel)]="date" dateFormat="dd.mm.yy"
                                                />
                                           </div>
+                                            </div> -->
+
+
+
+                                            <div class="col-12  align-items-end">
+                                                <div class="col-12">
+                                                    <div>
+                                                        <label for="Furnishing" class="my-2">Furnishing </label>
+                                                        <p-select [options]="Furnishing" formControlName="furnishing"
+                                                            [checkmark]="true" [showClear]="true"
+                                                            placeholder="Select Furnishing type"
+                                                            class="w-full md:w-56" />
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-12  align-items-end">
+                                                <div class="col-12">
+                                                    <div>
+                                                        <label for="Parking" class="my-2">Parking </label>
+                                                        <p-select formControlName="parking" [options]="Parking"
+                                                            [checkmark]="true" [showClear]="true"
+                                                            placeholder="Select Parking type" class="w-full md:w-56" />
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-12  align-items-end">
+                                                <div class="col-12">
+                                                    <div>
+                                                        <label for="preferedTenants" class="my-2">Prefered Tenants
+                                                        </label>
+                                                        <p-select [options]=" preferedTenants" [checkmark]="true"
+                                                            [showClear]="true" formControlName="preferedTenants"
+                                                            placeholder="Select The type of tenant"
+                                                            class="w-full md:w-56" />
+                                                    </div>
+                                                </div>
                                             </div>
 
 
 
                                             <div class="col-12  align-items-end">
-                                              <div class="col-12">
-                                                <div>
-                                                    <label for="Furnishing" class="my-2">Furnishing </label>
-                                                    <p-select [options]="Furnishing"  formControlName="furnishing" [checkmark]="true"
-                                                        [showClear]="true" placeholder="Select Furnishing type"
-                                                        class="w-full md:w-56" />
-                                                </div>
-                                            </div>
-                                              </div>
-                                            <div class="col-12  align-items-end">
-                                              <div class="col-12">
-                                                <div>
-                                                    <label for="Parking" class="my-2">Parking </label>
-                                                    <p-select formControlName="parking" [options]="Parking" [checkmark]="true"
-                                                        [showClear]="true" placeholder="Select Parking type"
-                                                        class="w-full md:w-56" />
-                                                </div>
-                                            </div>
-                                              </div>
-                                            <div class="col-12  align-items-end">
-                                              <div class="col-12">
-                                                <div>
-                                                    <label for="PreferedTenants" class="my-2">Prefered Tenants </label>
-                                                    <p-select [options]="PreferedTenants" [checkmark]="true"
-                                                        [showClear]="true" formControlName="PreferedTenants" placeholder="Select The type of tenant"
-                                                        class="w-full md:w-56" />
-                                                </div>
-                                            </div>
-                                              </div>
-  
-
-
-                                              <div class="col-12  align-items-end">
                                                 <div class="col-12 ">
-                                                    <label for="propertyDescription" class="my-2 ">Property Description</label>
-                                                    <input pInputText id="propertyDescription" formControlName="propertyDescription"class="w-full p-5" placeholder="write a few lines about the property" />
+                                                    <label for="propertyDescription" class="my-2 ">Property
+                                                        Description</label>
+                                                    <input pInputText id="propertyDescription"
+                                                        formControlName="propertyDescription" class="w-full p-5"
+                                                        placeholder="write a few lines about the property" />
                                                 </div>
-                                              </div>
+                                            </div>
 
-                                              <div class="flex pt-6 justify-content-end">
+                                            <div class="flex pt-6 justify-content-end">
                                                 <p-button label="Back" severity="secondary" icon="pi pi-arrow-left"
                                                     (onClick)="activateCallback(1)" />
                                                 <p-button label="Next" icon="pi pi-arrow-right" iconPos="right"
                                                     (onClick)="activateCallback(3)" />
                                             </div>
                                         </div>
-                                    </form>
 
 
 
 
-                                    
-                                </ng-template>
-                            </p-step-panel>
-                        
 
-                        
-                         <!-- Ownership & Legal Information Start -->
-                          <p-step-panel [value]="3">
-                              <ng-template #content let-activateCallback="activateCallback">
-                                <form [formGroup]="propertyForm" (ngSubmit)="onSubmit()">
-                                      <div class="row">
-                                        <div class="col-12 ">
-                                            <div>
-                                                <label for=" ownerName" class="my-2">Owner Name
-                                                </label>
-                                                <input pInputText id=" ownerName" formControlName="ownerName" class="w-100" placeholder="Current legal owner"/>
+
+                                    </ng-template>
+                                </p-step-panel>
+
+
+                                <!-- Ownership & Legal Information Start -->
+                                <p-step-panel [value]="3">
+                                    <ng-template #content let-activateCallback="activateCallback">
+
+                                        <div class="row">
+                                            <div class="col-12 ">
+                                                <div>
+                                                    <label for=" ownerName" class="my-2">Owner Name
+                                                    </label>
+                                                    <input pInputText id=" ownerName" formControlName="ownerName"
+                                                        class="w-100" placeholder="Current legal owner" />
+                                                </div>
+                                            </div>
+                                            <div class="col-12 ">
+                                                <div>
+                                                    <label for="ownerContact" class="my-2">Owner contact
+                                                    </label>
+                                                    <input pInputText id="ownerContact" formControlName="ownerContact"
+                                                        class="w-100" placeholder="owner contact number" />
+                                                </div>
+                                            </div>
+                                            <div class="col-12 ">
+                                                <div>
+                                                    <label for="ownerAddress" class="my-2">Owner Address
+                                                    </label>
+                                                    <input pInputText id="ownerAddress" formControlName="ownerAddress"
+                                                        class="w-100" placeholder="owner Address" />
+                                                </div>
+                                            </div>
+                                            <div class="col-12 ">
+                                                <div>
+                                                    <label for="ownerEmail" class="my-2">Owner Email
+                                                    </label>
+                                                    <input pInputText id="ownerEmail" formControlName="ownerEmail"
+                                                        class="w-100" placeholder="Owner Email" />
+                                                </div>
+                                            </div>
+
+
+                                        </div>
+
+                                        <div class="flex pt-6 justify-content-end debug-border">
+                                            <p-button label="Back" severity="secondary" icon="pi pi-arrow-left"
+                                                (onClick)="activateCallback(2)" />
+                                            <p-button label="Next" icon="pi pi-arrow-right" iconPos="right"
+                                                (onClick)="activateCallback(4)" />
+                                        </div>
+                                    </ng-template>
+                                </p-step-panel>
+
+                                <!-- Ownership & Legal Information End -->
+
+                                <!-- Additional Considerations Start -->
+                                <p-step-panel [value]="4">
+                                    <ng-template #content let-activateCallback="activateCallback">
+
+                                        <div class="row">
+                                            <!-- Amenities -->
+                                            <div class="col-3">
+                                                <label class="my-2">Amenities</label>
+                                                <div *ngFor="let amenity of amenities">
+                                                    <p-checkbox [formControlName]="'amenities'" [value]="amenity"
+                                                        inputId="{{amenity}}"></p-checkbox>
+                                                    <label [for]="amenity">{{ amenity.label }}</label>
+                                                </div>
+                                            </div>
+
+                                            <!-- Utilities Available -->
+                                            <div class="col-3">
+                                                <label class="my-2">Utilities Available</label>
+                                                <div *ngFor="let utility of utilitiesAvailable">
+                                                    <p-checkbox [formControlName]="'utilitiesAvailable'"
+                                                        [value]="utility" inputId="{{utility}}"></p-checkbox>
+                                                    <label [for]="utility">{{ utility.label }}</label>
+                                                </div>
+                                            </div>
+
+                                            <!-- Nearby Facilities -->
+                                            <div class="col-3">
+                                                <label class="my-2">Nearby Facilities</label>
+                                                <div *ngFor="let facility of nearbyFacilities">
+                                                    <p-checkbox [formControlName]="'nearbyFacilities'"
+                                                        [value]="facility" inputId="{{facility}}"></p-checkbox>
+                                                    <label [for]="facility">{{ facility.label }}</label>
+                                                </div>
+                                            </div>
+
+                                            <!-- Restrictions -->
+                                            <div class="col-3">
+                                                <label class="my-2">Restrictions</label>
+                                                <div *ngFor="let restriction of restrictions">
+                                                    <p-checkbox [formControlName]="'restrictions'" [value]="restriction"
+                                                        inputId="{{restriction}}"></p-checkbox>
+                                                    <label [for]="restriction">{{ restriction.label }}</label>
+                                                </div>
+                                            </div>
+
+                                            <!-- Navigation Buttons -->
+                                            <div class="flex pt-6 justify-content-end">
+                                                <p-button label="Back" severity="secondary" icon="pi pi-arrow-left"
+                                                    (onClick)="activateCallback(3)" />
+                                                <p-button label="Next" icon="pi pi-arrow-right" iconPos="right"
+                                                    (onClick)="activateCallback(5)" />
                                             </div>
                                         </div>
-                                        <div class="col-12 ">
-                                            <div>
-                                                <label for="ownerContact" class="my-2">Owner contact
-                                                </label>
-                                                <input pInputText id="ownerContact" formControlName="ownerContact" class="w-100" placeholder="owner contact number"/>
+
+                                    </ng-template>
+                                </p-step-panel>
+                                <!-- Additional Considerations End -->
+
+
+                                <!-- Locality Details Start -->
+                                <p-step-panel [value]="5">
+                                    <ng-template #content let-activateCallback="activateCallback">
+
+                                        <div class="row">
+                                            <div class="col-12">
+                                                <div>
+                                                    <label for="state" class="my-2">State</label>
+                                                    <input pInputText id="state" formControlName="state" class="w-100"
+                                                        placeholder="Enter State" />
+                                                </div>
+                                            </div>
+                                            <div class="col-12">
+                                                <div>
+                                                    <label for="city" class="my-2">City</label>
+                                                    <input pInputText id="city" formControlName="city" class="w-100"
+                                                        placeholder="Enter City" />
+                                                </div>
+                                            </div>
+                                            <div class="col-12">
+                                                <div>
+                                                    <label for="pincode" class="my-2">Pincode</label>
+                                                    <input pInputText id="pincode" formControlName="pincode"
+                                                        class="w-100" placeholder="Enter Pincode" />
+                                                </div>
+                                            </div>
+                                            <div class="col-12">
+                                                <div>
+                                                    <label for="buildingName" class="my-2">Building Name</label>
+                                                    <input pInputText id="buildingName" formControlName="buildingName"
+                                                        class="w-100" placeholder="Enter Building Name" />
+                                                </div>
+                                            </div>
+
+                                            <!-- Navigation Buttons -->
+                                            <div class="flex pt-6 justify-content-between">
+                                                <p-button label="Back" severity="secondary" icon="pi pi-arrow-left"
+                                                    (onClick)="activateCallback(4)" />
+
+                                                <p-button label="Save" severity="success" icon="pi pi-save"
+                                                    (onClick)="onSubmit()" />
                                             </div>
                                         </div>
-                                        <div class="col-12 ">
-                                            <div>
-                                                <label for="ownerAddress" class="my-2">Owner Address
-                                                </label>
-                                                <input pInputText id="ownerAddress" formControlName="ownerAddress" class="w-100" placeholder="owner Address"/>
-                                            </div>
-                                        </div>
-                                        <div class="col-12 ">
-                                            <div>
-                                                <label for="ownerEmail" class="my-2">Owner Email
-                                                </label>
-                                                <input pInputText id="ownerEmail" formControlName="ownerEmail" class="w-100" placeholder="Owner Email"/>
-                                            </div>
-                                        </div>
 
-                                          
-                                      </div>
-                                  </form>
-                                  <div class="flex pt-6 justify-content-end debug-border">
-                                    <p-button label="Back" severity="secondary" icon="pi pi-arrow-left"
-                                        (onClick)="activateCallback(2)" />
-                                    <p-button label="Next" icon="pi pi-arrow-right" iconPos="right"
-                                        (onClick)="activateCallback(4)" />
-                                      </div>
-                              </ng-template>
-                          </p-step-panel>
-                        
-                          <!-- Ownership & Legal Information End -->
+                                    </ng-template>
+                                </p-step-panel>
+                                <!-- Locality Details End -->
 
 
+                        </p-stepper>
 
-
-
-
-
-
-
-                           <!-- Additional Considerations Start -->
-                           
-                          <p-step-panel [value]="4">
-                            <ng-template #content let-activateCallback="activateCallback">
-                                <form [formGroup]="propertyForm" (ngSubmit)="onSubmit()">
-                                    <div class="row">
-                                        <div class="col-12">
-                                            <div >
-                                                     <label for="amenities" class="my-2">Amenities</label>
-                                                     <p-select [options]="amenities" [checkmark]="true" formControlName="amenities" [showClear]="true"
-                                                         placeholder="Select Amenities" class="w-full" />
-                                                 </div>
-                                         </div>
-                                        <div class="col-12">
-                                          <div >
-                                                   <label for="utilitiesAvailable" class="my-2">Utilities Available</label>
-                                                   <p-select [options]="utilitiesAvailable" formControlName="utilitiesAvailable"       [checkmark]="true" [showClear]="true"
-                                                       placeholder="Select Utilities Available" class="w-full" />
-                                               </div>
-                                       </div>
-                                        <div class="col-12">
-                                          <div >
-                                                   <label for="nearbyFacilities" class="my-2">Nearby Facilities</label>
-                                                   <p-select [options]="nearbyFacilities" formControlName="nearbyFacilities" [checkmark]="true" [showClear]="true"
-                                                       placeholder="Select Nearby Facilities" class="w-full" />
-                                               </div>
-                                       </div>
-                                        <div class="col-12">
-                                          <div >
-                                                   <label for="restrictions" class="my-2">Restrictions</label>
-                                                   <p-select [options]="restrictions" formControlName="restrictions" [checkmark]="true" [showClear]="true"
-                                                       placeholder="The Restrictions" class="w-full" />
-                                               </div>
-                                       </div>
-                                       
-                                      
-
-                                         <div class="flex pt-6 justify-content-end">
-                                    <p-button label="Back" severity="secondary" icon="pi pi-arrow-left"
-                                        (onClick)="activateCallback(3)" />
-                                    <p-button label="Next" icon="pi pi-arrow-right" iconPos="right"
-                                        (onClick)="activateCallback(5)" />
-                                </div>
-                                    </div>
-                                </form>
-                            </ng-template>
-                          </p-step-panel>
-                    
- <!--Additional Considerations End -->
-
-<!-- Locality Details Start -->
-                    
- <p-step-panel [value]="5">
-    <ng-template #content let-activateCallback="activateCallback">
-        <form [formGroup]="propertyForm" (ngSubmit)="onSubmit()">
-            <div class="row ">
-              <div class="col-12">
-                  <div>
-                      <label for="state" class="my-2">State
-                      </label>
-                      <input pInputText id="state" formControlName="state"  class="w-100" placeholder="enter State"/>
-                  </div>
-              </div>
-              <div class="col-12">
-                  <div>
-                      <label for="city" class="my-2">city
-                      </label>
-                      <input pInputText id="city" formControlName="city"  class="w-100" placeholder="enter State"/>
-                  </div>
-              </div>
-               
-              <div class="col-12">
-                  <div>
-                      <label for="pincode" class="my-2">pincode
-                      </label>
-                      <input pInputText id="pincode" formControlName="pincode" class="w-100" placeholder="Enter pincode"/>
-                  </div>
-              </div>
-                <div class="col-12">
-                    <div>
-                        <label for="buildingName" class="my-2">Building Name
-                        </label>
-                        <input pInputText id="buildingName" formControlName="buildingName" class="w-100" placeholder="Enter Building Name"/>
-                    </div>
+                        </form>
                 </div>
-                
-               
-              
-
-                 <div class="flex pt-6 justify-content-end">
-            <p-button label="Back" severity="secondary" icon="pi pi-arrow-left"
-                (onClick)="activateCallback(4)" />
-            
-        </div>
             </div>
-        </form>
-    </ng-template>
-</p-step-panel>
-                    
-<!-- Locality Details End -->
-
-
-
-
-                      </p-step-panels>
-                  </p-stepper>
-              </div>
-          </div>
-      </div>
-  </div>
+        </div>
+    </div>
 </div>

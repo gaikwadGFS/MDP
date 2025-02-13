@@ -41,14 +41,15 @@ export class UploadpropertiesComponent implements OnInit {
  propertySize:any[]= ['']
  state:any[]= ['']
  city:any[]= ['']
+ deposite:any[]= ['']
  buildingName:any[]= ['']
  pincode:any[]= ['']
  propertyDescription:any[]= ['']
  Parking:any[]=['None', 'Car','Bike','Car & Bike']
- PreferedTenants:any[]=['Anyone', 'Family','Bachelor Male','Bachelor Female','Company']
+ preferedTenants:any[]=['Anyone', 'Family','Bachelor Male','Bachelor Female','Company']
   identityType:any[]=['Aadhaar', 'PAN', 'Passport']
   BhkType:any[]=['1RK','1 BHK','2 BHK','3 BHK','4 BHK ','4+ BHK']
-  PropertyAge:any[]=['Less than 1 year','1-3 Years','3-5 Years','5-10 Years','>10 Years']
+  propertyAge:any[]=['Less than 1 year','1-3 Years','3-5 Years','5-10 Years','>10 Years']
   Condition:any[]=['New','Renovated','Needs Repair']
   selectedPropertyType:string='';
   floorOptions = Array.from({ length: 101 }, (_, i) => ({ label: i.toString(), value: i }));
@@ -167,9 +168,9 @@ property:any = {
       bhkType: ['', Validators.required],
       propertyType: ['', Validators.required],
       propertySize: ['', [Validators.required, Validators.pattern(/^[0-9]+$/)]],
-      buildingName: ['', [Validators.required, Validators.pattern(/^[0-9]+$/)]],
+      buildingName: ['', Validators.required],
       facing: ['', Validators.required],
-      propertyAge: ['', [Validators.required, Validators.pattern(/^[0-9]+$/)]],
+      propertyAge: ['', Validators.required],
       propertyCondition: ['', Validators.required],
       floor: ['', [Validators.required, Validators.pattern(/^[0-9]+$/)]],
       totalFloor: ['', [Validators.required, Validators.pattern(/^[0-9]+$/)]],
@@ -182,7 +183,7 @@ property:any = {
       rent: ['', [Validators.required, Validators.pattern(/^[0-9]+$/)]],
       deposite: ['', [Validators.required, Validators.pattern(/^[0-9]+$/)]],
       perMonthOrAnum: ['', Validators.required],
-      monthlyMaintenance: ['', [Validators.required, Validators.pattern(/^[0-9]+$/)]],
+      monthlyMaintenance: ['', Validators.required],
       furnishing: ['', Validators.required],
       parking: ['', Validators.required],
       preferedTenants: ['', Validators.required],
