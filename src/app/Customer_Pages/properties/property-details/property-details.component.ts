@@ -4,11 +4,12 @@ import { CommonModule } from '@angular/common'; // Import for *ngFor
 import { CardModule } from 'primeng/card'; // Import PrimeNG Card
 import { TagModule } from 'primeng/tag'; // Import PrimeNG Tag
 import { ButtonModule } from 'primeng/button';
+import { CarouselModule } from 'primeng/carousel';
 
 @Component({
   selector: 'app-property-details',
   standalone: true,
-  imports: [CommonModule, CardModule, TagModule, ButtonModule],
+  imports: [CommonModule, CardModule, TagModule, ButtonModule, CarouselModule],
   templateUrl: './property-details.component.html',
   styleUrls: ['./property-details.component.css']
 })
