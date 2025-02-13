@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import { TabViewModule } from 'primeng/tabview';
 import { ButtonModule } from 'primeng/button';
-import { ReactiveFormsModule, FormGroup, FormControl, FormBuilder } from '@angular/forms';
+import { ReactiveFormsModule, FormGroup, FormControl } from '@angular/forms';
 import { DropdownModule } from 'primeng/dropdown';
 import { TabsModule } from 'primeng/tabs';
 import { CarouselModule } from 'primeng/carousel';
@@ -17,7 +17,6 @@ import { ConfirmPopupModule } from 'primeng/confirmpopup';
 import { ToastModule } from 'primeng/toast';
 import { SidebarModule } from 'primeng/sidebar';
 import { ApiService } from '../../../Core/Services/api.service';
-import { debounceTime, distinctUntilChanged } from 'rxjs/operators';
 
 @Component({
   selector: 'app-dashboard',
@@ -49,7 +48,6 @@ export class DashboardComponent implements OnInit {
   activeTabIndex: number = 0;
   properties: any[] = []; // Array to hold properties
   filteredProperties: any[] = []; // Array to hold filtered properties
-  allProperties: any[] = []; // Array to hold all properties
 
   tabs = [
     { route: '/dashboard/buy', label: 'Buy', icon: 'pi pi-shopping-cart', isActive: true },
@@ -77,7 +75,7 @@ export class DashboardComponent implements OnInit {
     'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTZFlyQWxv72erCxTodjvHGPFEUbWmzME43LA&s'
   ];
 
-  constructor(private apiService: ApiService, private fb: FormBuilder) {
+  constructor(private apiService: ApiService) {
     this.dashboardForm = new FormGroup({
       tabSelection: new FormControl(''),
       searchCity: new FormControl(''),

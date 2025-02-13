@@ -5,7 +5,7 @@
       "location": "Datt Colony near Kirti Classic Plots",
       "rent": 14000,
       "deposit": 20000,
-      "size": "500",
+      "size": "500 sqft",
       "furnishing": "Unfurnished",
       "bhk": "1 BHK",
       "suitableFor": "Bachelor",
@@ -17,7 +17,57 @@
         {
           "src": "https://3.imimg.com/data3/QF/VC/MY-11005443/princetown.jpg"
         }
-      ]
+      ],
+      "apartmentType": "Apartment",
+      "propertyType": "Residential",
+      "propertySize": "1200 sqft",
+      "facing": "East",
+      "propertyAge": "5 years",
+      "propertyCondition": "Well Maintained",
+      "floor": "7",
+      "totalFloor": "10",
+      "state": "Maharashtra",
+      "city": "Pune",
+      "pincode": "411045",
+      "address": "Skyline Residency, Near Balewadi Phata, Pune",
+      "rentType": "Lease",
+      "perMonthOrAnum": "Per Month",
+      "monthlyMaintenance": 2000,
+      "parking": "1 Covered Parking",
+      "preferedTenants": "Family or Working Professionals",
+      "propertyDescription": "Spacious 3 BHK apartment with a balcony, modular kitchen, and ample sunlight. Located in a gated community with 24/7 security.",
+      "amenities": [
+        "Gym",
+        "Swimming Pool",
+        "Children's Play Area",
+        "Clubhouse",
+        "Power Backup",
+        "24/7 Water Supply",
+        "CCTV Surveillance"
+      ],
+      "utilitiesAvailable": [
+        "Water Supply",
+        "Electricity",
+        "Internet",
+        "Gas Pipeline"
+      ],
+      "nearbyFacilities": [
+        "Hospitals",
+        "Schools",
+        "Malls",
+        "Public Transport",
+        "Supermarkets"
+      ],
+      "restrictions": [
+        "No Pets",
+        "No Loud Music after 10 PM"
+      ],
+      "ownerDetails": {
+        "name": "Amit Sharma",
+        "contact": "9876543210",
+        "address": "Koregaon Park, Pune",
+        "email": "amit.sharma@example.com"
+      }
     },
     {
       "title": "2 BHK Apartment For Rent in Baner",
@@ -154,6 +204,71 @@
       "ownerAddress": "Hinjewadi phase 1",
       "ownerEmail": "k@gmail.com",
       "active":"false"
+
+    },
+    {
+      "propertyId": "PUNE123456",
+      "apartmentType": "Apartment",
+      "bhkType": "3 BHK",
+      "propertyType": "Residential",
+      "propertySize": "1200 sqft",
+      "facing": "East",
+      "propertyAge": "5 years",
+      "propertyCondition": "Well Maintained",
+      "floor": "7",
+      "totalFloor": "10",
+      "state": "Maharashtra",
+      "city": "Pune",
+      "pincode": "411045",
+      "address": "Skyline Residency, Near Balewadi Phata, Pune",
+      "rentType": "Lease",
+      "rent": "35000",
+      "deposite": "100000",
+      "perMonthOrAnum": "Per Month",
+      "monthlyMaintenance": "2000",
+      "furnishing": "Fully Furnished",
+      "parking": "1 Covered Parking",
+      "preferedTenants": "Family or Working Professionals",
+      "propertyDescription": "Spacious 3 BHK apartment with a balcony, modular kitchen, and ample sunlight. Located in a gated community with 24/7 security.",
+      "amenities": [
+        "Gym",
+        "Swimming Pool",
+        "Children's Play Area",
+        "Clubhouse",
+        "Power Backup",
+        "24/7 Water Supply",
+        "CCTV Surveillance"
+      ],
+      "utilitiesAvailable": [
+        "Water Supply",
+        "Electricity",
+        "Internet",
+        "Gas Pipeline"
+      ],
+      "nearbyFacilities": [
+        "Hospitals",
+        "Schools",
+        "Malls",
+        "Public Transport",
+        "Supermarkets"
+      ],
+      "restrictions": [
+        "No Pets",
+        "No Loud Music after 10 PM"
+      ],
+      "ownerName": "Amit Sharma",
+      "ownerContact": "9876543210",
+      "ownerAddress": "Koregaon Park, Pune",
+      "ownerEmail": "amit.sharma@example.com",
+      "availableFrom": "01-Apr-2025",
+      "propertyImages": [
+        {
+          "src": "https://3.imimg.com/data3/QF/VC/MY-11005443/princetown.jpg"
+        },
+        {
+          "src": "https://www.skyi.com/images/iris-baner/iris-header_monile.jpg"
+        }
+      ]
     }
   ],
   "registerOffice": [
