@@ -36,13 +36,20 @@ export class UploadpropertiesComponent implements OnInit {
 
  propertyType:any[]=['Apartment', 'Independent House/Villa', 'Gated Community Villa'];
  Facing:any[]=['East', 'West', 'North', 'South','North-East','North-West','South-East','South-West']
- MonthlyMaintenance:any[]=['Maintenance Included', 'Maintenance Extra']
+ monthlyMaintenance:any[]=['Maintenance Included', 'Maintenance Extra']
  Furnishing:any[]=['Full', 'Semi','unfurnished']
+ propertySize:any[]= ['']
+ state:any[]= ['']
+ city:any[]= ['']
+ buildingName:any[]= ['']
+ pincode:any[]= ['']
+ propertyDescription:any[]= ['']
  Parking:any[]=['None', 'Car','Bike','Car & Bike']
  PreferedTenants:any[]=['Anyone', 'Family','Bachelor Male','Bachelor Female','Company']
   identityType:any[]=['Aadhaar', 'PAN', 'Passport']
   BhkType:any[]=['1RK','1 BHK','2 BHK','3 BHK','4 BHK ','4+ BHK']
   PropertyAge:any[]=['Less than 1 year','1-3 Years','3-5 Years','5-10 Years','>10 Years']
+  Condition:any[]=['New','Renovated','Needs Repair']
   selectedPropertyType:string='';
   floorOptions = Array.from({ length: 101 }, (_, i) => ({ label: i.toString(), value: i }));
 
@@ -56,8 +63,148 @@ rentDurationOptions = [
   { label: 'Month', value: 'month' },
   { label: 'Annum', value: 'year' }
 ];
+// Options for "titlestatus" dropdown
+titlestatus = [
+  { label: 'Freehold', value: 'Freehold' },
+  { label: 'Leasehold', value: 'Leasehold' },
+  { label: 'Encumbered', value: 'Encumbered' }
+];
+// Options for "zoningclassification" dropdown
+zoningclassification = [
+  { label: 'Residential', value: 'Residential' },
+  { label: 'Commercial', value: 'Commercial' },
+  { label: 'Mixed-use', value: 'Mixed-use' }
+];
+// Options for "Encumbrances" dropdown
+Encumbrances = [
+  { label: 'Mortgages', value: 'Mortgages' },
+  { label: 'Liens', value: 'Liens' },
+  { label: 'Legal Disputes', value: 'Legal Disputes' }
+];
+// Options for "Amenities" dropdown
+amenities = [
+  { label: 'Parking', value: 'Parking' },
+  { label: 'Garden', value: 'Garden' },
+  { label: 'Swimming Pool', value: 'Swimming Pool' },
+  { label: 'Gym', value: 'Gym' }
+];
+// Options for "Utilities Available" dropdown
+utilitiesAvailable = [
+  { label: 'Water', value: 'Water' },
+  { label: 'Electricity', value: 'Electricity' },
+  { label: 'Gas', value: 'Gas' },
+  { label: 'Internet', value: 'Internet' }
+];
+// Options for "Nearby Facilities" dropdown
+nearbyFacilities = [
+  { label: 'Schools', value: 'Schools' },
+  { label: 'Hospitals', value: 'Hospitals' },
+  { label: 'Malls', value: 'Malls' },
+  { label: 'Public Transport', value: 'Public Transport' }
+];
+// Options for "Restrictions" dropdown
+restrictions= [
+  { label: 'HOA Rules', value: 'HOA Rules' },
+  { label: 'Building Codes', value: 'Building Codes' },
+  { label: 'Easements', value: 'Easements' },
+];
 
-  constructor(private messageService:MessageService) {}
+
+propertyForm: FormGroup;
+
+
+property:any = {
+  "propertyId":"",
+  "apartmentType":"",
+  "bhkType":"",
+  "propertyType":"",
+  "propertySize":"",
+  "buildingName":"",
+  "facing":"",
+  "propertyAge":"",
+  "propertyCondition":"",
+  "floor":"",
+  "totalFloor":"",
+  "state":"",
+  "rentDurationOptions":"",
+  "city":"",
+  "pincode":"",
+  "address":"",
+   "rentType":"",
+  "rent":"",
+  "deposite":"",
+  "perMonthOrAnum":"",
+  "monthlyMaintenance":"",
+  "furnishing":"",
+  "parking":"",
+  "preferedTenants":"",
+  "propertyDescription":"",
+  "amenities":[],
+  "utilitiesAvailable":[],
+  "nearbyFacilities:":[],
+  "restrictions":[],
+  "ownerName":"",
+  "ownerContact":"",
+  "ownerAddress":"",
+  "ownerEmail":"",
+  "availableFrom": "",
+ "propertyImages": [
+    {
+      "src": ""
+    }
+  ]
+
+}
+
+
+
+
+  constructor(private messageService:MessageService,private fb: FormBuilder) {
+
+    this.propertyForm = this.fb.group({
+      propertyId: ['', Validators.required],
+      apartmentType: ['', Validators.required],
+      bhkType: ['', Validators.required],
+      propertyType: ['', Validators.required],
+      propertySize: ['', [Validators.required, Validators.pattern(/^[0-9]+$/)]],
+      buildingName: ['', [Validators.required, Validators.pattern(/^[0-9]+$/)]],
+      facing: ['', Validators.required],
+      propertyAge: ['', [Validators.required, Validators.pattern(/^[0-9]+$/)]],
+      propertyCondition: ['', Validators.required],
+      floor: ['', [Validators.required, Validators.pattern(/^[0-9]+$/)]],
+      totalFloor: ['', [Validators.required, Validators.pattern(/^[0-9]+$/)]],
+      state: ['', Validators.required],
+      rentDurationOptions: ['', Validators.required],
+      city: ['', Validators.required],
+      pincode: ['', [Validators.required, Validators.pattern(/^[0-9]{6}$/)]],
+      address: ['', [Validators.required, Validators.minLength(5)]],
+      rentType: ['', Validators.required],
+      rent: ['', [Validators.required, Validators.pattern(/^[0-9]+$/)]],
+      deposite: ['', [Validators.required, Validators.pattern(/^[0-9]+$/)]],
+      perMonthOrAnum: ['', Validators.required],
+      monthlyMaintenance: ['', [Validators.required, Validators.pattern(/^[0-9]+$/)]],
+      furnishing: ['', Validators.required],
+      parking: ['', Validators.required],
+      preferedTenants: ['', Validators.required],
+      propertyDescription: ['', [Validators.required, Validators.minLength(10)]],
+      amenities: [[], Validators.required],
+      utilitiesAvailable: [[], Validators.required],
+      nearbyFacilities: [[], Validators.required],
+      restrictions: [[]],
+      ownerName: ['', [Validators.required, Validators.minLength(2)]],
+      ownerContact: ['', [Validators.required, Validators.pattern(/^[0-9]{10}$/)]],
+      ownerAddress: ['', Validators.required],
+      ownerEmail: ['', [Validators.required, Validators.email]],
+      availableFrom: ['', Validators.required],
+      propertyImages: this.fb.array([
+        this.fb.group({ src: ['', Validators.required] })
+      ])
+    });
+
+
+
+
+  }
 
   ngOnInit() {
 
@@ -73,7 +220,13 @@ rentDurationOptions = [
 
 
 
-
+  onSubmit() {
+    if (this.propertyForm.valid) {
+      console.log('Form Submitted:', this.propertyForm.value);
+    } else {
+      console.log('Form is invalid!');
+    }
+  }
 
   
 

@@ -8,6 +8,7 @@ import { ViewRegisterPropertiesComponent } from './Registration/view-register-pr
 import { SerachRegistrarOfficeComponent } from './serach-registrar-office/serach-registrar-office.component';
 import { CheckMahaReraComponent } from './check-maha-rera/check-maha-rera.component';
 import { MostPopularComponent } from './most-popular/most-popular.component';
+import { PropertyDetailsComponent } from './property-details/property-details.component';
 
 const routes: Routes = [
 
@@ -42,8 +43,11 @@ const routes: Routes = [
         {
           path:'mostPopular',
           component:MostPopularComponent
+        },
+        {
+          path:'propertyDetails',
+          component:PropertyDetailsComponent
         }
-
       ]
    },
   
