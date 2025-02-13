@@ -29,7 +29,133 @@
           { "src": "assets/property3.jpg" },
           { "src": "assets/property4.jpg" }
         ]
+      },
+      {
+        "propertyId":"",
+        "apartmentType":"",
+        "bhkType":"",
+        "propertyType":"",
+        "propertySize":"",
+        "facing":"",
+        "propertyAge":"",
+        "propertyCondition":"",
+        "floor":"",
+        "totalFloor":"",
+        "state":"",
+        "city":"",
+        "pincode":"",
+        "address":"",
+         "rentType":"",
+        "rent":"",
+        "deposite":"",
+        "perMonthOrAnum":"",
+        "monthlyMaintenance":"",
+        "furnishing":"",
+        "parking":"",
+        "preferedTenants":"",
+        "propertyDescription":"",
+        "amenities":[],
+        "utilitiesAvailable":[],
+        "nearbyFacilities:":[],
+        "restrictions":[],
+        "ownerName":"",
+        "ownerContact":"",
+        "ownerAddress":"",
+        "ownerEmail":"",
+        "availableFrom": "",
+       "propertyImages": [
+          {
+            "src": ""
+          }
+        ]
+   
       }
-    ]
+   
+    ],
+
+"registerOffice":[
+{
+  "registerOfficeId": "1",
+  "officeName": "Jt. Sub Registrar Haveli No.15 ",
+  "address": " Kale Eliet Bldg. Opp. Swami Vivekanand Soc. Nimahan Mala, Shop No. 4 Pashan Gaon, Pune 21",
+  "officeEmail": "jsr.haveli15@igrmaharashtra.gov.in ",
+  "siteOfficeLink": "click here",
+  "officeTimeAndWeeklyHolidays": "10 to 5.45 (Every Sunday,Second and Fourth Saturday)",
+  "city":"pune"
+},
+{
+  "registerOfficeId": "2",
+  "officeName": "Dy.Inspector General of Registration & Dy. Controller of Stamps,Pune",
+  "address": " New Admn. Bldg. Fourth Floor, Pune, 1",
+  "officeEmail": "jdr.punecity@igrmaharashtra.gov.in",
+  "siteOfficeLink": "click here",
+  "officeTimeAndWeeklyHolidays": "10 to 5.45 (Every Sunday,Second and Fourth Saturday)",
+  "city":"pune"
+},
+{
+  "registerOfficeId": "3",
+  "officeName": "Joint District Registrar & Collector of Stamps, Pune City ",
+  "address": " Finance Road Govt. photo Registrar Office Building Opp. B.J. Medical Ladies Hostel, Pune-01 ",
+  "officeEmail": "jsr.haveli1@igrmaharashtra.gov.in ",
+  "siteOfficeLink": "click here",
+ "officeTimeAndWeeklyHolidays": "10 to 5.45 (Every Sunday,Second and Fourth Saturday)",
+  "city":"pune"
+},
+{
+  "registerOfficeId": "4",
+  "officeName": "Jt. Sub Registrar Haveli No. 1",
+  "address": " Tahsil Office Compound, Shukrawar Peth, Pune",
+  "officeEmail": "jsr.haveli2@igrmaharashtra.gov.in",
+  "siteOfficeLink": "click here",
+ "officeTimeAndWeeklyHolidays": "10 to 5.45 (Every Sunday,Second and Fourth Saturday)",
+  "city":"pune"
+},
+{
+  "registerOffice": "5",
+  "officeName": "Dy.Inspector General of Registration & Dy. Controller of Stamps, Nashik Division, Nashik",
+  "address": " Udyog Bhavan,Block No.22, 5th Floor, I.T.I Signal Chauk,Trambak Road, Nashik",
+  "officeEmail": "dig.nashik@igrmaharashtra.gov.in",
+  "siteOfficeLink": "click here",
+ "officeTimeAndWeeklyHolidays": "10 to 5.45 (Every Sunday,Second and Fourth Saturday)",
+  "city":"nashik"
+},
+{
+  "registerOffice": "6",
+  "officeName": "Joint District Registrar & Collector of Stamps, Nashik ",
+  "address": " Zilha Krushi Audyogik Sahkari Sangh.Building, 1st Floor, Nashik Dwarka Point, Nashik, Dist. Nashik",
+  "officeEmail": "jdr.nashik@igrmaharashtra.gov.in",
+  "siteOfficeLink": "click here",
+ "officeTimeAndWeeklyHolidays": "10 to 5.45 (Every Sunday,Second and Fourth Saturday)",
+  "city":"nashik"
+},
+{
+  "registerOffice": "7",
+  "officeName": "Jt Sub Registra, Nashik 1, ",
+  "address": " Collector Compound, , Dist.Nashik",
+  "officeEmail": "sr.nashik1@igrmaharashtra.gov.in",
+  "siteOfficeLink": "click here",
+  "officeTimeAndWeeklyHolidays": "10 to 5.45 (Every Sunday,Second and Fourth Saturday)",
+  "city":"nashik"
+},
+{
+  "registerOffice": "8",
+  "officeName": "Jt Sub Registrar, Nashik 2, ",
+  "address": " Genuji Bhuwan 1st Floor, Nashik Road Nashik, Dist. Nashik",
+ "officeEmail": "Sr.nashik2@igrmaharashtra.gov.in",
+  "siteOfficeLink": "click here",
+  "officeTimeAndWeeklyHolidays": "10 to 5.45 (Every Sunday,Second and Fourth Saturday)",
+  "city":"nashik"
+}
+
+
+
+
+]
+
   }
+
+
+
+
+  
   
