@@ -203,8 +203,7 @@
       "ownerContact": "9890660766",
       "ownerAddress": "Hinjewadi phase 1",
       "ownerEmail": "k@gmail.com",
-      "active":"false"
-
+      "active": "false"
     },
     {
       "propertyId": "PUNE123456",
@@ -269,6 +268,60 @@
           "src": "https://www.skyi.com/images/iris-baner/iris-header_monile.jpg"
         }
       ]
+    },
+    {
+      "id": "314e",
+      "bhkType": "2 BHK",
+      "propertyType": "Independent House/Villa",
+      "propertySize": "20000",
+      "buildingName": "shri complex",
+      "facing": "East",
+      "propertyAge": "3-5 Years",
+      "propertyCondition": "Renovated",
+      "floor": 2,
+      "totalFloor": 3,
+      "state": "maha",
+      "city": "pune",
+      "pincode": "8653417",
+      "address": "hello world",
+      "rentType": "rent",
+      "rent": "3878888",
+      "deposite": "20000",
+      "perMonthOrAnum": "year",
+      "monthlyMaintenance": "Maintenance Included",
+      "furnishing": "Semi",
+      "parking": "Car",
+      "preferedTenants": "Family",
+      "propertyDescription": "jhabfliabfa",
+      "amenities": [
+        {
+          "label": "Swimming Pool",
+          "value": "Swimming Pool"
+        }
+      ],
+      "utilitiesAvailable": [
+        {
+          "label": "Electricity",
+          "value": "Electricity"
+        }
+      ],
+      "nearbyFacilities": [
+        {
+          "label": "Schools",
+          "value": "Schools"
+        }
+      ],
+      "restrictions": [
+        {
+          "label": "Easements",
+          "value": "Easements"
+        }
+      ],
+      "ownerName": "hfhfggg",
+      "ownerContact": "khgvkhvv",
+      "ownerAddress": "kgcvkygckgc",
+      "ownerEmail": "kgclhgcluc",
+      "active": false
     }
   ],
   "registerOffice": [

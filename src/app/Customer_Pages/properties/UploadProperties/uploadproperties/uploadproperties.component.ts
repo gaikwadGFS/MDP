@@ -52,7 +52,7 @@ export class UploadpropertiesComponent implements OnInit {
   // identity_Type:any[]=['Aadhaar', 'PAN', 'Passport']
   bhk_Type:any[]=['1RK','1 BHK','2 BHK','3 BHK','4 BHK ','4+ BHK']
   property_Age:any[]=['Less than 1 year','1-3 Years','3-5 Years','5-10 Years','>10 Years']
-  property_Condition:any[]=['New','Renovated','Needs Repair']
+  property_Condition:any[]=['New','Renovated','Needs Repair','None']
   // selectedPropertyType:string='';
   floor_Options = Array.from({ length: 101 }, (_, i) => ({ label: i.toString(), value: i }));
 
@@ -180,7 +180,7 @@ propertyForm: FormGroup;
       // rentDurationOptions: ['', Validators.required],
       city: ['', Validators.required],
       pincode: ['', [Validators.required]],
-      // address: ['', [Validators.required]],
+      address: ['', [Validators.required]],
       rentType: ['', Validators.required],
       rent: ['', [Validators.required]],
       deposite: ['', [Validators.required]],

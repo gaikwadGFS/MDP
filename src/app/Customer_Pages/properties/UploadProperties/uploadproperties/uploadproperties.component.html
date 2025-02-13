@@ -13,9 +13,9 @@
                             <p-step-list>
                                 <p-step [value]="1">Property Details</p-step>
                                 <p-step [value]="2">Rent Details</p-step>
-                                <p-step [value]="3">Ownership & Legal Information</p-step>
+                                <p-step [value]="3">Owner Information</p-step>
                                 <p-step [value]="4">Additional Considerations</p-step>
-                                <p-step [value]="5">locality details</p-step>
+                                <p-step [value]="5">Property Details</p-step>
                             </p-step-list>
                             <!-- <p-step-panels> -->
 
@@ -383,6 +383,13 @@
                                                     <input pInputText  formControlName="buildingName"
                                                         class="w-100" placeholder="Enter Building Name" />
                                                 </div>
+                                            </div>
+                                            <div class="col-12 ">
+                                                <label for="propertyDescription" class="my-2 ">Property
+                                                    Address</label>
+                                                <input pInputText 
+                                                    formControlName="address" class="w-full p-5"
+                                                    placeholder="Please enter your property address" />
                                             </div>
 
                                             <!-- Navigation Buttons -->
