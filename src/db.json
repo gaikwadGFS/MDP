@@ -101,6 +101,59 @@
           "src": "https://www.skyi.com/images/iris-baner/iris-header_monile.jpg"
         }
       ]
+    },
+    {
+      "id": "3d9b",
+      "bhkType": "1RK",
+      "propertyType": "Independent House/Villa",
+      "propertySize": "564",
+      "buildingName": "Mahalaxmi",
+      "facing": "East",
+      "propertyAge": "1-3 Years",
+      "propertyCondition": "Renovated",
+      "floor": 1,
+      "totalFloor": 5,
+      "state": "Maharashtra",
+      "city": "pune",
+      "pincode": "413155",
+      "rentType": "rent",
+      "rent": "20000",
+      "deposite": "60000",
+      "perMonthOrAnum": "month",
+      "monthlyMaintenance": "Maintenance Included",
+      "furnishing": "Semi",
+      "parking": "Bike",
+      "preferedTenants": "Family",
+      "propertyDescription": "It is good",
+      "amenities": [
+        {
+          "label": "Parking",
+          "value": "Parking"
+        }
+      ],
+      "utilitiesAvailable": [
+        {
+          "label": "Water",
+          "value": "Water"
+        }
+      ],
+      "nearbyFacilities": [
+        {
+          "label": "Schools",
+          "value": "Schools"
+        }
+      ],
+      "restrictions": [
+        {
+          "label": "HOA Rules",
+          "value": "HOA Rules"
+        }
+      ],
+      "ownerName": "Kshitija Gaikwad",
+      "ownerContact": "9890660766",
+      "ownerAddress": "Hinjewadi phase 1",
+      "ownerEmail": "k@gmail.com",
+      "active":"false"
     }
   ],
   "registerOffice": [
@@ -236,7 +289,7 @@
       "name": "Sneha Patil",
       "cityId": 4,
       "specialization": "Family Law",
-      "rating": 4.0,
+      "rating": 4,
       "fee": 200,
       "city": "Nashik",
       "contactNumber": "8765432109",
@@ -332,7 +385,6 @@
     }
   ],
   "customerRegister": [
-  
     {
       "id": "ec4c",
       "firstName": "Kshitija",
