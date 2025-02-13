@@ -1,0 +1,12 @@
+.property-img {
+    width: 100%;
+    border-radius: 10px;
+}
+
+.stars i {
+    font-size: 1.2rem;
+}
+
+.p-galleria .p-galleria-thumbnail img {
+    border-radius: 8px;
+}

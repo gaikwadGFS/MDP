@@ -7,3 +7,7 @@
         }
     }
 }
+
+.p-select{
+    position: unset !important;
+}

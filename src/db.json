@@ -222,21 +222,25 @@
   "advocates": [
     {
       "id": 1,
-      "name": "Alice Smith",
-      "cityId": 1,
+      "name": "Aarav Mehta",
+      "cityId": 2,
       "specialization": "Criminal Law",
       "rating": 4.5,
-      "fee": 150,
-      "city": "New York"
+      "fee": 300,
+      "city": "Pune",
+      "contactNumber": "9876543210",
+      "address": "123 Law Street, Pune"
     },
     {
       "id": 2,
-      "name": "Bob Johnson",
-      "cityId": 2,
+      "name": "Sneha Patil",
+      "cityId": 4,
       "specialization": "Family Law",
-      "rating": 3.8,
+      "rating": 4.0,
       "fee": 200,
-      "city": "Los Angeles"
+      "city": "Nashik",
+      "contactNumber": "8765432109",
+      "address": "456 Advocate Lane, Nashik"
     },
     {
       "id": 3,
@@ -245,7 +249,86 @@
       "specialization": "Corporate Law",
       "rating": 4.2,
       "fee": 250,
-      "city": "New York"
+      "city": "Mumbai",
+      "contactNumber": "7654321098",
+      "address": "789 Legal Avenue, Mumbai"
+    },
+    {
+      "id": 4,
+      "name": "Vikram Deshmukh",
+      "cityId": 5,
+      "specialization": "Intellectual Property Law",
+      "rating": 4.8,
+      "fee": 350,
+      "city": "Aurangabad",
+      "contactNumber": "6543210987",
+      "address": "321 Patent Blvd, Aurangabad"
+    },
+    {
+      "id": 5,
+      "name": "Riya Kulkarni",
+      "cityId": 3,
+      "specialization": "Tax Law",
+      "rating": 3.9,
+      "fee": 180,
+      "city": "Nagpur",
+      "contactNumber": "5432109876",
+      "address": "654 Finance Road, Nagpur"
+    },
+    {
+      "id": 6,
+      "name": "Karan Joshi",
+      "cityId": 6,
+      "specialization": "Labor Law",
+      "rating": 4.3,
+      "fee": 270,
+      "city": "Solapur",
+      "contactNumber": "4321098765",
+      "address": "987 Worker Street, Solapur"
+    },
+    {
+      "id": 7,
+      "name": "Neha Shinde",
+      "cityId": 7,
+      "specialization": "Environmental Law",
+      "rating": 4.6,
+      "fee": 320,
+      "city": "Amravati",
+      "contactNumber": "3210987654",
+      "address": "159 Green Lane, Amravati"
+    },
+    {
+      "id": 8,
+      "name": "Arjun Pawar",
+      "cityId": 8,
+      "specialization": "Real Estate Law",
+      "rating": 4.1,
+      "fee": 240,
+      "city": "Kolhapur",
+      "contactNumber": "2109876543",
+      "address": "753 Property Blvd, Kolhapur"
+    },
+    {
+      "id": 9,
+      "name": "Priya Nair",
+      "cityId": 9,
+      "specialization": "Immigration Law",
+      "rating": 3.8,
+      "fee": 220,
+      "city": "Akola",
+      "contactNumber": "1098765432",
+      "address": "852 Visa Street, Akola"
+    },
+    {
+      "id": 10,
+      "name": "Rohit Bansal",
+      "cityId": 10,
+      "specialization": "Banking Law",
+      "rating": 4.4,
+      "fee": 310,
+      "city": "Jalgaon",
+      "contactNumber": "0987654321",
+      "address": "963 Finance Avenue, Jalgaon"
     }
   ],
   "customerRegister": [
