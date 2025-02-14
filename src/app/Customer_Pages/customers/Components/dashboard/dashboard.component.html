@@ -1,5 +1,5 @@
-<div class="container">
-    <div class="row" style="margin-top: 90px;">
+<div class="container ">
+    <div class="row" >
         <!-- Left Advertisement Section -->
         <div class="col-3 p-m-2">
             <div class="advertisement p-d-flex p-flex-column p-ai-center p-shadow-4 p-border-round-lg p-p-3"
@@ -44,7 +44,8 @@
                             <a href="#" style="color: #d07a16; text-decoration: none;">Flats in Maan for rent</a>
                         </li>
                         <li class="p-mb-2">
-                            <a href="#" style="color: #d07a16; text-decoration: none;">Flats in Hinjewadi Phase 2 Road for rent</a>
+                            <a href="#" style="color: #d07a16; text-decoration: none;">Flats in Hinjewadi Phase 2 Road
+                                for rent</a>
                         </li>
                     </ul>
                 </div>
@@ -53,24 +54,24 @@
 
         <!-- Main Card Section -->
         <div class="col-6 p-m-2">
-            <div class="p-d-flex p-jc-center">
-                <div class="p-card p-3 p-shadow-4 p-border-round-lg"
+            <div class="p-d-flex p-jc-center p-flex-column">
+                <div *ngFor="let property of filteredProperties" class="p-card p-3 p-shadow-4 p-border-round-lg mb-2"
                     style="width: 100%; max-width: 800px; background: linear-gradient(135deg, #f0f8ff, #d9f7ff); border: 1px solid #a7c7d7;">
                     <div class="p-card-title text-xl font-bold p-mb-2" style="color: #2a5d84;">
-                        1 BHK Flat In Standalone Building (No Lift 2nd Floor) For Rent In Hinjawadi
+                        {{ property.title }}
                     </div>
                     <div class="p-card-subtitle p-mb-3" style="color: #4a8fc9;">
-                        Datt Colony near Kirti Classic Plots, <a href="#" class="text-primary">Explore Nearby</a>
+                        {{ property.location }} <a href="#" class="text-primary">Explore Nearby</a>
                     </div>
 
                     <!-- Content Section -->
                     <div class="grid">
                         <!-- Left Section: Image Carousel -->
                         <div class="col-5 text-center">
-                            <p-carousel [value]="propertyImages" [numVisible]="1" [numScroll]="1" [circular]="true"
-                                [autoplayInterval]="3000">
+                            <p-carousel [value]="property.propertyImages" [numVisible]="1" [numScroll]="1"
+                                [circular]="true" [autoplayInterval]="3000">
                                 <ng-template pTemplate="item" let-image>
-                                    <img [src]="image" alt="Property Image" class="w-full border-round-sm shadow-1"
+                                    <img [src]="image.src" alt="Property Image" class="w-full border-round-sm shadow-1"
                                         style="object-fit: cover; width: 100%; height: 250px;" />
                                 </ng-template>
                             </p-carousel>
@@ -82,39 +83,41 @@
                             <!-- Price Section -->
                             <div class="grid p-mb-3">
                                 <div class="col-4 text-center">
-                                    <div class="text-lg font-bold" style="color: #2a5d84;">₹ 14,000</div>
+                                    <div class="text-lg font-bold" style="color: #2a5d84;">₹ {{ property.rent }}</div>
                                     <div class="text-sm" style="color: #555;">Rent (Non-Negotiable)</div>
                                 </div>
                                 <div class="col-4 text-center">
-                                    <div class="text-lg font-bold" style="color: #2a5d84;">₹ 20,000</div>
+                                    <div class="text-lg font-bold" style="color: #2a5d84;">₹ {{ property.deposit }}
+                                    </div>
                                     <div class="text-sm" style="color: #555;">Deposit</div>
                                 </div>
                                 <div class="col-4 text-center">
-                                    <div class="text-lg font-bold" style="color: #2a5d84;">500 sqft</div>
+                                    <div class="text-lg font-bold" style="color: #2a5d84;">{{ property.size }} sqft
+                                    </div>
                                     <div class="text-sm" style="color: #555;">Buildup</div>
                                 </div>
                             </div>
 
                             <!-- Additional Details -->
-                            <div class="grid p-mb-3">
+                            <div class="grid p-mb-3 mt-2">
                                 <div class="col-4">
                                     <i class="pi pi-home p-mr-2" style="color: #2a5d84;"></i>
-                                    <span>Unfurnished</span>
+                                    <span>{{ property.furnishing }}</span>
                                 </div>
                                 <div class="col-4">
                                     <i class="pi pi-building p-mr-2" style="color: #2a5d84;"></i>
-                                    <span>1 BHK</span>
+                                    <span>{{ property.bhk }}</span>
                                 </div>
                                 <div class="col-4">
                                     <i class="pi pi-user p-mr-2" style="color: #2a5d84;"></i>
-                                    <span>Bachelor</span>
+                                    <span>{{ property.suitableFor }}</span>
                                 </div>
                             </div>
 
                             <div class="grid">
-                                <div class="col-4">
+                                <div class="col-6">
                                     <i class="pi pi-calendar p-mr-2" style="color: #2a5d84;"></i>
-                                    <span>01-Feb-2025</span>
+                                    <span>{{ property.availableFrom }}</span>
                                 </div>
                             </div>
 
@@ -133,6 +136,10 @@
                             <div class="text-right p-mt-3">
                                 <button class="p-button p-button-outlined p-button-success">
                                     Join Visit
+                                </button>
+
+                                <button class="p-button p-button-outlined p-button-success">
+                                   View Details
                                 </button>
                             </div>
                         </div>
@@ -167,12 +174,12 @@
                             <span class="p-inputgroup-addon">
                                 <i class="pi pi-map-marker"></i>
                             </span>
-                            <input pInputText formControlName="searchCity" placeholder="City" class="p-inputtext-lg"  class="p-inputtext-lg p-filled" style="border: 1px solid #ced4da;"/>
+                            <input pInputText formControlName="searchCity" placeholder="City" class="p-inputtext-lg"
+                                style="border: 1px solid #ced4da;" />
                         </div>
                         <!-- Area Input -->
                         <div class="p-inputgroup p-col-12 p-md-3">
                             <span class="p-inputgroup-addon">
-                                <!-- Custom Icon (SVG Example) -->
                                 <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20"
                                     fill="none">
                                     <path
@@ -180,7 +187,8 @@
                                         fill="#007ad9" />
                                 </svg>
                             </span>
-                            <input pInputText formControlName="searchArea" placeholder="Area" class="p-inputtext-lg" class="p-inputtext-lg p-filled" style="border: 1px solid #ced4da;" />
+                            <input pInputText formControlName="searchArea" placeholder="Area" class="p-inputtext-lg"
+                                style="border: 1px solid #ced4da;" />
                         </div>
                         <!-- Pincode Input -->
                         <div class="p-inputgroup p-col-12 p-md-3">
@@ -188,7 +196,7 @@
                                 <i class="pi pi-map"></i>
                             </span>
                             <input pInputText formControlName="searchPincode" placeholder="Pincode"
-                            class="p-inputtext-lg p-filled" style="border: 1px solid #ced4da;"  />
+                                class="p-inputtext-lg" style="border: 1px solid #ced4da;" />
                         </div>
                         <!-- Property Type Dropdown -->
                         <div class="p-inputgroup p-col-12 p-md-3">

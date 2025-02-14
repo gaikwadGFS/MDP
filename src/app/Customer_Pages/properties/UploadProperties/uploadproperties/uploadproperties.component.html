@@ -4,622 +4,414 @@
             <h2 class="mt-5 text-center">Upload Your New Property</h2>
         </div>
     </div>
-  <div class="row">
-      <div class="col-12">
-          <div class="">
-              <div class="card   shadow border-0 p-3">
-                  <p-stepper [value]="1" class="basis-[50rem]">
-                      <p-step-list>
-                          <p-step [value]="1">Property Details</p-step>
-                          <p-step [value]="2">Locality Details</p-step>
-                          <p-step [value]="3">Rent Details</p-step>
-                          <p-step [value]="4">Amenities Details</p-step>
-                          <p-step [value]="5">Registration Fee </p-step>
+    <div class="row">
+        <div class="col-12">
+            <div class="">
+                <div class="card   shadow border-0 p-3">
+                    <form [formGroup]="propertyForm" (ngSubmit)="onSubmit()">
+                        <p-stepper [value]="1" class="basis-[50rem]">
+                            <p-step-list>
+                                <p-step [value]="1">Property Details</p-step>
+                                <p-step [value]="2">Rent Details</p-step>
+                                <p-step [value]="3">Owner Information</p-step>
+                                <p-step [value]="4">Additional Considerations</p-step>
+                                <p-step [value]="5">Property Details</p-step>
+                            </p-step-list>
+                            <!-- <p-step-panels> -->
 
-                       
-                      </p-step-list>
-                      <p-step-panels>
-                          <!-- Property Details Start -->
-                          <p-step-panel [value]="1">
-                              <ng-template #content let-activateCallback="activateCallback">
-                                  <form action="">
-                                      <div class="row ">
+                                <!-- Property Details Start -->
 
-
-
-                                        
-                                          <div class="col-12">
-                                              <div>
-                                                  <label for="propertyType" class="my-2">Apartment Type </label>
-                                                  <p-select [options]="propertyType" [checkmark]="true"
-                                                      [showClear]="true" placeholder="Select a Property Type"
-                                                      class="w-full md:w-56" />
-                                              </div>
-                                          </div>
-                                         
-                                          <div class="col-12">
-                                              <div>
-                                                  <label for="BhkType" class="my-2">BHK Type </label>
-                                                  <p-select [options]="BhkType" [checkmark]="true"
-                                                      [showClear]="true" placeholder="Select a Bhk Type"
-                                                      class="w-full md:w-56" />
-                                              </div>
-                                          </div>
-                                          <div class="col-12">
-                                              <div>
-                                                  <label for="totalarea" class="my-2">Property Size
-                                                  </label>
-                                                  <input pInputText id="totalarea" class="w-100" placeholder="Total Area (sq. ft./sq. m.)"/>
-                                              </div>
-                                          </div>
-                                          <div class="col-12">
-                                              <div>
-                                                  <label for="Facing" class="my-2">Facing </label>
-                                                  <p-select [options]="Facing" [checkmark]="true"
-                                                      [showClear]="true" placeholder="Select a Direction"
-                                                      class="w-full md:w-56" />
-                                              </div>
-                                          </div>
-                                          <div class="col-12">
-                                              <div>
-                                                  <label for="PropertyAge" class="my-2">Property Age </label>
-                                                  <p-select [options]="PropertyAge" [checkmark]="true"
-                                                      [showClear]="true" placeholder="Select Property Age"
-                                                      class="w-full md:w-56" />
-                                              </div>
-                                          </div>
-                                          <div class="col-12 d-flex gap-3 align-items-end">
-                                            <!-- Floors Dropdown -->
-                                            <div class="col-6">
+                                <p-step-panel [value]="1">
+                                    <ng-template #content let-activateCallback="activateCallback">
+                                        <div class="row ">
+                                            <div class="col-12">
                                                 <div>
-                                                    <label for="floors" class="my-2">Floors</label>
-                                                    <p-select [options]="floorOptions" [checkmark]="true" [showClear]="true"
-                                                        placeholder="Select Floors" class="w-full" />
+                                                    <label for="propertyType" class="my-2">Apartment Type </label>
+                                                    <p-select formControlName="propertyType" [options]="property_Type"
+                                                        [checkmark]="true" [showClear]="true"
+                                                        placeholder="Select a Property Type" class="w-full md:w-56" />
                                                 </div>
                                             </div>
-                                        
-                                            <!-- Total Floors Dropdown -->
-                                            <div class="col-6">
+
+                                            <div class="col-12">
                                                 <div>
-                                                    <label for="totalFloors" class="my-2">Total Floors</label>
-                                                    <p-select [options]="floorOptions" [checkmark]="true" [showClear]="true"
-                                                        placeholder="Select Total Floors" class="w-full" />
+                                                    <label for="BhkType" class="my-2">BHK Type </label>
+                                                    <p-select formControlName="bhkType" [options]=" bhk_Type"
+                                                        [checkmark]="true" [showClear]="true"
+                                                        placeholder="Select a Bhk Type" class="w-full md:w-56" />
                                                 </div>
                                             </div>
-                                        </div>
-                                        
+                                            <div class="col-12">
+                                                <div>
+                                                    <label for="propertySize" class="my-2">Property Size
+                                                    </label>
+                                                    <input pInputText  class="w-100"
+                                                        formControlName="propertySize"
+                                                        placeholder="Total Area (sq. ft./sq. m.)" />
+                                                </div>
+                                            </div>
+                                            <div class="col-12">
+                                                <div>
+                                                    <label for="Facing" class="my-2">Facing </label>
+                                                    <p-select formControlName="facing" [options]="facing_Property"
+                                                        [checkmark]="true" [showClear]="true"
+                                                        placeholder="Select a Direction" class="w-full md:w-56" />
+                                                </div>
+                                            </div>
+                                            <div class="col-12">
+                                                <div>
+                                                    <label for="propertyAge" class="my-2">Property Age </label>
+                                                    <p-select formControlName="propertyAge" [options]="property_Age"
+                                                        [checkmark]="true" [showClear]="true"
+                                                        placeholder="Select Property Age" class="w-full md:w-56" />
+                                                </div>
+                                            </div>
+                                            <div class="col-12">
+                                                <div>
+                                                    <label for="Condition" class="my-2">Condition</label>
+                                                    <p-select formControlName="propertyCondition" [options]="property_Condition"
+                                                        [checkmark]="true" [showClear]="true"
+                                                        placeholder="Select Condition" class="w-full md:w-56" />
+                                                </div>
+                                            </div>
+                                            <div class="col-12 d-flex gap-2 align-items-end">
+                                                <!-- Floors Dropdown -->
+                                                <div class="col-6">
+                                                    <div>
+                                                        <label for="floors" class="my-2">Floors</label>
+                                                        <p-select formControlName="floor" [options]="floor_Options"
+                                                            [checkmark]="true" [showClear]="true"
+                                                            placeholder="Select Floors" class="w-full" />
+                                                    </div>
+                                                </div>
 
-                                          <div class="flex   justify-content-end">
-                                              <p-button label="Next" icon="pi pi-arrow-right" iconPos="right"
-                                                  (onClick)="activateCallback(2)" />
-                                          </div>
-                                      </div>
-                                  </form>
-                              </ng-template>
-                          </p-step-panel>
-                          <!-- Property Details End -->
+                                                <!-- Total Floors Dropdown -->
+                                                <div class="col-6">
+                                                    <div>
+                                                        <label for="totalFloors" class="my-2">Total Floors</label>
+                                                        <p-select formControlName="totalFloor" [options]="floor_Options"
+                                                            [checkmark]="true" [showClear]="true"
+                                                            placeholder="Select Total Floors" class="w-100" />
+                                                    </div>
+                                                </div>
+                                            </div>
 
-                          <!-- Locality Details Start -->
-                          <p-step-panel [value]="2">
-                              <ng-template #content let-activateCallback="activateCallback">
-                                  <form action="">
-                                      <div class="row ">
-                                        <div class="col-12">
-                                            <div>
-                                                <label for="totalarea" class="my-2">Locality
-                                                </label>
-                                                <input pInputText id="totalarea" class="w-100" placeholder="enter Locality"/>
+
+
+                                            <div class="flex  py-4 justify-content-end">
+                                                <p-button label="Next" icon="pi pi-arrow-right" iconPos="right"
+                                                    (onClick)="activateCallback(2)" />
                                             </div>
                                         </div>
-                                         
-                                        <div class="col-12">
-                                            <div>
-                                                <label for="totalarea" class="my-2">pincode
-                                                </label>
-                                                <input pInputText id="totalarea" class="w-100" placeholder="Enter pincode"/>
-                                            </div>
-                                        </div>
-                                          <div class="col-12">
-                                              <div>
-                                                  <label for="totalarea" class="my-2">Street/Area/Landmark
-                                                  </label>
-                                                  <input pInputText id="totalarea" class="w-100" placeholder="Enter Street/Area/Landmark"/>
-                                              </div>
-                                          </div>
-                                          
-                                         
-                                        
 
-                                           <div class="flex pt-6 justify-content-end">
-                                      <p-button label="Back" severity="secondary" icon="pi pi-arrow-left"
-                                          (onClick)="activateCallback(1)" />
-                                      <p-button label="Next" icon="pi pi-arrow-right" iconPos="right"
-                                          (onClick)="activateCallback(3)" />
-                                  </div>
-                                      </div>
-                                  </form>
-                              </ng-template>
-                          </p-step-panel>
-                          <!-- Locality Details End -->
+                                    </ng-template>
+                                </p-step-panel>
+                                <!-- Property Details End -->
 
 
+                                <!-- Rent Details Start -->
+                                <p-step-panel [value]="2">
+                                    <ng-template #content let-activateCallback="activateCallback">
 
-                          <!-- Document upload Start -->
-                          <!-- <p-step-panel [value]="2">
-                              <ng-template #content let-activateCallback="activateCallback">
-                                  <form action="">
-                                      <div class="row ">
-                                          <div class="col-4">
-                                              <div>
-                                                  <label for="propertyType" class="my-2">Property Deed </label>
-                                                  <p-toast />
-                                                  <p-fileupload #fu mode="basic" chooseLabel="Choose"
-                                                      chooseIcon="pi pi-upload" name="demo[]"
-                                                      url="https://www.primefaces.org/cdn/api/upload.php"
-                                                      accept="image/*" maxFileSize="1000000"
-                                                      (onUpload)="onUpload($event)" />
-                                              </div>
-                                          </div>
-                                          <div class="col-4">
-                                              <div>
-                                                  <label for="propertyType" class="my-2">Previous Sale Agreement (if
-                                                      applicable) </label>
-                                                  <p-fileupload #fu mode="basic" chooseLabel="Choose"
-                                                      chooseIcon="pi pi-upload" name="demo[]"
-                                                      url="https://www.primefaces.org/cdn/api/upload.php"
-                                                      accept="image/*" maxFileSize="1000000"
-                                                      (onUpload)="onUpload($event)" />
-                                              </div>
-                                          </div>
-                                          <div class="col-4">
-                                              <div>
-                                                  <label for="propertyType" class="my-2">Tax Receipts (last 3 years)
-                                                  </label>
-                                                  <p-fileupload #fu mode="basic" chooseLabel="Choose"
-                                                      chooseIcon="pi pi-upload" name="demo[]"
-                                                      url="https://www.primefaces.org/cdn/api/upload.php"
-                                                      accept="image/*" maxFileSize="1000000"
-                                                      (onUpload)="onUpload($event)" />
-                                              </div>
-                                          </div>
-                                          <div class="col-4">
-                                              <div>
-                                                  <label for="propertyType" class="my-2">Encumbrance Certificate
-                                                  </label>
-                                                  <p-fileupload #fu mode="basic" chooseLabel="Choose"
-                                                      chooseIcon="pi pi-upload" name="demo[]"
-                                                      url="https://www.primefaces.org/cdn/api/upload.php"
-                                                      accept="image/*" maxFileSize="1000000"
-                                                      (onUpload)="onUpload($event)" />
-                                              </div>
-                                          </div>
-                                          <div class="col-4">
-                                              <div>
-                                                  <label for="identificationnumber" class="my-2">Address Proof
-                                                  </label>
-                                                  <p-fileupload #fu mode="basic" chooseLabel="Choose"
-                                                      chooseIcon="pi pi-upload" name="demo[]"
-                                                      url="https://www.primefaces.org/cdn/api/upload.php"
-                                                      accept="image/*" maxFileSize="1000000"
-                                                      (onUpload)="onUpload($event)" />
-                                              </div>
-                                          </div>
-                                          <div class="col-4">
-                                              <div>
-                                                  <label for="totalarea" class="my-2"> NOC (if required) </label>
-                                                  <p-fileupload #fu mode="basic" chooseLabel="Choose"
-                                                      chooseIcon="pi pi-upload" name="demo[]"
-                                                      url="https://www.primefaces.org/cdn/api/upload.php"
-                                                      accept="image/*" maxFileSize="1000000"
-                                                      (onUpload)="onUpload($event)" />
-                                              </div>
-                                          </div>
-                                          <div class="col-4">
-                                              <div>
-                                                  <label for="ownershipType" class="my-2"> Identity Type </label>
-                                                  <p-select [options]="identityType" [checkmark]="true"
-                                                      [showClear]="true" placeholder="Select a Identity Type"
-                                                      class="w-full md:w-56" />
-                                              </div>
-                                          </div>
-                                          <div class="col-4">
-                                              <div>
-                                                  <label for="identity" class="my-2"> Identity Proof </label>
-                                                  <p-fileupload #fu mode="basic" chooseLabel="Choose"
-                                                      chooseIcon="pi pi-upload" name="demo[]"
-                                                      url="https://www.primefaces.org/cdn/api/upload.php"
-                                                      accept="image/*" maxFileSize="1000000"
-                                                      (onUpload)="onUpload($event)" />
-                                              </div>
-                                          </div>
-
-                                      </div>
-                                  </form>
-
-                                  <div class="flex pt-6 justify-content-end">
-                                      <p-button label="Back" severity="secondary" icon="pi pi-arrow-left"
-                                          (onClick)="activateCallback(1)" />
-                                      <p-button label="Next" icon="pi pi-arrow-right" iconPos="right"
-                                          (onClick)="activateCallback(3)" />
-                                  </div>
-                              </ng-template>
-                          </p-step-panel>
-                          -->
-                          <!-- Document uplaod end -->
-
-
-
-
-                          <p-step-panels>
-                            <!-- Property Details Start -->
-                            <p-step-panel [value]="3">
-                                <ng-template #content let-activateCallback="activateCallback">
-                                    <form action="">
-                                        <div class="row">        
-                                      <!-- Rent Type Radio Buttons -->
+                                        <div class="row">
+                                            <!-- Rent Type Radio Buttons -->
                                             <div class="col-12 mb-3">
                                                 <h5 class="my-2 fw-bold">Select Rent Type</h5>
                                                 <div class="d-flex gap-4">
-                                                    <p-radioButton name="rentType" value="rent" [(ngModel)]="rentType" inputId="Only Rent"
-                                                    ></p-radioButton>
-                                                    <label for="ingredient1" class="ml-2">Only rent</label>
-                                                    </div>
-                                                    <div class="d-flex gap-4">
-                                                    <p-radioButton name="rentType" value="lease" [(ngModel)]="rentType" inputId="Only Lease"></p-radioButton>
-                                                    <label for="ingredient1" class="ml-2">Only lease</label>
-                                                    </div>
+                                                    <p-radioButton name="rentType" value="rent"
+                                                        formControlName="rentType" inputId="Only Rent"></p-radioButton>
+                                                    <label for="Only Rent" class="ml-2">Only rent</label>
+                                                </div>
+                                                <div class="d-flex gap-4">
+                                                    <p-radioButton name="rentType" value="lease"
+                                                        formControlName="rentType" inputId="Only Lease"></p-radioButton>
+                                                    <label for="Only Lease" class="ml-2">Only lease</label>
+                                                </div>
                                             </div>
-                        
+
                                             <!-- Expected Rent Fields -->
                                             <div class="col-12  align-items-end">
                                                 <div class="col-12">
                                                     <label for="expectedRent" class="my-2">Expected Rent</label>
-                                                    <input pInputText id="expectedRent" class="w-full" placeholder="Enter Amount" />
+                                                    <input pInputText  class="w-full"
+                                                        formControlName="rent" placeholder="Enter Amount" />
                                                 </div>
                                                 <div class="col-12">
                                                     <label for="rentDuration" class="my-2">Per</label>
-                                                    <p-select [options]="rentDurationOptions" [checkmark]="true" [showClear]="true"
-                                                        placeholder="Select Duration" class="w-full" />
+                                                    <p-select [options]="rentDurationOptions"
+                                                        formControlName="perMonthOrAnum" [checkmark]="true"
+                                                        [showClear]="true" placeholder="Select Duration"
+                                                        class="w-full" />
                                                 </div>
                                             </div>
-                        
-                                            <!-- Negotiable Checkbox -->
-                                            <!-- <div class="col-12 mt-2">
-                                                <p-checkbox [(ngModel)]="isNegotiable" inputId="negotiable"></p-checkbox>
-                                                <label for="negotiable" class="ml-2">Negotiable</label>
-                                            </div> -->
-
-                                            
-
-                                            <!-- <div class="card">
-                                              <form class="flex items-center gap-1" [formGroup]="formGroup">
-                                                  <p-checkbox formControlName="city" value="New York" inputId="ny" />
-                                                  <label for="ny" class="ml-2">New York</label>
-                                              </form>
-                                          </div> -->
-
-
-
-
-
-
-
-
                                             <!-- Expected Deposit Field -->
                                             <div class="col-12  align-items-end">
-                                            <div class="col-12 ">
-                                                <label for="expectedDeposit" class="my-2">Expected Deposit</label>
-                                                <input pInputText id="expectedDeposit" class="w-full" placeholder="Enter Deposit Amount" />
-                                            </div>
-                        
-                                            <!-- Floors & Total Floors -->
-                                            <div class="justify-content-center d-flex mt-3">
-                                                <div class="col-6 ">
-                                                    <label for="floors" class="my-2">Floors</label>
-                                                    <p-select [options]="floorOptions" [checkmark]="true" [showClear]="true"
-                                                        placeholder="Select Floors" class="w-full" />
+                                                <div class="col-12 ">
+                                                    <label for="deposite" class="my-2">Total Deposit</label>
+                                                    <input pInputText  class="w-full"
+                                                        formControlName="deposite" placeholder="Enter Deposit Amount" />
                                                 </div>
-                                                <div class="col-6 ">
-                                                    <label for="totalFloors" class="my-2">Total Floors</label>
-                                                    <p-select [options]="floorOptions" [checkmark]="true" [showClear]="true"
-                                                        placeholder="Select Total Floors" class="w-full" />
-                                                </div>
-                                            </div>
-
-
-                                           
-
-
-
-
-
 
 
                                             </div>
-
-
-
-
-
-
-
-
-
                                             <div class="col-12  align-items-end">
-                                            <div class="col-12">
-                                              <div>
-                                                  <label for="MonthlyMaintenance" class="my-2">Monthly Maintenance </label>
-                                                  <p-select [options]="MonthlyMaintenance" [checkmark]="true"
-                                                      [showClear]="true" placeholder="Select"
-                                                      class="w-full md:w-56" />
-                                              </div>
-                                          </div>
+                                                <div class="col-12">
+                                                    <div>
+                                                        <label for="monthlyMaintenance" class="my-2">Monthly Maintenance
+                                                        </label>
+                                                        <p-select formControlName="monthlyMaintenance"
+                                                            [options]="monthly_Maintenance" [checkmark]="true"
+                                                            [showClear]="true" placeholder="Select"
+                                                            class="w-full md:w-56" />
+                                                    </div>
+                                                </div>
                                             </div>
 
 
-                                            <div class="col-12  align-items-end ">
+                                            <!-- <div class="col-12  align-items-end ">
                                             <div class="col-12 ">
                                               <p-datepicker   class="w-full" [(ngModel)]="date" dateFormat="dd.mm.yy"
                                                />
                                           </div>
+                                            </div> -->
+
+
+
+                                            <div class="col-12  align-items-end">
+                                                <div class="col-12">
+                                                    <div>
+                                                        <label for="Furnishing" class="my-2">Furnishing </label>
+                                                        <p-select [options]="furnishing_Property" formControlName="furnishing"
+                                                            [checkmark]="true" [showClear]="true"
+                                                            placeholder="Select Furnishing type"
+                                                            class="w-full md:w-56" />
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-12  align-items-end">
+                                                <div class="col-12">
+                                                    <div>
+                                                        <label for="Parking" class="my-2">Parking </label>
+                                                        <p-select formControlName="parking" [options]="parkings"
+                                                            [checkmark]="true" [showClear]="true"
+                                                            placeholder="Select Parking type" class="w-full md:w-56" />
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-12  align-items-end">
+                                                <div class="col-12">
+                                                    <div>
+                                                        <label for="preferedTenants" class="my-2">Prefered Tenants
+                                                        </label>
+                                                        <p-select [options]=" prefered_Tenants" [checkmark]="true"
+                                                            [showClear]="true" formControlName="preferedTenants"
+                                                            placeholder="Select The type of tenant"
+                                                            class="w-full md:w-56" />
+                                                    </div>
+                                                </div>
                                             </div>
 
 
 
                                             <div class="col-12  align-items-end">
-                                              <div class="col-12">
-                                                <div>
-                                                    <label for="Furnishing" class="my-2">Furnishing </label>
-                                                    <p-select [options]="Furnishing" [checkmark]="true"
-                                                        [showClear]="true" placeholder="Select Furnishing type"
-                                                        class="w-full md:w-56" />
-                                                </div>
-                                            </div>
-                                              </div>
-                                            <div class="col-12  align-items-end">
-                                              <div class="col-12">
-                                                <div>
-                                                    <label for="Parking" class="my-2">Parking </label>
-                                                    <p-select [options]="Parking" [checkmark]="true"
-                                                        [showClear]="true" placeholder="Select Parking type"
-                                                        class="w-full md:w-56" />
-                                                </div>
-                                            </div>
-                                              </div>
-                                            <div class="col-12  align-items-end">
-                                              <div class="col-12">
-                                                <div>
-                                                    <label for="PreferedTenants" class="my-2">Prefered Tenants </label>
-                                                    <p-select [options]="PreferedTenants" [checkmark]="true"
-                                                        [showClear]="true" placeholder="Select The type of tenant"
-                                                        class="w-full md:w-56" />
-                                                </div>
-                                            </div>
-                                              </div>
-  
-
-
-                                              <div class="col-12  align-items-end">
                                                 <div class="col-12 ">
-                                                    <label for="expectedDeposit" class="my-2 ">Property Description</label>
-                                                    <input pInputText id="expectedDeposit" class="w-full p-5" placeholder="write a few lines about the property" />
+                                                    <label for="propertyDescription" class="my-2 ">Property
+                                                        Description</label>
+                                                    <input pInputText 
+                                                        formControlName="propertyDescription" class="w-full p-5"
+                                                        placeholder="write a few lines about the property" />
                                                 </div>
-                                              </div>
+                                            </div>
 
-                                          
+                                            <div class="flex pt-6 justify-content-end">
+                                                <p-button label="Back" severity="secondary" icon="pi pi-arrow-left"
+                                                    (onClick)="activateCallback(1)" />
+                                                <p-button label="Next" icon="pi pi-arrow-right" iconPos="right"
+                                                    (onClick)="activateCallback(3)" />
+                                            </div>
                                         </div>
-                                    </form>
-
-
-
-
-                                    <div class="flex pt-6 justify-content-end">
-                                      <p-button label="Back" severity="secondary" icon="pi pi-arrow-left"
-                                          (onClick)="activateCallback(2)" />
-                                      <p-button label="Next" icon="pi pi-arrow-right" iconPos="right"
-                                          (onClick)="activateCallback(4)" />
-                                  </div>
-                                </ng-template>
-                            </p-step-panel>
-                        </p-step-panels>
-                        
 
 
 
 
 
 
+                                    </ng-template>
+                                </p-step-panel>
 
 
+                                <!-- Ownership & Legal Information Start -->
+                                <p-step-panel [value]="3">
+                                    <ng-template #content let-activateCallback="activateCallback">
 
-                          <!-- Registration Fee -->
-                          <p-step-panel [value]="4">
-                              <ng-template #content let-activateCallback="activateCallback">
-                                  <div class="row">
-                                      <div class="col-12">
-                                          <div class="card border-0 shadow p-4">
-                                              <form>
-                                                  <div class="row">
-                                                      <div class="col-12">
-                                                          <div class="px-5">
-                                                              <strong>Razor</strong><span>Pay</span>
-                                                          </div>
-                                                      </div>
-                                                      <div class="col-7">
-                                                          <div class="row">
-                                                              <div class="col-12">
-                                                                  <div>
-                                                                      <label for="" class="fw-bold">Card
-                                                                          Number</label>
-                                                                      <p class="text-muted"> <small> Enter 16-digit
-                                                                              card number on the card</small></p>
-                                                                      <p-inputgroup>
-                                                                          <p-inputgroup-addon><i
-                                                                                  class="fa-brands fa-cc-mastercard text-dark"></i></p-inputgroup-addon>
-                                                                          <p-inputnumber placeholder="Card Number" />
-                                                                          <p-inputgroup-addon><i
-                                                                                  class="fa-solid fa-circle-check text-dark"></i></p-inputgroup-addon>
-                                                                      </p-inputgroup>
-                                                                  </div>
-                                                              </div>
-                                                              <div class="col-12">
-                                                                  <div class="d-flex justify-content-between">
-                                                                      <div>
-                                                                          <label for="" class="fw-bold">Expiry
-                                                                              Date</label>
-                                                                          <p class="text-muted"> <small> Enter the
-                                                                                  expiration date of the card</small>
-                                                                          </p>
-                                                                      </div>
-                                                                      <div>
-                                                                          <!-- <p-datepicker view="month"
-                                                                              dateFormat="mm/yyyy"
-                                                                              [readonlyInput]="true" /> -->
-                                                                              <p-inputgroup>
-                                                                                  <p-inputgroup-addon><i
-                                                                                          class="fa-brands fa-cc-mastercard text-dark"></i></p-inputgroup-addon>
-                                                                                  <p-inputnumber
-                                                                                      placeholder="MM/YYYY" />
-                                                                                  <p-inputgroup-addon><i class="fa-solid fa-calendar-days text-dark"></i></p-inputgroup-addon>
-                                                                              </p-inputgroup>
+                                        <div class="row">
+                                            <div class="col-12 ">
+                                                <div>
+                                                    <label for=" ownerName" class="my-2">Owner Name
+                                                    </label>
+                                                    <input pInputText formControlName="ownerName"
+                                                        class="w-100" placeholder="Current legal owner" />
+                                                </div>
+                                            </div>
+                                            <div class="col-12 ">
+                                                <div>
+                                                    <label for="ownerContact" class="my-2">Owner contact
+                                                    </label>
+                                                    <input pInputText  formControlName="ownerContact"
+                                                        class="w-100" placeholder="owner contact number" />
+                                                </div>
+                                            </div>
+                                            <div class="col-12 ">
+                                                <div>
+                                                    <label for="ownerAddress" class="my-2">Owner Address
+                                                    </label>
+                                                    <input pInputText  formControlName="ownerAddress"
+                                                        class="w-100" placeholder="owner Address" />
+                                                </div>
+                                            </div>
+                                            <div class="col-12 ">
+                                                <div>
+                                                    <label for="ownerEmail" class="my-2">Owner Email
+                                                    </label>
+                                                    <input pInputText  formControlName="ownerEmail"
+                                                        class="w-100" placeholder="Owner Email" />
+                                                </div>
+                                            </div>
 
-                                                                      </div>
-                                                                  </div>
-                                                              </div>
-                                                              <div class="col-12">
-                                                                  <div class="d-flex justify-content-between">
-                                                                      <div>
-                                                                          <label for="" class="fw-bold">CVC
-                                                                              Number</label>
-                                                                          <p class="text-muted"> <small> Enter card
-                                                                                  verification code from the back of
-                                                                                  the card</small></p>
-                                                                      </div>
-                                                                      <div class="">
-                                                                          <p-password [toggleMask]="true"
-                                                                              [feedback]="false" />
 
-                                                                      </div>
-                                                                  </div>
-                                                              </div>
-                                                              <div class="col-12">
-                                                                  <div class="d-flex justify-content-between">
-                                                                      <div>
-                                                                          <label for="" class="fw-bold">Cardholder
-                                                                              Name
-                                                                          </label>
-                                                                          <p class="text-muted"> <small> Enter
-                                                                                  cardholder's name</small></p>
-                                                                      </div>
-                                                                      <div>
-                                                                          <p-inputgroup>
-                                                                              <p-inputgroup-addon><i
-                                                                                      class="fa-brands fa-cc-mastercard text-dark"></i></p-inputgroup-addon>
-                                                                              <p-inputnumber
-                                                                                  placeholder="CardHolder Name" />
-                                                                              <p-inputgroup-addon><i
-                                                                                      class="fa-solid fa-user text-dark"></i></p-inputgroup-addon>
-                                                                          </p-inputgroup>
+                                        </div>
 
-                                                                      </div>
-                                                                  </div>
-                                                              </div>
-                                                              <div class="col-12">
-                                                                  <div class="d-flex justify-content-between">
-                                                                      <div>
-                                                                          <label for="" class="fw-bold">Mobile
-                                                                              No.</label>
-                                                                          <p class="text-muted"> <small> Enter Mobile
-                                                                                  No.</small></p>
-                                                                      </div>
-                                                                      <div>
-                                                                          <p-inputgroup>
-                                                                              <p-inputgroup-addon><i
-                                                                                      class="fa-solid fa-mobile-screen-button text-dark"></i></p-inputgroup-addon>
-                                                                              <p-inputnumber
-                                                                                  placeholder="Mobile Number" />
-                                                                              <p-inputgroup-addon><i
-                                                                                      class="fa-solid fa-phone-flip text-dark"></i></p-inputgroup-addon>
-                                                                          </p-inputgroup>
+                                        <div class="flex pt-6 justify-content-end debug-border">
+                                            <p-button label="Back" severity="secondary" icon="pi pi-arrow-left"
+                                                (onClick)="activateCallback(2)" />
+                                            <p-button label="Next" icon="pi pi-arrow-right" iconPos="right"
+                                                (onClick)="activateCallback(4)" />
+                                        </div>
+                                    </ng-template>
+                                </p-step-panel>
 
-                                                                      </div>
-                                                                  </div>
-                                                              </div>
-                                                              <div class="col-12">
-                                                                  <div class=" text-center mt-4">
-                                                                      <p-button label="Pay Now" severity="info"
-                                                                          class="mx-5 " />
-                                                                  </div>
+                                <!-- Ownership & Legal Information End -->
 
-                                                              </div>
-                                                          </div>
+                                <!-- Additional Considerations Start -->
+                                <p-step-panel [value]="4">
+                                    <ng-template #content let-activateCallback="activateCallback">
 
-                                                      </div>
-                                                      <div class="col-5">
-                                                             <div class="bg-light rounded-4 p-5">
-                                                                   <div class="row">
-                                                                      <div class="col-12">
-                                                                          <div class="text-center">
-                                                                              <img src="https://cdn.iconscout.com/icon/premium/png-512-thumb/debit-card-2133848-1796833.png?f=webp&w=256" alt="Debit card image" class="h-5- w-50">
-                                                                          </div>
-                                                                      </div>
-                                                                      <div class="col-12">
-                                                                          <div class="d-flex justify-content-between mx-5">
-                                                                              <p>Company</p>
-                                                                              <strong>Apple</strong>
-                                                  
-                                                                          </div>
-                                                                      </div>
-                                                                      <div class="col-12">
-                                                                          <div class="d-flex justify-content-between mx-5">
-                                                                              <p>Order number</p>
-                                                                              <strong>429252965</strong>
-                                                  
-                                                                          </div>
-                                                                      </div>
-                                                                      <div class="col-12">
-                                                                          <div class="d-flex justify-content-between mx-5">
-                                                                              <p>Product</p>
-                                                                              <strong>MacBook Air</strong>
-                                                  
-                                                                          </div>
-                                                                      </div>
-                                                                      <div class="col-12">
-                                                                          <div class="d-flex justify-content-between mx-5">
-                                                                              <p>VAT (20%)</p>
-                                                                              <strong>$100.00</strong>
-                                                  
-                                                                          </div>
-                                                                      </div>
-                                                                      <div class="col-12">
-                                                                          <hr class="border border-dark border-2 opacity-50">
-                                                                      </div>
-                                                                      <div class="col-12">
-                                                                          <div class="d-flex justify-content-between mx-5">
-                                                                              <small>You have to Pay</small>
-                                                                              <h3 class="fw-bold">Rs.549</h3>
-                                                                          </div>
+                                        <div class="row">
+                                            <!-- Amenities -->
+                                            <div class="col-3">
+                                                <label class="my-2">Amenities</label>
+                                                <div *ngFor="let amenity of amenities">
+                                                    <p-checkbox [formControlName]="'amenities'" [value]="amenity"
+                                                        inputId="{{amenity}}"></p-checkbox>
+                                                    <label [for]="amenity">{{ amenity.label }}</label>
+                                                </div>
+                                            </div>
 
-                                                                      </div>
-                                                                      
-                                                                   </div>
-                                                             </div>
-                                                      </div>
-                                                  </div>
-                                              </form>
-                                          </div>
-                                      </div>
-                                  </div>
-                                  <div class="flex pt-6 justify-start">
-                                      <p-button label="Back" icon="pi pi-arrow-left" iconPos="right"
-                                          (onClick)="activateCallback(2)" />
-                                  </div>
-                              </ng-template>
-                          </p-step-panel>
-                      </p-step-panels>
-                  </p-stepper>
-              </div>
-          </div>
-      </div>
-  </div>
+                                            <!-- Utilities Available -->
+                                            <div class="col-3">
+                                                <label class="my-2">Utilities Available</label>
+                                                <div *ngFor="let utility of utilitiesAvailable">
+                                                    <p-checkbox [formControlName]="'utilitiesAvailable'"
+                                                        [value]="utility" inputId="{{utility}}"></p-checkbox>
+                                                    <label [for]="utility">{{ utility.label }}</label>
+                                                </div>
+                                            </div>
+
+                                            <!-- Nearby Facilities -->
+                                            <div class="col-3">
+                                                <label class="my-2">Nearby Facilities</label>
+                                                <div *ngFor="let facility of nearbyFacilities">
+                                                    <p-checkbox [formControlName]="'nearbyFacilities'"
+                                                        [value]="facility" inputId="{{facility}}"></p-checkbox>
+                                                    <label [for]="facility">{{ facility.label }}</label>
+                                                </div>
+                                            </div>
+
+                                            <!-- Restrictions -->
+                                            <div class="col-3">
+                                                <label class="my-2">Restrictions</label>
+                                                <div *ngFor="let restriction of restrictions">
+                                                    <p-checkbox [formControlName]="'restrictions'" [value]="restriction"
+                                                        inputId="{{restriction}}"></p-checkbox>
+                                                    <label [for]="restriction">{{ restriction.label }}</label>
+                                                </div>
+                                            </div>
+
+                                            <!-- Navigation Buttons -->
+                                            <div class="flex pt-6 justify-content-end">
+                                                <p-button label="Back" severity="secondary" icon="pi pi-arrow-left"
+                                                    (onClick)="activateCallback(3)" />
+                                                <p-button label="Next" icon="pi pi-arrow-right" iconPos="right"
+                                                    (onClick)="activateCallback(5)" />
+                                            </div>
+                                        </div>
+
+                                    </ng-template>
+                                </p-step-panel>
+                                <!-- Additional Considerations End -->
+
+
+                                <!-- Locality Details Start -->
+                                <p-step-panel [value]="5">
+                                    <ng-template #content let-activateCallback="activateCallback">
+
+                                        <div class="row">
+                                            <div class="col-12">
+                                                <div>
+                                                    <label for="state" class="my-2">State</label>
+                                                    <input pInputText  formControlName="state" class="w-100"
+                                                        placeholder="Enter State" />
+                                                </div>
+                                            </div>
+                                            <div class="col-12">
+                                                <div>
+                                                    <label for="city" class="my-2">City</label>
+                                                    <input pInputText  formControlName="city" class="w-100"
+                                                        placeholder="Enter City" />
+                                                </div>
+                                            </div>
+                                            <div class="col-12">
+                                                <div>
+                                                    <label for="pincode" class="my-2">Pincode</label>
+                                                    <input pInputText  formControlName="pincode"
+                                                        class="w-100" placeholder="Enter Pincode" />
+                                                </div>
+                                            </div>
+                                            <div class="col-12">
+                                                <div>
+                                                    <label for="buildingName" class="my-2">Building Name</label>
+                                                    <input pInputText  formControlName="buildingName"
+                                                        class="w-100" placeholder="Enter Building Name" />
+                                                </div>
+                                            </div>
+                                            <div class="col-12 ">
+                                                <label for="propertyDescription" class="my-2 ">Property
+                                                    Address</label>
+                                                <input pInputText 
+                                                    formControlName="address" class="w-full p-5"
+                                                    placeholder="Please enter your property address" />
+                                            </div>
+
+                                            <!-- Navigation Buttons -->
+                                            <div class="flex pt-6 justify-content-between">
+                                                <p-button label="Back" severity="secondary" icon="pi pi-arrow-left"
+                                                    (onClick)="activateCallback(4)" />
+
+                                                <p-button label="Save" severity="success" icon="pi pi-save"
+                                                    (onClick)="onSubmit()" />
+                                            </div>
+                                        </div>
+
+                                    </ng-template>
+                                </p-step-panel>
+                                <!-- Locality Details End -->
+
+
+                        </p-stepper>
+
+                        </form>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>

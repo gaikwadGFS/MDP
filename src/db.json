@@ -5,20 +5,73 @@
       "location": "Datt Colony near Kirti Classic Plots",
       "rent": 14000,
       "deposit": 20000,
-      "size": "500",
+      "size": "500 sqft",
       "furnishing": "Unfurnished",
       "bhk": "1 BHK",
       "suitableFor": "Bachelor",
       "availableFrom": "01-Feb-2025",
       "propertyImages": [
         {
-          "src": "assets/property1.jpg"
+          "src": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQh7BlPQnpAmVTuhPN2UsvfgkxGVNzfsHZwlg&s"
         },
         {
-          "src": "assets/property2.jpg"
+          "src": "https://3.imimg.com/data3/QF/VC/MY-11005443/princetown.jpg"
         }
       ],
+<<<<<<< HEAD
       "id": "2bc8"
+=======
+      "apartmentType": "Apartment",
+      "propertyType": "Residential",
+      "propertySize": "1200 sqft",
+      "facing": "East",
+      "propertyAge": "5 years",
+      "propertyCondition": "Well Maintained",
+      "floor": "7",
+      "totalFloor": "10",
+      "state": "Maharashtra",
+      "city": "Pune",
+      "pincode": "411045",
+      "address": "Skyline Residency, Near Balewadi Phata, Pune",
+      "rentType": "Lease",
+      "perMonthOrAnum": "Per Month",
+      "monthlyMaintenance": 2000,
+      "parking": "1 Covered Parking",
+      "preferedTenants": "Family or Working Professionals",
+      "propertyDescription": "Spacious 3 BHK apartment with a balcony, modular kitchen, and ample sunlight. Located in a gated community with 24/7 security.",
+      "amenities": [
+        "Gym",
+        "Swimming Pool",
+        "Children's Play Area",
+        "Clubhouse",
+        "Power Backup",
+        "24/7 Water Supply",
+        "CCTV Surveillance"
+      ],
+      "utilitiesAvailable": [
+        "Water Supply",
+        "Electricity",
+        "Internet",
+        "Gas Pipeline"
+      ],
+      "nearbyFacilities": [
+        "Hospitals",
+        "Schools",
+        "Malls",
+        "Public Transport",
+        "Supermarkets"
+      ],
+      "restrictions": [
+        "No Pets",
+        "No Loud Music after 10 PM"
+      ],
+      "ownerDetails": {
+        "name": "Amit Sharma",
+        "contact": "9876543210",
+        "address": "Koregaon Park, Pune",
+        "email": "amit.sharma@example.com"
+      }
+>>>>>>> e81ddf5b0cd868409b8740399cfa3efdfd7ed320
     },
     {
       "title": "2 BHK Apartment For Rent in Baner",
@@ -32,53 +85,253 @@
       "availableFrom": "15-Mar-2025",
       "propertyImages": [
         {
-          "src": "assets/property3.jpg"
+          "src": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSHnRNKzw_qArrl79_XUFZJoxzIlyCjyGUlNA&s"
         },
         {
-          "src": "assets/property4.jpg"
+          "src": "https://www.skyi.com/images/iris-baner/iris-header_monile.jpg"
         }
       ],
       "id": "f9c2"
     },
     {
-      "propertyId": "",
-      "apartmentType": "",
-      "bhkType": "",
-      "propertyType": "",
-      "propertySize": "",
-      "facing": "",
-      "propertyAge": "",
-      "propertyCondition": "",
-      "floor": "",
-      "totalFloor": "",
-      "state": "",
-      "city": "",
-      "pincode": "",
-      "address": "",
-      "rentType": "",
-      "rent": "",
-      "deposite": "",
-      "perMonthOrAnum": "",
-      "monthlyMaintenance": "",
-      "furnishing": "",
-      "parking": "",
-      "preferedTenants": "",
-      "propertyDescription": "",
-      "amenities": [],
-      "utilitiesAvailable": [],
-      "nearbyFacilities:": [],
-      "restrictions": [],
-      "ownerName": "",
-      "ownerContact": "",
-      "ownerAddress": "",
-      "ownerEmail": "",
-      "availableFrom": "",
+      "propertyId": "PUNE123456",
+      "apartmentType": "Apartment",
+      "bhkType": "3 BHK",
+      "propertyType": "Residential",
+      "propertySize": "1200 sqft",
+      "facing": "East",
+      "propertyAge": "5 years",
+      "propertyCondition": "Well Maintained",
+      "floor": "7",
+      "totalFloor": "10",
+      "state": "Maharashtra",
+      "city": "Pune",
+      "pincode": "411045",
+      "address": "Skyline Residency, Near Balewadi Phata, Pune",
+      "rentType": "Lease",
+      "rent": "35000",
+      "deposite": "100000",
+      "perMonthOrAnum": "Per Month",
+      "monthlyMaintenance": "2000",
+      "furnishing": "Fully Furnished",
+      "parking": "1 Covered Parking",
+      "preferedTenants": "Family or Working Professionals",
+      "propertyDescription": "Spacious 3 BHK apartment with a balcony, modular kitchen, and ample sunlight. Located in a gated community with 24/7 security.",
+      "amenities": [
+        "Gym",
+        "Swimming Pool",
+        "Children's Play Area",
+        "Clubhouse",
+        "Power Backup",
+        "24/7 Water Supply",
+        "CCTV Surveillance"
+      ],
+      "utilitiesAvailable": [
+        "Water Supply",
+        "Electricity",
+        "Internet",
+        "Gas Pipeline"
+      ],
+      "nearbyFacilities": [
+        "Hospitals",
+        "Schools",
+        "Malls",
+        "Public Transport",
+        "Supermarkets"
+      ],
+      "restrictions": [
+        "No Pets",
+        "No Loud Music after 10 PM"
+      ],
+      "ownerName": "Amit Sharma",
+      "ownerContact": "9876543210",
+      "ownerAddress": "Koregaon Park, Pune",
+      "ownerEmail": "amit.sharma@example.com",
+      "availableFrom": "01-Apr-2025",
       "propertyImages": [
         {
-          "src": ""
+          "src": "https://3.imimg.com/data3/QF/VC/MY-11005443/princetown.jpg"
+        },
+        {
+          "src": "https://www.skyi.com/images/iris-baner/iris-header_monile.jpg"
         }
+<<<<<<< HEAD
       ],
       "id": "edc8"
+=======
+      ]
+    },
+    {
+      "id": "3d9b",
+      "bhkType": "1RK",
+      "propertyType": "Independent House/Villa",
+      "propertySize": "564",
+      "buildingName": "Mahalaxmi",
+      "facing": "East",
+      "propertyAge": "1-3 Years",
+      "propertyCondition": "Renovated",
+      "floor": 1,
+      "totalFloor": 5,
+      "state": "Maharashtra",
+      "city": "pune",
+      "pincode": "413155",
+      "rentType": "rent",
+      "rent": "20000",
+      "deposite": "60000",
+      "perMonthOrAnum": "month",
+      "monthlyMaintenance": "Maintenance Included",
+      "furnishing": "Semi",
+      "parking": "Bike",
+      "preferedTenants": "Family",
+      "propertyDescription": "It is good",
+      "amenities": [
+        {
+          "label": "Parking",
+          "value": "Parking"
+        }
+      ],
+      "utilitiesAvailable": [
+        {
+          "label": "Water",
+          "value": "Water"
+        }
+      ],
+      "nearbyFacilities": [
+        {
+          "label": "Schools",
+          "value": "Schools"
+        }
+      ],
+      "restrictions": [
+        {
+          "label": "HOA Rules",
+          "value": "HOA Rules"
+        }
+      ],
+      "ownerName": "Kshitija Gaikwad",
+      "ownerContact": "9890660766",
+      "ownerAddress": "Hinjewadi phase 1",
+      "ownerEmail": "k@gmail.com",
+      "active": "false"
+    },
+    {
+      "propertyId": "PUNE123456",
+      "apartmentType": "Apartment",
+      "bhkType": "3 BHK",
+      "propertyType": "Residential",
+      "propertySize": "1200 sqft",
+      "facing": "East",
+      "propertyAge": "5 years",
+      "propertyCondition": "Well Maintained",
+      "floor": "7",
+      "totalFloor": "10",
+      "state": "Maharashtra",
+      "city": "Pune",
+      "pincode": "411045",
+      "address": "Skyline Residency, Near Balewadi Phata, Pune",
+      "rentType": "Lease",
+      "rent": "35000",
+      "deposite": "100000",
+      "perMonthOrAnum": "Per Month",
+      "monthlyMaintenance": "2000",
+      "furnishing": "Fully Furnished",
+      "parking": "1 Covered Parking",
+      "preferedTenants": "Family or Working Professionals",
+      "propertyDescription": "Spacious 3 BHK apartment with a balcony, modular kitchen, and ample sunlight. Located in a gated community with 24/7 security.",
+      "amenities": [
+        "Gym",
+        "Swimming Pool",
+        "Children's Play Area",
+        "Clubhouse",
+        "Power Backup",
+        "24/7 Water Supply",
+        "CCTV Surveillance"
+      ],
+      "utilitiesAvailable": [
+        "Water Supply",
+        "Electricity",
+        "Internet",
+        "Gas Pipeline"
+      ],
+      "nearbyFacilities": [
+        "Hospitals",
+        "Schools",
+        "Malls",
+        "Public Transport",
+        "Supermarkets"
+      ],
+      "restrictions": [
+        "No Pets",
+        "No Loud Music after 10 PM"
+      ],
+      "ownerName": "Amit Sharma",
+      "ownerContact": "9876543210",
+      "ownerAddress": "Koregaon Park, Pune",
+      "ownerEmail": "amit.sharma@example.com",
+      "availableFrom": "01-Apr-2025",
+      "propertyImages": [
+        {
+          "src": "https://3.imimg.com/data3/QF/VC/MY-11005443/princetown.jpg"
+        },
+        {
+          "src": "https://www.skyi.com/images/iris-baner/iris-header_monile.jpg"
+        }
+      ]
+    },
+    {
+      "id": "314e",
+      "bhkType": "2 BHK",
+      "propertyType": "Independent House/Villa",
+      "propertySize": "20000",
+      "buildingName": "shri complex",
+      "facing": "East",
+      "propertyAge": "3-5 Years",
+      "propertyCondition": "Renovated",
+      "floor": 2,
+      "totalFloor": 3,
+      "state": "maha",
+      "city": "pune",
+      "pincode": "8653417",
+      "address": "hello world",
+      "rentType": "rent",
+      "rent": "3878888",
+      "deposite": "20000",
+      "perMonthOrAnum": "year",
+      "monthlyMaintenance": "Maintenance Included",
+      "furnishing": "Semi",
+      "parking": "Car",
+      "preferedTenants": "Family",
+      "propertyDescription": "jhabfliabfa",
+      "amenities": [
+        {
+          "label": "Swimming Pool",
+          "value": "Swimming Pool"
+        }
+      ],
+      "utilitiesAvailable": [
+        {
+          "label": "Electricity",
+          "value": "Electricity"
+        }
+      ],
+      "nearbyFacilities": [
+        {
+          "label": "Schools",
+          "value": "Schools"
+        }
+      ],
+      "restrictions": [
+        {
+          "label": "Easements",
+          "value": "Easements"
+        }
+      ],
+      "ownerName": "hfhfggg",
+      "ownerContact": "khgvkhvv",
+      "ownerAddress": "kgcvkygckgc",
+      "ownerEmail": "kgclhgcluc",
+      "active": false
+>>>>>>> e81ddf5b0cd868409b8740399cfa3efdfd7ed320
     }
   ],
   "registerOffice": [
@@ -207,22 +460,38 @@
   ],
   "advocates": [
     {
+<<<<<<< HEAD
       "id": "1",
       "name": "Alice Smith",
       "cityId": 1,
+=======
+      "id": 1,
+      "name": "Aarav Mehta",
+      "cityId": 2,
+>>>>>>> e81ddf5b0cd868409b8740399cfa3efdfd7ed320
       "specialization": "Criminal Law",
       "rating": 4.5,
-      "fee": 150,
-      "city": "New York"
+      "fee": 300,
+      "city": "Pune",
+      "contactNumber": "9876543210",
+      "address": "123 Law Street, Pune"
     },
     {
+<<<<<<< HEAD
       "id": "2",
       "name": "Bob Johnson",
       "cityId": 2,
+=======
+      "id": 2,
+      "name": "Sneha Patil",
+      "cityId": 4,
+>>>>>>> e81ddf5b0cd868409b8740399cfa3efdfd7ed320
       "specialization": "Family Law",
-      "rating": 3.8,
+      "rating": 4,
       "fee": 200,
-      "city": "Los Angeles"
+      "city": "Nashik",
+      "contactNumber": "8765432109",
+      "address": "456 Advocate Lane, Nashik"
     },
     {
       "id": "3",
@@ -231,7 +500,86 @@
       "specialization": "Corporate Law",
       "rating": 4.2,
       "fee": 250,
-      "city": "New York"
+      "city": "Mumbai",
+      "contactNumber": "7654321098",
+      "address": "789 Legal Avenue, Mumbai"
+    },
+    {
+      "id": 4,
+      "name": "Vikram Deshmukh",
+      "cityId": 5,
+      "specialization": "Intellectual Property Law",
+      "rating": 4.8,
+      "fee": 350,
+      "city": "Aurangabad",
+      "contactNumber": "6543210987",
+      "address": "321 Patent Blvd, Aurangabad"
+    },
+    {
+      "id": 5,
+      "name": "Riya Kulkarni",
+      "cityId": 3,
+      "specialization": "Tax Law",
+      "rating": 3.9,
+      "fee": 180,
+      "city": "Nagpur",
+      "contactNumber": "5432109876",
+      "address": "654 Finance Road, Nagpur"
+    },
+    {
+      "id": 6,
+      "name": "Karan Joshi",
+      "cityId": 6,
+      "specialization": "Labor Law",
+      "rating": 4.3,
+      "fee": 270,
+      "city": "Solapur",
+      "contactNumber": "4321098765",
+      "address": "987 Worker Street, Solapur"
+    },
+    {
+      "id": 7,
+      "name": "Neha Shinde",
+      "cityId": 7,
+      "specialization": "Environmental Law",
+      "rating": 4.6,
+      "fee": 320,
+      "city": "Amravati",
+      "contactNumber": "3210987654",
+      "address": "159 Green Lane, Amravati"
+    },
+    {
+      "id": 8,
+      "name": "Arjun Pawar",
+      "cityId": 8,
+      "specialization": "Real Estate Law",
+      "rating": 4.1,
+      "fee": 240,
+      "city": "Kolhapur",
+      "contactNumber": "2109876543",
+      "address": "753 Property Blvd, Kolhapur"
+    },
+    {
+      "id": 9,
+      "name": "Priya Nair",
+      "cityId": 9,
+      "specialization": "Immigration Law",
+      "rating": 3.8,
+      "fee": 220,
+      "city": "Akola",
+      "contactNumber": "1098765432",
+      "address": "852 Visa Street, Akola"
+    },
+    {
+      "id": 10,
+      "name": "Rohit Bansal",
+      "cityId": 10,
+      "specialization": "Banking Law",
+      "rating": 4.4,
+      "fee": 310,
+      "city": "Jalgaon",
+      "contactNumber": "0987654321",
+      "address": "963 Finance Avenue, Jalgaon"
     }
   ],
   "customerRegister": [
