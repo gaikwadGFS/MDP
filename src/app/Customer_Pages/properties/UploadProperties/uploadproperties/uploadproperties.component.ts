@@ -21,6 +21,8 @@ import { ToastModule } from "primeng/toast";
 import { Select } from "primeng/select";
 import { DatePicker } from "primeng/datepicker";
 import { CheckboxModule } from "primeng/checkbox";
+import { ApiService } from "../../../Core/Services/api.service";
+import { Router } from "@angular/router";
 
 
 @Component({
@@ -34,29 +36,29 @@ import { CheckboxModule } from "primeng/checkbox";
 export class UploadpropertiesComponent implements OnInit {
 
 
- propertyType:any[]=['Apartment', 'Independent House/Villa', 'Gated Community Villa'];
- Facing:any[]=['East', 'West', 'North', 'South','North-East','North-West','South-East','South-West']
- monthlyMaintenance:any[]=['Maintenance Included', 'Maintenance Extra']
- Furnishing:any[]=['Full', 'Semi','unfurnished']
- propertySize:any[]= ['']
- state:any[]= ['']
- city:any[]= ['']
- deposite:any[]= ['']
- buildingName:any[]= ['']
- pincode:any[]= ['']
- propertyDescription:any[]= ['']
- Parking:any[]=['None', 'Car','Bike','Car & Bike']
- preferedTenants:any[]=['Anyone', 'Family','Bachelor Male','Bachelor Female','Company']
-  identityType:any[]=['Aadhaar', 'PAN', 'Passport']
-  BhkType:any[]=['1RK','1 BHK','2 BHK','3 BHK','4 BHK ','4+ BHK']
-  propertyAge:any[]=['Less than 1 year','1-3 Years','3-5 Years','5-10 Years','>10 Years']
-  Condition:any[]=['New','Renovated','Needs Repair']
-  selectedPropertyType:string='';
-  floorOptions = Array.from({ length: 101 }, (_, i) => ({ label: i.toString(), value: i }));
+ property_Type:any[]=['Apartment', 'Independent House/Villa', 'Gated Community Villa'];
+ facing_Property:any[]=['East', 'West', 'North', 'South','North-East','North-West','South-East','South-West']
+ monthly_Maintenance:any[]=['Maintenance Included', 'Maintenance Extra']
+ furnishing_Property:any[]=['Full', 'Semi','unfurnished']
+//  propertySize:any[]= ['']
+//  state:any[]= ['']
+//  city:any[]= ['']
+//  deposite:any[]= ['']
+//  buildingName:any[]= ['']
+//  pincode:any[]= ['']
+//  propertyDescription:any[]= ['']
+ parkings:any[]=['None', 'Car','Bike','Car & Bike']
+ prefered_Tenants:any[]=['Anyone', 'Family','Bachelor Male','Bachelor Female','Company']
+  // identity_Type:any[]=['Aadhaar', 'PAN', 'Passport']
+  bhk_Type:any[]=['1RK','1 BHK','2 BHK','3 BHK','4 BHK ','4+ BHK']
+  property_Age:any[]=['Less than 1 year','1-3 Years','3-5 Years','5-10 Years','>10 Years']
+  property_Condition:any[]=['New','Renovated','Needs Repair','None']
+  // selectedPropertyType:string='';
+  floor_Options = Array.from({ length: 101 }, (_, i) => ({ label: i.toString(), value: i }));
 
-  date: Date | undefined;
-  rentType!: string ; // Stores selected rent type
-  formGroup: FormGroup | undefined;
+  // date: Date | undefined;
+  // rentType!: string ;
+  // formGroup: FormGroup | undefined;
 
 
 // Options for "Per Month/Annum" dropdown
@@ -114,126 +116,178 @@ restrictions= [
 propertyForm: FormGroup;
 
 
-property:any = {
-  "propertyId":"",
-  "apartmentType":"",
-  "bhkType":"",
-  "propertyType":"",
-  "propertySize":"",
-  "buildingName":"",
-  "facing":"",
-  "propertyAge":"",
-  "propertyCondition":"",
-  "floor":"",
-  "totalFloor":"",
-  "state":"",
-  "rentDurationOptions":"",
-  "city":"",
-  "pincode":"",
-  "address":"",
-   "rentType":"",
-  "rent":"",
-  "deposite":"",
-  "perMonthOrAnum":"",
-  "monthlyMaintenance":"",
-  "furnishing":"",
-  "parking":"",
-  "preferedTenants":"",
-  "propertyDescription":"",
-  "amenities":[],
-  "utilitiesAvailable":[],
-  "nearbyFacilities:":[],
-  "restrictions":[],
-  "ownerName":"",
-  "ownerContact":"",
-  "ownerAddress":"",
-  "ownerEmail":"",
-  "availableFrom": "",
- "propertyImages": [
-    {
-      "src": ""
-    }
-  ]
+// property:any = {
+//   "propertyId":"",
+//   "apartmentType":"",
+//   "bhkType":"",
+//   "propertyType":"",
+//   "propertySize":"",
+//   "buildingName":"",
+//   "facing":"",
+//   "propertyAge":"",
+//   "propertyCondition":"",
+//   "floor":"",
+//   "totalFloor":"",
+//   "state":"",
+//   "rentDurationOptions":"",
+//   "city":"",
+//   "pincode":"",
+//   "address":"",
+//    "rentType":"",
+//   "rent":"",
+//   "deposite":"",
+//   "perMonthOrAnum":"",
+//   "monthlyMaintenance":"",
+//   "furnishing":"",
+//   "parking":"",
+//   "preferedTenants":"",
+//   "propertyDescription":"",
+//   "amenities":[],
+//   "utilitiesAvailable":[],
+//   "nearbyFacilities:":[],
+//   "restrictions":[],
+//   "ownerName":"",
+//   "ownerContact":"",
+//   "ownerAddress":"",
+//   "ownerEmail":"",
+//   "availableFrom": "",
+//  "propertyImages": [
+//     {
+//       "src": ""
+//     }
+//   ]
 
-}
-
-
+// }
 
 
-  constructor(private messageService:MessageService,private fb: FormBuilder) {
+
+
+  constructor(private messageService:MessageService,private fb: FormBuilder,private apiSrv:ApiService, private route:Router) {
 
     this.propertyForm = this.fb.group({
-      propertyId: ['', Validators.required],
-      apartmentType: ['', Validators.required],
+      // propertyId: [0, Validators.required],
+      // apartmentType: ['', Validators.required],
       bhkType: ['', Validators.required],
       propertyType: ['', Validators.required],
-      propertySize: ['', [Validators.required, Validators.pattern(/^[0-9]+$/)]],
+      propertySize: ['', [Validators.required]],
       buildingName: ['', Validators.required],
       facing: ['', Validators.required],
       propertyAge: ['', Validators.required],
       propertyCondition: ['', Validators.required],
-      floor: ['', [Validators.required, Validators.pattern(/^[0-9]+$/)]],
-      totalFloor: ['', [Validators.required, Validators.pattern(/^[0-9]+$/)]],
+      floor: ['', [Validators.required]],
+      totalFloor: ['', Validators.required],
       state: ['', Validators.required],
-      rentDurationOptions: ['', Validators.required],
+      // rentDurationOptions: ['', Validators.required],
       city: ['', Validators.required],
-      pincode: ['', [Validators.required, Validators.pattern(/^[0-9]{6}$/)]],
-      address: ['', [Validators.required, Validators.minLength(5)]],
+      pincode: ['', [Validators.required]],
+      address: ['', [Validators.required]],
       rentType: ['', Validators.required],
-      rent: ['', [Validators.required, Validators.pattern(/^[0-9]+$/)]],
-      deposite: ['', [Validators.required, Validators.pattern(/^[0-9]+$/)]],
+      rent: ['', [Validators.required]],
+      deposite: ['', [Validators.required]],
       perMonthOrAnum: ['', Validators.required],
       monthlyMaintenance: ['', Validators.required],
       furnishing: ['', Validators.required],
       parking: ['', Validators.required],
       preferedTenants: ['', Validators.required],
-      propertyDescription: ['', [Validators.required, Validators.minLength(10)]],
+      propertyDescription: ['', [Validators.required]],
       amenities: [[], Validators.required],
       utilitiesAvailable: [[], Validators.required],
       nearbyFacilities: [[], Validators.required],
       restrictions: [[]],
-      ownerName: ['', [Validators.required, Validators.minLength(2)]],
-      ownerContact: ['', [Validators.required, Validators.pattern(/^[0-9]{10}$/)]],
+      ownerName: ['', [Validators.required]],
+      ownerContact: ['', [Validators.required]],
       ownerAddress: ['', Validators.required],
-      ownerEmail: ['', [Validators.required, Validators.email]],
-      availableFrom: ['', Validators.required],
-      propertyImages: this.fb.array([
-        this.fb.group({ src: ['', Validators.required] })
-      ])
+      ownerEmail: ['', [Validators.required]],
+      // availableFrom: ['', Validators.required],
+      // propertyImages: this.fb.array([
+      //   this.fb.group({ src: ['', Validators.required] })
+      // ])
+      active:[false]
     });
-
-
 
 
   }
 
   ngOnInit() {
 
-    this.formGroup = new FormGroup({
-      city: new FormControl<string | null>(null)
-  });
+  //   this.formGroup = new FormGroup({
+  //     city: new FormControl<string | null>(null)
+  // });
 
     
   }
 
 
-
-
-
-
   onSubmit() {
     if (this.propertyForm.valid) {
       console.log('Form Submitted:', this.propertyForm.value);
+      this.apiSrv.propertyUpload(this.propertyForm.value).subscribe((res:any)=>{
+        if(res){
+          setTimeout(() => {
+          this.messageService.add({ severity: 'success', summary: 'Success', detail: 'Property Uploaded Successfully' });
+            
+          }, 3000);
+          this.clear();
+          this.route.navigateByUrl('/properties/viewUploadedProperties')
+        }else{
+          this.messageService.add({ severity: 'error', summary: 'Error', detail: 'Something Wrong Try Again' });
+
+        }
+      })
     } else {
       console.log('Form is invalid!');
+      this.messageService.add({ severity: 'error', summary: 'form is invalid', detail: 'Pls fill all details' });
+
     }
+  }
+
+  clear(){
+    this.propertyForm = this.fb.group({
+      propertyId: [0],
+      // apartmentType: [''],
+      bhkType: [''],
+      propertyType: [''],
+      propertySize: [''],
+      buildingName: [''],
+      facing: [''],
+      propertyAge: [''],
+      propertyCondition: [''],
+      floor: [''],
+      totalFloor: [''],
+      state: [''],
+      // rentDurationOptions: [''],
+      city: [''],
+      pincode: [''],
+      // address: [''],
+      rentType: [''],
+      rent: [''],
+      deposite: [''],
+      perMonthOrAnum: [''],
+      monthlyMaintenance: [''],
+      furnishing: [''],
+      parking: [''],
+      preferedTenants: [''],
+      propertyDescription: [''],
+      amenities: [[]],
+      utilitiesAvailable: [[]],
+      nearbyFacilities: [[]],
+      restrictions: [[]],
+      ownerName: [''],
+      ownerContact: [''],
+      ownerAddress: [''],
+      ownerEmail: [''],
+      // availableFrom: [''],
+      // propertyImages: this.fb.array([
+      //   this.fb.group({ src: [''] })
+      // ])
+    });
   }
 
   
 
-  onUpload(event: any) {
-    this.messageService.add({ severity: 'info', summary: 'Success', detail: 'File Uploaded with Basic Mode' });
-}
+//   onUpload(event: any) {
+//     this.messageService.add({ severity: 'info', summary: 'Success', detail: 'File Uploaded with Basic Mode' });
+// }
 
 
 

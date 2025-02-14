@@ -21,9 +21,7 @@ export class ApiService {
   customerRegistration(obj: any): Observable<any> {
     return this.http.post(`${this.apiUrlStartPoint}customerRegister`, obj);
   }
-  propertyUpload(obj: any): Observable<any> {
-    return this.http.post(`${this.apiUrlStartPoint}propertiesList`, obj);
-  }
+ 
 
   customerLogin(obj: any): Observable<any> {
     return this.http.post(`${this.apiUrlStartPoint}customerRegister`, obj);
@@ -51,8 +49,12 @@ export class ApiService {
   getAdvocatesByCity(cityId: number): Observable<any[]> {
     return this.http.get<any[]>(`${this.apiUrlStartPoint}advocates?cityId=${cityId}`);
   }
-  getAllInteriorDesign(): Observable<any> {
-    return this.http.get(`${this.apiUrlStartPoint}interior`)
+  getAllInteriorDesign():Observable<any>{
+    return this.http.get(`${this.apiUrlStartPoint}interiorDesign`)
+  }
+
+  propertyUpload(obj: any): Observable<any> {
+    return this.http.post(`${this.apiUrlStartPoint}propertiesList`, obj);
   }
 
 }

@@ -1,17 +1,20 @@
 
- <div class="container mt-8 mb-3">
+ <div class="container mt-8 light-background ">
+  <h2 class="text-center">Interior Designs</h2>
+ 
   <div class="row">
-    <div class="col">
+    
+    <!-- <div class="col">
       <div class="p-inputgroup w-50 mt-3 ml-1">
         <input type="text" pInputText placeholder="Search..." />
         <p-button label="Search" icon="pi pi-check" [loading]="loading" (onClick)="load()" />
         
       </div>
-    </div>
+    </div> -->
   </div>
  </div>
 
-  <div class="container-fluid">
+  <div class="container m-5">
     <div class="row">
       <div class="col-12">
        <div class="carousel-container">
@@ -26,6 +29,8 @@
               <div class="carousel-item">
                 <img [src]="design.image" [alt]="design.title" />
                 <h3>{{ design.title }}</h3>
+                <h3>{{ design.price }}</h3>
+                <!-- <p-button  label="view More" severity="contrast" /> -->
               </div>
             </ng-template>
           </p-carousel>
@@ -34,98 +39,7 @@
     </div>
   </div>
 
-  <section id="Trending-interiors" class="light-background py-5"> 
-    <div class="container">
-        <div class=" text-center pb-5 position-relative" data-aos="fade-up">
-            <h2 class="fs-2 fw-bold position-relative"> Interior Designs</h2>
-        </div>
-
-        <div id="interiorDesignCarousel" class="carousel slide" data-bs-ride="carousel">
-            <!-- Indicators -->
-            
-
-            <!-- Carousel Items -->
-            <div class="carousel-inner">
-                <!-- Slide 1 -->
-                <div class="carousel-item active">
-                    <div class="row justify-content-center">
-                        <div class="col-lg-10">
-                            <div class="card border-0 shadow-sm">
-                                <img src="https://chiedesign.in/wp-content/uploads/2022/05/Luxury-Interior-Design-Living-Room-1080x675.jpg" height="100px"
-                                    class="card-img-top" alt="Modern Living Room">
-                                <div class="card-body text-center">
-                                    <h5 class="card-title">Modern Living Room</h5>
-                                    <p class="card-text">A stylish living room with a contemporary sofa set and decor.</p>
-                                    <p class="text-primary fw-bold">$2,500</p>
-                                    <p class="card-text">Set of 4 Pieces</p>
-                                    <a href="#" class="btn btn-dark w-50">View Details</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Slide 2 -->
-                <div class="carousel-item">
-                    <div class="row justify-content-center">
-                        <div class="col-lg-10">
-                            <div class="card border-0 shadow-sm ">
-                                <img src="https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080"  height="100px"
-                                    class="card-img-top " alt="Elegant Bedroom Room">
-                                <div class="card-body text-center">
-                                    <h5 class="card-title">Elegant Dining Room</h5>
-                                    <p class="card-text">A sleek dining table with designer chairs for a refined look.</p>
-                                    <p class="text-primary fw-bold">$1,800</p>
-                                    <p class="card-text">6-Seater Table Set</p>
-                                    <a href="#" class="btn btn-dark w-50">View Details</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Slide 3 -->
-                <div class="carousel-item">
-                    <div class="row justify-content-center">
-                        <div class="col-lg-10">
-                            <div class="card border-0 shadow-sm">
-                                <img src="https://www.thespruce.com/thmb/qeLn_ASMyAikPipCFCkd3keuM7I=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/TylerKaruKitchen-26b40bbce75e497fb249e5782079a541.jpeg" height="100px"
-                                    class="card-img-top" alt="kitchen Design">
-                                <div class="card-body text-center">
-                                    <h5 class="card-title">Cozy Bedroom Design</h5>
-                                    <p class="card-text">A cozy bedroom setup with a comfortable bed and minimal decor.</p>
-                                    <p class="text-primary fw-bold">$1,200</p>
-                                    <p class="card-text">Includes Bed, Lamp, and Rug</p>
-                                    <a href="#" class="btn btn-dark w-50">View Details</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Controls -->
-            <button class="carousel-control-prev" type="button" data-bs-target="#interiorDesignCarousel" data-bs-slide="prev">
-                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Previous</span>
-            </button>
-            <button class="carousel-control-next"  type="button" data-bs-target="#interiorDesignCarousel" data-bs-slide="next">
-                <span class="carousel-control-next-icon"  aria-hidden="true"></span>
-                <span class="visually-hidden">Next</span>
-            </button>
-        </div>
-    </div>
-</section>
-
-
-
-
-
-
-
-
-
-  <!-- Offer section started -->
+    <!-- Offer section started -->
  <section class="bg-dark">
   <div class="container ">
     <h1 class="text-center " style="color:white">Special Offers</h1>

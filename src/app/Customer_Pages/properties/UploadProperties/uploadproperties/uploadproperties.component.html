@@ -8,39 +8,26 @@
         <div class="col-12">
             <div class="">
                 <div class="card   shadow border-0 p-3">
-
-
-
                     <form [formGroup]="propertyForm" (ngSubmit)="onSubmit()">
-
-
                         <p-stepper [value]="1" class="basis-[50rem]">
                             <p-step-list>
                                 <p-step [value]="1">Property Details</p-step>
                                 <p-step [value]="2">Rent Details</p-step>
-                                <p-step [value]="3">Ownership & Legal Information</p-step>
+                                <p-step [value]="3">Owner Information</p-step>
                                 <p-step [value]="4">Additional Considerations</p-step>
-                                <p-step [value]="5">locality details</p-step>
-
-
+                                <p-step [value]="5">Property Details</p-step>
                             </p-step-list>
                             <!-- <p-step-panels> -->
 
                                 <!-- Property Details Start -->
 
                                 <p-step-panel [value]="1">
-
                                     <ng-template #content let-activateCallback="activateCallback">
-
                                         <div class="row ">
-
-
-
-
                                             <div class="col-12">
                                                 <div>
                                                     <label for="propertyType" class="my-2">Apartment Type </label>
-                                                    <p-select formControlName="propertyType" [options]="propertyType"
+                                                    <p-select formControlName="propertyType" [options]="property_Type"
                                                         [checkmark]="true" [showClear]="true"
                                                         placeholder="Select a Property Type" class="w-full md:w-56" />
                                                 </div>
@@ -49,7 +36,7 @@
                                             <div class="col-12">
                                                 <div>
                                                     <label for="BhkType" class="my-2">BHK Type </label>
-                                                    <p-select formControlName="bhkType" [options]="BhkType"
+                                                    <p-select formControlName="bhkType" [options]=" bhk_Type"
                                                         [checkmark]="true" [showClear]="true"
                                                         placeholder="Select a Bhk Type" class="w-full md:w-56" />
                                                 </div>
@@ -58,7 +45,7 @@
                                                 <div>
                                                     <label for="propertySize" class="my-2">Property Size
                                                     </label>
-                                                    <input pInputText id="propertySize" class="w-100"
+                                                    <input pInputText  class="w-100"
                                                         formControlName="propertySize"
                                                         placeholder="Total Area (sq. ft./sq. m.)" />
                                                 </div>
@@ -66,7 +53,7 @@
                                             <div class="col-12">
                                                 <div>
                                                     <label for="Facing" class="my-2">Facing </label>
-                                                    <p-select formControlName="facing" [options]="Facing"
+                                                    <p-select formControlName="facing" [options]="facing_Property"
                                                         [checkmark]="true" [showClear]="true"
                                                         placeholder="Select a Direction" class="w-full md:w-56" />
                                                 </div>
@@ -74,7 +61,7 @@
                                             <div class="col-12">
                                                 <div>
                                                     <label for="propertyAge" class="my-2">Property Age </label>
-                                                    <p-select formControlName="propertyAge" [options]="propertyAge"
+                                                    <p-select formControlName="propertyAge" [options]="property_Age"
                                                         [checkmark]="true" [showClear]="true"
                                                         placeholder="Select Property Age" class="w-full md:w-56" />
                                                 </div>
@@ -82,7 +69,7 @@
                                             <div class="col-12">
                                                 <div>
                                                     <label for="Condition" class="my-2">Condition</label>
-                                                    <p-select formControlName="propertyCondition" [options]="Condition"
+                                                    <p-select formControlName="propertyCondition" [options]="property_Condition"
                                                         [checkmark]="true" [showClear]="true"
                                                         placeholder="Select Condition" class="w-full md:w-56" />
                                                 </div>
@@ -92,7 +79,7 @@
                                                 <div class="col-6">
                                                     <div>
                                                         <label for="floors" class="my-2">Floors</label>
-                                                        <p-select formControlName="floor" [options]="floorOptions"
+                                                        <p-select formControlName="floor" [options]="floor_Options"
                                                             [checkmark]="true" [showClear]="true"
                                                             placeholder="Select Floors" class="w-full" />
                                                     </div>
@@ -102,7 +89,7 @@
                                                 <div class="col-6">
                                                     <div>
                                                         <label for="totalFloors" class="my-2">Total Floors</label>
-                                                        <p-select formControlName="totalFloor" [options]="floorOptions"
+                                                        <p-select formControlName="totalFloor" [options]="floor_Options"
                                                             [checkmark]="true" [showClear]="true"
                                                             placeholder="Select Total Floors" class="w-100" />
                                                     </div>
@@ -146,13 +133,13 @@
                                             <div class="col-12  align-items-end">
                                                 <div class="col-12">
                                                     <label for="expectedRent" class="my-2">Expected Rent</label>
-                                                    <input pInputText id="expectedRent" class="w-full"
+                                                    <input pInputText  class="w-full"
                                                         formControlName="rent" placeholder="Enter Amount" />
                                                 </div>
                                                 <div class="col-12">
                                                     <label for="rentDuration" class="my-2">Per</label>
                                                     <p-select [options]="rentDurationOptions"
-                                                        formControlName="rentDurationOptions" [checkmark]="true"
+                                                        formControlName="perMonthOrAnum" [checkmark]="true"
                                                         [showClear]="true" placeholder="Select Duration"
                                                         class="w-full" />
                                                 </div>
@@ -161,7 +148,7 @@
                                             <div class="col-12  align-items-end">
                                                 <div class="col-12 ">
                                                     <label for="deposite" class="my-2">Total Deposit</label>
-                                                    <input pInputText id="deposite" class="w-full"
+                                                    <input pInputText  class="w-full"
                                                         formControlName="deposite" placeholder="Enter Deposit Amount" />
                                                 </div>
 
@@ -173,7 +160,7 @@
                                                         <label for="monthlyMaintenance" class="my-2">Monthly Maintenance
                                                         </label>
                                                         <p-select formControlName="monthlyMaintenance"
-                                                            [options]="monthlyMaintenance" [checkmark]="true"
+                                                            [options]="monthly_Maintenance" [checkmark]="true"
                                                             [showClear]="true" placeholder="Select"
                                                             class="w-full md:w-56" />
                                                     </div>
@@ -194,7 +181,7 @@
                                                 <div class="col-12">
                                                     <div>
                                                         <label for="Furnishing" class="my-2">Furnishing </label>
-                                                        <p-select [options]="Furnishing" formControlName="furnishing"
+                                                        <p-select [options]="furnishing_Property" formControlName="furnishing"
                                                             [checkmark]="true" [showClear]="true"
                                                             placeholder="Select Furnishing type"
                                                             class="w-full md:w-56" />
@@ -205,7 +192,7 @@
                                                 <div class="col-12">
                                                     <div>
                                                         <label for="Parking" class="my-2">Parking </label>
-                                                        <p-select formControlName="parking" [options]="Parking"
+                                                        <p-select formControlName="parking" [options]="parkings"
                                                             [checkmark]="true" [showClear]="true"
                                                             placeholder="Select Parking type" class="w-full md:w-56" />
                                                     </div>
@@ -216,7 +203,7 @@
                                                     <div>
                                                         <label for="preferedTenants" class="my-2">Prefered Tenants
                                                         </label>
-                                                        <p-select [options]=" preferedTenants" [checkmark]="true"
+                                                        <p-select [options]=" prefered_Tenants" [checkmark]="true"
                                                             [showClear]="true" formControlName="preferedTenants"
                                                             placeholder="Select The type of tenant"
                                                             class="w-full md:w-56" />
@@ -230,7 +217,7 @@
                                                 <div class="col-12 ">
                                                     <label for="propertyDescription" class="my-2 ">Property
                                                         Description</label>
-                                                    <input pInputText id="propertyDescription"
+                                                    <input pInputText 
                                                         formControlName="propertyDescription" class="w-full p-5"
                                                         placeholder="write a few lines about the property" />
                                                 </div>
@@ -262,7 +249,7 @@
                                                 <div>
                                                     <label for=" ownerName" class="my-2">Owner Name
                                                     </label>
-                                                    <input pInputText id=" ownerName" formControlName="ownerName"
+                                                    <input pInputText formControlName="ownerName"
                                                         class="w-100" placeholder="Current legal owner" />
                                                 </div>
                                             </div>
@@ -270,7 +257,7 @@
                                                 <div>
                                                     <label for="ownerContact" class="my-2">Owner contact
                                                     </label>
-                                                    <input pInputText id="ownerContact" formControlName="ownerContact"
+                                                    <input pInputText  formControlName="ownerContact"
                                                         class="w-100" placeholder="owner contact number" />
                                                 </div>
                                             </div>
@@ -278,7 +265,7 @@
                                                 <div>
                                                     <label for="ownerAddress" class="my-2">Owner Address
                                                     </label>
-                                                    <input pInputText id="ownerAddress" formControlName="ownerAddress"
+                                                    <input pInputText  formControlName="ownerAddress"
                                                         class="w-100" placeholder="owner Address" />
                                                 </div>
                                             </div>
@@ -286,7 +273,7 @@
                                                 <div>
                                                     <label for="ownerEmail" class="my-2">Owner Email
                                                     </label>
-                                                    <input pInputText id="ownerEmail" formControlName="ownerEmail"
+                                                    <input pInputText  formControlName="ownerEmail"
                                                         class="w-100" placeholder="Owner Email" />
                                                 </div>
                                             </div>
@@ -372,30 +359,37 @@
                                             <div class="col-12">
                                                 <div>
                                                     <label for="state" class="my-2">State</label>
-                                                    <input pInputText id="state" formControlName="state" class="w-100"
+                                                    <input pInputText  formControlName="state" class="w-100"
                                                         placeholder="Enter State" />
                                                 </div>
                                             </div>
                                             <div class="col-12">
                                                 <div>
                                                     <label for="city" class="my-2">City</label>
-                                                    <input pInputText id="city" formControlName="city" class="w-100"
+                                                    <input pInputText  formControlName="city" class="w-100"
                                                         placeholder="Enter City" />
                                                 </div>
                                             </div>
                                             <div class="col-12">
                                                 <div>
                                                     <label for="pincode" class="my-2">Pincode</label>
-                                                    <input pInputText id="pincode" formControlName="pincode"
+                                                    <input pInputText  formControlName="pincode"
                                                         class="w-100" placeholder="Enter Pincode" />
                                                 </div>
                                             </div>
                                             <div class="col-12">
                                                 <div>
                                                     <label for="buildingName" class="my-2">Building Name</label>
-                                                    <input pInputText id="buildingName" formControlName="buildingName"
+                                                    <input pInputText  formControlName="buildingName"
                                                         class="w-100" placeholder="Enter Building Name" />
                                                 </div>
+                                            </div>
+                                            <div class="col-12 ">
+                                                <label for="propertyDescription" class="my-2 ">Property
+                                                    Address</label>
+                                                <input pInputText 
+                                                    formControlName="address" class="w-full p-5"
+                                                    placeholder="Please enter your property address" />
                                             </div>
 
                                             <!-- Navigation Buttons -->
