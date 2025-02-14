@@ -17,10 +17,9 @@
         {
           "src": "https://3.imimg.com/data3/QF/VC/MY-11005443/princetown.jpg"
         }
-      ],
-<<<<<<< HEAD
-      "id": "2bc8"
-=======
+      ]},
+      {
+      "id": "2bc8",
       "apartmentType": "Apartment",
       "propertyType": "Residential",
       "propertySize": "1200 sqft",
@@ -71,7 +70,6 @@
         "address": "Koregaon Park, Pune",
         "email": "amit.sharma@example.com"
       }
->>>>>>> e81ddf5b0cd868409b8740399cfa3efdfd7ed320
     },
     {
       "title": "2 BHK Apartment For Rent in Baner",
