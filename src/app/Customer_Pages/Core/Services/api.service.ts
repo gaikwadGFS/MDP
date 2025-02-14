@@ -49,13 +49,8 @@ export class ApiService {
   getAdvocatesByCity(cityId: number): Observable<any[]> {
     return this.http.get<any[]>(`${this.apiUrlStartPoint}advocates?cityId=${cityId}`);
   }
-<<<<<<< HEAD
   getAllInteriorDesign():Observable<any>{
     return this.http.get(`${this.apiUrlStartPoint}interiorDesign`)
-=======
-  getAllInteriorDesign(): Observable<any> {
-    return this.http.get(`${this.apiUrlStartPoint}interior`)
->>>>>>> e81ddf5b0cd868409b8740399cfa3efdfd7ed320
   }
 
   propertyUpload(obj: any): Observable<any> {

@@ -155,10 +155,6 @@
         {
           "src": "https://www.skyi.com/images/iris-baner/iris-header_monile.jpg"
         }
-<<<<<<< HEAD
-      ],
-      "id": "edc8"
-=======
       ]
     },
     {
@@ -331,7 +327,6 @@
       "ownerAddress": "kgcvkygckgc",
       "ownerEmail": "kgclhgcluc",
       "active": false
->>>>>>> e81ddf5b0cd868409b8740399cfa3efdfd7ed320
     }
   ],
   "registerOffice": [
@@ -460,15 +455,9 @@
   ],
   "advocates": [
     {
-<<<<<<< HEAD
-      "id": "1",
-      "name": "Alice Smith",
-      "cityId": 1,
-=======
       "id": 1,
       "name": "Aarav Mehta",
       "cityId": 2,
->>>>>>> e81ddf5b0cd868409b8740399cfa3efdfd7ed320
       "specialization": "Criminal Law",
       "rating": 4.5,
       "fee": 300,
@@ -477,15 +466,9 @@
       "address": "123 Law Street, Pune"
     },
     {
-<<<<<<< HEAD
-      "id": "2",
-      "name": "Bob Johnson",
-      "cityId": 2,
-=======
       "id": 2,
       "name": "Sneha Patil",
       "cityId": 4,
->>>>>>> e81ddf5b0cd868409b8740399cfa3efdfd7ed320
       "specialization": "Family Law",
       "rating": 4,
       "fee": 200,
