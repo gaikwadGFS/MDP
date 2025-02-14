@@ -49,7 +49,7 @@ export class ApiService {
     return this.http.get<any[]>(`${this.apiUrlStartPoint}advocates?cityId=${cityId}`);
   }
   getAllInteriorDesign():Observable<any>{
-    return this.http.get(`${this.apiUrlStartPoint}interior`)
+    return this.http.get(`${this.apiUrlStartPoint}interiorDesign`)
   }
 
 
