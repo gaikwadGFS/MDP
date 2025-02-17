@@ -1,4 +1,4 @@
-<p-toast/>
+<p-toast />
 <div class="container mt-5">
     <div class="row">
         <div class="col-12">
@@ -109,11 +109,11 @@
                                     <ng-template #content let-activateCallback="activateCallback">
                                         <!-- <form action=""> -->
                                         <div class="row ">
-                                            
+
                                             <div class="col-4 col-offset-4">
                                                 <div>
                                                     <p>
-                                                        Important Note : Upload Document List : 
+                                                        Important Note : Upload Document List :
                                                     </p>
                                                     <ul>
                                                         <li>Property Deed</li>
@@ -123,14 +123,15 @@
                                                         <li>Address Proof</li>
                                                         <li>NOC</li>
                                                         <li>Identity Proof</li>
-                                                        
-                                                       </ul>
+
+                                                    </ul>
                                                     <label>Upload Documents:</label>
-                                                    <input type="file" class="btn btn-success form-control" (change)="onFileSelected($event)" multiple />
-                                            
+                                                    <input type="file" class="btn btn-success form-control"
+                                                        (change)="onFileSelected($event)" multiple />
+
                                                 </div>
                                             </div>
-                                           
+
 
                                         </div>
                                         <!-- </form> -->
@@ -169,7 +170,8 @@
                                                                             <p-inputgroup-addon><i
                                                                                     class="fa-brands fa-cc-mastercard text-dark"></i></p-inputgroup-addon>
                                                                             <p-inputnumber placeholder="Card Number"
-                                                                                formControlName="cardNumber" [useGrouping]="false" />
+                                                                                formControlName="cardNumber"
+                                                                                [useGrouping]="false" />
                                                                             <p-inputgroup-addon><i
                                                                                     class="fa-solid fa-circle-check text-dark"></i></p-inputgroup-addon>
                                                                         </p-inputgroup>
@@ -188,8 +190,10 @@
                                                                             <!-- <p-datepicker view="month"
                                                                                 dateFormat="mm/yyyy"
                                                                                 [readonlyInput]="true" /> -->
-                                                                                <!-- <p-datepicker formControlName="expiryDate" /> -->
-                                                                                <p-datepicker formControlName="expiryDate" view="month" dateFormat="mm/yy" [readonlyInput]="true" />
+                                                                            <!-- <p-datepicker formControlName="expiryDate" /> -->
+                                                                            <p-datepicker formControlName="expiryDate"
+                                                                                view="month" dateFormat="mm/yy"
+                                                                                [readonlyInput]="true" />
 
                                                                             <!-- <p-inputgroup>
                                                                                 <p-inputgroup-addon><i
@@ -232,9 +236,12 @@
                                                                         <div>
                                                                             <p-inputgroup>
                                                                                 <p-inputgroup-addon>
-                                                                                    <i class="fa-solid fa-user text-dark"></i>
+                                                                                    <i
+                                                                                        class="fa-solid fa-user text-dark"></i>
                                                                                 </p-inputgroup-addon>
-                                                                                <input pInputText formControlName="cardholderName" placeholder="CardHolder Name" />
+                                                                                <input pInputText
+                                                                                    formControlName="cardholderName"
+                                                                                    placeholder="CardHolder Name" />
                                                                             </p-inputgroup>
                                                                             <!-- <p-inputgroup>
                                                                                 <p-inputgroup-addon><i
@@ -263,7 +270,8 @@
                                                                                         class="fa-solid fa-mobile-screen-button text-dark"></i></p-inputgroup-addon>
                                                                                 <p-inputnumber
                                                                                     placeholder="Mobile Number"
-                                                                                    formControlName="mobileNo"  [useGrouping]="false"/>
+                                                                                    formControlName="mobileNo"
+                                                                                    [useGrouping]="false" />
                                                                                 <p-inputgroup-addon><i
                                                                                         class="fa-solid fa-phone-flip text-dark"></i></p-inputgroup-addon>
                                                                             </p-inputgroup>
@@ -361,6 +369,8 @@
         </div>
     </div>
 </div>
+
+
 
 
 

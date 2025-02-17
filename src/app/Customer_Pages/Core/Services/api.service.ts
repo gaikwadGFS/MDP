@@ -76,7 +76,7 @@ export class ApiService {
   //   return this.http.patch(`${this.apiUrlStartPoint}/${userId}`, { documents: files });
   // }
   getUserDocuments(userId: number): Observable<any> {
-    return this.http.get(`${this.apiUrlStartPoint}/${userId}`);
+    return this.http.get(`${this.apiUrlStartPoint}propertyRegister/${userId}`);
   }
 
   propertyRegistratation(obj: any): Observable<any> {
