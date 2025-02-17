@@ -74,26 +74,7 @@
       }
     },
     {
-      "title": "2 BHK Apartment For Rent in Baner",
-      "location": "Opp. Balewadi High Street",
-      "rent": 22000,
-      "deposit": 50000,
-      "size": "800",
-      "furnishing": "Semi-Furnished",
-      "bhk": "2 BHK",
-      "suitableFor": "Family",
-      "availableFrom": "15-Mar-2025",
-      "propertyImages": [
-        {
-          "src": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSHnRNKzw_qArrl79_XUFZJoxzIlyCjyGUlNA&s"
-        },
-        {
-          "src": "https://www.skyi.com/images/iris-baner/iris-header_monile.jpg"
-        }
-      ],
-      "id": "f9c2"
-    },
-    {
+      "id": "f9c2",
       "propertyId": "PUNE123456",
       "apartmentType": "Apartment",
       "bhkType": "3 BHK",
@@ -331,7 +312,8 @@
       "id": "314e"
     },
     {
-      "id": "981e",
+      
+      "id": "314e",
       "bhkType": "2 BHK",
       "propertyType": "Independent House/Villa",
       "propertySize": "20000",
@@ -382,6 +364,68 @@
       "ownerContact": "khgvkhvv",
       "ownerAddress": "kgcvkygckgc",
       "ownerEmail": "kgclhgcluc",
+      "active": false
+    },
+    {
+      "id": "7361",
+      "bhkType": "4+ BHK",
+      "propertyType": "Gated Community Villa",
+      "propertySize": "100",
+      "buildingName": "Godrèj Park World Hinjewadi",
+      "facing": "South-East",
+      "propertyAge": "5-10 Years",
+      "propertyCondition": "New",
+      "floor": 20,
+      "totalFloor": 20,
+      "state": "Maharashtra",
+      "city": "Pune",
+      "pincode": "410036",
+      "address": "Hinjewadi",
+      "rentType": "lease",
+      "rent": "25000",
+      "deposite": "20000",
+      "perMonthOrAnum": "month",
+      "monthlyMaintenance": "Maintenance Extra",
+      "furnishing": "Full",
+      "parking": "Car & Bike",
+      "preferedTenants": "Anyone",
+      "propertyDescription": "Nice",
+      "amenities": [
+        {
+          "label": "Garden",
+          "value": "Garden"
+        },
+        {
+          "label": "Parking",
+          "value": "Parking"
+        }
+      ],
+      "utilitiesAvailable": [
+        {
+          "label": "Internet",
+          "value": "Internet"
+        }
+      ],
+      "nearbyFacilities": [
+        {
+          "label": "Public Transport",
+          "value": "Public Transport"
+        },
+        {
+          "label": "Malls",
+          "value": "Malls"
+        }
+      ],
+      "restrictions": [
+        {
+          "label": "Building Codes",
+          "value": "Building Codes"
+        }
+      ],
+      "ownerName": "Badhan",
+      "ownerContact": "8099771036",
+      "ownerAddress": "Pune",
+      "ownerEmail": "badhan12@gmail.com",
       "active": false
     }
   ],
@@ -645,6 +689,14 @@
       "mobile": "8888888888",
       "address": "413655",
       "password": "123456"
+      },
+      {
+      "id": "94b5",
+      "firstName": "Prajakta",
+      "lastName": "Badhan",
+      "mobile": "9270069872",
+      "address": "Ravet Pune ",
+      "password": "prajakta"
     }
   ],
   "interiorDesign": [
@@ -739,7 +791,7 @@
         "Blackout curtains",
         "Roller blinds"
       ],
-      "id": "9353"
+      "id": "5e4d"
     },
     {
       "title": "Modern Kitchen",
@@ -946,6 +998,7 @@
       ],
       "mobileNo": 6598745612,
       "isPaymentDone": true
+     
     }
   ]
 }

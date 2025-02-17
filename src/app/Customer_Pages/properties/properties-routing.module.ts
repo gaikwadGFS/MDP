@@ -53,9 +53,13 @@ const routes: Routes = [
           component:MostPopularComponent
         },
         {
-          path:'propertyDetails',
-          component:PropertyDetailsComponent
-        }
+          path: 'propertyDetails/:id',  
+          component: PropertyDetailsComponent
+      },
+      {
+        path: 'propertyDetails',  
+        component: PropertyDetailsComponent
+    }
       ]
    },
 ];

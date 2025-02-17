@@ -1,8 +1,9 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 import { ApiService } from '../../Core/Services/api.service';
-import { CommonModule } from '@angular/common'; // Import for *ngFor
-import { CardModule } from 'primeng/card'; // Import PrimeNG Card
-import { TagModule } from 'primeng/tag'; // Import PrimeNG Tag
+import { CommonModule } from '@angular/common';
+import { CardModule } from 'primeng/card';
+import { TagModule } from 'primeng/tag';
 import { ButtonModule } from 'primeng/button';
 import { CarouselModule } from 'primeng/carousel';
 
@@ -14,14 +15,23 @@ import { CarouselModule } from 'primeng/carousel';
   styleUrls: ['./property-details.component.css']
 })
 export class PropertyDetailsComponent implements OnInit {
-  property: any = null; // Store only one property
+  propertyId!: string;
+  property: any = null;
 
-  constructor(private apiService: ApiService) { }
+  constructor(private apiService: ApiService, private route: ActivatedRoute) { }
 
-  ngOnInit() {
-    this.apiService.getProperties().subscribe((data) => {
-      if (data.length > 0) {
-        this.property = data[0]; // Assign only the first property
+  ngOnInit(): void {
+    this.route.paramMap.subscribe(params => {
+      this.propertyId = params.get('id')!; // Get property ID from the route
+      if (this.propertyId) {
+        this.apiService.getPropertyById(this.propertyId).subscribe(
+          data => {
+            this.property = data;
+          },
+          error => {
+            console.error("Error fetching property details:", error);
+          }
+        );
       }
     });
   }

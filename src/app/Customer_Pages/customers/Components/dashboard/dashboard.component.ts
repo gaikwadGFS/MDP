@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { RouterModule } from '@angular/router';
+import { Router, RouterModule } from '@angular/router';
 import { TabViewModule } from 'primeng/tabview';
 import { ButtonModule } from 'primeng/button';
 import { ReactiveFormsModule, FormGroup, FormControl } from '@angular/forms';
@@ -46,8 +46,8 @@ import { ApiService } from '../../../Core/Services/api.service';
 export class DashboardComponent implements OnInit {
   dashboardForm: FormGroup;
   activeTabIndex: number = 0;
-  properties: any[] = []; // Array to hold properties
-  filteredProperties: any[] = []; // Array to hold filtered properties
+  properties: any[] = []; 
+  filteredProperties: any[] = []; 
 
   tabs = [
     { route: '/dashboard/buy', label: 'Buy', icon: 'pi pi-shopping-cart', isActive: true },
@@ -75,7 +75,7 @@ export class DashboardComponent implements OnInit {
     'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTZFlyQWxv72erCxTodjvHGPFEUbWmzME43LA&s'
   ];
 
-  constructor(private apiService: ApiService) {
+  constructor(private apiService: ApiService, private router: Router) {
     this.dashboardForm = new FormGroup({
       tabSelection: new FormControl(''),
       searchCity: new FormControl(''),
@@ -94,7 +94,7 @@ export class DashboardComponent implements OnInit {
   fetchProperties(): void {
     this.apiService.getProperties().subscribe((data: any) => {
       this.properties = data;
-      this.filteredProperties = data; // Initialize filteredProperties with all properties
+      this.filteredProperties = data; 
     });
   }
 
@@ -123,5 +123,9 @@ export class DashboardComponent implements OnInit {
     const minBudget = parseInt(budgetRange[0].replace(/,/g, ''), 10);
     const maxBudget = budgetRange[1] ? parseInt(budgetRange[1].replace(/,/g, ''), 10) : Infinity;
     return rent >= minBudget && rent <= maxBudget;
+  }
+  
+  viewDetails(propertyId: string) {
+    this.router.navigate(['/properties/propertyDetails', propertyId]);
   }
 }

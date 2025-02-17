@@ -1,5 +1,5 @@
 <div class="container ">
-    <div class="row" >
+    <div class="row" style="margin-top: 100px;">
         <!-- Left Advertisement Section -->
         <div class="col-3 p-m-2">
             <div class="advertisement p-d-flex p-flex-column p-ai-center p-shadow-4 p-border-round-lg p-p-3"
@@ -55,13 +55,15 @@
         <!-- Main Card Section -->
         <div class="col-6 p-m-2">
             <div class="p-d-flex p-jc-center p-flex-column">
-                <div *ngFor="let property of filteredProperties" class="p-card p-3 p-shadow-4 p-border-round-lg mb-2"
+                <div *ngFor="let property of filteredProperties.slice(1)"
+                    class="p-card p-3 p-shadow-4 p-border-round-lg mb-2"
                     style="width: 100%; max-width: 800px; background: linear-gradient(135deg, #f0f8ff, #d9f7ff); border: 1px solid #a7c7d7;">
                     <div class="p-card-title text-xl font-bold p-mb-2" style="color: #2a5d84;">
-                        {{ property.title }}
+                        {{ property.buildingName }}
                     </div>
                     <div class="p-card-subtitle p-mb-3" style="color: #4a8fc9;">
-                        {{ property.location }} <a href="#" class="text-primary">Explore Nearby</a>
+                        {{ property.address }}, {{ property.city }} - {{ property.pincode }}
+                        <a href="#" class="text-primary">Explore Nearby</a>
                     </div>
 
                     <!-- Content Section -->
@@ -83,18 +85,19 @@
                             <!-- Price Section -->
                             <div class="grid p-mb-3">
                                 <div class="col-4 text-center">
-                                    <div class="text-lg font-bold" style="color: #2a5d84;">₹ {{ property.rent }}</div>
-                                    <div class="text-sm" style="color: #555;">Rent (Non-Negotiable)</div>
+                                    <div class="text-lg font-bold" style="color: #2a5d84;">₹ {{ property.rent }} / {{
+                                        property.perMonthOrAnum }}</div>
+                                    <div class="text-sm" style="color: #555;">Rent ({{ property.rentType }})</div>
                                 </div>
                                 <div class="col-4 text-center">
-                                    <div class="text-lg font-bold" style="color: #2a5d84;">₹ {{ property.deposit }}
+                                    <div class="text-lg font-bold" style="color: #2a5d84;">₹ {{ property.deposite }}
                                     </div>
                                     <div class="text-sm" style="color: #555;">Deposit</div>
                                 </div>
                                 <div class="col-4 text-center">
-                                    <div class="text-lg font-bold" style="color: #2a5d84;">{{ property.size }} sqft
-                                    </div>
-                                    <div class="text-sm" style="color: #555;">Buildup</div>
+                                    <div class="text-lg font-bold" style="color: #2a5d84;">{{ property.propertySize }}
+                                        sqft</div>
+                                    <div class="text-sm" style="color: #555;">Built-up</div>
                                 </div>
                             </div>
 
@@ -106,18 +109,26 @@
                                 </div>
                                 <div class="col-4">
                                     <i class="pi pi-building p-mr-2" style="color: #2a5d84;"></i>
-                                    <span>{{ property.bhk }}</span>
+                                    <span>{{ property.bhkType }} - {{ property.propertyType }}</span>
                                 </div>
                                 <div class="col-4">
                                     <i class="pi pi-user p-mr-2" style="color: #2a5d84;"></i>
-                                    <span>{{ property.suitableFor }}</span>
+                                    <span>{{ property.preferedTenants }}</span>
                                 </div>
                             </div>
 
                             <div class="grid">
-                                <div class="col-6">
+                                <div class="col-4">
+                                    <i class="pi pi-arrow-down p-mr-2" style="color: #2a5d84;"></i>
+                                    <span>{{ property.floor }} / {{ property.totalFloor }} Floors</span>
+                                </div>
+                                <div class="col-4">
+                                    <i class="pi pi-map-marker p-mr-2" style="color: #2a5d84;"></i>
+                                    <span>{{ property.facing }}</span>
+                                </div>
+                                <div class="col-4">
                                     <i class="pi pi-calendar p-mr-2" style="color: #2a5d84;"></i>
-                                    <span>{{ property.availableFrom }}</span>
+                                    <span>{{ property.propertyAge }}</span>
                                 </div>
                             </div>
 
@@ -138,8 +149,9 @@
                                     Join Visit
                                 </button>
 
-                                <button class="p-button p-button-outlined p-button-success">
-                                   View Details
+                                <button class="p-button p-button-outlined p-button-success"
+                                    (click)="viewDetails(property.id)">
+                                    View Details
                                 </button>
                             </div>
                         </div>
@@ -147,6 +159,7 @@
                 </div>
             </div>
         </div>
+
 
         <!-- Search Form Section -->
         <div class="col-3 p-m-2">

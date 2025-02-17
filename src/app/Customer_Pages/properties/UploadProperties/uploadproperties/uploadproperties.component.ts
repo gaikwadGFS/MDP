@@ -222,7 +222,7 @@ propertyForm: FormGroup;
     
   }
   getUserDetails(id: number) {
-    this.apiSrv.getPropertyById(id).subscribe(user => {
+    this.apiSrv.getPropertyDetailsById(id).subscribe(user => {
       this.propertyForm.patchValue(user); // Populate form with data
     });
   }
