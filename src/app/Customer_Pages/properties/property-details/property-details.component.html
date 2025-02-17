@@ -1,113 +1,115 @@
-<div class="p-container flex justify-content-center mt-5">
-    <div class="col-12 md:col-6 lg:col-4 p-2 mt-3" style="max-width: 800px;">
-        <p-card class="h-full border-round-lg shadow-4 hover:shadow-6 transition-duration-300" *ngIf="property">
-             <!-- Carousel for Images -->
-             <ng-template pTemplate="header">
-                <p-carousel [value]="property.propertyImages" [numVisible]="1" [numScroll]="1" circular [autoplayInterval]="3000">
+<div class="flex justify-content-center mt-5">
+    <div class="col-12 md:col-6 lg:col-4 p-3" style="max-width: 800px;">
+        <p-card class="h-full border-round-lg shadow-5 hover:shadow-7 transition-duration-300 surface-card"
+            *ngIf="property">
+
+            <!-- Carousel for Images -->
+            <ng-template pTemplate="header">
+                <p-carousel [value]="property?.propertyImages" [numVisible]="1" [numScroll]="1" circular
+                    [autoplayInterval]="3000">
                     <ng-template let-image pTemplate="item">
-                        <img [src]="image.src" alt="Property Image" class="w-full border-round-top-lg " />
+                        <img [src]="image?.src" alt="Property Image" class="w-full border-round-top-lg shadow-3" />
                     </ng-template>
                 </p-carousel>
             </ng-template>
 
+            <!-- Property Title -->
             <ng-template pTemplate="title">
-                <span class="text-xl font-bold text-primary">{{ property.title }}</span>
+                <div class="text-2xl font-bold text-primary">{{ property?.name }}</div>
             </ng-template>
 
+            <!-- Property Details -->
             <ng-template pTemplate="content">
-                <div class="p-grid p-align-center">
-                    <div class="p-col-12">
-                        <div class="flex align-items-center text-sm">
-                            <i class="pi pi-map-marker text-red-500 text-lg mr-2"></i>
-                            <span>{{ property.location }}</span>
-                        </div>
+                <div class="grid align-items-center p-2">
+
+                    <!-- Address -->
+                    <div class="col-12 flex align-items-center text-sm mb-2">
+                        <i class="pi pi-map-marker text-red-500 text-lg mr-2"></i>
+                        <span class="text-gray-700">{{ property?.address }}</span>
                     </div>
 
-                    <div class="p-col-6">
-                        <div class="flex align-items-center text-sm">
-                            <i class="pi pi-money-bill text-green-500 text-lg mr-2"></i>
-                            <span>₹{{ property.rent }}/month</span>
-                        </div>
+                    <!-- Rent & Deposit -->
+                    <div class="col-6 flex align-items-center text-sm">
+                        <i class="pi pi-money-bill text-green-500 text-lg mr-2"></i>
+                        <span class="font-medium">₹{{ property?.rent }}/month</span>
+                    </div>
+                    <div class="col-6 flex align-items-center text-sm">
+                        <i class="pi pi-wallet text-orange-500 text-lg mr-2"></i>
+                        <span class="font-medium">₹{{ property?.deposite }} deposit</span>
                     </div>
 
-                    <div class="p-col-6">
-                        <div class="flex align-items-center text-sm">
-                            <i class="pi pi-wallet text-orange-500 text-lg mr-2"></i>
-                            <span>₹{{ property.deposit }} deposit</span>
-                        </div>
+                    <!-- BHK & Size -->
+                    <div class="col-6 flex align-items-center text-sm">
+                        <i class="pi pi-home text-indigo-500 text-lg mr-2"></i>
+                        <span class="font-medium">{{ property?.bhkType }} BHK</span>
+                    </div>
+                    <div class="col-6 flex align-items-center text-sm">
+                        <i class="pi pi-chart-bar text-cyan-500 text-lg mr-2"></i>
+                        <span class="font-medium">{{ property?.propertySize }} sq.ft</span>
                     </div>
 
-                    <div class="p-col-6">
-                        <div class="flex align-items-center text-sm">
-                            <i class="pi pi-home text-indigo-500 text-lg mr-2"></i>
-                            <span>{{ property.bhk }}</span>
-                        </div>
-                    </div>
-
-                    <div class="p-col-6">
-                        <div class="flex align-items-center text-sm">
-                            <i class="pi pi-chart-bar text-cyan-500 text-lg mr-2"></i>
-                            <span>{{ property.size }}</span>
-                        </div>
-                    </div>
-
-                    <div class="p-col-12">
-                        <p-tag value="Available" severity="success" class="mt-2 text-sm"></p-tag>
+                    <!-- Availability Tag -->
+                    <div class="col-12 flex justify-content-center mt-3">
+                        <p-tag value="Available" severity="success"
+                            class="mt-2 text-sm font-bold px-3 py-2 text-white bg-green-700 border-none"></p-tag>
                     </div>
 
                     <!-- Additional Details Section -->
-                    <div class="p-col-12 p-3 border-round bg-blue-50 mt-3">
+                    <div class="col-12 p-3 border-round bg-blue-50 shadow-1 mt-3">
                         <h3 class="text-lg font-semibold text-primary">Additional Details</h3>
                         <div class="flex align-items-center text-sm mb-2">
                             <i class="pi pi-map"></i>
-                            <span class="ml-2">State: {{ property.state }}</span>
+                            <span class="ml-2">State: {{ property?.state }}</span>
                         </div>
                         <div class="flex align-items-center text-sm mb-2">
                             <i class="pi pi-map-marker"></i>
-                            <span class="ml-2">City: {{ property.city }}</span>
+                            <span class="ml-2">City: {{ property?.city }}</span>
                         </div>
                         <div class="flex align-items-center text-sm mb-2">
                             <i class="pi pi-compass"></i>
-                            <span class="ml-2">Facing: {{ property.facing }}</span>
+                            <span class="ml-2">Facing: {{ property?.facing }}</span>
                         </div>
                     </div>
 
-                    <!-- Amenities -->
-                    <div class="p-col-12 p-3 border-round bg-green-50 mt-3">
+                    <!-- Amenities Section -->
+                    <div class="col-12 p-3 border-round bg-green-50 shadow-1 mt-3">
                         <h3 class="text-lg font-semibold text-green-600">Amenities</h3>
                         <ul class="list-none pl-0">
-                            <li *ngFor="let amenity of property.amenities" class="flex align-items-center">
-                                <i class="pi pi-check-circle text-green-500 mr-2"></i>{{ amenity }}
+                            <li *ngFor="let amenity of property?.amenities" class="flex align-items-center">
+                                <i class="pi pi-check-circle text-green-500 mr-2"></i>
+                                <span class="font-medium">{{ amenity?.value || amenity }}</span>
                             </li>
                         </ul>
                     </div>
 
-                    <!-- Nearby Facilities -->
-                    <div class="p-col-12 p-3 border-round bg-yellow-50 mt-3">
+                    <!-- Nearby Facilities Section -->
+                    <div class="col-12 p-3 border-round bg-yellow-50 shadow-1 mt-3">
                         <h3 class="text-lg font-semibold text-yellow-600">Nearby Facilities</h3>
                         <ul class="list-none pl-0">
-                            <li *ngFor="let facility of property.nearbyFacilities" class="flex align-items-center">
-                                <i class="pi pi-map-marker text-yellow-500 mr-2"></i>{{ facility }}
+                            <li *ngFor="let facility of property?.nearbyFacilities" class="flex align-items-center">
+                                <i class="pi pi-map-marker text-yellow-500 mr-2"></i>
+                                <span class="font-medium">{{ facility?.value || facility }}</span>
                             </li>
                         </ul>
                     </div>
 
-                    <!-- Owner Details -->
-                    <div class="p-col-12 p-3 border-round bg-purple-50 mt-3">
+                    <!-- Owner Details Section -->
+                    <div class="col-12 p-3 border-round bg-purple-50 shadow-1 mt-3" *ngIf="property?.ownerName">
                         <h3 class="text-lg font-semibold text-purple-600">Owner Details</h3>
                         <div class="flex align-items-center text-sm mb-2">
                             <i class="pi pi-user text-purple-500"></i>
-                            <span class="ml-2">Name: {{ property.ownerDetails.name }}</span>
+                            <span class="ml-2 font-medium">Name: {{ property?.ownerName }}</span>
                         </div>
                         <div class="flex align-items-center text-sm mb-2">
                             <i class="pi pi-phone text-purple-500"></i>
-                            <span class="ml-2">Contact: {{ property.ownerDetails.contact }}</span>
+                            <span class="ml-2 font-medium">Contact: {{ property?.ownerContact }}</span>
                         </div>
                         <div class="flex align-items-center text-sm mb-2">
                             <i class="pi pi-envelope text-purple-500"></i>
-                            <span class="ml-2">Email: {{ property.ownerDetails.email }}</span>
+                            <span class="ml-2 font-medium">Email: {{ property?.ownerEmail }}</span>
                         </div>
                     </div>
+
                 </div>
             </ng-template>
         </p-card>
