@@ -65,6 +65,7 @@ export class GetAdvocateComponent implements OnInit {
 
   clearSearch() {
     this.selectedCity = "";
+    this.advocates = [];
   }
 
 

@@ -19,10 +19,10 @@ import { PasswordModule } from "primeng/password";
 import { FileUploadModule } from "primeng/fileupload";
 import { ToastModule } from "primeng/toast";
 import { Select } from "primeng/select";
-import { DatePicker } from "primeng/datepicker";
 import { CheckboxModule } from "primeng/checkbox";
 import { ApiService } from "../../../Core/Services/api.service";
 import { ActivatedRoute, Router } from "@angular/router";
+import { DatePicker } from 'primeng/datepicker';
 
 
 @Component({
@@ -40,26 +40,12 @@ export class UploadpropertiesComponent implements OnInit {
  facing_Property:any[]=['East', 'West', 'North', 'South','North-East','North-West','South-East','South-West']
  monthly_Maintenance:any[]=['Maintenance Included', 'Maintenance Extra']
  furnishing_Property:any[]=['Full', 'Semi','unfurnished']
-//  propertySize:any[]= ['']
-//  state:any[]= ['']
-//  city:any[]= ['']
-//  deposite:any[]= ['']
-//  buildingName:any[]= ['']
-//  pincode:any[]= ['']
-//  propertyDescription:any[]= ['']
  parkings:any[]=['None', 'Car','Bike','Car & Bike']
  prefered_Tenants:any[]=['Anyone', 'Family','Bachelor Male','Bachelor Female','Company']
-  // identity_Type:any[]=['Aadhaar', 'PAN', 'Passport']
   bhk_Type:any[]=['1RK','1 BHK','2 BHK','3 BHK','4 BHK ','4+ BHK']
   property_Age:any[]=['Less than 1 year','1-3 Years','3-5 Years','5-10 Years','>10 Years']
   property_Condition:any[]=['New','Renovated','Needs Repair','None']
-  // selectedPropertyType:string='';
   floor_Options = Array.from({ length: 101 }, (_, i) => ({ label: i.toString(), value: i }));
-
-  // date: Date | undefined;
-  // rentType!: string ;
-  // formGroup: FormGroup | undefined;
-
 
 // Options for "Per Month/Annum" dropdown
 rentDurationOptions = [
@@ -116,49 +102,6 @@ restrictions= [
 propertyForm: FormGroup;
 
 
-// property:any = {
-//   "propertyId":"",
-//   "apartmentType":"",
-//   "bhkType":"",
-//   "propertyType":"",
-//   "propertySize":"",
-//   "buildingName":"",
-//   "facing":"",
-//   "propertyAge":"",
-//   "propertyCondition":"",
-//   "floor":"",
-//   "totalFloor":"",
-//   "state":"",
-//   "rentDurationOptions":"",
-//   "city":"",
-//   "pincode":"",
-//   "address":"",
-//    "rentType":"",
-//   "rent":"",
-//   "deposite":"",
-//   "perMonthOrAnum":"",
-//   "monthlyMaintenance":"",
-//   "furnishing":"",
-//   "parking":"",
-//   "preferedTenants":"",
-//   "propertyDescription":"",
-//   "amenities":[],
-//   "utilitiesAvailable":[],
-//   "nearbyFacilities:":[],
-//   "restrictions":[],
-//   "ownerName":"",
-//   "ownerContact":"",
-//   "ownerAddress":"",
-//   "ownerEmail":"",
-//   "availableFrom": "",
-//  "propertyImages": [
-//     {
-//       "src": ""
-//     }
-//   ]
-
-// }
-
 
 
 
@@ -198,7 +141,7 @@ propertyForm: FormGroup;
       ownerContact: ['', [Validators.required]],
       ownerAddress: ['', Validators.required],
       ownerEmail: ['', [Validators.required]],
-      // availableFrom: ['', Validators.required],
+      availableFrom: ['', Validators.required],
       // propertyImages: this.fb.array([
       //   this.fb.group({ src: ['', Validators.required] })
       // ])
@@ -216,25 +159,18 @@ propertyForm: FormGroup;
       this.currentPropertyId = params.get('id'); // Get ID from route
       console.log(this.currentPropertyId)
       if (this.currentPropertyId) {
-        this.getUserDetails(this.currentPropertyId);
+        this.getProperty(this.currentPropertyId);
       }
     });
     
   }
-  getUserDetails(id: number) {
+
+
+  getProperty(id: number) {
     this.apiSrv.getPropertyDetailsById(id).subscribe(user => {
       this.propertyForm.patchValue(user); // Populate form with data
     });
   }
-
-  // updateUser() {
-  //   if (this.userForm.valid) {
-  //     this.userService.updateUser(this.userId, this.userForm.value).subscribe(() => {
-  //       alert('User updated successfully!');
-  //     });
-  //   }
-  // }
-
 
   onSubmit() {
     if (this.propertyForm.valid) {
@@ -321,11 +257,6 @@ propertyForm: FormGroup;
     });
   }
 
-  
-
-//   onUpload(event: any) {
-//     this.messageService.add({ severity: 'info', summary: 'Success', detail: 'File Uploaded with Basic Mode' });
-// }
 
 
 

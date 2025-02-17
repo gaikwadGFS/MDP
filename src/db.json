@@ -1,26 +1,6 @@
 {
   "propertiesList": [
     {
-      "title": "1 BHK Flat In Standalone Building (No Lift 2nd Floor) For Rent In Hinjawadi",
-      "location": "Datt Colony near Kirti Classic Plots",
-      "rent": 14000,
-      "deposit": 20000,
-      "size": "500 sqft",
-      "furnishing": "Unfurnished",
-      "bhk": "1 BHK",
-      "suitableFor": "Bachelor",
-      "availableFrom": "01-Feb-2025",
-      "propertyImages": [
-        {
-          "src": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQh7BlPQnpAmVTuhPN2UsvfgkxGVNzfsHZwlg&s"
-        },
-        {
-          "src": "https://3.imimg.com/data3/QF/VC/MY-11005443/princetown.jpg"
-        }
-      ],
-      "id": "6292"
-    },
-    {
       "id": "2bc8",
       "apartmentType": "Apartment",
       "propertyType": "Residential",
@@ -75,7 +55,6 @@
     },
     {
       "id": "f9c2",
-      "propertyId": "PUNE123456",
       "apartmentType": "Apartment",
       "bhkType": "3 BHK",
       "propertyType": "Residential",
@@ -136,8 +115,7 @@
         {
           "src": "https://www.skyi.com/images/iris-baner/iris-header_monile.jpg"
         }
-      ],
-      "id": "bdc5"
+      ]
     },
     {
       "id": "3d9b",
@@ -270,7 +248,7 @@
       "state": "maharashtra",
       "city": "pune",
       "pincode": "8653417",
-      "address": "Hinjewadi phase 3",
+      "address": "Hinjewadi phase 3 near laxmi chowk",
       "rentType": "rent",
       "rent": "3878888",
       "deposite": "20000",
@@ -279,7 +257,7 @@
       "furnishing": "Semi",
       "parking": "Car",
       "preferedTenants": "Family",
-      "propertyDescription": "It is Good",
+      "propertyDescription": "It is Good and amazing flat",
       "amenities": [
         {
           "label": "Swimming Pool",
@@ -312,7 +290,6 @@
       "id": "314e"
     },
     {
-      
       "id": "314e",
       "bhkType": "2 BHK",
       "propertyType": "Independent House/Villa",
@@ -426,6 +403,144 @@
       "ownerContact": "8099771036",
       "ownerAddress": "Pune",
       "ownerEmail": "badhan12@gmail.com",
+      "active": false
+    },
+    {
+      "id": 8976,
+      "bhkType": "1RK",
+      "propertyType": "Apartment",
+      "propertySize": "2500",
+      "buildingName": "gaurav Apartment",
+      "facing": "East",
+      "propertyAge": "1-3 Years",
+      "propertyCondition": "New",
+      "floor": 1,
+      "totalFloor": 2,
+      "state": "Maharashtra",
+      "city": "pune",
+      "pincode": "413665",
+      "address": "Vadgao budruk , katraj, pune",
+      "rentType": "rent",
+      "rent": "5000",
+      "deposite": "10000",
+      "perMonthOrAnum": "month",
+      "monthlyMaintenance": "Maintenance Included",
+      "furnishing": "Semi",
+      "parking": "Car & Bike",
+      "preferedTenants": "Anyone",
+      "propertyDescription": "It is a good",
+      "amenities": [
+        {
+          "label": "Garden",
+          "value": "Garden"
+        },
+        {
+          "label": "Parking",
+          "value": "Parking"
+        }
+      ],
+      "utilitiesAvailable": [
+        {
+          "label": "Water",
+          "value": "Water"
+        },
+        {
+          "label": "Electricity",
+          "value": "Electricity"
+        }
+      ],
+      "nearbyFacilities": [
+        {
+          "label": "Hospitals",
+          "value": "Hospitals"
+        },
+        {
+          "label": "Schools",
+          "value": "Schools"
+        }
+      ],
+      "restrictions": [
+        {
+          "label": "Building Codes",
+          "value": "Building Codes"
+        }
+      ],
+      "ownerName": "Sayali Jadhav",
+      "ownerContact": "9865412356",
+      "ownerAddress": "Hinjewadi phase 1",
+      "ownerEmail": "sayali@gmail.com",
+      "availableFrom": "2025-02-17T18:30:00.000Z",
+      "active": false
+    },
+    {
+      "id": "8fb4",
+      "bhkType": "1 BHK",
+      "propertyType": "Apartment",
+      "propertySize": "600",
+      "buildingName": "Sky villa",
+      "facing": "West",
+      "propertyAge": "5-10 Years",
+      "propertyCondition": "Renovated",
+      "floor": 3,
+      "totalFloor": 10,
+      "state": "Maharashtra",
+      "city": "Pune",
+      "pincode": "413665",
+      "address": "Rahatani phata, jai malhar nagar, pipmari,pune",
+      "rentType": "rent",
+      "rent": "20000",
+      "deposite": "500000",
+      "perMonthOrAnum": "month",
+      "monthlyMaintenance": "Maintenance Included",
+      "furnishing": "Full",
+      "parking": "Car & Bike",
+      "preferedTenants": "Anyone",
+      "propertyDescription": "It is a good",
+      "amenities": [
+        {
+          "label": "Garden",
+          "value": "Garden"
+        },
+        {
+          "label": "Parking",
+          "value": "Parking"
+        }
+      ],
+      "utilitiesAvailable": [
+        {
+          "label": "Water",
+          "value": "Water"
+        },
+        {
+          "label": "Gas",
+          "value": "Gas"
+        }
+      ],
+      "nearbyFacilities": [
+        {
+          "label": "Schools",
+          "value": "Schools"
+        },
+        {
+          "label": "Hospitals",
+          "value": "Hospitals"
+        }
+      ],
+      "restrictions": [
+        {
+          "label": "HOA Rules",
+          "value": "HOA Rules"
+        },
+        {
+          "label": "Building Codes",
+          "value": "Building Codes"
+        }
+      ],
+      "ownerName": "Shubham Gaikwad",
+      "ownerContact": "9921556655",
+      "ownerAddress": "Kalewadi phata ,pune",
+      "ownerEmail": "s@gmail.com",
+      "availableFrom": "2025-02-16T18:30:00.000Z",
       "active": false
     }
   ],
@@ -689,8 +804,8 @@
       "mobile": "8888888888",
       "address": "413655",
       "password": "123456"
-      },
-      {
+    },
+    {
       "id": "94b5",
       "firstName": "Prajakta",
       "lastName": "Badhan",
@@ -998,7 +1113,6 @@
       ],
       "mobileNo": 6598745612,
       "isPaymentDone": true
-     
     }
   ]
 }
