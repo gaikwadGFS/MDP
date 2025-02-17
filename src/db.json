@@ -17,8 +17,10 @@
         {
           "src": "https://3.imimg.com/data3/QF/VC/MY-11005443/princetown.jpg"
         }
-      ]},
-      {
+      ],
+      "id": "6292"
+    },
+    {
       "id": "2bc8",
       "apartmentType": "Apartment",
       "propertyType": "Residential",
@@ -153,7 +155,8 @@
         {
           "src": "https://www.skyi.com/images/iris-baner/iris-header_monile.jpg"
         }
-      ]
+      ],
+      "id": "bdc5"
     },
     {
       "id": "3d9b",
@@ -270,10 +273,65 @@
         {
           "src": "https://www.skyi.com/images/iris-baner/iris-header_monile.jpg"
         }
-      ]
+      ],
+      "id": "8057"
     },
     {
-      "id": "314e",
+      "bhkType": "2 BHK",
+      "propertyType": "Independent House/Villa",
+      "propertySize": "20000",
+      "buildingName": "shri complex",
+      "facing": "East",
+      "propertyAge": "3-5 Years",
+      "propertyCondition": "Renovated",
+      "floor": 2,
+      "totalFloor": 3,
+      "state": "maharashtra",
+      "city": "pune",
+      "pincode": "8653417",
+      "address": "Hinjewadi phase 3",
+      "rentType": "rent",
+      "rent": "3878888",
+      "deposite": "20000",
+      "perMonthOrAnum": "year",
+      "monthlyMaintenance": "Maintenance Included",
+      "furnishing": "Semi",
+      "parking": "Car",
+      "preferedTenants": "Family",
+      "propertyDescription": "It is Good",
+      "amenities": [
+        {
+          "label": "Swimming Pool",
+          "value": "Swimming Pool"
+        }
+      ],
+      "utilitiesAvailable": [
+        {
+          "label": "Electricity",
+          "value": "Electricity"
+        }
+      ],
+      "nearbyFacilities": [
+        {
+          "label": "Schools",
+          "value": "Schools"
+        }
+      ],
+      "restrictions": [
+        {
+          "label": "Easements",
+          "value": "Easements"
+        }
+      ],
+      "ownerName": "hfhfggg",
+      "ownerContact": "khgvkhvv",
+      "ownerAddress": "kgcvkygckgc",
+      "ownerEmail": "kgclhgcluc",
+      "active": false,
+      "id": "314e"
+    },
+    {
+      "id": "981e",
       "bhkType": "2 BHK",
       "propertyType": "Independent House/Villa",
       "propertySize": "20000",
@@ -453,7 +511,7 @@
   ],
   "advocates": [
     {
-      "id": 1,
+      "id": "1",
       "name": "Aarav Mehta",
       "cityId": 2,
       "specialization": "Criminal Law",
@@ -464,7 +522,7 @@
       "address": "123 Law Street, Pune"
     },
     {
-      "id": 2,
+      "id": "2",
       "name": "Sneha Patil",
       "cityId": 4,
       "specialization": "Family Law",
@@ -486,7 +544,7 @@
       "address": "789 Legal Avenue, Mumbai"
     },
     {
-      "id": 4,
+      "id": "4",
       "name": "Vikram Deshmukh",
       "cityId": 5,
       "specialization": "Intellectual Property Law",
@@ -497,7 +555,7 @@
       "address": "321 Patent Blvd, Aurangabad"
     },
     {
-      "id": 5,
+      "id": "5",
       "name": "Riya Kulkarni",
       "cityId": 3,
       "specialization": "Tax Law",
@@ -508,7 +566,7 @@
       "address": "654 Finance Road, Nagpur"
     },
     {
-      "id": 6,
+      "id": "6",
       "name": "Karan Joshi",
       "cityId": 6,
       "specialization": "Labor Law",
@@ -519,7 +577,7 @@
       "address": "987 Worker Street, Solapur"
     },
     {
-      "id": 7,
+      "id": "7",
       "name": "Neha Shinde",
       "cityId": 7,
       "specialization": "Environmental Law",
@@ -530,7 +588,7 @@
       "address": "159 Green Lane, Amravati"
     },
     {
-      "id": 8,
+      "id": "8",
       "name": "Arjun Pawar",
       "cityId": 8,
       "specialization": "Real Estate Law",
@@ -541,7 +599,7 @@
       "address": "753 Property Blvd, Kolhapur"
     },
     {
-      "id": 9,
+      "id": "9",
       "name": "Priya Nair",
       "cityId": 9,
       "specialization": "Immigration Law",
@@ -552,7 +610,7 @@
       "address": "852 Visa Street, Akola"
     },
     {
-      "id": 10,
+      "id": "10",
       "name": "Rohit Bansal",
       "cityId": 10,
       "specialization": "Banking Law",
@@ -579,55 +637,315 @@
       "mobile": "7218021932",
       "address": "Pune,pincode-411041",
       "password": "7218021932"
+    },
+    {
+      "id": "358c",
+      "firstName": "Abhishek",
+      "lastName": "Joshi",
+      "mobile": "8888888888",
+      "address": "413655",
+      "password": "123456"
     }
   ],
-  "interiorDesign":[ {
-     
-    "title": "Elegant Living Room",
-    "image": "assets/interior.jpg",
-    "price": "$5000 - $15000",
-    "wallColor": ["Neutral tones", "Beige", "Gray", "White", "Accent walls"],
-    "flooring": ["Hardwood", "Marble", "Vinyl", "Tiles"],
-    "ceilingDesign": ["False ceiling", "LED cove lighting", "Chandeliers"],
-    "furniture": ["Sofa set", "Coffee table", "TV unit", "Side tables"],
-    "lighting": ["Pendant lights", "Recessed lighting", "LED strips"],
-    "decor": ["Wall art", "Mirrors", "Rugs", "Plants", "Curtains"],
-    "storage": ["TV console", "Shelves", "Cabinets"],
-    "seatingArrangement": ["Open layout", "Sectional sofas", "Accent chairs"],
-    "technologyIntegration": ["Smart lighting", "Home theater", "Speakers"],
-    "cabinetry": ["Modular cabinets", "Open shelves", "Closed storage"],
-    "countertop": ["Quartz", "Granite", "Marble"],
-    "backsplash": ["Tile", "Glass", "Stone finish"],
-    "appliances": ["Built-in oven", "Refrigerator", "Dishwasher", "Hob", "Chimney"],
-    "storageSolutions": ["Pull-out drawers", "Pantry cabinets", "Corner units"],
-    "diningArea": ["Breakfast counter", "Small dining nook"],
-    "curtainsAndBlinds": ["Sheer curtains", "Blackout curtains", "Roller blinds"]
-  },
-  {
-     
-    "title": "Modern Kitchen",
-    "image": "assets/interior.jpg",
-    "price": "$5000 - $7000",
-    "wallColor": ["Neutral tones", "Beige", "Gray", "White", "Accent walls"],
-    "flooring": ["Hardwood", "Marble", "Vinyl", "Tiles"],
-    "ceilingDesign": ["False ceiling", "LED cove lighting", "Chandeliers"],
-    "furniture": ["Sofa set", "Coffee table", "TV unit", "Side tables"],
-    "lighting": ["Pendant lights", "Recessed lighting", "LED strips"],
-    "decor": ["Wall art", "Mirrors", "Rugs", "Plants", "Curtains"],
-    "storage": ["TV console", "Shelves", "Cabinets"],
-    "seatingArrangement": ["Open layout", "Sectional sofas", "Accent chairs"],
-    "technologyIntegration": ["Smart lighting", "Home theater", "Speakers"],
-    "cabinetry": ["Modular cabinets", "Open shelves", "Closed storage"],
-    "countertop": ["Quartz", "Granite", "Marble"],
-    "backsplash": ["Tile", "Glass", "Stone finish"],
-    "appliances": ["Built-in oven", "Refrigerator", "Dishwasher", "Hob", "Chimney"],
-    "storageSolutions": ["Pull-out drawers", "Pantry cabinets", "Corner units"],
-    "diningArea": ["Breakfast counter", "Small dining nook"],
-    "curtainsAndBlinds": ["Sheer curtains", "Blackout curtains", "Roller blinds"]
-  }]
-  
-  
-
-
-  
+  "interiorDesign": [
+    {
+      "title": "Elegant Living Room",
+      "image": "assets/interior.jpg",
+      "price": "$5000 - $15000",
+      "wallColor": [
+        "Neutral tones",
+        "Beige",
+        "Gray",
+        "White",
+        "Accent walls"
+      ],
+      "flooring": [
+        "Hardwood",
+        "Marble",
+        "Vinyl",
+        "Tiles"
+      ],
+      "ceilingDesign": [
+        "False ceiling",
+        "LED cove lighting",
+        "Chandeliers"
+      ],
+      "furniture": [
+        "Sofa set",
+        "Coffee table",
+        "TV unit",
+        "Side tables"
+      ],
+      "lighting": [
+        "Pendant lights",
+        "Recessed lighting",
+        "LED strips"
+      ],
+      "decor": [
+        "Wall art",
+        "Mirrors",
+        "Rugs",
+        "Plants",
+        "Curtains"
+      ],
+      "storage": [
+        "TV console",
+        "Shelves",
+        "Cabinets"
+      ],
+      "seatingArrangement": [
+        "Open layout",
+        "Sectional sofas",
+        "Accent chairs"
+      ],
+      "technologyIntegration": [
+        "Smart lighting",
+        "Home theater",
+        "Speakers"
+      ],
+      "cabinetry": [
+        "Modular cabinets",
+        "Open shelves",
+        "Closed storage"
+      ],
+      "countertop": [
+        "Quartz",
+        "Granite",
+        "Marble"
+      ],
+      "backsplash": [
+        "Tile",
+        "Glass",
+        "Stone finish"
+      ],
+      "appliances": [
+        "Built-in oven",
+        "Refrigerator",
+        "Dishwasher",
+        "Hob",
+        "Chimney"
+      ],
+      "storageSolutions": [
+        "Pull-out drawers",
+        "Pantry cabinets",
+        "Corner units"
+      ],
+      "diningArea": [
+        "Breakfast counter",
+        "Small dining nook"
+      ],
+      "curtainsAndBlinds": [
+        "Sheer curtains",
+        "Blackout curtains",
+        "Roller blinds"
+      ],
+      "id": "9353"
+    },
+    {
+      "title": "Modern Kitchen",
+      "image": "assets/interior.jpg",
+      "price": "$5000 - $7000",
+      "wallColor": [
+        "Neutral tones",
+        "Beige",
+        "Gray",
+        "White",
+        "Accent walls"
+      ],
+      "flooring": [
+        "Hardwood",
+        "Marble",
+        "Vinyl",
+        "Tiles"
+      ],
+      "ceilingDesign": [
+        "False ceiling",
+        "LED cove lighting",
+        "Chandeliers"
+      ],
+      "furniture": [
+        "Sofa set",
+        "Coffee table",
+        "TV unit",
+        "Side tables"
+      ],
+      "lighting": [
+        "Pendant lights",
+        "Recessed lighting",
+        "LED strips"
+      ],
+      "decor": [
+        "Wall art",
+        "Mirrors",
+        "Rugs",
+        "Plants",
+        "Curtains"
+      ],
+      "storage": [
+        "TV console",
+        "Shelves",
+        "Cabinets"
+      ],
+      "seatingArrangement": [
+        "Open layout",
+        "Sectional sofas",
+        "Accent chairs"
+      ],
+      "technologyIntegration": [
+        "Smart lighting",
+        "Home theater",
+        "Speakers"
+      ],
+      "cabinetry": [
+        "Modular cabinets",
+        "Open shelves",
+        "Closed storage"
+      ],
+      "countertop": [
+        "Quartz",
+        "Granite",
+        "Marble"
+      ],
+      "backsplash": [
+        "Tile",
+        "Glass",
+        "Stone finish"
+      ],
+      "appliances": [
+        "Built-in oven",
+        "Refrigerator",
+        "Dishwasher",
+        "Hob",
+        "Chimney"
+      ],
+      "storageSolutions": [
+        "Pull-out drawers",
+        "Pantry cabinets",
+        "Corner units"
+      ],
+      "diningArea": [
+        "Breakfast counter",
+        "Small dining nook"
+      ],
+      "curtainsAndBlinds": [
+        "Sheer curtains",
+        "Blackout curtains",
+        "Roller blinds"
+      ],
+      "id": "3d46"
+    }
+  ],
+  "propertyRegister": [
+    {
+      "id": "01e7",
+      "propertyType": "Residential",
+      "identificationNumber": "1233",
+      "totalArea": "250",
+      "propertyValue": "852369",
+      "ownershipType": "Single",
+      "propertyAddress": "hhsjhh",
+      "propertyDeed": "",
+      "previousSaleAgreement": null,
+      "taxReceipts": null,
+      "encumbranceCertificate": null,
+      "addressProof": null,
+      "noc": null,
+      "identityType": "",
+      "identityProof": null,
+      "cardNumber": 5555,
+      "expiryDate": 2255,
+      "cvcNumber": "231",
+      "cardholderName": 2222,
+      "document": [
+        {
+          "id": 1739779950460,
+          "fileName": "IMG_4693 copy (1).jpg",
+          "fileUrl": "/uploads/IMG_4693 copy (1).jpg"
+        },
+        {
+          "id": 1739779950462,
+          "fileName": "IMG_4693 copy.jpg",
+          "fileUrl": "/uploads/IMG_4693 copy.jpg"
+        },
+        {
+          "id": 1739779950463,
+          "fileName": "user.jpg",
+          "fileUrl": "/uploads/user.jpg"
+        }
+      ],
+      "mobileNo": 1111,
+      "isPaymentDone": true
+    },
+    {
+      "id": "e787",
+      "propertyType": "Residential",
+      "identificationNumber": "12354",
+      "totalArea": "250",
+      "propertyValue": "1235",
+      "ownershipType": "Leasehold",
+      "propertyAddress": "snmnmsmn",
+      "cardNumber": 256398745641236580,
+      "expiryDate": "2025-07-31T18:30:00.000Z",
+      "cvcNumber": "12355",
+      "cardholderName": "kshitija",
+      "document": [
+        {
+          "id": 1739781617356,
+          "fileName": "screencapture-localhost-4200-properties-uploadProperties-2025-02-03-15_43_26.png",
+          "fileUrl": "/uploads/screencapture-localhost-4200-properties-uploadProperties-2025-02-03-15_43_26.png"
+        },
+        {
+          "id": 1739781617357,
+          "fileName": "IMG_4693 copy (1).jpg",
+          "fileUrl": "/uploads/IMG_4693 copy (1).jpg"
+        }
+      ],
+      "mobileNo": 123644,
+      "isPaymentDone": true
+    },
+    {
+      "id": "6edc",
+      "propertyType": "Residential",
+      "identificationNumber": "123654",
+      "totalArea": "2225",
+      "propertyValue": "10000",
+      "ownershipType": "Single",
+      "propertyAddress": "Hinjewadi phase 1",
+      "cardNumber": 1234567896325874,
+      "expiryDate": "2027-05-31T18:30:00.000Z",
+      "cvcNumber": "8445",
+      "cardholderName": "Kshitija Gaikwad",
+      "document": [
+        {
+          "id": 1739781896564,
+          "fileName": "IMG_4693 copy.jpg",
+          "fileUrl": "/uploads/IMG_4693 copy.jpg"
+        }
+      ],
+      "mobileNo": 9890660766,
+      "isPaymentDone": true
+    },
+    {
+      "id": "e184",
+      "propertyType": "Land",
+      "identificationNumber": "158",
+      "totalArea": "123",
+      "propertyValue": "5266",
+      "ownershipType": "Leasehold",
+      "propertyAddress": "Pune",
+      "cardNumber": 2365987456,
+      "expiryDate": "2025-10-31T18:30:00.000Z",
+      "cvcNumber": "12356",
+      "cardholderName": "Gaikwad",
+      "document": [
+        {
+          "id": 1739782004984,
+          "fileName": "screencapture-localhost-4200-legalServices-getAdvocate-2025-02-03-15_36_48.png",
+          "fileUrl": "/uploads/screencapture-localhost-4200-legalServices-getAdvocate-2025-02-03-15_36_48.png"
+        }
+      ],
+      "mobileNo": 6598745612,
+      "isPaymentDone": true
+    }
+  ]
 }

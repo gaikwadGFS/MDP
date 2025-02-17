@@ -1,10 +1,10 @@
 <div class="container mt-5">
-    <h2 class="text-center mb-4 py-4">View Properties</h2>
+    <h2 class="text-center pt-5">View Properties</h2>
 
     <div class="grid">
         <!-- First Property (For Rent) -->
-        <div class="col-12 md:col-4">
-            <div class="card shadow-2 p-3">
+        <div class="col-12 md:col-4" *ngFor="let items of list">
+            <div class="card shadow-2 p-3" *ngIf="items.active === false">
                 <!-- Property Image -->
                 <p-galleria 
                     [value]="['property1-img1.jpg', 'property1-img2.jpg', 'property1-img3.jpg']" 
@@ -13,17 +13,17 @@
                     [showThumbnails]="false"
                     [showIndicators]="true">
                     <ng-template let-image pTemplate="item">
-                        <img [src]="image" alt="Property Image" class="property-img">
+                        <img [src]="items.propertyImages" alt="Property Image" class="property-img">
                     </ng-template>
                 </p-galleria>
 
                 <!-- Property Details -->
-                <h3 class="mt-3">Luxury Apartment</h3>
-                <h4 class="text-primary">$1,200,000</h4>
-                <p><i class="pi pi-map-marker"></i> New York, USA</p>
+                <h3 class="mt-3">{{items.propertyType}}</h3>
+                <h4 class="text-primary">{{items.rent}}</h4>
+                <p><i class="pi pi-map-marker"></i> {{items.address}},{{items.city}},{{items.state}},{{items.pincode}}.</p>
 
                 <!-- Description -->
-                <p class="text-600">A beautiful luxury apartment with modern amenities and a great view.</p>
+                <p class="text-600">{{items.propertyDescription}}</p>
 
                 <!-- Rating (Static Stars) -->
                 <div class="stars">
@@ -36,7 +36,7 @@
 
                 <!-- Action Buttons -->
                 <div class="flex justify-content-between mt-3">
-                    <button pButton type="button" label="Edit" class="p-button-sm p-button-success"></button>
+                    <button pButton type="button" label="Edit" class="p-button-sm p-button-success" (click)="onEdit(items.id)"></button>
                     <button pButton type="button" label="Request Activation" class="p-button-sm p-button-warning"></button>
                 </div>
 
@@ -49,9 +49,9 @@
         </div>
 
         <!-- Second Property (Rented Out) -->
-        <div class="col-12 md:col-4">
+        <!-- <div class="col-12 md:col-4">
             <div class="card shadow-2 p-3">
-                <!-- Property Image -->
+                Property Image
                 <p-galleria 
                     [value]="['property2-img1.jpg', 'property2-img2.jpg', 'property2-img3.jpg']" 
                     [numVisible]="3" 
@@ -63,15 +63,15 @@
                     </ng-template>
                 </p-galleria>
 
-                <!-- Property Details -->
+                Property Details
                 <h3 class="mt-3">Modern Townhouse</h3>
                 <h4 class="text-primary">$850,000</h4>
                 <p><i class="pi pi-map-marker"></i> Los Angeles, USA</p>
 
-                <!-- Description -->
+                Description
                 <p class="text-600">Spacious and well-lit townhouse with a private backyard.</p>
 
-                <!-- Rating (Static Stars) -->
+                Rating (Static Stars)
                 <div class="stars">
                     <i class="pi pi-star text-yellow-500"></i>
                     <i class="pi pi-star text-yellow-500"></i>
@@ -79,24 +79,24 @@
                     <i class="pi pi-star text-yellow-500"></i>
                 </div>
 
-                <!-- Action Buttons -->
+                Action Buttons
                 <div class="flex justify-content-between mt-3">
                     <button pButton type="button" label="Edit" class="p-button-sm p-button-success"></button>
                     <button pButton type="button" label="Request Activation" class="p-button-sm p-button-warning"></button>
                 </div>
 
-                <!-- Rented Out Badge -->
+                Rented Out Badge
                 <span class="badge bg-red-500 text-white p-1 border-round absolute"
                       style="top: 6px; right: 5px;">
                     Rented Out
                 </span>
             </div>
-        </div>
+        </div> -->
 
         <!-- Third Property (Static Example) -->
-        <div class="col-12 md:col-4">
+        <!-- <div class="col-12 md:col-4">
             <div class="card shadow-2 p-3">
-                <!-- Property Image -->
+                Property Image
                 <p-galleria 
                     [value]="['property3-img1.jpg', 'property3-img2.jpg', 'property3-img3.jpg']" 
                     [numVisible]="3" 
@@ -108,15 +108,15 @@
                     </ng-template>
                 </p-galleria>
 
-                <!-- Property Details -->
+                Property Details
                 <h3 class="mt-3">Cozy Cottage</h3>
                 <h4 class="text-primary">$500,000</h4>
                 <p><i class="pi pi-map-marker"></i> San Francisco, USA</p>
 
-                <!-- Description -->
+                Description
                 <p class="text-600">Charming cottage with a rustic feel and scenic surroundings.</p>
 
-                <!-- Rating (Static Stars) -->
+                Rating (Static Stars)
                 <div class="stars">
                     <i class="pi pi-star text-yellow-500"></i>
                     <i class="pi pi-star text-yellow-500"></i>
@@ -124,18 +124,18 @@
                     <i class="pi pi-star text-yellow-500"></i>
                 </div>
 
-                <!-- Action Buttons -->
+                Action Buttons
                 <div class="flex justify-content-between mt-3">
                     <button pButton type="button" label="Edit" class="p-button-sm p-button-success"></button>
                     <button pButton type="button" label="Request Activation" class="p-button-sm p-button-warning"></button>
                 </div>
                 
-                <!-- Rented Out Badge -->
+                Rented Out Badge
                 <span class="badge bg-red-500 text-white p-1 border-round absolute"
                       style="top: 6px; right: 5px;">
                     Rent Out
                 </span>
             </div>
-        </div>
+        </div> -->
     </div>
 </div>

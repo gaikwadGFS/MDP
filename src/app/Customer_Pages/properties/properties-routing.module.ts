@@ -33,9 +33,17 @@ const routes: Routes = [
           component:UploadpropertiesComponent
         },
         {
+          path:'uploadProperties/:id',
+          component:UploadpropertiesComponent
+        },
+        {
           path:'viewUploadedProperties',
           component:ViewpropertiesComponent
         },
+        // {
+        //   path:'viewUploadedProperties/:id',
+        //   component:ViewpropertiesComponent
+        // },
         {
           path:'check_maharera',
           component:CheckMahaReraComponent

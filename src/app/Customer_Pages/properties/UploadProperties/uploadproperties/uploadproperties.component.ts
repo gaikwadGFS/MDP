@@ -22,7 +22,7 @@ import { Select } from "primeng/select";
 import { DatePicker } from "primeng/datepicker";
 import { CheckboxModule } from "primeng/checkbox";
 import { ApiService } from "../../../Core/Services/api.service";
-import { Router } from "@angular/router";
+import { ActivatedRoute, Router } from "@angular/router";
 
 
 @Component({
@@ -162,7 +162,7 @@ propertyForm: FormGroup;
 
 
 
-  constructor(private messageService:MessageService,private fb: FormBuilder,private apiSrv:ApiService, private route:Router) {
+  constructor(private messageService:MessageService,private fb: FormBuilder,private apiSrv:ApiService, private route:Router,private activatedRoute:ActivatedRoute) {
 
     this.propertyForm = this.fb.group({
       // propertyId: [0, Validators.required],
@@ -208,14 +208,32 @@ propertyForm: FormGroup;
 
   }
 
+  currentPropertyId:any=''
+
   ngOnInit() {
 
-  //   this.formGroup = new FormGroup({
-  //     city: new FormControl<string | null>(null)
-  // });
-
+    this.activatedRoute.paramMap.subscribe((params:any) => {
+      this.currentPropertyId = params.get('id'); // Get ID from route
+      console.log(this.currentPropertyId)
+      if (this.currentPropertyId) {
+        this.getUserDetails(this.currentPropertyId);
+      }
+    });
     
   }
+  getUserDetails(id: number) {
+    this.apiSrv.getPropertyById(id).subscribe(user => {
+      this.propertyForm.patchValue(user); // Populate form with data
+    });
+  }
+
+  // updateUser() {
+  //   if (this.userForm.valid) {
+  //     this.userService.updateUser(this.userId, this.userForm.value).subscribe(() => {
+  //       alert('User updated successfully!');
+  //     });
+  //   }
+  // }
 
 
   onSubmit() {
@@ -239,6 +257,26 @@ propertyForm: FormGroup;
       this.messageService.add({ severity: 'error', summary: 'form is invalid', detail: 'Pls fill all details' });
 
     }
+  }
+
+  updateProperty(){
+    if(this.propertyForm.valid){
+    this.apiSrv.updateProperty(this.currentPropertyId,this.propertyForm.value).subscribe((res:any)=>{
+     if(res){
+      this.messageService.add({ severity: 'success', summary: 'Updated', detail: 'Property Updated Successfully' });
+      this.clear();
+      this.route.navigateByUrl('/properties/viewUploadedProperties')
+     }
+     else{
+      this.messageService.add({ severity: 'error', summary: 'Error', detail: 'Something Wrong Try Again' });
+
+    }
+    })
+  }else {
+    console.log('Form is invalid!');
+    this.messageService.add({ severity: 'error', summary: 'form is invalid', detail: 'Pls fill all details' });
+
+  }
   }
 
   clear(){

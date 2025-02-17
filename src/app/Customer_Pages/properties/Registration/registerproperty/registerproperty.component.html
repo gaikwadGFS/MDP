@@ -1,3 +1,4 @@
+<p-toast/>
 <div class="container mt-5">
     <div class="row">
         <div class="col-12">
@@ -14,13 +15,15 @@
                             <p-step [value]="2">Document Uploads</p-step>
                             <p-step [value]="3">Registration Fee </p-step>
                         </p-step-list>
+
                         <p-step-panels>
-                            <!-- Property Details Start -->
-                            <p-step-panel [value]="1">
-                                <ng-template #content let-activateCallback="activateCallback">
-                                    <form action="">
+                            <form [formGroup]="myForm" (ngSubmit)="registerUser()">
+                                <!-- Property Details Start -->
+                                <p-step-panel [value]="1">
+                                    <ng-template #content let-activateCallback="activateCallback">
+
                                         <div class="row ">
-                                            <div class="col-4">
+                                            <!-- <div class="col-4">
                                                 <div>
                                                     <label for="propertyType" class="my-2">Property Type </label>
                                                     <p-select [options]="propertyType" [checkmark]="true"
@@ -43,33 +46,36 @@
                                                         [showClear]="true" placeholder="Select a Property Type"
                                                         class="w-full md:w-56" />
                                                 </div>
-                                            </div>
+                                            </div> -->
                                             <div class="col-4">
                                                 <div>
                                                     <label for="propertyType" class="my-2">Property Type </label>
                                                     <p-select [options]="propertyType" [checkmark]="true"
-                                                        [showClear]="true" placeholder="Select a Property Type"
-                                                        class="w-full md:w-56" />
+                                                        formControlName="propertyType" [showClear]="true"
+                                                        placeholder="Select a Property Type" class="w-full md:w-56" />
                                                 </div>
                                             </div>
                                             <div class="col-4">
                                                 <div>
                                                     <label for="identificationnumber" class="my-2">Identification Number
                                                     </label>
-                                                    <input pInputText id="identificationnumber" class="w-100" />
+                                                    <input pInputText id="identificationnumber" class="w-100"
+                                                        formControlName="identificationNumber" />
                                                 </div>
                                             </div>
                                             <div class="col-4">
                                                 <div>
                                                     <label for="totalarea" class="my-2">Total Area (sq. ft./sq. m.)
                                                     </label>
-                                                    <input pInputText id="totalarea" class="w-100" />
+                                                    <input pInputText id="totalarea" class="w-100"
+                                                        formControlName="totalArea" />
                                                 </div>
                                             </div>
                                             <div class="col-4">
                                                 <div>
                                                     <label for="price" class="my-2">Property Value (INR) </label>
-                                                    <input pInputText id="price" class="w-100" />
+                                                    <input pInputText id="price" class="w-100"
+                                                        formControlName="propertyValue" />
                                                 </div>
                                             </div>
                                             <div class="col-4">
@@ -77,14 +83,14 @@
                                                     <label for="ownershipType" class="my-2">Ownership Type </label>
                                                     <p-select [options]="ownerShipType" [checkmark]="true"
                                                         [showClear]="true" placeholder="Select a Ownership Type"
-                                                        class="w-full md:w-56" />
+                                                        class="w-full md:w-56" formControlName="ownershipType" />
                                                 </div>
                                             </div>
                                             <div class="col-6">
                                                 <div>
                                                     <label for="propertyAddress" class="my-2">Property Address </label>
                                                     <textarea rows="5" cols="30" pTextarea [autoResize]="true"
-                                                        class="w-100"></textarea>
+                                                        class="w-100" formControlName="propertyAddress"></textarea>
 
                                                 </div>
                                             </div>
@@ -94,118 +100,57 @@
                                                     (onClick)="activateCallback(2)" />
                                             </div>
                                         </div>
-                                    </form>
-                                </ng-template>
-                            </p-step-panel>
-                            <!-- Property Details End -->
-                            <!-- Document upload Start -->
-                            <p-step-panel [value]="2">
-                                <ng-template #content let-activateCallback="activateCallback">
-                                    <form action="">
+
+                                    </ng-template>
+                                </p-step-panel>
+                                <!-- Property Details End -->
+                                <!-- Document upload Start -->
+                                <p-step-panel [value]="2">
+                                    <ng-template #content let-activateCallback="activateCallback">
+                                        <!-- <form action=""> -->
                                         <div class="row ">
-                                            <div class="col-4">
+                                            
+                                            <div class="col-4 col-offset-4">
                                                 <div>
-                                                    <label for="propertyType" class="my-2">Property Deed </label>
-                                                    <p-toast />
-                                                    <p-fileupload #fu mode="basic" chooseLabel="Choose"
-                                                        chooseIcon="pi pi-upload" name="demo[]"
-                                                        url="https://www.primefaces.org/cdn/api/upload.php"
-                                                        accept="image/*" maxFileSize="1000000"
-                                                        (onUpload)="onUpload($event)" />
+                                                    <p>
+                                                        Important Note : Upload Document List : 
+                                                    </p>
+                                                    <ul>
+                                                        <li>Property Deed</li>
+                                                        <li>Previous Sale Agreement</li>
+                                                        <li>Tax Receipts</li>
+                                                        <li>Encumbrance Certificate</li>
+                                                        <li>Address Proof</li>
+                                                        <li>NOC</li>
+                                                        <li>Identity Proof</li>
+                                                        
+                                                       </ul>
+                                                    <label>Upload Documents:</label>
+                                                    <input type="file" class="btn btn-success form-control" (change)="onFileSelected($event)" multiple />
+                                            
                                                 </div>
                                             </div>
-                                            <div class="col-4">
-                                                <div>
-                                                    <label for="propertyType" class="my-2">Previous Sale Agreement (if
-                                                        applicable) </label>
-                                                    <p-fileupload #fu mode="basic" chooseLabel="Choose"
-                                                        chooseIcon="pi pi-upload" name="demo[]"
-                                                        url="https://www.primefaces.org/cdn/api/upload.php"
-                                                        accept="image/*" maxFileSize="1000000"
-                                                        (onUpload)="onUpload($event)" />
-                                                </div>
-                                            </div>
-                                            <div class="col-4">
-                                                <div>
-                                                    <label for="propertyType" class="my-2">Tax Receipts (last 3 years)
-                                                    </label>
-                                                    <p-fileupload #fu mode="basic" chooseLabel="Choose"
-                                                        chooseIcon="pi pi-upload" name="demo[]"
-                                                        url="https://www.primefaces.org/cdn/api/upload.php"
-                                                        accept="image/*" maxFileSize="1000000"
-                                                        (onUpload)="onUpload($event)" />
-                                                </div>
-                                            </div>
-                                            <div class="col-4">
-                                                <div>
-                                                    <label for="propertyType" class="my-2">Encumbrance Certificate
-                                                    </label>
-                                                    <p-fileupload #fu mode="basic" chooseLabel="Choose"
-                                                        chooseIcon="pi pi-upload" name="demo[]"
-                                                        url="https://www.primefaces.org/cdn/api/upload.php"
-                                                        accept="image/*" maxFileSize="1000000"
-                                                        (onUpload)="onUpload($event)" />
-                                                </div>
-                                            </div>
-                                            <div class="col-4">
-                                                <div>
-                                                    <label for="identificationnumber" class="my-2">Address Proof
-                                                    </label>
-                                                    <p-fileupload #fu mode="basic" chooseLabel="Choose"
-                                                        chooseIcon="pi pi-upload" name="demo[]"
-                                                        url="https://www.primefaces.org/cdn/api/upload.php"
-                                                        accept="image/*" maxFileSize="1000000"
-                                                        (onUpload)="onUpload($event)" />
-                                                </div>
-                                            </div>
-                                            <div class="col-4">
-                                                <div>
-                                                    <label for="totalarea" class="my-2"> NOC (if required) </label>
-                                                    <p-fileupload #fu mode="basic" chooseLabel="Choose"
-                                                        chooseIcon="pi pi-upload" name="demo[]"
-                                                        url="https://www.primefaces.org/cdn/api/upload.php"
-                                                        accept="image/*" maxFileSize="1000000"
-                                                        (onUpload)="onUpload($event)" />
-                                                </div>
-                                            </div>
-                                            <div class="col-4">
-                                                <div>
-                                                    <label for="ownershipType" class="my-2"> Identity Type </label>
-                                                    <p-select [options]="identityType" [checkmark]="true"
-                                                        [showClear]="true" placeholder="Select a Identity Type"
-                                                        class="w-full md:w-56" />
-                                                </div>
-                                            </div>
-                                            <div class="col-4">
-                                                <div>
-                                                    <label for="identity" class="my-2"> Identity Proof </label>
-                                                    <p-fileupload #fu mode="basic" chooseLabel="Choose"
-                                                        chooseIcon="pi pi-upload" name="demo[]"
-                                                        url="https://www.primefaces.org/cdn/api/upload.php"
-                                                        accept="image/*" maxFileSize="1000000"
-                                                        (onUpload)="onUpload($event)" />
-                                                </div>
-                                            </div>
+                                           
 
                                         </div>
-                                    </form>
+                                        <!-- </form> -->
 
-                                    <div class="flex pt-6 justify-content-end">
-                                        <p-button label="Back" severity="secondary" icon="pi pi-arrow-left"
-                                            (onClick)="activateCallback(1)" />
-                                        <p-button label="Next" icon="pi pi-arrow-right" iconPos="right"
-                                            (onClick)="activateCallback(3)" />
-                                    </div>
-                                </ng-template>
-                            </p-step-panel>
-                            <!-- Document uplaod end -->
-                            <!-- Registration Fee -->
-                            <p-step-panel [value]="3">
-                                <ng-template #content let-activateCallback="activateCallback">
-                                    <div class="row">
-                                        <div class="col-12">
-                                            <div class="card border-0 shadow p-4">
-                                                <form>
+                                        <div class="flex pt-6 justify-content-end">
+                                            <p-button label="Back" severity="secondary" icon="pi pi-arrow-left"
+                                                (onClick)="activateCallback(1)" />
+                                            <p-button label="Next" icon="pi pi-arrow-right" iconPos="right"
+                                                (onClick)="activateCallback(3)" />
+                                        </div>
+                                    </ng-template>
+                                </p-step-panel>
+                                <!-- Document uplaod end -->
+                                <!-- Registration Fee -->
+                                <p-step-panel [value]="3">
+                                    <ng-template #content let-activateCallback="activateCallback">
+                                        <div class="row">
+                                            <div class="col-12">
+                                                <div class="card border-0 shadow p-4">
+                                                    <!-- <form> -->
                                                     <div class="row">
                                                         <div class="col-12">
                                                             <div class="px-5">
@@ -223,7 +168,8 @@
                                                                         <p-inputgroup>
                                                                             <p-inputgroup-addon><i
                                                                                     class="fa-brands fa-cc-mastercard text-dark"></i></p-inputgroup-addon>
-                                                                            <p-inputnumber placeholder="Card Number" />
+                                                                            <p-inputnumber placeholder="Card Number"
+                                                                                formControlName="cardNumber" [useGrouping]="false" />
                                                                             <p-inputgroup-addon><i
                                                                                     class="fa-solid fa-circle-check text-dark"></i></p-inputgroup-addon>
                                                                         </p-inputgroup>
@@ -242,13 +188,17 @@
                                                                             <!-- <p-datepicker view="month"
                                                                                 dateFormat="mm/yyyy"
                                                                                 [readonlyInput]="true" /> -->
-                                                                                <p-inputgroup>
-                                                                                    <p-inputgroup-addon><i
-                                                                                            class="fa-brands fa-cc-mastercard text-dark"></i></p-inputgroup-addon>
-                                                                                    <p-inputnumber
-                                                                                        placeholder="MM/YYYY" />
-                                                                                    <p-inputgroup-addon><i class="fa-solid fa-calendar-days text-dark"></i></p-inputgroup-addon>
-                                                                                </p-inputgroup>
+                                                                                <!-- <p-datepicker formControlName="expiryDate" /> -->
+                                                                                <p-datepicker formControlName="expiryDate" view="month" dateFormat="mm/yy" [readonlyInput]="true" />
+
+                                                                            <!-- <p-inputgroup>
+                                                                                <p-inputgroup-addon><i
+                                                                                        class="fa-brands fa-cc-mastercard text-dark"></i></p-inputgroup-addon>
+                                                                                <p-inputnumber placeholder="MM/YYYY"
+                                                                                    formControlName="expiryDate" />
+                                                                                <p-inputgroup-addon><i
+                                                                                        class="fa-solid fa-calendar-days text-dark"></i></p-inputgroup-addon>
+                                                                            </p-inputgroup> -->
 
                                                                         </div>
                                                                     </div>
@@ -264,6 +214,7 @@
                                                                         </div>
                                                                         <div class="">
                                                                             <p-password [toggleMask]="true"
+                                                                                formControlName="cvcNumber"
                                                                                 [feedback]="false" />
 
                                                                         </div>
@@ -280,13 +231,20 @@
                                                                         </div>
                                                                         <div>
                                                                             <p-inputgroup>
+                                                                                <p-inputgroup-addon>
+                                                                                    <i class="fa-solid fa-user text-dark"></i>
+                                                                                </p-inputgroup-addon>
+                                                                                <input pInputText formControlName="cardholderName" placeholder="CardHolder Name" />
+                                                                            </p-inputgroup>
+                                                                            <!-- <p-inputgroup>
                                                                                 <p-inputgroup-addon><i
                                                                                         class="fa-brands fa-cc-mastercard text-dark"></i></p-inputgroup-addon>
                                                                                 <p-inputnumber
-                                                                                    placeholder="CardHolder Name" />
+                                                                                    placeholder="CardHolder Name"
+                                                                                    formControlName="cardholderName" />
                                                                                 <p-inputgroup-addon><i
                                                                                         class="fa-solid fa-user text-dark"></i></p-inputgroup-addon>
-                                                                            </p-inputgroup>
+                                                                            </p-inputgroup> -->
 
                                                                         </div>
                                                                     </div>
@@ -304,7 +262,8 @@
                                                                                 <p-inputgroup-addon><i
                                                                                         class="fa-solid fa-mobile-screen-button text-dark"></i></p-inputgroup-addon>
                                                                                 <p-inputnumber
-                                                                                    placeholder="Mobile Number" />
+                                                                                    placeholder="Mobile Number"
+                                                                                    formControlName="mobileNo"  [useGrouping]="false"/>
                                                                                 <p-inputgroup-addon><i
                                                                                         class="fa-solid fa-phone-flip text-dark"></i></p-inputgroup-addon>
                                                                             </p-inputgroup>
@@ -316,7 +275,9 @@
                                                                     <div class=" text-center mt-5">
                                                                         <!-- <p-button label="Pay Now" severity="info"
                                                                             class="mx-5 " /> -->
-                                                                            <button class="p-button p-button-primary w-full">Pay Now</button>
+                                                                        <button type="submit"
+                                                                            class="p-button p-button-primary w-full">Pay
+                                                                            Now</button>
                                                                     </div>
 
                                                                 </div>
@@ -324,66 +285,75 @@
 
                                                         </div>
                                                         <div class="col-5">
-                                                               <div class="bg-light rounded-4 p-5">
-                                                                     <div class="row">
-                                                                        <div class="col-12">
-                                                                            <div class="text-center">
-                                                                                <img src="https://cdn.iconscout.com/icon/premium/png-512-thumb/debit-card-2133848-1796833.png?f=webp&w=256" alt="Debit card image" class="h-5- w-50">
-                                                                            </div>
+                                                            <div class="bg-light rounded-4 p-5">
+                                                                <div class="row">
+                                                                    <div class="col-12">
+                                                                        <div class="text-center">
+                                                                            <img src="https://cdn.iconscout.com/icon/premium/png-512-thumb/debit-card-2133848-1796833.png?f=webp&w=256"
+                                                                                alt="Debit card image"
+                                                                                class="h-5- w-50">
                                                                         </div>
-                                                                        <div class="col-12">
-                                                                            <div class="d-flex justify-content-between mx-5">
-                                                                                <p>Company</p>
-                                                                                <strong>Apple</strong>
-                                                    
-                                                                            </div>
-                                                                        </div>
-                                                                        <div class="col-12">
-                                                                            <div class="d-flex justify-content-between mx-5">
-                                                                                <p>Order number</p>
-                                                                                <strong>429252965</strong>
-                                                    
-                                                                            </div>
-                                                                        </div>
-                                                                        <div class="col-12">
-                                                                            <div class="d-flex justify-content-between mx-5">
-                                                                                <p>Product</p>
-                                                                                <strong>MacBook Air</strong>
-                                                    
-                                                                            </div>
-                                                                        </div>
-                                                                        <div class="col-12">
-                                                                            <div class="d-flex justify-content-between mx-5">
-                                                                                <p>VAT (20%)</p>
-                                                                                <strong>$100.00</strong>
-                                                    
-                                                                            </div>
-                                                                        </div>
-                                                                        <div class="col-12">
-                                                                            <hr class="border border-dark border-2 opacity-50">
-                                                                        </div>
-                                                                        <div class="col-12">
-                                                                            <div class="d-flex justify-content-between mx-5">
-                                                                                <small>You have to Pay</small>
-                                                                                <h3 class="fw-bold">Rs.549</h3>
-                                                                            </div>
+                                                                    </div>
+                                                                    <div class="col-12">
+                                                                        <div
+                                                                            class="d-flex justify-content-between mx-5">
+                                                                            <p>Company</p>
+                                                                            <strong>Apple</strong>
 
                                                                         </div>
-                                                                        
-                                                                     </div>
-                                                               </div>
+                                                                    </div>
+                                                                    <div class="col-12">
+                                                                        <div
+                                                                            class="d-flex justify-content-between mx-5">
+                                                                            <p>Order number</p>
+                                                                            <strong>429252965</strong>
+
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="col-12">
+                                                                        <div
+                                                                            class="d-flex justify-content-between mx-5">
+                                                                            <p>Product</p>
+                                                                            <strong>MacBook Air</strong>
+
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="col-12">
+                                                                        <div
+                                                                            class="d-flex justify-content-between mx-5">
+                                                                            <p>VAT (20%)</p>
+                                                                            <strong>$100.00</strong>
+
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="col-12">
+                                                                        <hr
+                                                                            class="border border-dark border-2 opacity-50">
+                                                                    </div>
+                                                                    <div class="col-12">
+                                                                        <div
+                                                                            class="d-flex justify-content-between mx-5">
+                                                                            <small>You have to Pay</small>
+                                                                            <h3 class="fw-bold">Rs.549</h3>
+                                                                        </div>
+
+                                                                    </div>
+
+                                                                </div>
+                                                            </div>
                                                         </div>
                                                     </div>
-                                                </form>
+                                                    <!-- </form> -->
+                                                </div>
                                             </div>
                                         </div>
-                                    </div>
-                                    <div class="flex pt-6 justify-start">
-                                        <p-button label="Back" icon="pi pi-arrow-left" iconPos="right"
-                                            (onClick)="activateCallback(2)" />
-                                    </div>
-                                </ng-template>
-                            </p-step-panel>
+                                        <div class="flex pt-6 justify-start">
+                                            <p-button label="Back" icon="pi pi-arrow-left" iconPos="right"
+                                                (onClick)="activateCallback(2)" />
+                                        </div>
+                                    </ng-template>
+                                </p-step-panel>
+                            </form>
                         </p-step-panels>
                     </p-stepper>
                 </div>

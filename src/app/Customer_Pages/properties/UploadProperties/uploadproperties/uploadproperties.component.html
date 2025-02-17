@@ -397,8 +397,11 @@
                                                 <p-button label="Back" severity="secondary" icon="pi pi-arrow-left"
                                                     (onClick)="activateCallback(4)" />
 
-                                                <p-button label="Save" severity="success" icon="pi pi-save"
+                                                <p-button label="Save" severity="success" icon="pi pi-save"  *ngIf="propertyForm.get('id')?.value === 0"
                                                     (onClick)="onSubmit()" />
+
+                                                    <p-button label="Update" severity="success" icon="pi pi-save"
+                                                    (onClick)="updateProperty()" *ngIf="propertyForm.get('id')?.value !== 0" />
                                             </div>
                                         </div>
 
