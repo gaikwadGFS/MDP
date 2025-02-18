@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Router, RouterModule } from '@angular/router';
 import { CardModule } from 'primeng/card';
 import { ButtonModule } from 'primeng/button';
@@ -29,7 +29,7 @@ import { AvatarModule } from 'primeng/avatar';
   templateUrl: './sidebar.component.html',
   styleUrls: ['./sidebar.component.css'],
 })
-export class SidebarComponent {
+export class SidebarComponent implements OnInit {
   drawerVisible: boolean = false; // To toggle drawer visibility
   searchDrawerVisible: boolean = false; // Drawer visibility toggle
   selectedCity: string | null = null; // Selected city filter
@@ -40,8 +40,13 @@ export class SidebarComponent {
     uploadProperty: false,
   };
   visible: boolean = false;
+  firstName: string = '';
   
   constructor(private router: Router) {}
+
+  ngOnInit() {
+    this.loadUser(); // Load user data when the component initializes
+  }
 
   // Options for city dropdown
   cityOptions = [
@@ -96,6 +101,14 @@ export class SidebarComponent {
       this.drawerVisible = false; // Close the drawer only when dropdowns are not open
     }
     this.router.navigate([`/${route}`]);
+  }
+
+  loadUser() {
+    const userData = localStorage.getItem("loginDetails");
+    if (userData) {
+      const user = JSON.parse(userData);
+      this.firstName = user.firstName; // Assign the name
+    }
   }
 
   // Logout functionality

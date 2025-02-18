@@ -1,33 +1,36 @@
 <div class="flex flex-column surface-ground">
   <!-- Navbar -->
   <div
-    class="navbar flex justify-content-between align-items-center px-4 py-3 border-bottom-1 surface-border surface-section shadow-2 w-full fixed top-0 left-0 z-3">
-
-    <!-- Left Section -->
-    <div class="flex align-items-center">
-      <i class="pi pi-bars text-xl text-primary cursor-pointer" (click)="toggleDrawer()"></i>
-      <span class="ml-2 text-xl font-bold text-primary">MDP</span>
-    </div>
-
-    <!-- Right Section with Icons -->
-    <div class="flex align-items-center gap-4">
-      <i class="pi pi-shopping-cart text-xl text-primary cursor-pointer"></i>
-      <i class="pi pi-cog text-xl text-primary cursor-pointer"></i>
-      <div class="relative">
-        <i class="pi pi-user text-xl text-primary cursor-pointer" (click)="overlayPanel.toggle($event)"></i>
-
-        <!-- Dropdown menu -->
-        <p-overlayPanel #overlayPanel appendTo="body">
-          <ul class="list-none p-0 m-0">
-            <li class="p-2 hover:surface-hover cursor-pointer">My Profile</li>
-            <li class="p-2 hover:surface-hover cursor-pointer" (click)="logout()">Logout</li>
-          </ul>
-        </p-overlayPanel>
-      </div>
-    </div>
+  class="navbar flex justify-content-between align-items-center px-4 py-3 border-bottom-1 surface-border surface-section shadow-2 w-full fixed top-0 left-0 z-3">
+  
+  <!-- Left Section -->
+  <div class="flex align-items-center">
+    <i class="pi pi-bars text-xl text-primary cursor-pointer" (click)="toggleDrawer()"></i>
+    <span class="ml-2 text-xl font-bold text-primary">MDP</span>
   </div>
 
-  <!-- Drawer -->
+  <!-- Right Section with Icons -->
+  <div class="flex align-items-center gap-4">
+    <i class="pi pi-shopping-cart text-xl text-primary cursor-pointer"></i>
+    <i class="pi pi-cog text-xl text-primary cursor-pointer"></i>
+    <div class="relative flex align-items-center gap-2">
+      <i class="pi pi-user text-xl text-primary cursor-pointer" (click)="overlayPanel.toggle($event)"></i>
+
+      <span *ngIf="firstName" class="text-primary font-medium">Hello {{ firstName }}</span>
+
+      <!-- Dropdown menu -->
+      <p-overlayPanel #overlayPanel appendTo="body">
+        <ul class="list-none p-0 m-0">
+          <li class="p-2 hover:surface-hover cursor-pointer">My Profile</li>
+          <li class="p-2 hover:surface-hover cursor-pointer" (click)="logout()">Logout</li>
+        </ul>
+      </p-overlayPanel>
+    </div>
+  </div>
+</div>
+
+
+  <!-- Drawer (Sidebar)-->
   <p-drawer [(visible)]="drawerVisible" position="left" appendTo="body" class="w-18rem shadow-2" [dismissible]="true"
     [showCloseIcon]="false">
     <!-- Close Icon -->
