@@ -16,7 +16,7 @@
     <div class="relative flex align-items-center gap-2">
       <i class="pi pi-user text-xl text-primary cursor-pointer" (click)="overlayPanel.toggle($event)"></i>
 
-      <span *ngIf="firstName" class="text-primary font-medium">Hello {{ firstName }}</span>
+      <span *ngIf="firstName" class="text-primary font-medium">Hello, {{ firstName }}</span>
 
       <!-- Dropdown menu -->
       <p-overlayPanel #overlayPanel appendTo="body">
@@ -28,7 +28,6 @@
     </div>
   </div>
 </div>
-
 
   <!-- Drawer (Sidebar)-->
   <p-drawer [(visible)]="drawerVisible" position="left" appendTo="body" class="w-18rem shadow-2" [dismissible]="true"
