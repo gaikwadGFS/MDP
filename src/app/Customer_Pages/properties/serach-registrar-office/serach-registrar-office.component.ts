@@ -43,4 +43,19 @@ export class SerachRegistrarOfficeComponent {
     } else {
       this.filteredProducts = [...this.products]; // Show all if no city is selected
     }
-  }}
+  }
+
+  clearSearch() {
+    this.selectedCity = null; // Reset the dropdown selection
+    this.filteredProducts = [...this.products]; // Reset table to show all offices
+  }
+
+
+
+
+
+
+
+
+
+}
