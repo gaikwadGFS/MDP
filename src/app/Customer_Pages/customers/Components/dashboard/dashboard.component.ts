@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 import { Router, RouterModule } from '@angular/router';
 import { TabViewModule } from 'primeng/tabview';
 import { ButtonModule } from 'primeng/button';
-import { ReactiveFormsModule, FormGroup, FormControl } from '@angular/forms';
+import { ReactiveFormsModule, FormGroup, FormControl, FormBuilder } from '@angular/forms';
 import { DropdownModule } from 'primeng/dropdown';
 import { TabsModule } from 'primeng/tabs';
 import { CarouselModule } from 'primeng/carousel';
@@ -47,13 +47,24 @@ export class DashboardComponent implements OnInit {
   dashboardForm: FormGroup;
   activeTabIndex: number = 0;
   properties: any[] = []; 
-  filteredProperties: any[] = []; 
+  filteredProperties: any[] = [];
+  filterBuyProperties:any[]=[]; 
+  // Rent
+  furnishing:any=[]=['Full','Semi','Fully Furnished'];
+  preferedTenants:any[]=['Family','Anyone','Bachelor Male','Bachelor Female','Comapany'];
+  rentSearchCriteriaForm:FormGroup;
+  buySearchCriteriaForm:FormGroup;
+  // displayBuyRentProperty:boolean=false;
+  selectedTab: string = 'buy';
+  buyProperty:any[]=[];
 
   tabs = [
     { route: '/dashboard/buy', label: 'Buy', icon: 'pi pi-shopping-cart', isActive: true },
     { route: '/dashboard/rent', label: 'Rent', icon: 'pi pi-home', isActive: false },
     { route: '/dashboard/commercial', label: 'Commercial', icon: 'pi pi-building', isActive: false }
   ];
+
+  locations:any[]=['City Center','Suburban','Rural']
 
   propertyTypes = [
     { label: 'Commercial', value: 'Commercial' },
@@ -75,7 +86,7 @@ export class DashboardComponent implements OnInit {
     'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTZFlyQWxv72erCxTodjvHGPFEUbWmzME43LA&s'
   ];
 
-  constructor(private apiService: ApiService, private router: Router) {
+  constructor(private apiService: ApiService, private router: Router,private fb: FormBuilder) {
     this.dashboardForm = new FormGroup({
       tabSelection: new FormControl(''),
       searchCity: new FormControl(''),
@@ -85,10 +96,26 @@ export class DashboardComponent implements OnInit {
       propertyType: new FormControl(''),
       budget: new FormControl('')
     });
+    this.rentSearchCriteriaForm= this.fb.group({
+      rent: (''),
+      city: (''),
+      furnishing: [''],
+      preferedTenants:['']
+
+    });
+
+    this.buySearchCriteriaForm=this.fb.group({
+       location:['']
+    })
+   
   }
 
   ngOnInit(): void {
+    this.resetRentFilters();
     this.fetchProperties();
+    this.allBuyProperties();
+    this.filteredProperties=[...this.properties];
+    this.filterBuyProperties=[...this.buyProperty];
   }
 
   fetchProperties(): void {
@@ -98,24 +125,38 @@ export class DashboardComponent implements OnInit {
     });
   }
 
-  onTabChange(tabIndex: number): void {
-    this.activeTabIndex = tabIndex;
-    this.tabs.forEach((tab, index) => {
-      tab.isActive = index === tabIndex;
-    });
-  }
+  // onTabChange(tabIndex: number): void {
+  //   this.activeTabIndex = tabIndex;
+  //   this.tabs.forEach((tab, index) => {
+  //     tab.isActive = index === tabIndex;
+  //   });
+    
+  // }
+
+  onTabChange(event: any) {
+    if (event.index === 0) {
+        this.selectedTab = 'buy';
+    } else if (event.index === 1) {
+        this.selectedTab = 'rent';
+    }
+}
+
+  // buyOrRent(){
+  //   alert(this.displayBuyRentProperty);
+  //  this.displayBuyRentProperty = !this.displayBuyRentProperty;
+  // }
 
   onSubmit(): void {
-    const formValue = this.dashboardForm.value;
-    this.filteredProperties = this.properties.filter(property => {
-      return (
-        (!formValue.searchCity || property.city.toLowerCase().includes(formValue.searchCity.toLowerCase())) &&
-        (!formValue.searchArea || property.location.toLowerCase().includes(formValue.searchArea.toLowerCase())) &&
-        (!formValue.searchPincode || property.pincode === formValue.searchPincode) &&
-        (!formValue.propertyType || property.propertyType === formValue.propertyType) &&
-        (!formValue.budget || this.isWithinBudget(property.rent, formValue.budget))
-      );
-    });
+    // const formValue = this.dashboardForm.value;
+    // this.filteredProperties = this.properties.filter(property => {
+    //   return (
+    //     (!formValue.searchCity || property.city.toLowerCase().includes(formValue.searchCity.toLowerCase())) &&
+    //     (!formValue.searchArea || property.location.toLowerCase().includes(formValue.searchArea.toLowerCase())) &&
+    //     (!formValue.searchPincode || property.pincode === formValue.searchPincode) &&
+    //     (!formValue.propertyType || property.propertyType === formValue.propertyType) &&
+    //     (!formValue.budget || this.isWithinBudget(property.rent, formValue.budget))
+    //   );
+    // });
   }
 
   isWithinBudget(rent: number, budget: string): boolean {
@@ -128,4 +169,58 @@ export class DashboardComponent implements OnInit {
   viewDetails(propertyId: string) {
     this.router.navigate(['/properties/propertyDetails', propertyId]);
   }
+
+  searchRent(){
+    const searchCriteria = this.rentSearchCriteriaForm.value;
+
+    // Filter properties based on selected criteria
+    this.filteredProperties = this.properties.filter(property => {
+      const matchesProperty = searchCriteria.city ? property.city === searchCriteria.city : true;
+      // const matchesCity = searchCriteria.selectedCity ? property.city.id === searchCriteria.selectedCity.id : true;
+      const matchesCity = searchCriteria.rent ? property.rent === searchCriteria.rent : true;
+      const matchesArea = searchCriteria.furnishing ? property.furnishing === searchCriteria.furnishing : true;
+      const tenants=searchCriteria.preferedTenants ? property.preferedTenants === searchCriteria.preferedTenants : true;
+      console.log('Matches:', matchesProperty, matchesCity, matchesArea,tenants);
+
+      return matchesProperty && matchesCity && matchesArea && tenants;
+    });
+
+    console.log('Filtered Properties:', this.filteredProperties);
+    console.log('Search Criteria:', searchCriteria);
+    console.log('Current Property:', this.properties);
+  }
+  searchBuy(){
+    const searchCriteria = this.buySearchCriteriaForm.value;
+
+    // Filter properties based on selected criteria
+    this.filterBuyProperties = this.buyProperty.filter(property => {
+      const matchesProperty = searchCriteria.location ? property.location === searchCriteria.location : true;
+      // const matchesCity = searchCriteria.selectedCity ? property.city.id === searchCriteria.selectedCity.id : true;
+      // const matchesCity = searchCriteria.rent ? property.rent === searchCriteria.rent : true;
+      // const matchesArea = searchCriteria.furnishing ? property.furnishing === searchCriteria.furnishing : true;
+      // const tenants=searchCriteria.preferedTenants ? property.preferedTenants === searchCriteria.preferedTenants : true;
+      // console.log('Matches:', matchesProperty, matchesCity, matchesArea,tenants);
+
+      return matchesProperty
+    });
+
+    console.log('Filtered Properties:', this.filterBuyProperties);
+    console.log('Search Criteria:', searchCriteria);
+    console.log('Current Property:', this.buyProperty);
+  }
+  allBuyProperties(){
+   this.apiService.getAllBuyProperty().subscribe((data:any)=>{
+    this.buyProperty=data;
+    this.filterBuyProperties=data;
+   })
+  }
+
+  resetRentFilters() {
+    this.filteredProperties = [...this.properties];
+    this.rentSearchCriteriaForm.reset(); 
+}
+resetBuyFilters(){
+  this.filterBuyProperties = [...this.buyProperty];
+  this.buySearchCriteriaForm.reset(); 
+}
 }

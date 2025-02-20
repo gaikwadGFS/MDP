@@ -26,6 +26,11 @@ export class ApiService {
   uploadBuyProperty(property: any): Observable<any> {
     return this.http.post(`${this.apiUrlStartPoint}buyingProperties`, property);
   }
+
+  getAllBuyProperty(): Observable<any>{
+    return this.http.get<any>(`${this.apiUrlStartPoint}buyingProperties`);
+
+  }
   uploadSellProperty(propertyData: any): Observable<any> {
     return this.http.post(`${this.apiUrlStartPoint}sellingProperties`, propertyData);
   }

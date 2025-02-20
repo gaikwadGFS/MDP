@@ -4,21 +4,25 @@
       "id": "2bc8",
       "apartmentType": "Apartment",
       "propertyType": "Residential",
+      "buildingName": "Sky villa",
       "propertySize": "1200 sqft",
       "facing": "East",
       "propertyAge": "5 years",
       "propertyCondition": "Well Maintained",
       "floor": "7",
       "totalFloor": "10",
+      "rent": "5000",
+      "deposite": "200000",
       "state": "Maharashtra",
       "city": "Pune",
       "pincode": "411045",
       "address": "Skyline Residency, Near Balewadi Phata, Pune",
       "rentType": "Lease",
+      "furnishing": "Semi",
       "perMonthOrAnum": "Per Month",
       "monthlyMaintenance": 2000,
       "parking": "1 Covered Parking",
-      "preferedTenants": "Family or Working Professionals",
+      "preferedTenants": "Bachelor Male",
       "propertyDescription": "Spacious 3 BHK apartment with a balcony, modular kitchen, and ample sunlight. Located in a gated community with 24/7 security.",
       "amenities": [
         "Gym",
@@ -46,18 +50,19 @@
         "No Pets",
         "No Loud Music after 10 PM"
       ],
-      "ownerDetails": {
-        "name": "Amit Sharma",
-        "contact": "9876543210",
-        "address": "Koregaon Park, Pune",
-        "email": "amit.sharma@example.com"
-      }
+      "ownerName": "Kshitija Gaikwad",
+      "ownerContact": "9890660766",
+      "ownerAddress": "Hinjewadi phase 1",
+      "ownerEmail": "k@gmail.com",
+      "availableFrom": "01-Apr-2025",
+      "active": "false"
     },
     {
       "id": "f9c2",
       "apartmentType": "Apartment",
       "bhkType": "3 BHK",
       "propertyType": "Residential",
+      "buildingName": "Sky villa",
       "propertySize": "1200 sqft",
       "facing": "East",
       "propertyAge": "5 years",
@@ -73,9 +78,9 @@
       "deposite": "100000",
       "perMonthOrAnum": "Per Month",
       "monthlyMaintenance": "2000",
-      "furnishing": "Fully Furnished",
+      "furnishing": "Full",
       "parking": "1 Covered Parking",
-      "preferedTenants": "Family or Working Professionals",
+      "preferedTenants": "Bachelor Female",
       "propertyDescription": "Spacious 3 BHK apartment with a balcony, modular kitchen, and ample sunlight. Located in a gated community with 24/7 security.",
       "amenities": [
         "Gym",
@@ -286,6 +291,7 @@
       "ownerContact": "khgvkhvv",
       "ownerAddress": "kgcvkygckgc",
       "ownerEmail": "kgclhgcluc",
+      "availableFrom": "01-Apr-2025",
       "active": false,
       "id": "314e"
     },
@@ -341,6 +347,7 @@
       "ownerContact": "khgvkhvv",
       "ownerAddress": "kgcvkygckgc",
       "ownerEmail": "kgclhgcluc",
+      "availableFrom": "01-Apr-2025",
       "active": false
     },
     {
@@ -403,6 +410,7 @@
       "ownerContact": "8099771036",
       "ownerAddress": "Pune",
       "ownerEmail": "badhan12@gmail.com",
+      "availableFrom": "01-Apr-2025",
       "active": false
     },
     {
@@ -542,48 +550,8 @@
       "ownerEmail": "s@gmail.com",
       "availableFrom": "2025-02-16T18:30:00.000Z",
       "active": false
-    },
-    {
-      "propertyType": "Residential",
-      "location": "City Center",
-      "budgetMin": 500000,
-      "budgetMax": 1000000,
-      "size": "1200 sqft",
-      "bedrooms": 3,
-      "bathrooms": 2,
-      "condition": "New",
-      "amenities": [
-        "Parking",
-        "Gym"
-      ],
-      "ownershipType": "Freehold",
-      "legalCompliance": true,
-      "paymentMode": "Mortgage",
-      "builderReputation": "Reputed",
-      "nearbyFacilities": [
-        "Schools",
-        "Hospitals"
-      ],
-      "resaleValue": "High",
-      "loanEligibility": true,
-      "negotiationFlexibility": true,
-      "possessionDate": "2025-01-01",
-      "id": "f234"
-    },
-    {
-      "id": "d6af",
-      "propertyType": "Residential",
-      "location": "City Center",
-      "budgetMin": 20000,
-      "budgetMax": 40000,
-      "size": 20,
-      "bedrooms": 2,
-      "bathrooms": 2,
-      "condition": "New",
-      "legalCompliance": true,
-      "paymentMode": "Installments",
-      "possessionDate": "2025-02-27T18:30:00.000Z"
     }
+    
   ],
   "buyingProperties": [
     {
@@ -599,6 +567,20 @@
       "legalCompliance": true,
       "paymentMode": "Installments",
       "possessionDate": "2025-02-27T18:30:00.000Z"
+    },
+    {
+      "id": "7930",
+      "propertyType": "Residential",
+      "location": "Rural",
+      "budgetMin": 300000,
+      "budgetMax": 500000,
+      "size": 10000000,
+      "bedrooms": 3,
+      "bathrooms": 2,
+      "condition": "New",
+      "legalCompliance": true,
+      "paymentMode": "Mortgage",
+      "possessionDate": "2025-02-20T18:30:00.000Z"
     }
   ],
   "sellingProperties": [
