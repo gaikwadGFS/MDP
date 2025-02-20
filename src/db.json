@@ -542,6 +542,63 @@
       "ownerEmail": "s@gmail.com",
       "availableFrom": "2025-02-16T18:30:00.000Z",
       "active": false
+    },
+    {
+      "propertyType": "Residential",
+      "location": "City Center",
+      "budgetMin": 500000,
+      "budgetMax": 1000000,
+      "size": "1200 sqft",
+      "bedrooms": 3,
+      "bathrooms": 2,
+      "condition": "New",
+      "amenities": [
+        "Parking",
+        "Gym"
+      ],
+      "ownershipType": "Freehold",
+      "legalCompliance": true,
+      "paymentMode": "Mortgage",
+      "builderReputation": "Reputed",
+      "nearbyFacilities": [
+        "Schools",
+        "Hospitals"
+      ],
+      "resaleValue": "High",
+      "loanEligibility": true,
+      "negotiationFlexibility": true,
+      "possessionDate": "2025-01-01",
+      "id": "f234"
+    },
+    {
+      "id": "d6af",
+      "propertyType": "Residential",
+      "location": "City Center",
+      "budgetMin": 20000,
+      "budgetMax": 40000,
+      "size": 20,
+      "bedrooms": 2,
+      "bathrooms": 2,
+      "condition": "New",
+      "legalCompliance": true,
+      "paymentMode": "Installments",
+      "possessionDate": "2025-02-27T18:30:00.000Z"
+    }
+  ],
+  "buyingProperties": [
+    {
+      "id": "e922",
+      "propertyType": "Commercial",
+      "location": "City Center",
+      "budgetMin": 30000,
+      "budgetMax": 50000,
+      "size": 60,
+      "bedrooms": 3,
+      "bathrooms": 4,
+      "condition": "New",
+      "legalCompliance": true,
+      "paymentMode": "Installments",
+      "possessionDate": "2025-02-27T18:30:00.000Z"
     }
   ],
   "registerOffice": [

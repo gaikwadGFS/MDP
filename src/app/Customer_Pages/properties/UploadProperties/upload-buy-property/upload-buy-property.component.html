@@ -1,1 +1,67 @@
-<p>upload-buy-property works!</p>
+<div class="container mt-4">
+    <h2 class="text-center mb-4">Upload Property for Sale</h2>
+  
+    <div class="card p-4 shadow">
+      <form [formGroup]="propertyForm" (ngSubmit)="onSubmit()">
+        
+        <!-- Property Type -->
+        <div class="mb-3">
+          <label class="form-label">Property Type</label>
+          <p-dropdown formControlName="propertyType" [options]="propertyTypes" placeholder="Select Property Type" class="w-100"></p-dropdown>
+        </div>
+  
+        <!-- Location -->
+        <div class="mb-3">
+          <label class="form-label">Location</label>
+          <p-dropdown formControlName="location" [options]="locations" placeholder="Select Location" class="w-100"></p-dropdown>
+        </div>
+  
+        <!-- Budget -->
+        <div class="mb-3 d-flex gap-2">
+          <input pInputText type="number" formControlName="budgetMin" class="w-50" placeholder="Min Budget" />
+          <input pInputText type="number" formControlName="budgetMax" class="w-50" placeholder="Max Budget" />
+        </div>
+  
+        <!-- Size & Rooms -->
+        <div class="mb-3">
+          <input pInputText type="number" formControlName="size" class="w-100" placeholder="Size (sq. ft.)" />
+        </div>
+        <div class="mb-3 d-flex gap-2">
+          <input pInputText type="number" formControlName="bedrooms" class="w-50" placeholder="Bedrooms" />
+          <input pInputText type="number" formControlName="bathrooms" class="w-50" placeholder="Bathrooms" />
+        </div>
+  
+        <!-- Condition -->
+        <div class="mb-3">
+          <label class="form-label">Condition</label>
+          <p-dropdown formControlName="condition" [options]="conditions" placeholder="Select Condition" class="w-100"></p-dropdown>
+        </div>
+  
+        <!-- Legal Compliance -->
+        <div class="mb-3 d-flex align-items-center">
+          <p-checkbox binary="true" formControlName="legalCompliance" inputId="legalCompliance"></p-checkbox>
+          <label for="legalCompliance" class="ms-2">Legal Compliance (Title Deed Verified)</label>
+        </div>
+  
+        <!-- Payment Mode -->
+        <div class="mb-3">
+          <label class="form-label">Payment Mode</label>
+          <p-dropdown formControlName="paymentMode" [options]="paymentModes" placeholder="Select Payment Mode" class="w-100"></p-dropdown>
+        </div>
+  
+        <!-- Possession Date -->
+        <div class="mb-3">
+          <label class="form-label">Possession Date</label>
+          <p-calendar formControlName="possessionDate" dateFormat="dd/mm/yy" showIcon="true" class="w-100"></p-calendar>
+        </div>
+  
+        <!-- Buttons -->
+        <div class="d-flex justify-content-end gap-3">
+          <p-button label="Reset" type="button" severity="secondary" (click)="onReset()"></p-button>
+          <p-button label="Submit" type="submit" severity="primary"></p-button>
+        </div>
+  
+      </form>
+    </div>
+  </div>
+  

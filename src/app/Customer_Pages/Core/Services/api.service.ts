@@ -7,10 +7,6 @@ import { map, Observable } from 'rxjs';
 })
 
 export class ApiService {
-  // getPropertyById(propertyId: string) {
-  //   throw new Error('Method not implemented.');
-  // }
-
   private dbUrl = 'assets/db.json'; // Adjust path as needed
   apiUrlStartPoint: string = "http://localhost:3000/"
 
@@ -21,8 +17,13 @@ export class ApiService {
     return this.http.get<any>("http://localhost:3000/propertiesList");
   }
 
-  getPropertyDetailsById(id:any): Observable<any> {
+  getPropertyDetailsById(id: any): Observable<any> {
     return this.http.get(`${this.apiUrlStartPoint}propertiesList/${id}`);
+  }
+
+  // Upload a new property
+  uploadBuyProperty(property: any): Observable<any> {
+    return this.http.post(`${this.apiUrlStartPoint}buyingProperties`, property);
   }
 
   updateProperty(id: number, user: any): Observable<any> {
@@ -33,7 +34,7 @@ export class ApiService {
       map((properties: any[]) => properties.find(property => property.id === id))
     );
   }
-  
+
   customerRegistration(obj: any): Observable<any> {
     return this.http.post(`${this.apiUrlStartPoint}customerRegister`, obj);
   }
