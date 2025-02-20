@@ -9,6 +9,8 @@ import { SerachRegistrarOfficeComponent } from './serach-registrar-office/serach
 import { CheckMahaReraComponent } from './check-maha-rera/check-maha-rera.component';
 import { MostPopularComponent } from './most-popular/most-popular.component';
 import { PropertyDetailsComponent } from './property-details/property-details.component';
+import { UploadBuyPropertyComponent } from './UploadProperties/upload-buy-property/upload-buy-property.component';
+import { UploadSellPropertyComponent } from './UploadProperties/upload-sell-property/upload-sell-property.component';
 
 const routes: Routes = [
 
@@ -35,6 +37,14 @@ const routes: Routes = [
         {
           path:'uploadProperties/:id',
           component:UploadpropertiesComponent
+        },
+        {
+          path:'uploadBuyProperties',
+          component:UploadBuyPropertyComponent
+        },
+        {
+          path:'uploadSellProperties',
+          component:UploadSellPropertyComponent
         },
         {
           path:'viewUploadedProperties',

@@ -132,11 +132,37 @@
  </section><!-- /Hero Section -->
 
  <!-- Treding Properties start -->
-  <section id="Trending-property" class="light-background "> 
+  <section id="Trending-property" class="light-background ">
+    
+   
 
     <div class="Trending-property section-title text-center pb-5 position-relative " data-aos="fade-up">
     <h2 class="fs-2 fw-bold position-relative">Trending Properties</h2>
-
+    <div class="row">
+        <div class="col-12">
+            <h3>Search for property :</h3>
+        </div>
+        <div class="col-12">
+            <form [formGroup]="searchForm" (ngSubmit)="onSubmit()">
+            <div>
+                <label for="">Property</label>
+                <p-select formControlName="selectedProperty"  [options]="property"  placeholder="Select a Property"  />
+            </div>
+           
+            <div>
+                <label for="">City</label>
+                <p-select formControlName="selectedCity"  [options]="cities" optionLabel="name" placeholder="Select a City"  />
+            </div>
+            <div>
+                <label for="">Area</label>
+                <input type="text" pInputText formControlName="area"  />
+            </div>
+            <div>
+                <button type="submit">Search</button>
+            </div>
+            </form>
+        </div>
+    </div>
     <div id="trendingPropertiesCarousel" class="carousel slide " data-bs-ride="carousel">
         <!-- Indicators -->
         <!-- <div class="carousel-indicators">
