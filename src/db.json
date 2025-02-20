@@ -601,6 +601,61 @@
       "possessionDate": "2025-02-27T18:30:00.000Z"
     }
   ],
+  "sellingProperties": [
+    {
+      "id": "",
+      "propertyType": "",
+      "location": "",
+      "askingPrice": "",
+      "size": "",
+      "propertyCondition": "",
+      "legalDocumentation": "",
+      "marketDemand": "",
+      "modeOfSale": "",
+      "sellingTimeline": "",
+      "advertisementMarketing": "",
+      "taxImplications": "",
+      "paymentModeAcceptance": "",
+      "furnishingStatus": "",
+      "incentivesForBuyers": ""
+    },
+    {
+      "id": "1fd5",
+      "propertyType": "Residential",
+      "location": "2000",
+      "askingPrice": 20000,
+      "size": 20000,
+      "propertyCondition": "Newly Constructed",
+      "legalDocumentation": "Ownership Proof",
+      "marketDemand": "Low",
+      "modeOfSale": "Direct Owner",
+      "sellingTimeline": "Open for Offers",
+      "advertisementMarketing": "Online Platforms",
+      "transferProcess": "Legal Formalities",
+      "taxImplications": "Capital Gains Tax",
+      "paymentModeAcceptance": "Cash",
+      "furnishingStatus": "Fully Furnished",
+      "incentivesForBuyers": "Free Registration"
+    },
+    {
+      "id": "abcb",
+      "propertyType": "Commercial",
+      "location": "pune",
+      "askingPrice": 2000,
+      "size": 5000,
+      "propertyCondition": "Renovated",
+      "legalDocumentation": "Title Clearance",
+      "marketDemand": "High",
+      "modeOfSale": "Direct Owner",
+      "sellingTimeline": "Urgent Sale",
+      "advertisementMarketing": "Online Platforms",
+      "transferProcess": "Legal Formalities",
+      "taxImplications": "Capital Gains Tax",
+      "paymentModeAcceptance": "Loan Buyers",
+      "furnishingStatus": "Semi-Furnished",
+      "incentivesForBuyers": "Discounts"
+    }
+  ],
   "registerOffice": [
     {
       "registerOfficeId": "1",

@@ -7,6 +7,7 @@ import { map, Observable } from 'rxjs';
 })
 
 export class ApiService {
+  
   private dbUrl = 'assets/db.json'; // Adjust path as needed
   apiUrlStartPoint: string = "http://localhost:3000/"
 
@@ -25,6 +26,10 @@ export class ApiService {
   uploadBuyProperty(property: any): Observable<any> {
     return this.http.post(`${this.apiUrlStartPoint}buyingProperties`, property);
   }
+  uploadSellProperty(propertyData: any): Observable<any> {
+    return this.http.post(`${this.apiUrlStartPoint}sellingProperties`, propertyData);
+  }
+  
 
   updateProperty(id: number, user: any): Observable<any> {
     return this.http.put(`${this.apiUrlStartPoint}propertiesList/${id}`, user); // PUT for updating the user

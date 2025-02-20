@@ -1,1 +1,93 @@
-<p>upload-sell-property works!</p>
+<div class="container mt-4">
+    <h2 class="text-center mb-4">Upload Property for Sale</h2>
+
+    <div class="card p-4 shadow">
+        <form [formGroup]="propertyForm" (ngSubmit)="onSubmit()">
+            <div class="grid p-fluid">
+                <!-- Property Type & Location -->
+                <div class="col-12 md:col-6">
+                    <label class="form-label" for="propertyType">Property Type</label>
+                    <p-select   formControlName="propertyType" [options]="property_Types" placeholder="Select Property Type" class="w-100"></p-select>
+                </div>
+                <div class="col-12 md:col-6">
+                    <label class="form-label" for="location">Location</label>
+                    <input  pInputText type="text" formControlName="location" placeholder="Enter Location" class="w-100" />
+                </div>
+
+                <!-- Asking Price -->
+                <div class="col-12 md:col-6">
+                    <label class="form-label" for="askingPrice">Asking Price</label>
+                    <input  pInputText type="number" formControlName="askingPrice" placeholder="Enter Asking Price" class="w-100" />
+                </div>
+
+                <!-- Size (sq. ft.) -->
+                <div class="col-12 md:col-6">
+                    <label class="form-label" for="size">Size (sq. ft.)</label>
+                    <input pInputText type="number" formControlName="size" placeholder="Enter Size1" class="w-100" />
+                </div>
+
+                <!-- Property Condition & Legal Documentation -->
+                <div class="col-12 md:col-6">
+                    <label class="form-label" for="propertyCondition">Property Condition</label>
+                    <p-select  formControlName="propertyCondition" [options]="property_Conditions" placeholder="Select Property Condition" class="w-100"></p-select>
+                </div>
+                <div class="col-12 md:col-6">
+                    <label class="form-label" for="legalDocumentation">Legal Documentation</label>
+                    <p-select formControlName="legalDocumentation" [options]="legal_DocumentationOptions" placeholder="Select Legal Documentation" class="w-100"></p-select>
+                </div>
+
+                <!-- Market Demand & Mode of Sale -->
+                <div class="col-12 md:col-6">
+                    <label class="form-label" for="marketDemand">Market Demand</label>
+                    <p-select  formControlName="marketDemand" [options]="market_Demand" placeholder="Select Market Demand" class="w-100"></p-select>
+                </div>
+                <div class="col-12 md:col-6">
+                    <label class="form-label" for="modeOfSale">Mode of Sale</label>
+                    <p-select  formControlName="modeOfSale" [options]="mode_OfSale" placeholder="Select Mode of Sale" class="w-100"></p-select>
+                </div>
+
+                <!-- Selling Timeline & Advertisement Marketing -->
+                <div class="col-12 md:col-6">
+                    <label class="form-label" for="sellingTimeline">Selling Timeline</label>
+                    <p-select  formControlName="sellingTimeline" [options]="selling_Timelines" placeholder="Select Selling Timeline" class="w-100"></p-select>
+                </div>
+                <div class="col-12 md:col-6">
+                    <label class="form-label" for="advertisementMarketing">Advertisement & Marketing</label>
+                    <p-select  formControlName="advertisementMarketing" [options]="advertisement_MarketingOptions" placeholder="Select Marketing Strategy" class="w-100"></p-select>
+                </div>
+
+                <!-- Transfer Process & Tax Implications -->
+                <div class="col-12 md:col-6">
+                    <label class="form-label" for="transferProcess">Transfer Process</label>
+                    <p-select  formControlName="transferProcess" [options]="transfer_ProcessOptions" placeholder="Select Transfer Process" class="w-100"></p-select>
+                </div>
+                <div class="col-12 md:col-6">
+                    <label class="form-label" for="taxImplications">Tax Implications</label>
+                    <p-select formControlName="taxImplications" [options]="tax_ImplicationsOptions" placeholder="Select Tax Implication" class="w-100"></p-select>
+                </div>
+
+                <!-- Payment Mode Acceptance & Furnishing Status -->
+                <div class="col-12 md:col-6">
+                    <label class="form-label" for="paymentModeAcceptance">Payment Mode Acceptance</label>
+                    <p-select  formControlName="paymentModeAcceptance" [options]="payment_Modes" placeholder="Select Payment Mode" class="w-100"></p-select>
+                </div>
+                <div class="col-12 md:col-6">
+                    <label class="form-label" for="furnishingStatus">Furnishing Status</label>
+                    <p-select formControlName="furnishingStatus" [options]="furnishing_Status" placeholder="Select Furnishing Status" class="w-100"></p-select>
+                </div>
+
+                <!-- Incentives for Buyers -->
+                <div class="col-12">
+                    <label class="form-label" for="incentivesForBuyers">Incentives for Buyers</label>
+                    <p-select  formControlName="incentivesForBuyers" [options]="incentives_ForBuyersOptions" placeholder="Select Incentives" class="w-100"></p-select>
+                </div>
+
+                <!-- Buttons -->
+                <div class="col-12 d-flex justify-content-end gap-3 mt-3">
+                    <p-button label="Reset" type="button" severity="secondary" (click)="onReset()"></p-button>
+                    <p-button label="Submit" type="submit" severity="primary"></p-button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
