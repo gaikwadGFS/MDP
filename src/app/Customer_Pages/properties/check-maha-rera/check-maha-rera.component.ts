@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+
 import { TableModule } from 'primeng/table';
 import { FileUploadModule } from 'primeng/fileupload';
 import { ButtonModule } from 'primeng/button';
@@ -15,6 +16,7 @@ import { CommonModule } from '@angular/common';
   styleUrl: './check-maha-rera.component.css'
 })
 export class CheckMahaReraComponent {
+ 
   loading: boolean = false;
   
   documents = [
@@ -43,7 +45,11 @@ export class CheckMahaReraComponent {
     this.filteredDocuments = [...this.documents];
   }
 
-  }
+  
+}
+
+
+  
 
 
 
