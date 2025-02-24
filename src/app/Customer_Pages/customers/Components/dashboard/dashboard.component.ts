@@ -35,7 +35,7 @@ import { ApiService } from '../../../Core/Services/api.service';
     PopoverModule,
     InputTextModule,
     InputGroupAddonModule,
-    InputGroup,
+    
     ConfirmPopupModule,
     ToastModule,
     CarouselModule
