@@ -1,3 +1,84 @@
+<!-- <div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-12 text-center py-5">
+            <h1>Search Registrar Office</h1>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-12 d-flex justify-content-center align-items-center">
+            Cities dropdown
+            <div class="mr-3">
+                <label for="cities"></label>
+                <p-select 
+                    [options]="cities" 
+                    [(ngModel)]="selectedCity"
+                    [checkmark]="true"
+                    [showClear]="true" 
+                    placeholder="Select a city">
+                </p-select>
+            </div>
+            Search Button
+            <button pButton type="button" label="Search" icon="pi pi-search" class="p-button-primary mr-2" (click)="search()"></button>
+            Clear Button
+            <button pButton type="button" label="Clear" icon="pi pi-times" class="p-button-secondary" (click)="clearSearch()"></button>
+        </div>
+    </div>
+
+    The Table Section
+    <div class="row">
+        <div class="col-12">
+            <div class="card mt-5">
+                <p-table
+                    [value]="filteredProducts"
+                    showGridlines
+                    [tableStyle]="{ 'min-width': '50rem' }">
+                    <ng-template #header>
+                        <tr>
+                            <th>Sr No.</th>
+                            <th>Office Name</th>
+                            <th>Address</th>
+                            <th>Contact</th>
+                            <th>Site/Office Link</th>
+                            <th>Rating</th>
+                        </tr>
+                    </ng-template>
+                    <ng-template #body let-product>
+                        <tr>
+                            <td>{{ product.srnumber }}</td>
+                            <td>{{ product.Officename }}</td>
+                            <td>{{ product.Address }}</td>
+                            <td>{{ product.contact }}</td>
+                            <td class="text-decoration-underline text-primary">{{ product.SiteOfficeLink }}</td>
+                            <td>
+                                <p-rating [(ngModel)]="product.Rating" [readonly]="true" class="custom-rating"></p-rating>
+                            </td>
+                        </tr>
+                    </ng-template>
+                </p-table>
+            </div>
+        </div>
+    </div>
+</div> -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <div class="container mt-5">
     <div class="row justify-content-center">
         <div class="col-12 text-center py-5">
@@ -32,7 +113,9 @@
                 <p-table
                     [value]="filteredProducts"
                     showGridlines
-                    [tableStyle]="{ 'min-width': '50rem' }">
+                    [tableStyle]="{ 'min-width': '50rem' }"
+                    [paginator]="true"
+                    [rows]="10"                 >
                     <ng-template #header>
                         <tr>
                             <th>Sr No.</th>
