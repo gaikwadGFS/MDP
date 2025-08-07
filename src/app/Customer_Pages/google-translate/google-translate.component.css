@@ -1,0 +1,60 @@
+Custom CSS to hide the footer and adjust the dropdown
+.goog-te-banner-frame.skiptranslate,
+.goog-te-footer,
+#goog-gt-tt,
+.goog-te-balloon-frame,
+.goog-logo-link {
+  display: none !important;
+}
+
+.goog-te-gadget {
+  font-size: 0px !important;
+  display: flex !important;
+  align-items: center;
+}
+
+#google_translate_element select {
+  font-size: 14px !important;
+  line-height: normal;
+  display: inline-block;
+  margin-left: 5px;
+}
+
+.goog-te-combo {
+  font-size: 14px !important;
+  margin-top: -5px;
+}
+
+/* .translate-container {
+  position: sticky;
+  top: 50%;
+  right: 0;
+  transform: translateY(-50%);
+  display: inline-block;
+  z-index: 1000;
+}
+
+.translate-btn {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  font-size: 24px;
+  padding: 10px;
+  position: sticky;
+  right: 0;
+}
+
+.translate-widget {
+  position: absolute;
+  top: 0;
+  right: 50px;   
+  z-index: 999;
+  background-color: white;
+  border: 1px solid #ccc;
+  padding: 10px;
+}
+
+.hidden {
+  display: none;
+} */
+

@@ -9,6 +9,7 @@ import { CommonModule } from '@angular/common';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { InputNumberModule } from 'primeng/inputnumber';
 import { AvatarModule } from 'primeng/avatar'; 
+import { GoogleTranslateComponent } from '../../google-translate/google-translate.component';
 
 @Component({
   selector: 'app-sidebar',
@@ -24,7 +25,7 @@ import { AvatarModule } from 'primeng/avatar';
     OverlayPanelModule,
     AvatarModule,
     DrawerModule,
-    CommonModule,
+    CommonModule
   ],
   templateUrl: './sidebar.component.html',
   styleUrls: ['./sidebar.component.css'],

@@ -131,7 +131,7 @@ h6 {
   # Navigation Menu
   --------------------------------------------------------------*/
 /* Desktop Navigation */
-@media (min-width: 1200px) {
+/* @media (min-width: 1200px) {
   .navmenu {
     padding: 0;
   }
@@ -262,10 +262,10 @@ h6 {
     left: -100%;
     visibility: visible;
   }
-}
+} */
 
 /* Mobile Navigation */
-@media (max-width: 1199px) {
+/* @media (max-width: 1199px) {
   .mobile-nav-toggle {
     color: var(--nav-color);
     font-size: 28px;
@@ -388,7 +388,7 @@ h6 {
   .mobile-nav-active .navmenu>ul {
     display: block;
   }
-}
+} */
 
 /*--------------------------------------------------------------
   # Global Sections

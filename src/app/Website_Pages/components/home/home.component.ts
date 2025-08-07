@@ -6,10 +6,11 @@ import { ApiService } from '../../../Customer_Pages/Core/Services/api.service';
 import { CommonModule } from '@angular/common';
 import { ButtonModule } from 'primeng/button';
 import { RouterLink } from '@angular/router';
+import { CardModule } from 'primeng/card';
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [InputTextModule, Select, ReactiveFormsModule, CommonModule, ButtonModule,RouterLink],
+  imports: [InputTextModule, Select, ReactiveFormsModule, CommonModule, ButtonModule,RouterLink,CardModule],
   templateUrl: './home.component.html',
   styleUrl: './home.component.css'
 })

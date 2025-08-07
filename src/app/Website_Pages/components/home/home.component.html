@@ -138,47 +138,48 @@
 
         <div class="Trending-property section-title text-center pb-5 position-relative " data-aos="fade-up">
             <h2 class="fs-2 fw-bold position-relative">Trending Properties</h2>
-           <div class="container">
-            <div class="row">
-                <div class="col-12">
-                    <h4 class="text-decoration-underline">Search for property :</h4>
-                </div>
-                <div class="col-12">
-                    <form [formGroup]="searchForm" (ngSubmit)="onSubmit()">
-                        <div class="row">
-                            <div class="col-3">
-                                <div>
-                                    <label class="mx-3" for="">Property :</label>
-                                    <p-select formControlName="selectedProperty" [options]="property"
-                                        placeholder="Select a Property" />
+            <div class="container">
+                <div class="row">
+                    <div class="col-12">
+                        <h4 class="text-decoration-underline">Search for property :</h4>
+                    </div>
+                    <div class="col-12">
+                        <form [formGroup]="searchForm" (ngSubmit)="onSubmit()">
+                            <div class="row">
+                                <div class="col-3">
+                                    <div>
+                                        <label class="mx-3" for="">Property :</label>
+                                        <p-select formControlName="selectedProperty" [options]="property"
+                                            placeholder="Select a Property" />
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="col-3">
-                                <div>
-                                    <label class="mx-3" for="">City :</label>
-                                    <p-select formControlName="selectedCity" [options]="cities" 
-                                        placeholder="Select a City" />
+                                <div class="col-3">
+                                    <div>
+                                        <label class="mx-3" for="">City :</label>
+                                        <p-select formControlName="selectedCity" [options]="cities"
+                                            placeholder="Select a City" />
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="col-3">
-                                <div>
-                                    <label class="mx-3" for="">Area :</label>
-                                    <input type="text" pInputText formControlName="area" placeholder="1000/1500" />
+                                <div class="col-3">
+                                    <div>
+                                        <label class="mx-3" for="">Area :</label>
+                                        <input type="text" pInputText formControlName="area" placeholder="1000/1500" />
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="col-3">
-                                <div class="mt-1">
-                                    <button type="submit" class="btn btn-success shadow">Search</button>
-                                    <button type="button" class="btn btn-light shadow mx-2" (click)="resetFilters()">Reset Filter</button>
+                                <div class="col-3">
+                                    <div class="mt-1">
+                                        <button type="submit" class="btn btn-success shadow">Search</button>
+                                        <button type="button" class="btn btn-light shadow mx-2"
+                                            (click)="resetFilters()">Reset Filter</button>
 
-                                    <!-- <p-button type="submit" icon="pi pi-search" [rounded]="true" severity="success" /> -->
+                                        <!-- <p-button type="submit" icon="pi pi-search" [rounded]="true" severity="success" /> -->
+                                    </div>
                                 </div>
                             </div>
-                        </div>  
-                    </form>
+                        </form>
+                    </div>
                 </div>
             </div>
-        </div>
             <div id="trendingPropertiesCarousel" class="carousel slide " data-bs-ride="carousel">
                 <!-- Indicators -->
                 <!-- <div class="carousel-indicators">
@@ -644,7 +645,5 @@
 
     </section>
     <!-- /Testimonials Section End -->
-
-
-
 </main>
+

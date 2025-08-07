@@ -7,11 +7,12 @@ import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { HeaderComponent } from './Website_Pages/layout/header/header.component';
 import { FooterComponent } from './Website_Pages/layout/footer/footer.component';
+import { GoogleTranslateComponent } from "./Customer_Pages/google-translate/google-translate.component";
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [FormsModule, CommonModule, ButtonModule, RippleModule, FooterComponent, RouterOutlet],
+  imports: [FormsModule, CommonModule, ButtonModule, RippleModule, FooterComponent, RouterOutlet, GoogleTranslateComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })

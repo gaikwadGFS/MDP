@@ -1,9 +1,10 @@
-import { Component, OnInit, Renderer2 } from '@angular/core';
+import { AfterViewInit, Component, ElementRef, OnInit, Renderer2, ViewChild } from '@angular/core';
 import { Menubar } from 'primeng/menubar';
 import { MenuItem } from 'primeng/api';
 import { Router, RouterLink, RouterLinkActive, RouterOutlet } from '@angular/router';
 import { PanelMenu } from 'primeng/panelmenu';
 import { CommonModule } from '@angular/common';
+
 @Component({
   selector: 'app-header',
   standalone: true,
@@ -12,6 +13,7 @@ import { CommonModule } from '@angular/common';
   styleUrl: './header.component.css'
 })
 export class HeaderComponent {
+
   constructor() {
     window.onload = function () {
       const mobileNavToggle = document.querySelector('.mobile-nav-toggle');
@@ -20,9 +22,12 @@ export class HeaderComponent {
       if (mobileNavToggle && navmenu) {
         mobileNavToggle.addEventListener('click', function () {
           navmenu.classList.toggle('mobile-nav-active');
+          // document.body.classList.toggle('mobile-nav-active');
         });
       }
     };
 
   }
+
+ 
 }
